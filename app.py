@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import streamlit_pandas as sp
 from st_aggrid import GridOptionsBuilder, AgGrid
 
 
