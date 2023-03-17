@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from st_aggrid import GridOptionsBuilder, AgGrid
 
 
 st.set_page_config(
@@ -30,7 +29,7 @@ with dataset:
 
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
-    video_df = get_data("mediastats_cuneytozdemir.csv")
+    video_df = get_data("/workspaces/MediaStats_YouTube_API/mediastats_cuneytozdemir.csv")
 
     # selected_media =
     selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
