@@ -1,13 +1,67 @@
 import streamlit as st
+import pandas as pd
+import streamlit_pandas as sp
+from st_aggrid import GridOptionsBuilder, AgGrid
 
-'''
-# How Turkish News Media's YouTube Stats Stack Up: Exploring the Data on My Streamlit App
-'''
+
+st.set_page_config(
+    page_title="YouTube Stats",
+
+)
+header = st.container()
+dataset= st.container()
+features = st.container()
+
+@st.cache_data
+def get_data(filename):
+    video_df = pd.read_csv(filename)
+    return video_df
+
+with header:
+    st.title("How Turkish News Media's YouTube Stats Stack Up: Exploring the Data on My Streamlit App")
+    st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to interact with one of the world's largest video-sharing platforms,which boasts billions of daily users uploading, viewing, and commenting on videos. By the end of this tutorial, you'll know how to automate various tasks using the YouTube API.")
+
+with features:
+    st.header("")
+    st.text("")
+
+with dataset:
+    st.subheader("YouTube Stats of Turkish News Media in YouTube")
+    years=[ i for i in range(2010, 2024)]
+
+    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    channels = ["Cuneyt Ozdemir Media", "AHaber"]
+    video_df = get_data("mediastats_cuneytozdemir.csv")
+
+    # selected_media =
+    selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
+    selected_month = st.sidebar.selectbox("Select Month", [""] + months, index=0)
+    if selected_year != "" and selected_month != "":
+        filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
+    else:
+        filtered_df = video_df
+    # if st.session_state.get('refresh', False):
+    #     selected_year = ""
+    #     selected_month = ""
+    #     st.session_state['refresh'] = False
+    # if selected_year != "" and selected_month != "":
+    #     filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
+    # else:
+    #     filtered_df = video_df
+
+    st.session_state.selected_year = selected_year
+    st.session_state.selected_month = selected_month
+
+    # if st.button("Refresh"):
+    #     st.session_state['refresh'] = True
+    #     st.experimental_rerun()
+
+    # Display the DataFrame
+    st.write(filtered_df)
+
 
 st.markdown('''
-In this tutorial, we'll explore how to use the YouTube API with Python to interact with one of the world's largest video-sharing platforms,
-which boasts billions of daily users uploading, viewing, and commenting on videos. By the end of this tutorial,
-you'll know how to automate various tasks using the YouTube API.
+
 ''')
 
 '''
@@ -91,11 +145,5 @@ By following these easy steps, you can now begin using the YouTube API with Pyth
 The YouTube API and Python provide a wide range of possibilities for automation, data gathering, and feature creation. Whether you want to build a tool to analyze videos or automate repetitive tasks, the API and the Google API Client library can help you achieve your goals.
 
 By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
-
-'''
-
-'''
-## Once we have these, let's call our API in order to retrieve a prediction
-
 
 '''
