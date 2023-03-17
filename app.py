@@ -25,7 +25,8 @@ with dataset:
 
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
-    video_df = get_data("/workspaces/MediaStats_YouTube_API/mediastats_cuneytozdemir.csv")
+    filename = "/workspaces/MediaStats_YouTube_API/mediastats_cuneytozdemir.csv"
+    video_df = get_data(filename)
 
     # selected_media =
     selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
