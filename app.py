@@ -2,10 +2,6 @@ import streamlit as st
 import pandas as pd
 
 
-st.set_page_config(
-    page_title="YouTube Stats",
-
-)
 header = st.container()
 dataset= st.container()
 features = st.container()
