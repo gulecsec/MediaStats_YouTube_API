@@ -6,7 +6,6 @@ header = st.container()
 dataset= st.container()
 features = st.container()
 
-@st.cache_data
 def get_data(filename):
     video_df = pd.read_csv(filename)
     return video_df
