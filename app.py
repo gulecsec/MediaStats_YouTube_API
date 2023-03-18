@@ -25,15 +25,15 @@ with dataset:
 
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
-    video_df = get_data("media_stats/media_stats.csv")
+    stats_df = get_data("media_stats/media_stats.csv")
 
     # selected_media =
     selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
     selected_month = st.sidebar.selectbox("Select Month", [""] + months, index=0)
     if selected_year != "" and selected_month != "":
-        filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
+        filtered_df = stats_df.loc[(stats_df["Year"]==selected_year) & (stats_df["Month"]==selected_month)]
     else:
-        filtered_df = video_df
+        filtered_df = stats_df
     # if st.session_state.get('refresh', False):
     #     selected_year = ""
     #     selected_month = ""
