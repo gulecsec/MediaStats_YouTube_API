@@ -2,10 +2,6 @@
 import streamlit as st
 import pandas as pd
 
-def get_data(filename):
-    video_df = pd.read_csv(filename)
-    return video_df
-
 header = st.container()
 dataset= st.container()
 features = st.container()
@@ -24,8 +20,7 @@ with dataset:
 
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
-
-    stats_df = get_data("media_stats/media_stats.csv")
+    stats_df = pd.read_csv("media_stats/media_stats.csv")
 
     # selected_media =
     selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
