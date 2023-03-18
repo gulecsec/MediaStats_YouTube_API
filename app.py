@@ -2,13 +2,13 @@
 import streamlit as st
 import pandas as pd
 
-header = st.container()
-dataset= st.container()
-features = st.container()
-
 def get_data(filename):
     video_df = pd.read_csv(filename)
     return video_df
+
+header = st.container()
+dataset= st.container()
+features = st.container()
 
 with header:
     st.title("How Turkish News Media's YouTube Stats Stack Up: Exploring the Data on My Streamlit App")
@@ -24,6 +24,7 @@ with dataset:
 
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
+
     stats_df = get_data("media_stats/media_stats.csv")
 
     # selected_media =
