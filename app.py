@@ -48,7 +48,7 @@ elif page == "Channel Details":
         co_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
 
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelTitle"])
+        channel_choice = st.selectbox("Select Channel", stats_df["channelTitle"].unique())
         year_choice = st.selectbox("Select Year", co_df["Year"].unique())
         month_choice = st.selectbox("Select Month", co_df["Month"].unique())
 
