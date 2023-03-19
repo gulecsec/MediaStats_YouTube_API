@@ -54,13 +54,10 @@ elif page == "Channel Details":
         month_choice = st.selectbox("Select Month", months)
 
         # years = [i for i in range(2010, 2024)]
-
         # channels = ["Cuneyt Ozdemir Media", "AHaber"]
 
-
-
         # display the selected graph
-        if channel_choice in stats_df["channelTitle"].values.tolist():
+        if channel_choice in stats_df["channelName"][0]:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False)[0:9],
                           x="channelTitle", y="viewCount", color='viewCount', title="Best Performing Videos")
             fig.update_layout(margin=dict(l=20, r=20, t=20, b=20))
