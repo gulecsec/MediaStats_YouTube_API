@@ -64,7 +64,7 @@ elif page == "Channel Details":
             ax = sns.barplot(x = 'title', y = 'viewCount', data = co_df.sort_values('viewCount', ascending=False)[0:9])
             plot = ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
             ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos:'{:,.0f}'.format(x/1000) + 'K'))
-            st.pyplot(ax)
+            st.pyplot(fig2)
         else:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False),
                           x="title", y="likeCount", color='viewCount', title="Subscribers-Total Videos")
