@@ -46,13 +46,17 @@ elif page == "Channel Details":
     with channel_details:
         st.title("Channel Details")
 
+        # Load data
+        co_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
+
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select a channel", stats_df["channelName"])
+        channel_choice = st.selectbox("Select Channel", stats_df["channelName"])
+        year_choice = st.selectbox("Select Year", stats_df["channelName"])
 
         # display the selected graph
         if channel_choice == stats_df["channelName"][0]:
-            fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
-                          x="channelName", y="views", color='totalVideos', title="Views-Total Videos")
+            fig = px.bar(data_frame=co_df.sort_values('Year', ascending=False),
+                          x="title", y="viewCount", color='viewCount', title="Best Performing Videos")
         else:
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
