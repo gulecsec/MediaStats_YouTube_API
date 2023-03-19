@@ -49,8 +49,8 @@ elif page == "Channel Details":
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-        year_choice = st.selectbox("Select Year", co_df["Year"].unique().tolist().sort_values('Year', ascending=False))
-        month_choice = st.selectbox("Select Month", co_df["Month"].unique().tolist().sort_values('Month', ascending=False))
+        year_choice = st.selectbox("Select Year", co_df["Year"].unique().sort_values('Year', ascending=False)tolist())
+        month_choice = st.selectbox("Select Month", co_df["Month"].unique().sort_values('Month', ascending=False).tolist())
 
         # years = [i for i in range(2010, 2024)]
         # months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
