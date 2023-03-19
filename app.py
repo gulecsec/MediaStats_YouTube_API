@@ -49,9 +49,24 @@ elif page == "Channel Details":
     with channel_details:
         st.title("Channel Details")
 
-        # Load data
-        co_df = pd.read_csv("media_stats/stats_cuneytozdemir.csv")
-        cnn_df = pd.read_csv("media_stats/stats_cuneytozdemir.csv")
+
+# create a dictionary to store data frames and graph titles for each channel
+channel_data = {
+'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top Videos by Like Count and View Count'},
+'CNN TÜRK': {'df_df': cnn_df, 'title': 'CNN TÜRK Top Videos by Like Count and View Count'},
+'TV100': {'df': tv100_df, 'title': 'ABC News (Australia) Top Videos by Like Count and View Count'},
+'Habertürk TV': {'df': htv_df, 'title': 'Anadolu Ajansı Top Videos by Like Count and View Count'},
+'NTV': {'df': ntv_df, 'title': 'NTV Top Videos by Like Count and View Count'},
+'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top Videos by Like Count and View Count'},
+'Fox News': {'df': fox_df, 'title': 'Fox News Top Videos by Like Count and View Count'},
+'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top Videos by Like Count and View Count'},
+'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top Videos by Like Count and View Count'},
+'Show Ana Haber': {'df': shw_df, 'title': 'Show Ana Haber Top Videos by Like Count and View Count'}
+}           
+
+
+
+
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
@@ -71,8 +86,6 @@ elif page == "Channel Details":
             fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False),
                           x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
             st.plotly_chart(fig1)
-
-
 
         # filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
         # # create a filter for the selected channel
