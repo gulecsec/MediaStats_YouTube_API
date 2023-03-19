@@ -53,10 +53,13 @@ elif page == "Channel Details":
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"])
         year_choice = st.selectbox("Select Year", stats_df["channelName"])
 
+
+
         # display the selected graph
         if channel_choice == stats_df["channelName"][0]:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False)[0:9],
                           x="title", y="viewCount", color='viewCount', title="Best Performing Videos")
+            fig.update_layout(margin=dict(l=20, r=20, t=20, b=20),paper_bgcolor="LightSteelBlue",)
         else:
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
