@@ -47,7 +47,7 @@ elif page == "Channel Details":
         st.title("Channel Details")
 
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select a channel", channels)
+        channel_choice = st.selectbox("Select a channel", stats_df["channelName"])
 
         # create a filter for the selected channel
         channel_filter = stats_df['channelName'] == channel_choice
