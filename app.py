@@ -51,9 +51,10 @@ elif page == "Channel Details":
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"])
-        year_choice = st.selectbox("Select Year", stats_df["channelName"])
+        year_choice = st.selectbox("Select Year", stats_df["Year"])
+        month_choice = st.selectbox("Select Month", stats_df["Month"])
 
-
+        
 
         # display the selected graph
         if channel_choice == stats_df["channelName"][0]:
