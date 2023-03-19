@@ -26,6 +26,10 @@ with dataset:
                   x="channelName", y="views",color='totalVideos', title="Views-Total Videos")
     st.write(fig1)
 
+    fig2 = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+                  x="channelName", y="subscribers",color='totalVideos', title="Subscribers-Total Videos")
+    st.write(fig2)
+
     # # selected_media =
     # selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
     # selected_month = st.sidebar.selectbox("Select Month", [""] + months, index=0)
