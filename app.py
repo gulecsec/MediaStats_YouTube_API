@@ -50,8 +50,8 @@ elif page == "Channel Details":
         st.title("Channel Details")
 
         # Load data
-        co_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
-        cnn_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
+        co_df = pd.read_csv("media_stats/stats_cuneytozdemir.csv")
+        cnn_df = pd.read_csv("media_stats/stats_cuneytozdemir.csv")
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
