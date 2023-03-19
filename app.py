@@ -59,7 +59,7 @@ elif page == "Channel Details":
 
 
         # display the selected graph
-        if channel_choice == stats_df["channelTitle"][0]:
+        if channel_choice in stats_df["channelTitle"].values.tolist():
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False)[0:9],
                           x="channelTitle", y="viewCount", color='viewCount', title="Best Performing Videos")
             fig.update_layout(margin=dict(l=20, r=20, t=20, b=20))
