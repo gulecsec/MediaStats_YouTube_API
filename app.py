@@ -22,32 +22,33 @@ with dataset:
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
     stats_df = pd.read_csv("media_stats/media_stats.csv")
+    st.write(stats_df)
 
-    # selected_media =
-    selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
-    selected_month = st.sidebar.selectbox("Select Month", [""] + months, index=0)
-    if selected_year != "" and selected_month != "":
-        filtered_df = stats_df.loc[(stats_df["Year"]==selected_year) & (stats_df["Month"]==selected_month)]
-    else:
-        filtered_df = stats_df
-    # if st.session_state.get('refresh', False):
-    #     selected_year = ""
-    #     selected_month = ""
-    #     st.session_state['refresh'] = False
+    # # selected_media =
+    # selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
+    # selected_month = st.sidebar.selectbox("Select Month", [""] + months, index=0)
     # if selected_year != "" and selected_month != "":
-    #     filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
+    #     filtered_df = stats_df.loc[(stats_df["Year"]==selected_year) & (stats_df["Month"]==selected_month)]
     # else:
-    #     filtered_df = video_df
+    #     filtered_df = stats_df
+    # # if st.session_state.get('refresh', False):
+    # #     selected_year = ""
+    # #     selected_month = ""
+    # #     st.session_state['refresh'] = False
+    # # if selected_year != "" and selected_month != "":
+    # #     filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
+    # # else:
+    # #     filtered_df = video_df
 
-    st.session_state.selected_year = selected_year
-    st.session_state.selected_month = selected_month
+    # st.session_state.selected_year = selected_year
+    # st.session_state.selected_month = selected_month
 
-    # if st.button("Refresh"):
-    #     st.session_state['refresh'] = True
-    #     st.experimental_rerun()
+    # # if st.button("Refresh"):
+    # #     st.session_state['refresh'] = True
+    # #     st.experimental_rerun()
 
-    # Display the DataFrame
-    st.write(filtered_df)
+    # # Display the DataFrame
+    # st.write(filtered_df)
 
 
 st.markdown('''
