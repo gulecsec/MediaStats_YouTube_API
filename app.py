@@ -63,8 +63,8 @@ elif page == "Channel Details":
 
         # display the selected graph
         if channel_choice == stats_df["channelName"][0]:
-            fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=True)[0:9],
-                          x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
+            fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False)[0:9],
+                          x="title", y="likeCount", color='likeCount', title="likeCount-viewCount")
             st.plotly_chart(fig1)
         else:
             fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False),
