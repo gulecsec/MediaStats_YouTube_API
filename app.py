@@ -23,7 +23,7 @@ def show_homepage():
         show_channel_details()
 
 # Define function to show stats page
-defshow_stats():
+def show_stats():
     with st.container():
         st.subheader("YouTube Stats of Turkish News Media in YouTube")
         years= [ i for i in range(2010, 2024)]
