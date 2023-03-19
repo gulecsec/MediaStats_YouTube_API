@@ -48,9 +48,9 @@ elif page == "Channel Details":
         co_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
 
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-        year_choice = st.selectbox("Select Year", co_df["Year"].unique().tolist())
-        month_choice = st.selectbox("Select Month", co_df["Month"].unique().tolist())
+        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique().sort_values(ascending=False))
+        year_choice = st.selectbox("Select Year", co_df["Year"].unique().tolist().sort_values('Year', ascending=False))
+        month_choice = st.selectbox("Select Month", co_df["Month"].unique().tolist().sort_values('Month', ascending=False)
 
         # years = [i for i in range(2010, 2024)]
         # months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
