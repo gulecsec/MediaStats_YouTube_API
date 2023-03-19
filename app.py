@@ -3,6 +3,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# Load Data
+stats_df = pd.read_csv("media_stats/media_stats.csv")
+
 header = st.container()
 dataset= st.container()
 features = st.container()
@@ -21,7 +24,7 @@ with dataset:
 
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
-    stats_df = pd.read_csv("media_stats/media_stats.csv")
+
     # add radio button to select between the two graphs
     graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
 
