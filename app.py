@@ -55,7 +55,7 @@ elif page == "Channel Details":
 
         # display the selected graph
         if channel_choice == stats_df["channelName"][0]:
-            fig = px.bar(data_frame=co_df.sort_values('Year', ascending=False),
+            fig = px.bar(data_frame=co_df.sort_values('Year', ascending=False)[0:9],
                           x="title", y="viewCount", color='viewCount', title="Best Performing Videos")
         else:
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
