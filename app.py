@@ -49,20 +49,26 @@ elif page == "Channel Details":
     with channel_details:
         st.title("Channel Details")
 
+        # co_df =
+        # cnn_df =
+        # tv100_df
+        # htv_df
+        # ntv_df
+        # soz_df
 
-# create a dictionary to store data frames and graph titles for each channel
-channel_data = {
-'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top Videos by Like Count and View Count'},
-'CNN TÜRK': {'df_df': cnn_df, 'title': 'CNN TÜRK Top Videos by Like Count and View Count'},
-'TV100': {'df': tv100_df, 'title': 'ABC News (Australia) Top Videos by Like Count and View Count'},
-'Habertürk TV': {'df': htv_df, 'title': 'Anadolu Ajansı Top Videos by Like Count and View Count'},
-'NTV': {'df': ntv_df, 'title': 'NTV Top Videos by Like Count and View Count'},
-'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top Videos by Like Count and View Count'},
-'Fox News': {'df': fox_df, 'title': 'Fox News Top Videos by Like Count and View Count'},
-'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top Videos by Like Count and View Count'},
-'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top Videos by Like Count and View Count'},
-'Show Ana Haber': {'df': shw_df, 'title': 'Show Ana Haber Top Videos by Like Count and View Count'}
-}           
+        # create a dictionary to store data frames and graph titles for each channel
+        channel_data = {
+        'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top Videos by Like Count and View Count'},
+        'CNN TÜRK': {'df_df': cnn_df=pd.read_csv("media_stats/stats_cnnturk.csv"), 'title': 'CNN TÜRK Top Videos by Like Count and View Count'},
+        'TV100': {'df': tv100_df=pd.read_csv("media_stats/stats_tv100.csv"), 'title': 'ABC News (Australia) Top Videos by Like Count and View Count'},
+        'Habertürk TV': {'df': htv_df, 'title': 'Anadolu Ajansı Top Videos by Like Count and View Count'},
+        'NTV': {'df': ntv_df, 'title': 'NTV Top Videos by Like Count and View Count'},
+        'SÖZCÜ Televizyonu': {'df': soz_df=pd.read_csv("media_stats/stats_cuneytozdemir.csv"), 'title': 'SÖZCÜ Televizyonu Top Videos by Like Count and View Count'},
+        'Fox News': {'df': fox_df, 'title': 'Fox News Top Videos by Like Count and View Count'},
+        'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top Videos by Like Count and View Count'},
+        'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top Videos by Like Count and View Count'},
+        'Show Ana Haber': {'df': shw_df, 'title': 'Show Ana Haber Top Videos by Like Count and View Count'}
+        }
 
 
 
