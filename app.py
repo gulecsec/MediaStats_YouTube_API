@@ -1,54 +1,61 @@
+# import libraries
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Define function to show homepage
-def show_homepage():
-    st.set_page_config(page_title="MediaStats", page_icon=":tv:", layout="wide")
+header = st.container()
+dataset= st.container()
+features = st.container()
+
+with header:
     st.title("How Turkish News Media's YouTube Stats Stack Up: Exploring the Data on My Streamlit App")
-    st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to interact with one of the world's largest video-sharing platforms, which boasts billions of daily users uploading, viewing, and commenting on videos. By the end of this tutorial, you'll know how to automate various tasks using the YouTube API.")
+    st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to interact with one of the world's largest video-sharing platforms,which boasts billions of daily users uploading, viewing, and commenting on videos. By the end of this tutorial, you'll know how to automate various tasks using the YouTube API.")
 
-    # Create navigation sidebar
-    navigation = st.sidebar.radio("Navigation", ["Home", "Channel Details"])
+with features:
+    st.header("")
+    st.text("")
 
-    # Show homepage by default
-    if navigation == "Home":
-        show_stats()
-    elif navigation == "Channel Details":
-        show_channel_details()
+with dataset:
+    st.subheader("YouTube Stats of Turkish News Media in YouTube")
+    years=[ i for i in range(2010, 2024)]
 
-# Define function to show stats page
-def show_stats():
-    with st.container():
-        st.subheader("YouTube Stats of Turkish News Media in YouTube")
-        years=[ i for i in range(2010, 2024)]
-        months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-        channels = ["Cuneyt Ozdemir Media", "AHaber"]
-        stats_df = pd.read_csv("media_stats/media_stats.csv")
+    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    channels = ["Cuneyt Ozdemir Media", "AHaber"]
+    stats_df = pd.read_csv("media_stats/media_stats.csv")
+    # add radio button to select between the two graphs
+    graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
 
-        fig1 = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
+    # display the selected graph
+    if graph_choice == "Views-Total Videos":
+        fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
                       x="channelName", y="views",color='totalVideos', title="Views-Total Videos")
-        st.write(fig1)
-
-        fig2 = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+    else:
+        fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                       x="channelName", y="subscribers",color='totalVideos', title="Subscribers-Total Videos")
-        st.write(fig2)
+    st.plotly_chart(fig)
 
-# Define function to show channel details page
-def show_channel_details():
-    with st.container():
-        st.subheader("Channel Details")
-        channels = ["Cuneyt Ozdemir Media", "AHaber"]
-        stats_df = pd.read_csv("media_stats/media_stats.csv")
+    # # selected_media =
+    # selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
+    # selected_month = st.sidebar.selectbox("Select Month", [""] + months, index=0)
+    # if selected_year != "" and selected_month != "":
+    #     filtered_df = stats_df.loc[(stats_df["Year"]==selected_year) & (stats_df["Month"]==selected_month)]
+    # else:
+    #     filtered_df = stats_df
+    # # if st.session_state.get('refresh', False):
+    # #     selected_year = ""
+    # #     selected_month = ""
+    # #     st.session_state['refresh'] = False
+    # # if selected_year != "" and selected_month != "":
+    # #     filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
+    # # else:
+    # #     filtered_df = video_df
 
-        for channel in channels:
-            channel_stats_df = stats_df[stats_df["channelName"] == channel]
-            fig1 = px.bar(data_frame=channel_stats_df, x="monthYear", y="views", title=f"{channel} Views Over Time")
-            st.write(fig1)
+    # st.session_state.selected_year = selected_year
+    # st.session_state.selected_month = selected_month
 
-            fig2 = px.bar(data_frame=channel_stats_df, x="monthYear", y="subscribers", title=f"{channel} Subscribers Over Time")
-            st.write(fig2)
+    # # if st.button("Refresh"):
+    # #     st.session_state['refresh'] = True
+    # #     st.experimental_rerun()
 
-# Run app
-if __name__ == "__main__":
-    show_homepage()
+    # # Display the DataFrame
+    # st.write(filtered_df)
