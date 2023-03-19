@@ -1,5 +1,7 @@
 streamlit
 pandas
-requests
 plotly
 plotly.express
+seaborn
+matplotlib.pyplot
+matplotlib.ticker
