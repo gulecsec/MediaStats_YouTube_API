@@ -8,8 +8,8 @@ stats_df = pd.read_csv("media_stats/media_stats.csv")
 
 # Define page layout
 header = st.container()
-dataset= st.container()
-features = st.container()
+navigation = st.container()
+channel_stats = st.container()
 
 # Define navigation items
 nav_items = ["All Channels"] + list(stats_df["channelName"].unique())
