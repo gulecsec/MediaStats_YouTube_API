@@ -50,10 +50,11 @@ elif page == "Channel Details":
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
         year_choice = st.selectbox("Select Year", co_df["Year"].sort_values(ascending=False).unique().tolist())
-        month_choice = st.selectbox("Select Month", co_df["Month"].sort_values(ascending=False).unique().tolist())
+        months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        month_choice = st.selectbox("Select Month", months)
 
         # years = [i for i in range(2010, 2024)]
-        # months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
         # channels = ["Cuneyt Ozdemir Media", "AHaber"]
 
 
