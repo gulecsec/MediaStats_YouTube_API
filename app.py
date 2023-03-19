@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
+
+# Data viz packages
 import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 
 # Load data
 stats_df = pd.read_csv("media_stats/media_stats.csv")
