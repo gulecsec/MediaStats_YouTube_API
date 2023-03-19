@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 # Load data
 stats_df = pd.read_csv("media_stats/media_stats.csv")
@@ -58,9 +60,11 @@ elif page == "Channel Details":
 
         # display the selected graph
         if channel_choice == stats_df["channelName"][0]:
-            fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False)[0:9],
-                          x="title", y="viewCount", color='viewCount', title="Best Performing Videos")
-            fig.update_layout(margin=dict(l=40, r=30, t=20, b=20))
+            fig2 = sns.set(rc = {'figure.figsize':(10,6)})
+            ax = sns.barplot(x = 'title', y = 'viewCount', data = co_df.sort_values('viewCount', ascending=False)[0:9])
+            plot = ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
+            ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos:'{:,.0f}'.format(x/1000) + 'K'))
+            st.pyplot(ax)
         else:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False),
                           x="title", y="likeCount", color='viewCount', title="Subscribers-Total Videos")
