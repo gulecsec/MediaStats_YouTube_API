@@ -60,7 +60,7 @@ elif page == "Channel Details":
         if channel_choice == stats_df["channelName"][0]:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False)[0:9],
                           x="title", y="viewCount", color='viewCount', title="Best Performing Videos")
-            fig.update_layout(margin=dict(l=20, r=20, t=20, b=20))
+            fig.update_layout(margin=dict(l=40, r=30, t=20, b=20))
         else:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False),
                           x="title", y="likeCount", color='viewCount', title="Subscribers-Total Videos")
