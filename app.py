@@ -48,7 +48,7 @@ elif page == "Channel Details":
         co_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
 
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", co_df["channelName"])
+        channel_choice = st.selectbox("Select Channel", co_df["channelTitle"])
         year_choice = st.selectbox("Select Year", co_df["Year"])
         month_choice = st.selectbox("Select Month", co_df["Month"])
 
@@ -59,13 +59,13 @@ elif page == "Channel Details":
 
 
         # display the selected graph
-        if channel_choice == stats_df["channelName"][0]:
+        if channel_choice == stats_df["channelTitle"][0]:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False)[0:9],
-                          x="title", y="viewCount", color='viewCount', title="Best Performing Videos")
+                          x="channelTitle", y="viewCount", color='viewCount', title="Best Performing Videos")
             fig.update_layout(margin=dict(l=20, r=20, t=20, b=20))
         else:
-            fig = px.bar(data_frame=co_df.sort_values('subscribers', ascending=False),
-                          x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
+            fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False),
+                          x="channelTitle", y="likeCount", color='viewCount', title="Subscribers-Total Videos")
         st.plotly_chart(fig)
 
         # # create a filter for the selected channel
