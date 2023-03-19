@@ -51,6 +51,7 @@ elif page == "Channel Details":
 
         # Load data
         co_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
+        cnn_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
@@ -71,6 +72,9 @@ elif page == "Channel Details":
                           x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
             st.plotly_chart(fig1)
 
+
+
+        # filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
         # # create a filter for the selected channel
         # channel_filter = stats_df['channelName'] == channel_choice
 
