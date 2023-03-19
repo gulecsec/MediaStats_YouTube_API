@@ -26,9 +26,7 @@ if page == "Home":
 
     with dataset:
         st.subheader("YouTube Stats of Turkish News Media in YouTube")
-        years = [i for i in range(2010, 2024)]
-        months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        channels = ["Cuneyt Ozdemir Media", "AHaber"]
+
 
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
@@ -50,11 +48,15 @@ elif page == "Channel Details":
         co_df = pd.read_csv("media_stats/mediastats_cuneytozdemir.csv")
 
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelName"])
-        year_choice = st.selectbox("Select Year", stats_df["Year"])
-        month_choice = st.selectbox("Select Month", stats_df["Month"])
+        channel_choice = st.selectbox("Select Channel", co_df["channelName"])
+        year_choice = st.selectbox("Select Year", co_df["Year"])
+        month_choice = st.selectbox("Select Month", co_df["Month"])
 
-        
+        # years = [i for i in range(2010, 2024)]
+        # months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        # channels = ["Cuneyt Ozdemir Media", "AHaber"]
+
+
 
         # display the selected graph
         if channel_choice == stats_df["channelName"][0]:
@@ -62,7 +64,7 @@ elif page == "Channel Details":
                           x="title", y="viewCount", color='viewCount', title="Best Performing Videos")
             fig.update_layout(margin=dict(l=20, r=20, t=20, b=20))
         else:
-            fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+            fig = px.bar(data_frame=co_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
         st.plotly_chart(fig)
 
