@@ -73,7 +73,7 @@ elif page == "Channel Details":
         else:
             fig = px.bar(data_frame=co_df.sort_values('viewCount', ascending=False),
                           x="title", y="likeCount", color='viewCount', title="Subscribers-Total Videos")
-        st.plotly_chart(fig)
+            st.plotly_chart(fig)
 
         # # create a filter for the selected channel
         # channel_filter = stats_df['channelName'] == channel_choice
