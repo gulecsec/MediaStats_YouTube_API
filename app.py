@@ -22,13 +22,17 @@ with dataset:
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
     stats_df = pd.read_csv("media_stats/media_stats.csv")
-    fig1 = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
-                  x="channelName", y="views",color='totalVideos', title="Views-Total Videos")
-    st.write(fig1)
+    # add radio button to select between the two graphs
+    graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
 
-    fig2 = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
-                  x="channelName", y="subscribers",color='totalVideos', title="Subscribers-Total Videos")
-    st.write(fig2)
+    # display the selected graph
+    if graph_choice == "Views-Total Videos":
+        fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
+                      x="channelName", y="views",color='totalVideos', title="Views-Total Videos")
+    else:
+        fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+                      x="channelName", y="subscribers",color='totalVideos', title="Subscribers-Total Videos")
+    st.plotly_chart(fig)
 
     # # selected_media =
     # selected_year = st.sidebar.selectbox("Select Year", [""] + years, index=0)
