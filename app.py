@@ -49,15 +49,24 @@ elif page == "Channel Details":
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select a channel", stats_df["channelName"])
 
-        # create a filter for the selected channel
-        channel_filter = stats_df['channelName'] == channel_choice
+        # display the selected graph
+        if channel_choice == stats_df["channelName"][0]:
+            fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
+                          x="channelName", y="views", color='totalVideos', title="Views-Total Videos")
+        else:
+            fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+                          x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
+        st.plotly_chart(fig)
 
-        # create a new dataframe with only data for the selected channel
-        channel_stats_df = stats_df[channel_filter]
+        # # create a filter for the selected channel
+        # channel_filter = stats_df['channelName'] == channel_choice
 
-        # create a bar chart for the views and subscribers for the selected channel
-        fig1 = px.bar(data_frame=channel_stats_df, x='year', y='views', color='month', title=f"{channel_choice} - Views per Year")
-        st.plotly_chart(fig1)
+        # # create a new dataframe with only data for the selected channel
+        # channel_stats_df = stats_df[channel_filter]
 
-        fig2 = px.bar(data_frame=channel_stats_df, x='year', y='subscribers', color='month', title=f"{channel_choice} - Subscribers per Year")
-        st.plotly_chart(fig2)
+        # # create a bar chart for the views and subscribers for the selected channel
+        # fig1 = px.bar(data_frame=channel_stats_df, x='year', y='views', color='month', title=f"{channel_choice} - Views per Year")
+        # st.plotly_chart(fig1)
+
+        # fig2 = px.bar(data_frame=channel_stats_df, x='year', y='subscribers', color='month', title=f"{channel_choice} - Subscribers per Year")
+        # st.plotly_chart(fig2)
