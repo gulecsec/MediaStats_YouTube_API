@@ -22,7 +22,8 @@ with dataset:
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     channels = ["Cuneyt Ozdemir Media", "AHaber"]
     stats_df = pd.read_csv("media_stats/media_stats.csv")
-    fig1 = px.bar(data_frame=stats_df.sort_values('views', ascending=False), x="channelName", y="views",color='totalVideos', title="Views-Total Videos")
+    fig1 = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
+                  x="channelName", y="views",color='totalVideos', title="Views-Total Videos")
     st.write(fig1)
 
     # # selected_media =
