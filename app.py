@@ -50,7 +50,7 @@ elif page == "Channel Details":
         channel_names = stats_df["channelTitle"].unique()
 
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", channel_names)
+        # channel_choice = st.selectbox("Select Channel", channel_names)
         year_choice = st.selectbox("Select Year", co_df["Year"].unique().tolist())
         month_choice = st.selectbox("Select Month", co_df["Month"].unique().tolist())
 
