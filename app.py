@@ -48,8 +48,8 @@ if page == "Home":
 if page == "Google Developers Console":
     with header:
         st.header("However, before we jump into the code,we'll need to create a project in the Google Developers Console and obtain an API key.")
+        st.subheader("Step 1: Set Up a Project in the Google Developers Console")
         st.text("""
-                However, before we jump into the code,we'll need to create a project in the Google Developers Console and obtain an API key.
                 ### Step 1: Set Up a Project in the Google Developers Console
                 To use the YouTube API with Python, you first need to create a project in the Google Developers Console and obtain an API key. Here are the steps:
                 1. Go to the Google Developers Console (https://console.developers.google.com/).
