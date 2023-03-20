@@ -49,7 +49,7 @@ if page == "Google Developers Console":
     with header:
         st.header("However, before we jump into the code,we'll need to create a project in the Google Developers Console and obtain an API key.")
         st.subheader("Step 1: Set Up a Project in the Google Developers Console")
-        st.title("""
+        st.text("""
                 To use the YouTube API with Python, you first need to create a project in the Google Developers Console and obtain an API key. Here are the steps:
                 1. Go to the Google Developers Console (https://console.developers.google.com/).
                 2. Click on the project drop-down menu at the top of the screen and select "New Project" or an existing project that you want to use for the API.
@@ -59,14 +59,6 @@ if page == "Google Developers Console":
                 6. Click on the "Enable" button to enable the API for your project""")
 
         st.subheader("Step 2: Obtain the API Key")
-        st.text("""
-                1. Next, click on the "Create Credentials" button to create a new set of credentials for your project.
-                2. Select "API key" as the type of credentials and choose the "Restricted key" option.
-                3. Set up any necessary restrictions for your API key, such as IP address or HTTP referrers.
-                4. Click on the "Create" button to generate your API key.
-                5. The API key will be displayed. Copy the key and keep it safe.
-                """)
-
         st.text("""
                 ### Step 3: Install the Google API Client Library for Python
                 The Google API Client Library for Python makes it easy for developers to access Google APIs.To install the library, run the following command in your terminal or command prompt:
