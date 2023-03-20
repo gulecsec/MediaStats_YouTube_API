@@ -148,9 +148,9 @@ elif page == "Top 10 Videos by Like Count and View Count":
         ahaber_df = pd.read_csv("media_stats/stats_a_haber.csv")
         aa_df = pd.read_csv("media_stats/stats_anadolu_ajansi.csv")
         bbc_df = pd.read_csv("media_stats/stats_bbc_news_turkce.csv")
-
-
-
+        cnn_df = pd.read_csv("media_stats/stats_cnn_turk.csv")
+        fox_df = pd.read_csv("media_stats/stats_fox_haber.csv")
+        ht_df = pd.read_csv("media_stats/stats_haberturk_tv.csv")
 
 
 
@@ -161,6 +161,9 @@ elif page == "Top 10 Videos by Like Count and View Count":
         'A Haber': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
         'Anadolu Ajansi': {'df': aa_df, 'title': 'Anadolu Ajansi Top 10 Videos by Like Count and View Count'},
         'BBC News Turkce': {'df': bbc_df, 'title': 'BBC News Turkce Top 10 Videos by Like Count and View Count'},
+        'CNN Turk': {'df': cnn_df, 'title': 'CNN Turk Top 10 Videos by Like Count and View Count'},
+        'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
+        'Haberturk': {'df': ht_df, 'title': 'Haberturk Top 10 Videos by Like Count and View Count'},
         }
 
         # add dropdown to select a channel
