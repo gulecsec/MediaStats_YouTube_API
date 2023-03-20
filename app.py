@@ -10,6 +10,37 @@ import matplotlib.ticker as ticker
 # Load data
 stats_df = pd.read_csv("media_stats/media_stats.csv")
 
+# Load Each Channel Data
+co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
+bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
+ahaber_df = pd.read_csv("media_stats/stats_a_haber.csv")
+aa_df = pd.read_csv("media_stats/stats_anadolu_ajansı.csv")
+bbc_df = pd.read_csv("media_stats/stats_bbc_news_türkçe.csv")
+cnn_df = pd.read_csv("media_stats/stats_cnn_türk.csv")
+fox_df = pd.read_csv("media_stats/stats_fox_haber.csv")
+ht_df = pd.read_csv("media_stats/stats_habertürk_tv.csv")
+soz_df = pd.read_csv("media_stats/stats_sözcü_televizyonu.csv")
+trt_df = pd.read_csv("media_stats/stats_trt_haber.csv")
+tv_df = pd.read_csv("media_stats/stats_tv100.csv")
+ys_df = pd.read_csv("media_stats/stats_yeni_şafak.csv")
+
+
+# create a dictionary to store data frames and graph titles for each channel
+channel_data = {
+'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
+'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
+'A Haber': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
+'Anadolu Ajansı': {'df': aa_df, 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
+'BBC News Türkçe': {'df': bbc_df, 'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
+'CNN TÜRK': {'df': cnn_df, 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
+'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
+'Habertürk': {'df': ht_df, 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
+'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
+'TRT Haber': {'df': trt_df, 'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
+'TV100': {'df': tv_df, 'title': 'TV100 Top 10 Videos by Like Count and View Count'},
+'Yeni Şafak': {'df': ys_df, 'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
+}
+
 # Define page layout
 header = st.container()
 dataset = st.container()
@@ -142,36 +173,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
         st.title("Channel Details")
 
-        # Load Each Channel Data
-        co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
-        bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
-        ahaber_df = pd.read_csv("media_stats/stats_a_haber.csv")
-        aa_df = pd.read_csv("media_stats/stats_anadolu_ajansı.csv")
-        bbc_df = pd.read_csv("media_stats/stats_bbc_news_türkçe.csv")
-        cnn_df = pd.read_csv("media_stats/stats_cnn_türk.csv")
-        fox_df = pd.read_csv("media_stats/stats_fox_haber.csv")
-        ht_df = pd.read_csv("media_stats/stats_habertürk_tv.csv")
-        soz_df = pd.read_csv("media_stats/stats_sözcü_televizyonu.csv")
-        trt_df = pd.read_csv("media_stats/stats_trt_haber.csv")
-        tv_df = pd.read_csv("media_stats/stats_tv100.csv")
-        ys_df = pd.read_csv("media_stats/stats_yeni_şafak.csv")
 
-
-        # create a dictionary to store data frames and graph titles for each channel
-        channel_data = {
-        'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
-        'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
-        'A Haber': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
-        'Anadolu Ajansı': {'df': aa_df, 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
-        'BBC News Türkçe': {'df': bbc_df, 'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
-        'CNN TÜRK': {'df': cnn_df, 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
-        'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
-        'Habertürk': {'df': ht_df, 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
-        'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
-        'TRT Haber': {'df': trt_df, 'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
-        'TV100': {'df': tv_df, 'title': 'TV100 Top 10 Videos by Like Count and View Count'},
-        'Yeni Şafak': {'df': ys_df, 'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
-        }
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
