@@ -76,8 +76,14 @@ elif page == "Channel Details":
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
 
-        # display plotly graph with adjusted size
-        st.plotly_chart(fig, use_container_width=True, height=600)
+        # set the height of the graph to 800 pixels
+        fig.update_layout(height=800)
+
+        # set the font size of the x-axis labels to 12 points
+        fig.update_layout(xaxis={'tickfont': {'size': 12}})
+
+        # display plotly graph
+        st.plotly_chart(fig)
 
         # # display the selected graph
         # if channel_choice == stats_df["channelName"][0]:
