@@ -47,9 +47,8 @@ if page == "Home":
 
 if page == "Google Developers Console":
     with header:
-        st.title("""
-                 However, before we jump into the code,
-                 we'll need to create a project in the Google Developers Console and obtain an API key.
+        st.text("""
+                However, before we jump into the code,we'll need to create a project in the Google Developers Console and obtain an API key.
                 ### Step 1: Set Up a Project in the Google Developers Console
                 To use the YouTube API with Python, you first need to create a project in the Google Developers Console and obtain an API key. Here are the steps:
                 1. Go to the Google Developers Console (https://console.developers.google.com/).
@@ -67,9 +66,8 @@ if page == "Google Developers Console":
                 5. The API key will be displayed. Copy the key and keep it safe.
 
                 ### Step 3: Install the Google API Client Library for Python
-                The Google API Client Library for Python makes it easy for developers to access Google APIs.
-                To install the library, run the following command in your terminal or command prompt:
-                    $ pip install --upgrade google-api-python-client
+                The Google API Client Library for Python makes it easy for developers to access Google APIs.To install the library, run the following command in your terminal or command prompt:
+                    pip install --upgrade google-api-python-client
 
                 ### Step 4: Make API Requests
                 Now that we have the API key and the library installed, we can start making API requests. Here’s a simple example that retrieves the details of a video:
@@ -80,9 +78,7 @@ if page == "Google Developers Console":
                     api_version = "v3"
 
                 ### Step 5: Get credentials and create an API client
-                In this example, the build function creates a YouTube service object that we can use to make API requests.
-                The videos().list() method retrieves the details of a video, and the execute() method sends the request and returns the response.
-                Note: Replace YOUR_API_KEY with your own API key.
+                In this example, the build function creates a YouTube service object that we can use to make API requests. The videos().list() method retrieves the details of a video, and the execute() method sends the request and returns the response. Note: Replace YOUR_API_KEY with your own API key.
 
                     youtube = build(
                     api_service_name, api_version, developerKey=api_key)
@@ -115,8 +111,6 @@ if page == "Google Developers Console":
                         all_data.append(data)
 
                     return(pd.DataFrame(all_data))
-
-
 
                 ### Step 6: Analyze the Response
                 The response is a JSON object that contains the details of the video, including the title, description, view count, like count, and more.
