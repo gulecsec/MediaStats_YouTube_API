@@ -162,15 +162,15 @@ elif page == "Top 10 Videos by Like Count and View Count":
         'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
         'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
         'A Haber': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
-        'Anadolu Ajansi': {'df': aa_df, 'title': 'Anadolu Ajansi Top 10 Videos by Like Count and View Count'},
-        'BBC News Turkce': {'df': bbc_df, 'title': 'BBC News Turkce Top 10 Videos by Like Count and View Count'},
-        'CNN Turk': {'df': cnn_df, 'title': 'CNN Turk Top 10 Videos by Like Count and View Count'},
+        'Anadolu Ajansı': {'df': aa_df, 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
+        'BBC News Türkçe': {'df': bbc_df, 'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
+        'CNN TÜRK': {'df': cnn_df, 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
         'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
-        'Haberturk': {'df': ht_df, 'title': 'Haberturk Top 10 Videos by Like Count and View Count'},
-        'Sozcu Televizyonu': {'df': soz_df, 'title': 'Sozcu Televizyonu Top 10 Videos by Like Count and View Count'},
+        'Habertürk': {'df': ht_df, 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
+        'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
         'TRT Haber': {'df': trt_df, 'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
         'TV100': {'df': tv_df, 'title': 'TV100 Top 10 Videos by Like Count and View Count'},
-        'Yeni Safak': {'df': ys_df, 'title': 'Yeni Safak Top 10 Videos by Like Count and View Count'},
+        'Yeni Şafak': {'df': ys_df, 'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
         }
 
         # add dropdown to select a channel
