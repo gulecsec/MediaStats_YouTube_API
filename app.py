@@ -67,53 +67,54 @@ if page == "Google Developers Console":
                 5. The API key will be displayed. Copy the key and keep it safe.
 
                 ### Step 3: Install the Google API Client Library for Python
-                The Google API Client Library for Python makes it easy for developers to access Google APIs. To install the library, run the following command in your terminal or command prompt:
-                    # pip install --upgrade google-api-python-client
+                The Google API Client Library for Python makes it easy for developers to access Google APIs.
+                To install the library, run the following command in your terminal or command prompt:
+                    $ pip install --upgrade google-api-python-client
 
                 ### Step 4: Make API Requests
                 Now that we have the API key and the library installed, we can start making API requests. Here’s a simple example that retrieves the details of a video:
 
-                    # from googleapiclient.discovery import build
+                    from googleapiclient.discovery import build
 
-                    # api_service_name = "youtube"
-                    # api_version = "v3"
+                    api_service_name = "youtube"
+                    api_version = "v3"
 
                 ### Step 5: Get credentials and create an API client
                 In this example, the build function creates a YouTube service object that we can use to make API requests.
                 The videos().list() method retrieves the details of a video, and the execute() method sends the request and returns the response.
                 Note: Replace YOUR_API_KEY with your own API key.
 
-                    # youtube = build(
-                    # api_service_name, api_version, developerKey=api_key)
+                    youtube = build(
+                    api_service_name, api_version, developerKey=api_key)
 
-                    # def get_channel_stats(youtube, channel_ids):
+                    def get_channel_stats(youtube, channel_ids):
 
-                    # all_data = []
-                    # request = youtube.channels().list(
-                    #     part="snippet,contentDetails,statistics",
-                    #     id=','.join(channel_ids)
-                    # )
-                    # response = request.execute()
+                    all_data = []
+                    request = youtube.channels().list(
+                        part="snippet,contentDetails,statistics",
+                        id=','.join(channel_ids)
+                    )
+                    response = request.execute()
 
-                    # # loop through items
-                    # for item in response['items']:
-                    #     data= {'channelName': item['snippet']['title'],
-                    #         'subscribers': item['statistics']['subscriberCount'],
-                    #         'views': item['statistics']['viewCount'],
-                    #         'totalVideos': item['statistics']['videoCount'],
-                    #         'playlistId': item['contentDetails']['relatedPlaylists']['uploads']
-                    #         }
+                    # loop through items
+                    for item in response['items']:
+                        data= {'channelName': item['snippet']['title'],
+                            'subscribers': item['statistics']['subscriberCount'],
+                            'views': item['statistics']['viewCount'],
+                            'totalVideos': item['statistics']['videoCount'],
+                            'playlistId': item['contentDetails']['relatedPlaylists']['uploads']
+                            }
 
-                    #     # Check if the channel has any subscriber milestone
-                    #     if 'bulletin' in item['contentDetails']:
-                    #         milestone = item['contentDetails']['bulletin']['resource']
-                    #         if milestone['kind'] == 'youtube#subscription':
-                    #             data['milestoneDate'] = milestone['publishedAt']
-                    #             data['milestoneSubscribers'] = milestone['metadata']['subscriberCount']
+                        # Check if the channel has any subscriber milestone
+                        if 'bulletin' in item['contentDetails']:
+                            milestone = item['contentDetails']['bulletin']['resource']
+                            if milestone['kind'] == 'youtube#subscription':
+                                data['milestoneDate'] = milestone['publishedAt']
+                                data['milestoneSubscribers'] = milestone['metadata']['subscriberCount']
 
-                    #     all_data.append(data)
+                        all_data.append(data)
 
-                    # return(pd.DataFrame(all_data))
+                    return(pd.DataFrame(all_data))
 
 
 
