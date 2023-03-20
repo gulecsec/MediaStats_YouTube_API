@@ -139,7 +139,7 @@ if page == "Google Developers Console":
         By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                 """)
 
-elif page == "Channel Details":
+elif page == "Channel Details:Top 10 Videos":
     with channel_details:
         st.title("Channel Details")
 
