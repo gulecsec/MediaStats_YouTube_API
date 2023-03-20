@@ -49,7 +49,7 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ("Home", "Top 10 Videos by Like Count and View Count","Google Developers Console"))
+page = st.sidebar.radio("Go to", ("Home", "Top 10 Videos by Like Count and View Count","After 6th of Feb 2023","Google Developers Console"))
 
 if page == "Home":
     with header:
@@ -169,11 +169,27 @@ if page == "Google Developers Console":
         By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                 """)
 
-elif page == "Top 10 Videos by Like Count and View Count":
+if page == "After 6th of Feb 2023":
     with channel_details:
         st.title("Channel Details")
 
+        # generate plotly graph
+        fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+                    x="channelName", y="views", color='subscribers', title="")
 
+        # format y-axis labels to show thousands
+        fig.update_yaxes(tickformat=',.0f')
+
+        # remove x-axis tick labels
+        fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []})
+
+        # display plotly graph
+        st.plotly_chart(fig)
+
+
+elif page == "Top 10 Videos by Like Count and View Count":
+    with channel_details:
+        st.title("Channel Details")
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
