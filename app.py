@@ -181,7 +181,7 @@ if page == "After 6th of Feb 2023":
         fig.update_yaxes(tickformat=',.0f')
 
         # remove x-axis tick labels
-        fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []})
+        # fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []})
 
         # display plotly graph
         st.plotly_chart(fig)
