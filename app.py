@@ -48,6 +48,7 @@ if page == "Home":
 if page == "Google Developers Console":
     with header:
         st.header("However, before we jump into the code,we'll need to create a project in the Google Developers Console and obtain an API key.")
+
         st.subheader("Step 1: Set Up a Project in the Google Developers Console")
         st.text("""
                 To use the YouTube API with Python, you first need to create a project in the Google Developers Console and obtain an API key. Here are the steps:
@@ -60,19 +61,26 @@ if page == "Google Developers Console":
 
         st.subheader("Step 2: Obtain the API Key")
         st.text("""
-                ### Step 3: Install the Google API Client Library for Python
+                1. Next, click on the "Create Credentials" button to create a new set of credentials for your project.
+                2. Select "API key" as the type of credentials and choose the "Restricted key" option.
+                3. Set up any necessary restrictions for your API key, such as IP address or HTTP referrers.
+                4. Click on the "Create" button to generate your API key.
+                5. The API key will be displayed. Copy the key and keep it safe.""")
+
+        st.subheader("Step 3: Install the Google API Client Library for Python")
+        st.text("""
                 The Google API Client Library for Python makes it easy for developers to access Google APIs.To install the library, run the following command in your terminal or command prompt:
                     pip install --upgrade google-api-python-client
 
-                ### Step 4: Make API Requests
-                Now that we have the API key and the library installed, we can start making API requests. Here’s a simple example that retrieves the details of a video:
+                """)
 
-                    from googleapiclient.discovery import build
+        st.subheader("Step 4: Make API Requests")
+        st.text("""
 
-                    api_service_name = "youtube"
-                    api_version = "v3"
+                """)
 
-                ### Step 5: Get credentials and create an API client
+        st.subheader("Step 5: Get credentials and create an API client")
+        st.text("""
                 In this example, the build function creates a YouTube service object that we can use to make API requests. The videos().list() method retrieves the details of a video, and the execute() method sends the request and returns the response. Note: Replace YOUR_API_KEY with your own API key.
 
                     youtube = build(
@@ -106,23 +114,25 @@ if page == "Google Developers Console":
                         all_data.append(data)
 
                     return(pd.DataFrame(all_data))
+                        """)
 
-                ### Step 6: Analyze the Response
-                The response is a JSON object that contains the details of the video, including the title, description, view count, like count, and more.
-                Here’s a simple example that prints the title and view count of the video:
+        st.subheader("Step 6: Analyze the Response")
+        st.text("""
+        The response is a JSON object that contains the details of the video, including the title, description, view count, like count, and more.
+        Here’s a simple example that prints the title and view count of the video:
 
-                By following these easy steps, you can now begin using the YouTube API with Python to streamline various tasks and collect valuable information about videos, channels, playlists, and beyond. Moreover, the API provides additional functionality such as:
+        By following these easy steps, you can now begin using the YouTube API with Python to streamline various tasks and collect valuable information about videos, channels, playlists, and beyond. Moreover, the API provides additional functionality such as:
 
-                * Search for videos: You can use the search.list method to search for videos based on keywords, location, language, and other criteria.
+        * Search for videos: You can use the search.list method to search for videos based on keywords, location, language, and other criteria.
 
-                * Retrieve channel details: You can use the channels.list method to retrieve information about a channel, including the number of subscribers, videos, and views.
+        * Retrieve channel details: You can use the channels.list method to retrieve information about a channel, including the number of subscribers, videos, and views.
 
-                * Retrieve playlist details: You can use the playlists.list method to retrieve information about a playlist, including the videos, title, and description.
+        * Retrieve playlist details: You can use the playlists.list method to retrieve information about a playlist, including the videos, title, and description.
 
-                The YouTube API and Python provide a wide range of possibilities for automation, data gathering, and feature creation. Whether you want to build a tool to analyze videos or automate repetitive tasks, the API and the Google API Client library can help you achieve your goals.
+        The YouTube API and Python provide a wide range of possibilities for automation, data gathering, and feature creation. Whether you want to build a tool to analyze videos or automate repetitive tasks, the API and the Google API Client library can help you achieve your goals.
 
-                By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
-                                """)
+        By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
+                """)
 
 elif page == "Channel Details":
     with channel_details:
