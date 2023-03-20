@@ -33,7 +33,6 @@ if page == "Home":
     with dataset:
         st.subheader("YouTube Stats of Turkish News Media in YouTube")
 
-
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
 
@@ -45,6 +44,8 @@ if page == "Home":
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
         st.plotly_chart(fig)
+
+        st.subheader("YouTube Stats of Turkish News Media in YouTube")
 
 elif page == "Channel Details: Top 10 Videos":
     with channel_details:
