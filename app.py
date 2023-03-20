@@ -76,11 +76,8 @@ elif page == "Channel Details":
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
 
-        # set the height of the graph to 800 pixels
-        fig.update_layout(height=800)
-
-        # set the font size of the x-axis labels to 12 points
-        fig.update_layout(xaxis={'tickfont': {'size': 12}})
+        # remove x-axis tick labels
+        fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []})
 
         # display plotly graph
         st.plotly_chart(fig)
