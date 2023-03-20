@@ -32,7 +32,6 @@ if page == "Home":
     with dataset:
         st.subheader("YouTube Stats of Turkish News Media in YouTube")
 
-
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
 
@@ -143,6 +142,7 @@ elif page == "Channel Details:Top 10 Videos":
     with channel_details:
         st.title("Channel Details")
 
+        # Load Each Channel Data
         co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
         bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
 
