@@ -50,28 +50,13 @@ elif page == "Channel Details":
         st.title("Channel Details")
 
         co_df = pd.read_csv("media_stats/stats_cuneytozdemir.csv")
-        cnn_df = pd.read_csv("media_stats/stats_cnnturk.csv")
-        tv100_df = pd.read_csv("media_stats/stats_tv100.csv")
-        htv_df = pd.read_csv("media_stats/stats_htv.csv")
-        ntv_df
-        soz_df
-        fox_df
         bab_df
-        fox_df
-        shw_df
+
 
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
         'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top Videos by Like Count and View Count'},
-        'CNN TÜRK': {'df_df': cnn_df, 'title': 'CNN TÜRK Top Videos by Like Count and View Count'},
-        'TV100': {'df': tv100_df, 'title': 'ABC News (Australia) Top Videos by Like Count and View Count'},
-        'Habertürk TV': {'df': htv_df, 'title': 'Anadolu Ajansı Top Videos by Like Count and View Count'},
-        'NTV': {'df': ntv_df, 'title': 'NTV Top Videos by Like Count and View Count'},
-        'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top Videos by Like Count and View Count'},
-        'Fox News': {'df': fox_df, 'title': 'Fox News Top Videos by Like Count and View Count'},
         'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top Videos by Like Count and View Count'},
-        'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top Videos by Like Count and View Count'},
-        'Show Ana Haber': {'df': shw_df, 'title': 'Show Ana Haber Top Videos by Like Count and View Count'}
         }
 
 
