@@ -65,12 +65,9 @@ elif page == "Channel Details":
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         month_choice = st.selectbox("Select Month", months)
 
-        # years = [i for i in range(2010, 2024)]
-        # channels = ["Cuneyt Ozdemir Media", "AHaber"]
-
         # filter data based on user's selection
         df = channel_data[channel_choice]['df']
-        df = df[(df['year'] == year_choice) & (df['month'] == month_choice)]
+        df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
 
         # generate plotly graph
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
@@ -78,6 +75,7 @@ elif page == "Channel Details":
 
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
+
 
         # display plotly graph
         st.plotly_chart(fig)
