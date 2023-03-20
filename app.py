@@ -147,10 +147,13 @@ elif page == "Top 10 Videos by Like Count and View Count":
         bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
 
 
+
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
         'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
         'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
+        'A Haber': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
+        'Anadolu Ajansi': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
         }
 
         # add dropdown to select a channel
