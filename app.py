@@ -138,7 +138,7 @@ if page == "Google Developers Console":
         By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                 """)
 
-elif page == "Channel Details:Top 10 Videos":
+elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
         st.title("Channel Details")
 
@@ -149,8 +149,8 @@ elif page == "Channel Details:Top 10 Videos":
 
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
-        'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top Videos by Like Count and View Count'},
-        'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top Videos by Like Count and View Count'},
+        'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
+        'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
         }
 
         # add dropdown to select a channel
