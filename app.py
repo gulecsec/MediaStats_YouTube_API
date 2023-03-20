@@ -146,15 +146,15 @@ elif page == "Top 10 Videos by Like Count and View Count":
         co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
         bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
         ahaber_df = pd.read_csv("media_stats/stats_a_haber.csv")
-        aa_df = pd.read_csv("media_stats/stats_anadolu_ajansi.csv")
-        bbc_df = pd.read_csv("media_stats/stats_bbc_news_turkce.csv")
-        cnn_df = pd.read_csv("media_stats/stats_cnn_turk.csv")
+        aa_df = pd.read_csv("media_stats/stats_anadolu_ajansı.csv")
+        bbc_df = pd.read_csv("media_stats/stats_bbc_news_türkçe.csv")
+        cnn_df = pd.read_csv("media_stats/stats_cnn_türk.csv")
         fox_df = pd.read_csv("media_stats/stats_fox_haber.csv")
-        ht_df = pd.read_csv("media_stats/stats_haberturk_tv.csv")
-        soz_df = pd.read_csv("media_stats/stats_sozcu_televizyonu.csv")
+        ht_df = pd.read_csv("media_stats/stats_habertürk_tv.csv")
+        soz_df = pd.read_csv("media_stats/stats_sözcü_televizyonu.csv")
         trt_df = pd.read_csv("media_stats/stats_trt_haber.csv")
         tv_df = pd.read_csv("media_stats/stats_tv100.csv")
-        ys_df = pd.read_csv("media_stats/stats_yeni_safak.csv")
+        ys_df = pd.read_csv("media_stats/stats_yeni_şafak.csv")
 
 
         # create a dictionary to store data frames and graph titles for each channel
@@ -170,6 +170,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
         'Sozcu Televizyonu': {'df': soz_df, 'title': 'Sozcu Televizyonu Top 10 Videos by Like Count and View Count'},
         'TRT Haber': {'df': trt_df, 'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
         'TV100': {'df': tv_df, 'title': 'TV100 Top 10 Videos by Like Count and View Count'},
+        'Yeni Safak': {'df': ys_df, 'title': 'Yeni Safak Top 10 Videos by Like Count and View Count'},
         }
 
         # add dropdown to select a channel
