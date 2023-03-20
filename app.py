@@ -76,7 +76,12 @@ if page == "Google Developers Console":
 
         st.subheader("Step 4: Make API Requests")
         st.text("""
+                Now that we have the API key and the library installed, we can start making API requests. Here’s a simple example that retrieves the details of a video:
 
+                    from googleapiclient.discovery import build
+
+                    api_service_name = "youtube"
+                    api_version = "v3"
                 """)
 
         st.subheader("Step 5: Get credentials and create an API client")
