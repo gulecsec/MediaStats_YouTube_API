@@ -65,21 +65,21 @@ To use the YouTube API with Python, you first need to create a project in the Go
 
 ### Step 3: Install the Google API Client Library for Python
 The Google API Client Library for Python makes it easy for developers to access Google APIs. To install the library, run the following command in your terminal or command prompt:
-pip install --upgrade google-api-python-client
+    pip install --upgrade google-api-python-client
 
 ### Step 4: Make API Requests
 Now that we have the API key and the library installed, we can start making API requests. Here’s a simple example that retrieves the details of a video:
 
-# from googleapiclient.discovery import build
+    from googleapiclient.discovery import build
 
-# api_service_name = "youtube"
-# api_version = "v3"
+    api_service_name = "youtube"
+    api_version = "v3"
 
 ### Step 5: Get credentials and create an API client
-# youtube = build(
-#     api_service_name, api_version, developerKey=api_key)
+    youtube = build(
+    api_service_name, api_version, developerKey=api_key)
 
-def get_channel_stats(youtube, channel_ids):
+    def get_channel_stats(youtube, channel_ids):
 
     all_data = []
     request = youtube.channels().list(
