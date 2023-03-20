@@ -45,7 +45,7 @@ if page == "Home":
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
         st.plotly_chart(fig)
 
-elif page == "Channel Details: Top 10 Videos":
+elif page == "Channel Details":
     with channel_details:
         st.title("Channel Details")
 
@@ -81,4 +81,3 @@ elif page == "Channel Details: Top 10 Videos":
 
         # display plotly graph
         st.plotly_chart(fig)
-
