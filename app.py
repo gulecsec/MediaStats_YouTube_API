@@ -135,7 +135,6 @@ elif page == "Channel Details: Top 10 Videos":
         co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
         bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
 
-
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
         'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top Videos by Like Count and View Count'},
