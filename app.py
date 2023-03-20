@@ -49,8 +49,8 @@ elif page == "Channel Details":
     with channel_details:
         st.title("Channel Details")
 
-        co_df = pd.read_csv("media_stats/stats_cuneytozdemir.csv")
-        bab_df
+        co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
+        bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
 
 
         # create a dictionary to store data frames and graph titles for each channel
@@ -58,11 +58,6 @@ elif page == "Channel Details":
         'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top Videos by Like Count and View Count'},
         'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top Videos by Like Count and View Count'},
         }
-
-
-
-
-
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
@@ -73,15 +68,29 @@ elif page == "Channel Details":
         # years = [i for i in range(2010, 2024)]
         # channels = ["Cuneyt Ozdemir Media", "AHaber"]
 
-        # display the selected graph
-        if channel_choice == stats_df["channelName"][0]:
-            fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False)[0:9],
-                          x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
-            st.plotly_chart(fig1)
-        else:
-            fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False),
-                          x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
-            st.plotly_chart(fig1)
+        # filter data based on user's selection
+        df = channel_data[channel_choice]['df']
+        df = df[(df['year'] == year_choice) & (df['month'] == month_choice)]
+
+        # generate plotly graph
+        fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
+                    x="title", y="likeCount", color='viewCount', title=channel_data[channel_choice]['title'])
+
+        # format y-axis labels to show thousands
+        fig.update_yaxes(tickformat=',.0f')
+
+        # display plotly graph
+        st.plotly_chart(fig)
+
+        # # display the selected graph
+        # if channel_choice == stats_df["channelName"][0]:
+        #     fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False)[0:9],
+        #                   x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
+        #     st.plotly_chart(fig1)
+        # else:
+        #     fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False),
+        #                   x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
+        #     st.plotly_chart(fig1)
 
         # filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
         # # create a filter for the selected channel
