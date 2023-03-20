@@ -45,7 +45,7 @@ if page == "Home":
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
         st.plotly_chart(fig)
 
-        st.subheader('''## However, before we jump into the code, we'll need to create a project in the Google Developers Console and obtain an API key.
+        st.subheader('''However, before we jump into the code, we'll need to create a project in the Google Developers Console and obtain an API key.
 
 ### Step 1: Set Up a Project in the Google Developers Console
 To use the YouTube API with Python, you first need to create a project in the Google Developers Console and obtain an API key. Here are the steps:
@@ -70,14 +70,14 @@ pip install --upgrade google-api-python-client
 ### Step 4: Make API Requests
 Now that we have the API key and the library installed, we can start making API requests. Here’s a simple example that retrieves the details of a video:
 
-from googleapiclient.discovery import build
+# from googleapiclient.discovery import build
 
-api_service_name = "youtube"
-api_version = "v3"
+# api_service_name = "youtube"
+# api_version = "v3"
 
 ### Step 5: Get credentials and create an API client
-youtube = build(
-    api_service_name, api_version, developerKey=api_key)
+# youtube = build(
+#     api_service_name, api_version, developerKey=api_key)
 
 def get_channel_stats(youtube, channel_ids):
 
