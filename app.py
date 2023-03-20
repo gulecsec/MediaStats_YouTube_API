@@ -82,26 +82,3 @@ elif page == "Channel Details: Top 10 Videos":
         # display plotly graph
         st.plotly_chart(fig)
 
-        # # display the selected graph
-        # if channel_choice == stats_df["channelName"][0]:
-        #     fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False)[0:9],
-        #                   x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
-        #     st.plotly_chart(fig1)
-        # else:
-        #     fig1 = px.bar(data_frame=co_df.sort_values('likeCount', ascending=False),
-        #                   x="title", y="likeCount", color='viewCount', title="likeCount-viewCount")
-        #     st.plotly_chart(fig1)
-
-        # filtered_df = video_df.loc[(video_df["Year"]==selected_year) & (video_df["Month"]==selected_month)]
-        # # create a filter for the selected channel
-        # channel_filter = stats_df['channelName'] == channel_choice
-
-        # # create a new dataframe with only data for the selected channel
-        # channel_stats_df = stats_df[channel_filter]
-
-        # # create a bar chart for the views and subscribers for the selected channel
-        # fig1 = px.bar(data_frame=channel_stats_df, x='year', y='views', color='month', title=f"{channel_choice} - Views per Year")
-        # st.plotly_chart(fig1)
-
-        # fig2 = px.bar(data_frame=channel_stats_df, x='year', y='subscribers', color='month', title=f"{channel_choice} - Subscribers per Year")
-        # st.plotly_chart(fig2)
