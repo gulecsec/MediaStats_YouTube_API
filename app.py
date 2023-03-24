@@ -390,7 +390,7 @@ if page == "Turkish News Media's YouTube Stats":
             # display the chart
             st.plotly_chart(fig)
 
-        if page == "Subscribers per Video":
+        elif page == "Subscribers per Video":
             with channel_details:
                 st.title("")
 
