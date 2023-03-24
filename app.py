@@ -149,7 +149,7 @@ if page == "Google Developers Console":
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
-        st.title("Video Stats After 6th of Feb 2023")
+        st.title("Turkish News Media's YouTube Stats")
 
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("media_stats_edited.csv")
