@@ -30,7 +30,7 @@ if page == "Home":
         st.text("")
 
     with dataset:
-        st.subheader("YouTube Stats of Turkish News Media in YouTube")
+        # st.subheader("")
 
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
