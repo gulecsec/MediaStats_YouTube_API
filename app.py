@@ -42,6 +42,7 @@ if page == "Home":
         else:
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
+
         st.plotly_chart(fig)
 
 if page == "Google Developers Console":
@@ -157,6 +158,12 @@ if page == "Video Stats After 6th of Feb 2023":
             # generate plotly graph
             fig = px.bar(data_frame=edited_stats_df.sort_values('view_count_after', ascending=False),
                         x="channelName", y="view_count_after", color='duration_count_after', title="Total Durations After 6th of Feb")
+
+
+            fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
+
+            fig.update_layout(xaxis_title=None)
+            fig.update_layout(yaxis_title=None)
 
             # display plotly graph
             st.plotly_chart(fig)
