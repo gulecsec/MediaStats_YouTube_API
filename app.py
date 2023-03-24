@@ -147,8 +147,8 @@ if page == "After 6th of Feb 2023":
         edited_stats_df = pd.read_csv("media_stats_edited.csv")
 
         # generate plotly graph
-        fig = px.bar(data_frame=edited_stats_df.sort_values('duration_count_after', ascending=False),
-                    x="channelName", y="duration_count_after", color='view_count_after', title="Uploaded Video Total Durations After")
+        fig = px.bar(data_frame=edited_stats_df.sort_values('view_count_after', ascending=False),
+                    x="channelName", y="view_count_after", color='duration_count_after', title="Uploaded Video Total Durations After")
 
         # display plotly graph
         st.plotly_chart(fig)
