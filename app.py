@@ -7,6 +7,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
+# Load data
+stats_df = pd.read_csv("media_stats.csv")
 
 # Define page layout
 header = st.container()
@@ -30,8 +32,7 @@ if page == "Home":
     with dataset:
         st.subheader("YouTube Stats of Turkish News Media in YouTube")
 
-        # Load data
-        stats_df = pd.read_csv("media_stats.csv")
+
 
 
         # add radio button to select between the two graphs
