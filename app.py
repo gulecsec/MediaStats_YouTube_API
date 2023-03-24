@@ -156,7 +156,7 @@ if page == "Video Stats After 6th of Feb 2023":
 
         # Define sidebar
         st.sidebar.title("Video Stats")
-        page = st.sidebar.radio("Go to", ("Views-Video Durations After", "Likes-Video Durations After", "Comments-Video Durations After", "Likes per Video", "Views per Video"))
+        page = st.sidebar.radio("Go to", ("Views-Video Durations After", "Likes-Video Durations After", "Comments-Video Durations After", "Likes per Video", "Views per Video", "Comments per Video"))
 
         if page == "Views-Video Durations After":
             with channel_details:
@@ -261,6 +261,25 @@ if page == "Video Stats After 6th of Feb 2023":
 
             # generate a horizontal bar chart using Plotly
             fig = px.bar(view_per_video_df, barmode='group', title="Views per Video Before & After")
+
+            fig.update_layout(xaxis_title=None)
+            fig.update_layout(yaxis_title=None)
+
+            # display the chart
+            st.plotly_chart(fig)
+
+        if page == "Comments per Video":
+            with channel_details:
+                st.title("")
+
+            # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
+            comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'comment_per_video_before']]
+
+            # set the index to 'channelName' column
+            comment_per_video_df = comment_per_video_df.set_index('channelName')
+
+            # generate a horizontal bar chart using Plotly
+            fig = px.bar(comment_per_video_df, barmode='group', title="Comments per Video Before & After")
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
