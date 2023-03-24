@@ -157,7 +157,8 @@ if page == "Video Stats After 6th of Feb 2023":
         # Define sidebar
         st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Views-Video Durations After", "Likes-Video Durations After", "Comments-Video Durations After",
-        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Uploaded Video Count"))
+        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Uploaded Video Count",
+        "Monthly Average Video Mins"))
 
         if page == "Views-Video Durations After":
             with channel_details:
@@ -338,6 +339,25 @@ if page == "Video Stats After 6th of Feb 2023":
 
             # generate a horizontal bar chart using Plotly
             fig = px.bar(video_count_df, barmode='group', title="Uploaded Video Count Before & After")
+
+            fig.update_layout(xaxis_title=None)
+            fig.update_layout(yaxis_title=None)
+
+            # display the chart
+            st.plotly_chart(fig)
+
+        if page == "Monthly Average Video Mins":
+            with channel_details:
+                st.title("")
+
+            # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
+            avg_monthly_mins_df = edited_stats_df[['channelName', 'avg_monthly_total_mins_after', 'avg_monthly_total_mins_before']]
+
+            # set the index to 'channelName' column
+            avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
+
+            # generate a horizontal bar chart using Plotly
+            fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins Before & After")
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
