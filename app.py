@@ -169,9 +169,7 @@ if page == "Video Stats After 6th of Feb 2023":
             fig = px.bar(data_frame=edited_stats_df.sort_values('like_count_after', ascending=False),
                         x="channelName", y="like_count_after", color='duration_count_after', title="Total Likes After 6th of Feb")
 
-            # hide x and y axis tick labels
-            fig.update_xaxes(showticklabels=False)
-            fig.update_yaxes(showticklabels=False)
+            fig.update_layout(xaxis_title=None)
 
             # display plotly graph
             st.plotly_chart(fig)
