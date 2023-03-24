@@ -182,7 +182,7 @@ if page == "Video Stats After 6th of Feb 2023":
 
             fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01))
 
-            fig.update_layout(coloraxis_colorbar=None)
+            fig.update_layout(coloraxis_colorbar=dict('title': {'text': None}))
 
             # display the chart
             st.plotly_chart(fig)
