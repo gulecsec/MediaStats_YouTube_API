@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 # Load data
-stats_df = pd.read_csv("media_stats/media_stats.csv")
+stats_df = pd.read_csv("media_stats.csv")
 
 # Load Each Channel Data
 co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
