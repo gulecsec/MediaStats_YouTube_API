@@ -148,9 +148,9 @@ if page == "Video Stats After 6th of Feb 2023":
 
         # Define sidebar
         st.sidebar.title("Navigation")
-        page = st.sidebar.radio("Go to", ("Total Durations After 6th of Feb", "Total Likes After 6th of Feb","Video Stats After 6th of Feb 2023","Google Developers Console"))
+        page = st.sidebar.radio("Go to", ("Total Durations After", "Total Likes After"))
 
-        if page == "Total Durations After 6th of Feb":
+        if page == "Total Durations After":
             with channel_details:
                 st.title("")
 
@@ -161,7 +161,7 @@ if page == "Video Stats After 6th of Feb 2023":
             # display plotly graph
             st.plotly_chart(fig)
 
-        if page == "Total Likes After 6th of Feb":
+        if page == "Total Likes After":
             with channel_details:
                 st.title("")
 
