@@ -147,7 +147,7 @@ if page == "Video Stats After 6th of Feb 2023":
         edited_stats_df = pd.read_csv("media_stats_edited.csv")
 
         # Define sidebar
-        st.sidebar.title("Navigation")
+        st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Total Durations After", "Total Likes After"))
 
         if page == "Total Durations After":
