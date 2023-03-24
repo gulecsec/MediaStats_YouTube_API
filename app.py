@@ -17,7 +17,7 @@ features = st.container()
 channel_details = st.container()
 
 # Define sidebar
-st.sidebar.title("Navigation")
+st.sidebar.title("Pages")
 page = st.sidebar.radio("Go to", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Video Stats After 6th of Feb 2023"))
 
 if page == "Home":
