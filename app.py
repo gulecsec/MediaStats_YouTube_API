@@ -143,6 +143,10 @@ if page == "Video Stats After 6th of Feb 2023":
     with channel_details:
         st.title("Video Stats After 6th of Feb 2023")
 
+        # Define sidebar
+        st.sidebar.title("Navigation")
+        page = st.sidebar.radio("Go to", ("Total Durations of Videos After 6th of Feb", "Top 10 Videos by Like Count and View Count","Video Stats After 6th of Feb 2023","Google Developers Console"))
+
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("media_stats_edited.csv")
 
