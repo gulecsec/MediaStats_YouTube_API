@@ -173,10 +173,12 @@ if page == "Video Stats After 6th of Feb 2023":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(view_count_df, barmode='group', title="Views-Video Durations After 6th of Feb")
 
-            fig.update_layout(coloraxis_colorbar=dict(title=["Total Videos","s"]))
+
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
+
+            xaxis_title="Channels", yaxis_title="Likes Count"
 
             # display the chart
             st.plotly_chart(fig)
