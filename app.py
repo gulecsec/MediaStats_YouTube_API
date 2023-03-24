@@ -201,23 +201,15 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
+            fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
+
+            fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
+
+            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="")
+
             # display the chart
             st.plotly_chart(fig)
 
-
-            # # generate plotly graph
-            # fig = px.bar(data_frame=edited_stats_df,
-            #             x="channelName", y=['like_count_before', 'like_count_after'],
-            #             barmode='group', title='Comparison of Total Likes Before and After 6th of Feb',
-            #             color='duration_count_after')
-
-            # fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
-
-            # fig.update_layout(xaxis_title=None)
-            # fig.update_layout(yaxis_title=None)
-
-            # # display plotly graph
-            # st.plotly_chart(fig)
 
         if page == "Comments-Video Durations After":
             with channel_details:
