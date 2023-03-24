@@ -18,7 +18,7 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ("Home", "Top 10 Videos by Like Count and View Count","After 6th of Feb 2023","Google Developers Console"))
+page = st.sidebar.radio("Go to", ("Home", "Top 10 Videos by Like Count and View Count","Video Stats After 6th of Feb 2023","Google Developers Console"))
 
 if page == "Home":
     with header:
@@ -139,16 +139,16 @@ if page == "Google Developers Console":
         By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                 """)
 
-if page == "After 6th of Feb 2023":
+if page == "Video Stats After 6th of Feb 2023":
     with channel_details:
-        st.title("Channel Details")
+        st.title("Video Stats After 6th of Feb 2023")
 
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("media_stats_edited.csv")
 
         # generate plotly graph
         fig = px.bar(data_frame=edited_stats_df.sort_values('view_count_after', ascending=False),
-                    x="channelName", y="view_count_after", color='duration_count_after', title="Uploaded Video Total Durations After")
+                    x="channelName", y="view_count_after", color='duration_count_after', title="Total Durations of Videos After 6th of Feb")
 
         # display plotly graph
         st.plotly_chart(fig)
