@@ -231,7 +231,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-        year_choice = st.selectbox("Select Year", co_df["Year"].sort_values(ascending=False).unique().tolist())
+        year_choice = st.selectbox("Select Year", channel_data[channel_choice]['df']["Year"].sort_values(ascending=False).unique().tolist())
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         month_choice = st.selectbox("Select Month", months)
 
