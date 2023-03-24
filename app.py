@@ -166,7 +166,7 @@ if page == "Video Stats After 6th of Feb 2023":
                 st.title("")
 
             # define list of custom colors
-            custom_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
+            custom_colors = ['#ff7f0e']
 
             # generate plotly graph
             fig = px.bar(data_frame=edited_stats_df.sort_values('like_count_after', ascending=False),
