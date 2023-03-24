@@ -165,9 +165,13 @@ if page == "Video Stats After 6th of Feb 2023":
             with channel_details:
                 st.title("")
 
+            # define list of custom colors
+            custom_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
+
             # generate plotly graph
             fig = px.bar(data_frame=edited_stats_df.sort_values('like_count_after', ascending=False),
-                        x="channelName", y="like_count_after", color='duration_count_after', title="Total Likes After 6th of Feb")
+                        x="channelName", y="like_count_after", color='duration_count_after', title="Total Likes After 6th of Feb",
+                        color_discrete_sequence=custom_colors)
 
             # display plotly graph
             st.plotly_chart(fig)
