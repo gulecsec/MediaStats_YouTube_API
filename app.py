@@ -243,8 +243,6 @@ elif page == "Top 10 Videos by Like Count and View Count":
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
                     x="title", y="likeCount", color='viewCount', title=channel_data[channel_choice]['title'])
 
-    
-
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
 
