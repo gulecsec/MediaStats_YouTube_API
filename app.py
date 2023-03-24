@@ -288,7 +288,6 @@ if page == "Video Stats After 6th of Feb 2023":
             # display the chart
             st.plotly_chart(fig)
 
-
         if page == "Durations per Video":
             with channel_details:
                 st.title("")
@@ -301,6 +300,25 @@ if page == "Video Stats After 6th of Feb 2023":
 
             # generate a horizontal bar chart using Plotly
             fig = px.bar(duration_per_video_df, barmode='group', title="Durations per Video Before & After")
+
+            fig.update_layout(xaxis_title=None)
+            fig.update_layout(yaxis_title=None)
+
+            # display the chart
+            st.plotly_chart(fig)
+
+        if page == "Views per Likes":
+            with channel_details:
+                st.title("")
+
+            # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
+            view_per_like_df = edited_stats_df[['channelName', 'view_per_like_after', 'view_per_like_before']]
+
+            # set the index to 'channelName' column
+            view_per_like_df = view_per_like_df.set_index('channelName')
+
+            # generate a horizontal bar chart using Plotly
+            fig = px.bar(view_per_like_df, barmode='group', title="Views per Likes Before & After")
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
