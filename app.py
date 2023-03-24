@@ -38,11 +38,11 @@ if page == "Home":
         # display the selected graph
         if graph_choice == "Views-Total Videos":
             fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
-                          x="channelName", y="views", color='totalVideos', title="Views-Total Videos")
+                          x="channelName", y="views", color='totalVideos')
 
         else:
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
-                          x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
+                          x="channelName", y="subscribers", color='totalVideos')
 
 
         fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"))
