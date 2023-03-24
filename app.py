@@ -179,7 +179,7 @@ if page == "Video Stats After 6th of Feb 2023":
                 st.title("")
 
             # create a new DataFrame with 'channelName', 'like_count_before', and 'like_count_after' columns
-            like_count_df = edited_stats_df[['channelName', 'like_count_before', 'like_count_after']]
+            like_count_df = edited_stats_df[['channelName', 'duration_count_after', 'like_count_after']]
 
             # set the index to 'channelName' column
             like_count_df = like_count_df.set_index('channelName')
