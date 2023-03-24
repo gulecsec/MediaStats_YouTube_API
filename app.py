@@ -247,8 +247,8 @@ elif page == "Top 10 Videos by Like Count and View Count":
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
 
-        # remove x-axis tick labels
-        fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []})
+        fig.update_layout(xaxis_title=None)
+        fig.update_layout(yaxis_title=None)
 
         # display plotly graph
         st.plotly_chart(fig)
