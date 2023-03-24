@@ -166,12 +166,10 @@ if page == "Video Stats After 6th of Feb 2023":
             fig = px.bar(data_frame=edited_stats_df.sort_values('view_count_after', ascending=False),
                         x="channelName", y="view_count_after", color='duration_count_after', title="Total Durations After 6th of Feb")
 
-
             fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
-
 
             # display plotly graph
             st.plotly_chart(fig)
@@ -182,7 +180,9 @@ if page == "Video Stats After 6th of Feb 2023":
 
             # generate plotly graph
             fig = px.bar(data_frame=edited_stats_df.sort_values('like_count_after', ascending=False),
-                        x="channelName", y="like_count_after", color='duration_count_after', title="Total Likes After 6th of Feb")
+                        x="channelName", y=['like_count_before', 'like_count_after'],
+                        barmode='group', title='Comparison of Total Likes Before and After 6th of Feb',
+                        color='duration_count_after', title="Total Likes After 6th of Feb")
 
             fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
 
