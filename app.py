@@ -18,7 +18,7 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Pages")
-page = st.sidebar.radio("Go to", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Video Stats After 6th of Feb 2023"))
+page = st.sidebar.radio("Go to", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Turkish News Media's YouTube Stats"))
 
 if page == "Home":
     with header:
@@ -147,7 +147,7 @@ if page == "Google Developers Console":
         By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                 """)
 
-if page == "Video Stats After 6th of Feb 2023":
+if page == "Turkish News Media's YouTube Stats":
     with channel_details:
         st.title("Video Stats After 6th of Feb 2023")
 
