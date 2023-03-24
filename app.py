@@ -143,23 +143,34 @@ if page == "Video Stats After 6th of Feb 2023":
     with channel_details:
         st.title("Video Stats After 6th of Feb 2023")
 
-        # Define sidebar
-        st.sidebar.title("Navigation")
-        page = st.sidebar.radio("Go to", ("Total Durations of Videos After 6th of Feb", "Top 10 Videos by Like Count and View Count","Video Stats After 6th of Feb 2023","Google Developers Console"))
-
-        if page == "Total Durations of Videos After 6th of Feb":
-            with channel_details:
-                st.title("")
-
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("media_stats_edited.csv")
 
-        # generate plotly graph
-        fig = px.bar(data_frame=edited_stats_df.sort_values('view_count_after', ascending=False),
-                    x="channelName", y="view_count_after", color='duration_count_after', title="Total Durations of Videos After 6th of Feb")
+        # Define sidebar
+        st.sidebar.title("Navigation")
+        page = st.sidebar.radio("Go to", ("Total Durations After 6th of Feb", "Total Likes After 6th of Feb","Video Stats After 6th of Feb 2023","Google Developers Console"))
 
-        # display plotly graph
-        st.plotly_chart(fig)
+        if page == "Total Durations After 6th of Feb":
+            with channel_details:
+                st.title("")
+
+            # generate plotly graph
+            fig = px.bar(data_frame=edited_stats_df.sort_values('view_count_after', ascending=False),
+                        x="channelName", y="view_count_after", color='duration_count_after', title="Total Durations After 6th of Feb")
+
+            # display plotly graph
+            st.plotly_chart(fig)
+
+        if page == "Total Likes After 6th of Feb":
+            with channel_details:
+                st.title("")
+
+            # generate plotly graph
+            fig = px.bar(data_frame=edited_stats_df.sort_values('like_count_after', ascending=False),
+                        x="channelName", y="like_count_after", color='duration_count_after', title="Total Likes After 6th of Feb")
+
+            # display plotly graph
+            st.plotly_chart(fig)
 
 
 elif page == "Top 10 Videos by Like Count and View Count":
