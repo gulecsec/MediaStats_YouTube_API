@@ -11,14 +11,17 @@ import matplotlib.ticker as ticker
 stats_df = pd.read_csv("media_stats.csv")
 
 # Load Each Channel Data
-co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
-bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
 ahaber_df = pd.read_csv("media_stats/stats_a_haber.csv")
 aa_df = pd.read_csv("media_stats/stats_anadolu_ajansı.csv")
+bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
 bbc_df = pd.read_csv("media_stats/stats_bbc_news_türkçe.csv")
 cnn_df = pd.read_csv("media_stats/stats_cnn_türk.csv")
+co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
+co_df = pd.read_csv("media_stats/stats_erk_acarer.csv")
 fox_df = pd.read_csv("media_stats/stats_fox_haber.csv")
-ht_df = pd.read_csv("media_stats/stats_habertürk_tv.csv")
+ht_df = pd.read_csv("media_stats/stats_habertürk.csv")
+h_tv_df = pd.read_csv("media_stats/stats_halktv.csv")
+nev_df = pd.read_csv("media_stats/stats_nevşin_mengü.csv")
 soz_df = pd.read_csv("media_stats/stats_sözcü_televizyonu.csv")
 trt_df = pd.read_csv("media_stats/stats_trt_haber.csv")
 tv_df = pd.read_csv("media_stats/stats_tv100.csv")
@@ -27,12 +30,14 @@ ys_df = pd.read_csv("media_stats/stats_yeni_şafak.csv")
 
 # create a dictionary to store data frames and graph titles for each channel
 channel_data = {
-'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
-'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
 'A Haber': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
 'Anadolu Ajansı': {'df': aa_df, 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
+'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
 'BBC News Türkçe': {'df': bbc_df, 'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
-'CNN TÜRK': {'df': cnn_df, 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
+'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
+
+
+
 'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
 'Habertürk': {'df': ht_df, 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
 'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
