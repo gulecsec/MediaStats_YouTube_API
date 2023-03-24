@@ -178,19 +178,33 @@ if page == "Video Stats After 6th of Feb 2023":
             with channel_details:
                 st.title("")
 
-            # generate plotly graph
-            fig = px.bar(data_frame=edited_stats_df,
-                        x="channelName", y=['like_count_before', 'like_count_after'],
-                        barmode='group', title='Comparison of Total Likes Before and After 6th of Feb',
-                        color='duration_count_after')
+            # create a new DataFrame with 'channelName', 'like_count_before', and 'like_count_after' columns
+            like_count_df = edited_stats_df[['channelName', 'like_count_before', 'like_count_after']]
 
-            fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
+            # set the index to 'channelName' column
+            like_count_df = like_count_df.set_index('channelName')
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
+            # generate a horizontal bar chart using Plotly
+            fig = px.bar(like_count_df, barmode='group', title="Total Likes Before and After 6th of Feb")
+            fig.update_layout(xaxis_title="Total Likes")
 
-            # display plotly graph
+            # display the chart
             st.plotly_chart(fig)
+
+
+            # # generate plotly graph
+            # fig = px.bar(data_frame=edited_stats_df,
+            #             x="channelName", y=['like_count_before', 'like_count_after'],
+            #             barmode='group', title='Comparison of Total Likes Before and After 6th of Feb',
+            #             color='duration_count_after')
+
+            # fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
+
+            # fig.update_layout(xaxis_title=None)
+            # fig.update_layout(yaxis_title=None)
+
+            # # display plotly graph
+            # st.plotly_chart(fig)
 
 
 elif page == "Top 10 Videos by Like Count and View Count":
