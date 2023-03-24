@@ -180,6 +180,8 @@ if page == "Video Stats After 6th of Feb 2023":
 
             fig.update_traces(name="Views",selector=dict(name="view_count_after"))
 
+            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=-0.1,xanchor='left',x=0,))
+
             # display the chart
             st.plotly_chart(fig)
 
