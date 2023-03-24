@@ -150,9 +150,6 @@ if page == "After 6th of Feb 2023":
         fig = px.bar(data_frame=edited_stats_df.sort_values('duration_count_after', ascending=False),
                     x="channelName", y="duration_count_after", color='view_count_after', title="Uploaded Video Total Durations After")
 
-        # format y-axis labels to show thousands
-        fig.update_yaxes(tickformat=',.0f')
-
         # display plotly graph
         st.plotly_chart(fig)
 
