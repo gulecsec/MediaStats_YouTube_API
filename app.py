@@ -176,6 +176,10 @@ if page == "Video Stats After 6th of Feb 2023":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
+            fig.update_traces(name="New Legend Name 1",selector=dict(name="duration_count_after"))
+
+            fig.update_traces(name="New Legend Name 2",selector=dict(name="view_count_after"))
+
             # display the chart
             st.plotly_chart(fig)
 
