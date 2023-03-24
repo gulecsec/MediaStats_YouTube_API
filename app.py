@@ -32,9 +32,6 @@ if page == "Home":
     with dataset:
         st.subheader("YouTube Stats of Turkish News Media in YouTube")
 
-
-
-
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
 
@@ -146,15 +143,18 @@ if page == "After 6th of Feb 2023":
     with channel_details:
         st.title("Channel Details")
 
+        # Load Each Channel Data
+        edited_stats_df = pd.read_csv("media_stats_edited.csv")
+
         # generate plotly graph
-        fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
-                    x="channelName", y="views", color='subscribers', title="")
+        fig = px.bar(data_frame=edited_stats_df.sort_values('duration_count_after', ascending=False)[0:9],
+                    x="title", y="duration_count_after", color='view_count_after', title="Uploaded Video Total Durations After")
 
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
 
         # remove x-axis tick labels
-        # fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []})
+        fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []})
 
         # display plotly graph
         st.plotly_chart(fig)
@@ -203,7 +203,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-        year_choice = st.selectbox("Select Year", co_df["Year"].sort_values(ascending=False).unique().tolist())
+        year_choice = st.selectbox("Select Year", channel_data[channel_choice]["Year"].sort_values(ascending=False).unique().tolist())
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         month_choice = st.selectbox("Select Month", months)
 
