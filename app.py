@@ -178,7 +178,7 @@ if page == "Video Stats After 6th of Feb 2023":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
-            xaxis_title="Channels", yaxis_title="Likes Count"
+            fig.update_layout(xaxis_title="Channels", yaxis_title="Likes Count")
 
             # display the chart
             st.plotly_chart(fig)
