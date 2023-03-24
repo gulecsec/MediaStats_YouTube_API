@@ -253,5 +253,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
         fig.update_layout(xaxis_title=None)
         fig.update_layout(yaxis_title=None)
 
+        fig.update_layout(coloraxis_colorbar=dict(title="Total Views"))
+
         # display plotly graph
         st.plotly_chart(fig)
