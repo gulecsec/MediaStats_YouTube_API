@@ -169,9 +169,7 @@ if page == "Video Stats After 6th of Feb 2023":
             fig = px.bar(data_frame=edited_stats_df.sort_values('like_count_after', ascending=False),
                         x="channelName", y="like_count_after", color='duration_count_after', title="Total Likes After 6th of Feb")
 
-            # update legend label
-            fig.update_traces(name='Total Durations', selector=dict(type='bar'))
-
+            fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
