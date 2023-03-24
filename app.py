@@ -149,7 +149,7 @@ if page == "Video Stats After 6th of Feb 2023":
 
         if page == "Total Durations of Videos After 6th of Feb":
             with channel_details:
-                st.title("Total Durations of Videos After 6th of Feb")
+                st.title("")
 
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("media_stats_edited.csv")
