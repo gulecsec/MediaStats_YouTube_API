@@ -156,7 +156,7 @@ if page == "Video Stats After 6th of Feb 2023":
 
         # Define sidebar
         st.sidebar.title("Video Stats")
-        page = st.sidebar.radio("Go to", ("Total Durations After", "Total Likes After"))
+        page = st.sidebar.radio("Go to", ("Total Durations After", "Likes-Video Durations After"))
 
         if page == "Total Durations After":
             with channel_details:
@@ -174,7 +174,7 @@ if page == "Video Stats After 6th of Feb 2023":
             # display plotly graph
             st.plotly_chart(fig)
 
-        if page == "Total Likes After":
+        if page == "Likes-Video Durations After":
             with channel_details:
                 st.title("")
 
@@ -185,7 +185,7 @@ if page == "Video Stats After 6th of Feb 2023":
             like_count_df = like_count_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(like_count_df, barmode='group', title="Total Likes Before and After 6th of Feb")
+            fig = px.bar(like_count_df, barmode='group', title="Likes-Video Durations After 6th of Feb")
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
