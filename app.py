@@ -43,6 +43,9 @@ if page == "Home":
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
 
+        fig.update_layout(xaxis_title=None)
+        fig.update_layout(yaxis_title=None)
+
         st.plotly_chart(fig)
 
 if page == "Google Developers Console":
@@ -239,6 +242,8 @@ elif page == "Top 10 Videos by Like Count and View Count":
         # generate plotly graph
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
                     x="title", y="likeCount", color='viewCount', title=channel_data[channel_choice]['title'])
+
+    
 
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
