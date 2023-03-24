@@ -77,6 +77,7 @@ if page == "Home":
 
 if page == "Google Developers Console":
     with header:
+        st.title("Channel Details")
         st.header("However, before we jump into the code,we'll need to create a project in the Google Developers Console and obtain an API key.")
 
         st.subheader("Step 1: Set Up a Project in the Google Developers Console")
