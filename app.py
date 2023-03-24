@@ -351,7 +351,7 @@ if page == "Video Stats After 6th of Feb 2023":
                 st.title("")
 
             # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-            avg_monthly_mins_df = edited_stats_df[['channelName', 'avg_monthly_total_mins_after', 'avg_monthly_total_mins_before']]
+            avg_monthly_mins_df = edited_stats_df[['channelName', 'avg_monthly_total_mins_after', 'avg_monthly_total_mins_before','avg_monthly_total_mins']]
 
             # set the index to 'channelName' column
             avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
