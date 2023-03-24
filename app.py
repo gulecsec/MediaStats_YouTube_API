@@ -162,23 +162,26 @@ if page == "Video Stats After 6th of Feb 2023":
             with channel_details:
                 st.title("")
 
-            # generate plotly graph
-            fig = px.bar(data_frame=edited_stats_df.sort_values('view_count_after', ascending=False),
-                        x="channelName", y="view_count_after", color='duration_count_after', title="Total Durations After 6th of Feb")
+            # create a new DataFrame with 'channelName', 'duration_count_after', and 'view_count_after' columns
+            view_count_df = edited_stats_df[['channelName', 'duration_count_after', 'view_count_after']]
 
-            fig.update_layout(coloraxis_colorbar=dict(title="Total Durations"))
+            # set the index to 'channelName' column
+            view_count_df = view_count_df.set_index('channelName')
+
+            # generate a horizontal bar chart using Plotly
+            fig = px.bar(view_count_df, barmode='group', title="Views-Video Durations After 6th of Feb")
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
-            # display plotly graph
+            # display the chart
             st.plotly_chart(fig)
 
         if page == "Likes-Video Durations After":
             with channel_details:
                 st.title("")
 
-            # create a new DataFrame with 'channelName', 'like_count_before', and 'like_count_after' columns
+            # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
             like_count_df = edited_stats_df[['channelName', 'duration_count_after', 'like_count_after']]
 
             # set the index to 'channelName' column
