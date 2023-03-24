@@ -39,9 +39,13 @@ if page == "Home":
         if graph_choice == "Views-Total Videos":
             fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
                           x="channelName", y="views", color='totalVideos', title="Views-Total Videos")
+
         else:
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos', title="Subscribers-Total Videos")
+
+
+        fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"))
 
         fig.update_layout(xaxis_title=None)
         fig.update_layout(yaxis_title=None)
@@ -167,6 +171,7 @@ if page == "Video Stats After 6th of Feb 2023":
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
+
 
             # display plotly graph
             st.plotly_chart(fig)
