@@ -180,8 +180,9 @@ if page == "Turkish News Media's YouTube Stats":
 
             fig.update_traces(name="Views",selector=dict(name="view_count_after"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="")
-
+            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600)
+            
             # display the chart
             st.plotly_chart(fig)
 
