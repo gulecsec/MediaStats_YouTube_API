@@ -157,7 +157,7 @@ if page == "Video Stats After 6th of Feb 2023":
         # Define sidebar
         st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Views-Video Durations After", "Likes-Video Durations After", "Comments-Video Durations After",
-        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video"))
+        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes"))
 
         if page == "Views-Video Durations After":
             with channel_details:
