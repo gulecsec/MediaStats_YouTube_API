@@ -460,8 +460,8 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
-        'A Haber': {'df': ahaber_df, 'title': 'A Haber Top 10 Videos by Like Count and View Count'},
-        'Anadolu Ajansı': {'df': aa_df, 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
+        'A Haber': {'df': ahaber_df, 'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Top 10 Videos by Like Count and View Count'},
+        'Anadolu Ajansı': {'df': aa_df, 'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
         'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
         'BBC News Türkçe': {'df': bbc_df, 'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
         'CNN TÜRK': {'df': cnn_df, 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
@@ -479,13 +479,16 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-        year_choice = st.selectbox("Select Year", channel_data[channel_choice]['df']["Year"].sort_values(ascending=False).unique().tolist())
+        # open the related CSV file
+        path = channel_choice['path']
+        df = pd.read_csv("path")
+
+        year_choice = st.selectbox("Select Year", df["Year"].sort_values(ascending=False).unique().tolist())
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         month_choice = st.selectbox("Select Month", months)
 
         # filter data based on user's selection
-        df = channel_data[channel_choice]['df']
-        df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
+       df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
 
 
         # generate plotly graph
