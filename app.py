@@ -477,18 +477,32 @@ elif page == "Top 10 Videos by Like Count and View Count":
         }
 
 
-        # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-        # open the related CSV file
-        path = channel_choice['path']
-        df = pd.read_csv("path")
+        # get the path and dataframe for the selected channel
+        path = channel_data[channel_choice]['path']
+        df = pd.read_csv(path)
 
-        year_choice = st.selectbox("Select Year", df["Year"].sort_values(ascending=False).unique().tolist())
-        months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        # create dropdowns for year and month selection
+        years = df['Year'].unique()
+        year_choice = st.selectbox("Select Year", sorted(years, reverse=True))
+
+        months = df[df['Year']==year_choice]['Month'].unique()
         month_choice = st.selectbox("Select Month", months)
 
-        # filter data based on user's selection
-        df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
+        # filter the data based on the user's selection
+        df = df[(df['Year']==year_choice) & (df['Month']==month_choice)]
+
+        # # add dropdown to select a channel
+        # channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
+        # # open the related CSV file
+        # path = channel_choice['path']
+        # df = pd.read_csv("path")
+
+        # year_choice = st.selectbox("Select Year", df["Year"].sort_values(ascending=False).unique().tolist())
+        # months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        # month_choice = st.selectbox("Select Month", months)
+
+        # # filter data based on user's selection
+        # df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
 
         # generate plotly graph
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
