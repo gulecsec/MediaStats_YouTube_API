@@ -325,7 +325,7 @@ It's important to note that these changes in average view counts could be due to
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
-                comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'comment_per_video_before']]
+                comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'comment_per_video_before', 'comment_per_video']]
 
                 # set the index to 'channelName' column
                 comment_per_video_df = comment_per_video_df.set_index('channelName')
@@ -337,17 +337,27 @@ It's important to note that these changes in average view counts could be due to
 
                 fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
 
+                fig.update_traces(name="Before",selector=dict(name="comment_per_video"))
+
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
 
+                st.caption("""Comments per video values show the average number of comments per video for each channel, both before and after the period covered in the data.
+
+Looking at the data, we can see that the channels with the highest comment_per_video are BaBaLa TV, Yeni Şafak, and Halktv, while the channels with the lowest comment_per_video are TRT Haber, Habertürk, and Anadolu Ajansı.
+
+Comparing the "comment_per_video" to the "comment_per_video_after" and "comment_per_video_before" columns, we can see that some channels have increased their average number of comments per video, while others have decreased. For example, Halktv and Erk Acarer have both seen a significant increase in the number of comments per video, while TRT Haber, Habertürk, and Anadolu Ajansı have remained relatively consistent.
+
+                """)
+
         if page == "Durations per Video":
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'duration_per_video_after', and 'duration_per_video_before' columns
-                duration_per_video_df = edited_stats_df[['channelName', 'duration_per_video_after', 'duration_per_video_before']]
+                duration_per_video_df = edited_stats_df[['channelName', 'duration_per_video_after', 'duration_per_video_before', 'duration_per_video']]
 
                 # set the index to 'channelName' column
                 duration_per_video_df = duration_per_video_df.set_index('channelName')
@@ -358,6 +368,8 @@ It's important to note that these changes in average view counts could be due to
                 fig.update_traces(name="After",selector=dict(name="duration_per_video_after"))
 
                 fig.update_traces(name="Before",selector=dict(name="duration_per_video_before"))
+
+                fig.update_traces(name="Before",selector=dict(name="duration_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
