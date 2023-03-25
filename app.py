@@ -256,6 +256,13 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
+            fig.update_traces(name="Likes after",selector=dict(name="like_per_video_after"))
+
+            fig.update_traces(name="Likes before",selector=dict(name="like_per_video_before"))
+
+            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600)
+
             # display the chart
             st.plotly_chart(fig)
 
