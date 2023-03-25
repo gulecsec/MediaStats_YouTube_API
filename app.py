@@ -249,6 +249,14 @@ Overall, the table suggests that after the earthquake in Turkey on February 6, 2
                 # display the chart
                 st.plotly_chart(fig)
 
+                st.caption("""The table above shows the like count and comment count for various Turkish news channels. Among the channels, TV100 has the highest like count with 482,840 likes, followed by Halktv with 665,555 likes and CNN TÜRK with 558,924 likes. On the other hand, Habertürk has the lowest like count with only 32,148 likes.
+
+In terms of comment count, Halktv has the highest count with 156,956 comments, followed by CNN TÜRK with 126,936 comments and TV100 with 106,354 comments. The lowest comment count is for BaBaLa TV with only 4,377 comments.
+
+It's interesting to note that although TV100 has the highest like count, it has a relatively lower comment count compared to Halktv and CNN TÜRK. This suggests that TV100's content may be more popular or appealing to viewers, but may not necessarily be sparking as much discussion or engagement. Conversely, Halktv and CNN TÜRK's content seems to be generating more conversation and engagement among viewers, despite having lower like counts.
+
+                """)
+
         if page == "Likes per Video":
             with channel_details:
 
