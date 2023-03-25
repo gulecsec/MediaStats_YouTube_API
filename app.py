@@ -13,7 +13,6 @@ stats_df = pd.read_csv("media_stats.csv")
 # Define page layout
 header = st.container()
 dataset = st.container()
-features = st.container()
 channel_details = st.container()
 
 # Define sidebar
@@ -25,13 +24,8 @@ if page == "Home":
         st.title("How Turkish News Media's YouTube Stats Stack Up: Exploring the Data on My Streamlit App")
         st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to interact with one of the world's largest video-sharing platforms,which boasts billions of daily users uploading, viewing, and commenting on videos. By the end of this tutorial, you'll know how to automate various tasks using the YouTube API.")
 
-    with features:
-        st.header("")
-        st.text("")
 
     with dataset:
-        # st.subheader("")
-
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
 
@@ -159,7 +153,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views-Video Durations After":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'duration_count_after', and 'view_count_after' columns
             view_count_df = edited_stats_df[['channelName', 'duration_count_after', 'view_count_after']]
@@ -182,7 +175,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Likes-Video Durations After":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
             like_count_df = edited_stats_df[['channelName', 'duration_count_after', 'like_count_after']]
@@ -206,7 +198,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Comments-Video Durations After":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
             comment_count_df = edited_stats_df[['channelName', 'comment_count_after', 'like_count_after']]
@@ -229,7 +220,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Likes per Video":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'like_per_video_after', and 'like_coulike_per_video_beforent_after' columns
             like_per_video_df = edited_stats_df[['channelName', 'like_per_video_after', 'like_per_video_before']]
@@ -252,7 +242,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views per Video":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
             view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before']]
@@ -275,7 +264,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Comments per Video":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
             comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'comment_per_video_before']]
@@ -298,7 +286,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Durations per Video":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'duration_per_video_after', and 'duration_per_video_before' columns
             duration_per_video_df = edited_stats_df[['channelName', 'duration_per_video_after', 'duration_per_video_before']]
@@ -321,7 +308,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views per Likes":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
             view_per_like_df = edited_stats_df[['channelName', 'view_per_like_after', 'view_per_like_before']]
@@ -344,7 +330,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Uploaded Video Count":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
             video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before']]
@@ -367,7 +352,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Monthly Average Video Mins":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
             avg_monthly_mins_df = edited_stats_df[['channelName', 'avg_monthly_total_mins_after', 'avg_monthly_total_mins_before','avg_monthly_total_mins']]
@@ -392,7 +376,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Monthly Average Video Likes":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
             avg_monthly_likes_df = edited_stats_df[['channelName', 'avg_monthly_total_likes_after', 'avg_monthly_total_likes_before','avg_monthly_total_likes']]
@@ -417,7 +400,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         elif page == "Subscribers per Video":
             with channel_details:
-                st.title("")
 
             # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
             sub_video_df = edited_stats_df[['channelName', 'subscribers_per_video']]
