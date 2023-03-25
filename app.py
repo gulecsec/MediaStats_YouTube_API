@@ -477,6 +477,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
         'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
         }
 
+        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
         # get the path and dataframe for the selected channel
         path = channel_data[channel_choice]['path']
