@@ -412,12 +412,7 @@ if page == "Turkish News Media's YouTube Stats":
                 fig.update_traces(name="Subscribers",selector=dict(name="subscribers_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                width=800, height=600,yaxis_title=None)
-
-                # get the xtick labels and set the font weight to bold
-                xtick_labels = plt.gca().get_xticklabels()
-                for label in xtick_labels:
-                    label.set_fontproperties({'weight': 'bold'})
+                width=800, height=600,yaxis_title=None,xaxis=dict(tickfont=dict(weight='bold'))
 
                 # display the chart
                 st.plotly_chart(fig)
