@@ -175,247 +175,247 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Likes-Video Durations After":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
-            like_count_df = edited_stats_df[['channelName', 'duration_count_after', 'like_count_after']]
+                # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
+                like_count_df = edited_stats_df[['channelName', 'duration_count_after', 'like_count_after']]
 
-            # set the index to 'channelName' column
-            like_count_df = like_count_df.set_index('channelName')
+                # set the index to 'channelName' column
+                like_count_df = like_count_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(like_count_df, barmode='group', title="Likes-Video Durations After 6th of Feb")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(like_count_df, barmode='group', title="Likes-Video Durations After 6th of Feb")
 
-            fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
+                fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
 
-            fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
+                fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
 
         if page == "Comments-Video Durations After":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
-            comment_count_df = edited_stats_df[['channelName', 'comment_count_after', 'like_count_after']]
+                # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
+                comment_count_df = edited_stats_df[['channelName', 'comment_count_after', 'like_count_after']]
 
-            # set the index to 'channelName' column
-            comment_count_df = comment_count_df.set_index('channelName')
+                # set the index to 'channelName' column
+                comment_count_df = comment_count_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(comment_count_df, barmode='group', title="Comments-Video Durations After 6th of Feb")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(comment_count_df, barmode='group', title="Comments-Video Durations After 6th of Feb")
 
-            fig.update_traces(name="Comments",selector=dict(name="comment_count_after"))
+                fig.update_traces(name="Comments",selector=dict(name="comment_count_after"))
 
-            fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
+                fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Likes per Video":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'like_per_video_after', and 'like_coulike_per_video_beforent_after' columns
-            like_per_video_df = edited_stats_df[['channelName', 'like_per_video_after', 'like_per_video_before']]
+                # create a new DataFrame with 'channelName', 'like_per_video_after', and 'like_coulike_per_video_beforent_after' columns
+                like_per_video_df = edited_stats_df[['channelName', 'like_per_video_after', 'like_per_video_before']]
 
-            # set the index to 'channelName' column
-            like_per_video_df = like_per_video_df.set_index('channelName')
+                # set the index to 'channelName' column
+                like_per_video_df = like_per_video_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(like_per_video_df, barmode='group', title="Likes per Video")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(like_per_video_df, barmode='group', title="Likes per Video")
 
-            fig.update_traces(name="After",selector=dict(name="like_per_video_after"))
+                fig.update_traces(name="After",selector=dict(name="like_per_video_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="like_per_video_before"))
+                fig.update_traces(name="Before",selector=dict(name="like_per_video_before"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Views per Video":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
-            view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before']]
+                # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
+                view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before']]
 
-            # set the index to 'channelName' column
-            view_per_video_df = view_per_video_df.set_index('channelName')
+                # set the index to 'channelName' column
+                view_per_video_df = view_per_video_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(view_per_video_df, barmode='group', title="Views per Video")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(view_per_video_df, barmode='group', title="Views per Video")
 
-            fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
+                fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
+                fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Comments per Video":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
-            comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'comment_per_video_before']]
+                # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
+                comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'comment_per_video_before']]
 
-            # set the index to 'channelName' column
-            comment_per_video_df = comment_per_video_df.set_index('channelName')
+                # set the index to 'channelName' column
+                comment_per_video_df = comment_per_video_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(comment_per_video_df, barmode='group', title="Comments per Video")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(comment_per_video_df, barmode='group', title="Comments per Video")
 
-            fig.update_traces(name="After",selector=dict(name="comment_per_video_after"))
+                fig.update_traces(name="After",selector=dict(name="comment_per_video_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
+                fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Durations per Video":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'duration_per_video_after', and 'duration_per_video_before' columns
-            duration_per_video_df = edited_stats_df[['channelName', 'duration_per_video_after', 'duration_per_video_before']]
+                # create a new DataFrame with 'channelName', 'duration_per_video_after', and 'duration_per_video_before' columns
+                duration_per_video_df = edited_stats_df[['channelName', 'duration_per_video_after', 'duration_per_video_before']]
 
-            # set the index to 'channelName' column
-            duration_per_video_df = duration_per_video_df.set_index('channelName')
+                # set the index to 'channelName' column
+                duration_per_video_df = duration_per_video_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(duration_per_video_df, barmode='group', title="Durations per Video")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(duration_per_video_df, barmode='group', title="Durations per Video")
 
-            fig.update_traces(name="After",selector=dict(name="duration_per_video_after"))
+                fig.update_traces(name="After",selector=dict(name="duration_per_video_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="duration_per_video_before"))
+                fig.update_traces(name="Before",selector=dict(name="duration_per_video_before"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Views per Likes":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
-            view_per_like_df = edited_stats_df[['channelName', 'view_per_like_after', 'view_per_like_before']]
+                # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
+                view_per_like_df = edited_stats_df[['channelName', 'view_per_like_after', 'view_per_like_before']]
 
-            # set the index to 'channelName' column
-            view_per_like_df = view_per_like_df.set_index('channelName')
+                # set the index to 'channelName' column
+                view_per_like_df = view_per_like_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(view_per_like_df, barmode='group', title="Views per Likes")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(view_per_like_df, barmode='group', title="Views per Likes")
 
-            fig.update_traces(name="After",selector=dict(name="view_per_like_after"))
+                fig.update_traces(name="After",selector=dict(name="view_per_like_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
+                fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Uploaded Video Count":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
-            video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before']]
+                # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
+                video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before']]
 
-            # set the index to 'channelName' column
-            video_count_df = video_count_df.set_index('channelName')
+                # set the index to 'channelName' column
+                video_count_df = video_count_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(video_count_df, barmode='group', title="Uploaded Video Count")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(video_count_df, barmode='group', title="Uploaded Video Count")
 
-            fig.update_traces(name="After",selector=dict(name="video_count_after"))
+                fig.update_traces(name="After",selector=dict(name="video_count_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="video_count_before"))
+                fig.update_traces(name="Before",selector=dict(name="video_count_before"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Monthly Average Video Mins":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-            avg_monthly_mins_df = edited_stats_df[['channelName', 'avg_monthly_total_mins_after', 'avg_monthly_total_mins_before','avg_monthly_total_mins']]
+                # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
+                avg_monthly_mins_df = edited_stats_df[['channelName', 'avg_monthly_total_mins_after', 'avg_monthly_total_mins_before','avg_monthly_total_mins']]
 
-            # set the index to 'channelName' column
-            avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
+                # set the index to 'channelName' column
+                avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins")
 
-            fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
+                fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
+                fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
 
-            fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_mins"))
+                fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_mins"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Monthly Average Video Likes":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-            avg_monthly_likes_df = edited_stats_df[['channelName', 'avg_monthly_total_likes_after', 'avg_monthly_total_likes_before','avg_monthly_total_likes']]
+                # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
+                avg_monthly_likes_df = edited_stats_df[['channelName', 'avg_monthly_total_likes_after', 'avg_monthly_total_likes_before','avg_monthly_total_likes']]
 
-            # set the index to 'channelName' column
-            avg_monthly_likes_df = avg_monthly_likes_df.set_index('channelName')
+                # set the index to 'channelName' column
+                avg_monthly_likes_df = avg_monthly_likes_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(avg_monthly_likes_df, barmode='group', title="Monthly Average Video Likes")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(avg_monthly_likes_df, barmode='group', title="Monthly Average Video Likes")
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            fig.update_traces(name="After",selector=dict(name="avg_monthly_total_likes_after"))
+                fig.update_traces(name="After",selector=dict(name="avg_monthly_total_likes_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_likes_before"))
+                fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_likes_before"))
 
-            fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_likes"))
+                fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_likes"))
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         elif page == "Subscribers per Video":
             with channel_details:
 
-            # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-            sub_video_df = edited_stats_df[['channelName', 'subscribers_per_video']]
+                # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
+                sub_video_df = edited_stats_df[['channelName', 'subscribers_per_video']]
 
-            # set the index to 'channelName' column
-            sub_video_df = sub_video_df.set_index('channelName')
+                # set the index to 'channelName' column
+                sub_video_df = sub_video_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(sub_video_df, barmode='group', title="Subscribers Count per Video ")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(sub_video_df, barmode='group', title="Subscribers Count per Video ")
 
-            fig.update_traces(name="Subscribers",selector=dict(name="subscribers_per_video"))
+                fig.update_traces(name="Subscribers",selector=dict(name="subscribers_per_video"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
