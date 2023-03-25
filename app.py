@@ -463,11 +463,16 @@ elif page == "Top 10 Videos by Like Count and View Count":
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
                     x="title", y="likeCount", color='viewCount', title=channel_data[channel_choice]['title'])
 
+        # get the xtick labels and set the font weight to bold
+        xtick_labels = plt.gca().get_xticklabels()
+        for label in xtick_labels:
+            label.set_fontproperties({'weight': 'bold'})
+
         # format y-axis labels to show thousands
         fig.update_yaxes(tickformat=',.0f')
 
         fig.update_layout(xaxis={'tickmode': 'array', 'tickvals': []},xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-        width=800, height=600,yaxis_title=None, fontweight="bold")
+        width=800, height=600,yaxis_title=None)
 
         # display plotly graph
         st.plotly_chart(fig)
