@@ -440,14 +440,15 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(avg_monthly_likes_df, barmode='group', title="Monthly Average Video Likes Before & After")
 
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
+
             fig.update_traces(name="After",selector=dict(name="avg_monthly_total_likes_after"))
 
             fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_likes_before"))
 
             fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_likes"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
 
             # display the chart
             st.plotly_chart(fig)
