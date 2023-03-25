@@ -44,14 +44,8 @@ if page == "Home":
             fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
                           x="channelName", y="subscribers", color='totalVideos')
 
-
-        fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"))
-
-        fig.update_layout(xaxis_title=None)
-        fig.update_layout(yaxis_title=None)
-
-        fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+        fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
         st.plotly_chart(fig)
 
@@ -176,15 +170,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(view_count_df, barmode='group', title="Views-Video Durations After 6th of Feb")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
 
             fig.update_traces(name="Views",selector=dict(name="view_count_after"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -202,15 +193,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(like_count_df, barmode='group', title="Likes-Video Durations After 6th of Feb")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
 
             fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -229,16 +217,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(comment_count_df, barmode='group', title="Comments-Video Durations After 6th of Feb")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="Comments",selector=dict(name="comment_count_after"))
 
             fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
-
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -256,15 +240,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(like_per_video_df, barmode='group', title="Likes per Video Before & After")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="After",selector=dict(name="like_per_video_after"))
 
             fig.update_traces(name="Before",selector=dict(name="like_per_video_before"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -282,15 +263,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(view_per_video_df, barmode='group', title="Views per Video Before & After")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
             fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -308,15 +286,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(comment_per_video_df, barmode='group', title="Comments per Video Before & After")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="After",selector=dict(name="comment_per_video_after"))
 
             fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -334,15 +309,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(duration_per_video_df, barmode='group', title="Durations per Video Before & After")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="After",selector=dict(name="duration_per_video_after"))
 
             fig.update_traces(name="Before",selector=dict(name="duration_per_video_before"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -360,15 +332,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(view_per_like_df, barmode='group', title="Views per Likes Before & After")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="After",selector=dict(name="view_per_like_after"))
 
             fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -386,15 +355,12 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(video_count_df, barmode='group', title="Uploaded Video Count Before & After")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="After",selector=dict(name="video_count_after"))
 
             fig.update_traces(name="Before",selector=dict(name="video_count_before"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -412,17 +378,14 @@ if page == "Turkish News Media's YouTube Stats":
             # generate a horizontal bar chart using Plotly
             fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins Before & After")
 
-            fig.update_layout(xaxis_title=None)
-            fig.update_layout(yaxis_title=None)
-
             fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
 
             fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
 
             fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_mins"))
 
-            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600,yaxis_title=None)
 
             # display the chart
             st.plotly_chart(fig)
@@ -448,7 +411,6 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_likes_before"))
 
             fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_likes"))
-
 
             # display the chart
             st.plotly_chart(fig)
