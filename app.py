@@ -193,9 +193,7 @@ FOX Haber had a high duration count of 1,394,832 seconds (387 hours and 27 minut
 count of 15,883,558.
 
 Overall, the table suggests that after the earthquake in Turkey on February 6, 2023, TV100, CNN TÜRK, and Halktv
-were the most popular news channels, while BaBaLa TV had the lowest viewership. The duration count and view count
-varied significantly across the different channels, with some channels having high duration counts but low view counts,
-and others having high view counts but low duration counts""")
+were the most popular news channels, while BaBaLa TV had the lowest viewership.""",font="Arial",style={"font-size": "20px", "font-weight": "bold", "color": "red"})
 
         if page == "Likes-Video Durations After":
             with channel_details:
