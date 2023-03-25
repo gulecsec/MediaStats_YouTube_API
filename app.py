@@ -50,6 +50,9 @@ if page == "Home":
         fig.update_layout(xaxis_title=None)
         fig.update_layout(yaxis_title=None)
 
+        fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600)
+
         st.plotly_chart(fig)
 
 if page == "Google Developers Console":
