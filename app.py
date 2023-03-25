@@ -172,8 +172,7 @@ if page == "Turkish News Media's YouTube Stats":
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""The table above shows the duration count and view count of various Turkish news channels
-                after the earthquake that occurred on 6th of Feb 2023 in Turkey.
+                st.caption("""The table above shows the duration count and view count of various Turkish news channels after the earthquake that occurred on 6th of Feb 2023 in Turkey.
 
 After the earthquake, TV100 had the highest duration count of 2,580,813 seconds (717 hours and 53 minutes) and the
 highest view count of 54,783,488.
