@@ -488,8 +488,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
         month_choice = st.selectbox("Select Month", months)
 
         # filter data based on user's selection
-       df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
-
+        df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
 
         # generate plotly graph
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
