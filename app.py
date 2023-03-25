@@ -217,6 +217,15 @@ were the most popular news channels, while BaBaLa TV had the lowest viewership."
                 # display the chart
                 st.plotly_chart(fig)
 
+                st.caption("""The duration_count_after column shows the total number of seconds that viewers watched a particular channel after the earthquake, while the like_count_after column shows the total number of likes or approvals received by the channel after the earthquake.
+
+TV100 had the highest duration_count_after value of 2,580,813 seconds (717 hours and 53 minutes) and the highest like_count_after value of 482,840. CNN TÜRK and Halktv also had high like_count_after values of 558,924 and 665,555, respectively.
+
+BaBaLa TV had the lowest duration_count_after and like_count_after values, with only 5,463 seconds (1 hour and 31 minutes) and 66,590 likes. Nevşin Mengü had a duration_count_after value of 178,286 seconds (49 hours and 31 minutes) and a like_count_after value of 385,602, while Cüneyt Özdemir had a duration_count_after value of 588,527 seconds (163 hours and 28 minutes) and a like_count_after value of 715,635.
+
+The Anadolu Ajansı had a duration_count_after value of 108,839 seconds (30 hours and 13 minutes) and a like_count_after value of 143,924, while the BBC News Türkçe had a duration_count_after value of 15,118 seconds (4 hours and 11 minutes) and a like_count_after value of 121,299. FOX Haber had a high duration_count_after value of 1,394,832 seconds (387 hours and 27 minutes), but a relatively low like_count_after value of 169,821.
+
+Overall, the table suggests that after the earthquake in Turkey on February 6, 2023, TV100, CNN TÜRK, and Halktv were the most popular news channels, while BaBaLa TV had the lowest viewership.""")
 
         if page == "Comments-Video Durations After":
             with channel_details:
