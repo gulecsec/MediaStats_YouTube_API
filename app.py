@@ -293,7 +293,7 @@ Overall, it is difficult to draw a general conclusion without more context about
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
-                view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before']]
+                view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before', 'view_per_video']]
 
                 # set the index to 'channelName' column
                 view_per_video_df = view_per_video_df.set_index('channelName')
@@ -304,6 +304,8 @@ Overall, it is difficult to draw a general conclusion without more context about
                 fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
                 fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
+
+                fig.update_traces(name="Before",selector=dict(name="view_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
