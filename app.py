@@ -377,6 +377,16 @@ Comparing the "comment_per_video" to the "comment_per_video_after" and "comment_
                 # display the chart
                 st.plotly_chart(fig)
 
+                st.caption("""Duration per video values represent the average duration of videos published by each channel. The "duration_per_video_after" column shows the average duration of videos after the algorithmic change, while the "duration_per_video_before" column represents the average duration of videos before the change.
+
+Looking at the values, it appears that some channels' average video durations have increased after the algorithmic change, while others have decreased. For example, Nevşin Mengü's videos have become longer after the change, with an average duration of 2785.7 seconds, compared to 1998.3 seconds before the change. In contrast, BabaLa TV's videos have become shorter, with an average duration of 1365.8 seconds after the change, compared to 2248.3 seconds before the change.
+
+Other channels, such as TRT Haber and BBC News Türkçe, also show a decrease in the average duration of their videos after the algorithmic change. On the other hand, Habertürk and Halktv have longer average video durations after the change.
+
+It is important to note that video duration is just one factor that can influence a video's performance on YouTube, and it's not clear how significant of an impact changes in video duration have on a channel's overall performance.
+                
+                """)
+
         if page == "Views per Likes":
             with channel_details:
 
