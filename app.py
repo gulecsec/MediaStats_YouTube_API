@@ -460,20 +460,22 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
-        'A Haber': {'df': ahaber_df, 'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Top 10 Videos by Like Count and View Count'},
-        'Anadolu Ajansı': {'df': aa_df, 'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
-        'BaBaLa TV': {'df': bab_df, 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
-        'BBC News Türkçe': {'df': bbc_df, 'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
-        'CNN TÜRK': {'df': cnn_df, 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
-        'Cüneyt Özdemir': {'df': co_df, 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
-        'FOX Haber': {'df': fox_df, 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
-        'Habertürk': {'df': ht_df, 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
-        'Halktv': {'df': h_tv_df, 'title': 'Halktv Top 10 Videos by Like Count and View Count'},
-        'Nevşin Mengü': {'df': nev_df, 'title': 'Nevşin Mengü Top 10 Videos by Like Count and View Count'},
-        'SÖZCÜ Televizyonu': {'df': soz_df, 'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
-        'TRT Haber': {'df': trt_df, 'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
-        'TV100': {'df': tv_df, 'title': 'TV100 Top 10 Videos by Like Count and View Count'},
-        'Yeni Şafak': {'df': ys_df, 'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
+        'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Top 10 Videos by Like Count and View Count'},
+        'Anadolu Ajansı': {'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
+        'BaBaLa TV': {'path': 'media_stats/stats_babala_tv.csv' , 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
+        'BBC News Türkçe': {'path': 'media_stats/stats_bbc_news_türkçe.csv' ,'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
+        'CNN TÜRK': {'path': 'media_stats/stats_cnn_türk.csv' , 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
+        'Cüneyt Özdemir': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
+        'Erk Acarer': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
+
+        'FOX Haber': {'df': fox_df,'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
+        'Habertürk': {'df': ht_df,'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
+        'Halktv': {'df': h_tv_df,'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Halktv Top 10 Videos by Like Count and View Count'},
+        'Nevşin Mengü': {'df': nev_df, 'path': 'media_stats/stats_anadolu_ajansı.csv' ,'title': 'Nevşin Mengü Top 10 Videos by Like Count and View Count'},
+        'SÖZCÜ Televizyonu': {'df': soz_df, 'path': 'media_stats/stats_anadolu_ajansı.csv' ,'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
+        'TRT Haber': {'df': trt_df, 'path': 'media_stats/stats_anadolu_ajansı.csv' ,'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
+        'TV100': {'df': tv_df, 'path': 'media_stats/stats_anadolu_ajansı.csv' ,'title': 'TV100 Top 10 Videos by Like Count and View Count'},
+        'Yeni Şafak': {'df': ys_df, 'path': 'media_stats/stats_anadolu_ajansı.csv' ,'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
         }
 
 
