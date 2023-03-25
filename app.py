@@ -153,25 +153,24 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views-Video Durations After":
             with channel_details:
+                # create a new DataFrame with 'channelName', 'duration_count_after', and 'view_count_after' columns
+                view_count_df = edited_stats_df[['channelName', 'duration_count_after', 'view_count_after']]
 
-            # create a new DataFrame with 'channelName', 'duration_count_after', and 'view_count_after' columns
-            view_count_df = edited_stats_df[['channelName', 'duration_count_after', 'view_count_after']]
+                # set the index to 'channelName' column
+                view_count_df = view_count_df.set_index('channelName')
 
-            # set the index to 'channelName' column
-            view_count_df = view_count_df.set_index('channelName')
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(view_count_df, barmode='group', title="Views-Video Durations After 6th of Feb")
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(view_count_df, barmode='group', title="Views-Video Durations After 6th of Feb")
+                fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
 
-            fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
+                fig.update_traces(name="Views",selector=dict(name="view_count_after"))
 
-            fig.update_traces(name="Views",selector=dict(name="view_count_after"))
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                width=800, height=600,yaxis_title=None)
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
-
-            # display the chart
-            st.plotly_chart(fig)
+                # display the chart
+                st.plotly_chart(fig)
 
         if page == "Likes-Video Durations After":
             with channel_details:
