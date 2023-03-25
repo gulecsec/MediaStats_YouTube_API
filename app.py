@@ -256,9 +256,9 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
-            fig.update_traces(name="Likes after",selector=dict(name="like_per_video_after"))
+            fig.update_traces(name="After",selector=dict(name="like_per_video_after"))
 
-            fig.update_traces(name="Likes before",selector=dict(name="like_per_video_before"))
+            fig.update_traces(name="Before",selector=dict(name="like_per_video_before"))
 
             fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
             width=800, height=600)
@@ -282,9 +282,9 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
-            fig.update_traces(name="Views after",selector=dict(name="view_per_video_after"))
+            fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
-            fig.update_traces(name="Views before",selector=dict(name="view_per_video_before"))
+            fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
 
             fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
             width=800, height=600)
@@ -308,9 +308,9 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
-            fig.update_traces(name="Comments after",selector=dict(name="comment_per_video_after"))
+            fig.update_traces(name="After",selector=dict(name="comment_per_video_after"))
 
-            fig.update_traces(name="Comments before",selector=dict(name="comment_per_video_before"))
+            fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
 
             fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
             width=800, height=600)
@@ -360,6 +360,13 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
+            fig.update_traces(name="After",selector=dict(name="view_per_like_after"))
+
+            fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
+
+            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600)
+
             # display the chart
             st.plotly_chart(fig)
 
@@ -379,6 +386,13 @@ if page == "Turkish News Media's YouTube Stats":
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
 
+            fig.update_traces(name="After",selector=dict(name="video_count_after"))
+
+            fig.update_traces(name="Before",selector=dict(name="video_count_before"))
+
+            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600)
+
             # display the chart
             st.plotly_chart(fig)
 
@@ -397,6 +411,15 @@ if page == "Turkish News Media's YouTube Stats":
 
             fig.update_layout(xaxis_title=None)
             fig.update_layout(yaxis_title=None)
+
+            fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
+
+            fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
+
+            fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_mins"))
+
+            fig.update_layout(legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+            width=800, height=600)
 
             # display the chart
             st.plotly_chart(fig)
