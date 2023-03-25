@@ -440,24 +440,6 @@ elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
         st.title("Channel Details")
 
-        # # Load Each Channel Data
-        # ahaber_df = pd.read_csv("media_stats/stats_a_haber.csv")
-        # aa_df = pd.read_csv("media_stats/stats_anadolu_ajansı.csv")
-        # bab_df = pd.read_csv("media_stats/stats_babala_tv.csv")
-        # bbc_df = pd.read_csv("media_stats/stats_bbc_news_türkçe.csv")
-        # cnn_df = pd.read_csv("media_stats/stats_cnn_türk.csv")
-        # co_df = pd.read_csv("media_stats/stats_cüneyt_özdemir.csv")
-        # co_df = pd.read_csv("media_stats/stats_erk_acarer.csv")
-        # fox_df = pd.read_csv("media_stats/stats_fox_haber.csv")
-        # ht_df = pd.read_csv("media_stats/stats_habertürk.csv")
-        # h_tv_df = pd.read_csv("media_stats/stats_halktv.csv")
-        # nev_df = pd.read_csv("media_stats/stats_nevşin_mengü.csv")
-        # soz_df = pd.read_csv("media_stats/stats_sözcü_televizyonu.csv")
-        # trt_df = pd.read_csv("media_stats/stats_trt_haber.csv")
-        # tv_df = pd.read_csv("media_stats/stats_tv100.csv")
-        # ys_df = pd.read_csv("media_stats/stats_yeni_şafak.csv")
-
-
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
         'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Top 10 Videos by Like Count and View Count'},
@@ -477,34 +459,24 @@ elif page == "Top 10 Videos by Like Count and View Count":
         'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
         }
 
+
+        # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
         # get the path and dataframe for the selected channel
         path = channel_data[channel_choice]['path']
+
+        # Load Each Channel Data
         df = pd.read_csv(path)
 
         # create dropdowns for year and month selection
         years = df['Year'].unique()
         year_choice = st.selectbox("Select Year", sorted(years, reverse=True))
-
         months = df[df['Year']==year_choice]['Month'].unique()
         month_choice = st.selectbox("Select Month", months)
 
         # filter the data based on the user's selection
         df = df[(df['Year']==year_choice) & (df['Month']==month_choice)]
-
-        # # add dropdown to select a channel
-        # channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-        # # open the related CSV file
-        # path = channel_choice['path']
-        # df = pd.read_csv("path")
-
-        # year_choice = st.selectbox("Select Year", df["Year"].sort_values(ascending=False).unique().tolist())
-        # months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        # month_choice = st.selectbox("Select Month", months)
-
-        # # filter data based on user's selection
-        # df = df[(df['Year'] == year_choice) & (df['Month'] == month_choice)]
 
         # generate plotly graph
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
