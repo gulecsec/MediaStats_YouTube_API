@@ -172,7 +172,7 @@ if page == "Turkish News Media's YouTube Stats":
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.text("""The table above shows the duration count and view count of various Turkish news channels after the earthquake
+                st.subheader("""The table above shows the duration count and view count of various Turkish news channels after the earthquake
                 that occurred on 6th of Feb 2023 in Turkey.After the earthquake, TV100 had the highest duration count of 2,580,813 seconds
                 (717 hours and 53 minutes) and the highest view count of 54,783,488. CNN TÜRK and Halktv also had high view counts of
                 71,164,841 and 66,710,949, respectively.BaBaLa TV had the lowest duration count and view count, with only 5,463 seconds
