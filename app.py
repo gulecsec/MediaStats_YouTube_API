@@ -281,6 +281,14 @@ It's interesting to note that although TV100 has the highest like count, it has 
                 # display the chart
                 st.plotly_chart(fig)
 
+                st.caption("""Looking at the values, we can see that for some channels like Nevşin Mengü, Cüneyt Özdemir, and A Haber, the like_per_video_after is slightly higher than the like_per_video_before. On the other hand, for channels like BaBaLa TV, FOX Haber, and Habertürk, the like_per_video_after is significantly lower than the like_per_video_before.
+
+For some channels like Yeni Şafak, Anadolu Ajansı, and CNN TÜRK, there is not much difference between the like_per_video_before and like_per_video_after values. However, for channels like Halktv and Erk Acarer, the like_per_video_after values are considerably higher than the like_per_video_before values.
+
+Overall, it is difficult to draw a general conclusion without more context about the channels and their content, but we can see some variation in the changes in average likes per video for different channels.
+
+                """)
+
         if page == "Views per Video":
             with channel_details:
 
