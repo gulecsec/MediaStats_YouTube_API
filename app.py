@@ -238,7 +238,7 @@ if page == "Turkish News Media's YouTube Stats":
             like_per_video_df = like_per_video_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(like_per_video_df, barmode='group', title="Likes per Video Before & After")
+            fig = px.bar(like_per_video_df, barmode='group', title="Likes per Video")
 
             fig.update_traces(name="After",selector=dict(name="like_per_video_after"))
 
@@ -261,7 +261,7 @@ if page == "Turkish News Media's YouTube Stats":
             view_per_video_df = view_per_video_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(view_per_video_df, barmode='group', title="Views per Video Before & After")
+            fig = px.bar(view_per_video_df, barmode='group', title="Views per Video")
 
             fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
@@ -284,7 +284,7 @@ if page == "Turkish News Media's YouTube Stats":
             comment_per_video_df = comment_per_video_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(comment_per_video_df, barmode='group', title="Comments per Video Before & After")
+            fig = px.bar(comment_per_video_df, barmode='group', title="Comments per Video")
 
             fig.update_traces(name="After",selector=dict(name="comment_per_video_after"))
 
@@ -307,7 +307,7 @@ if page == "Turkish News Media's YouTube Stats":
             duration_per_video_df = duration_per_video_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(duration_per_video_df, barmode='group', title="Durations per Video Before & After")
+            fig = px.bar(duration_per_video_df, barmode='group', title="Durations per Video")
 
             fig.update_traces(name="After",selector=dict(name="duration_per_video_after"))
 
@@ -330,7 +330,7 @@ if page == "Turkish News Media's YouTube Stats":
             view_per_like_df = view_per_like_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(view_per_like_df, barmode='group', title="Views per Likes Before & After")
+            fig = px.bar(view_per_like_df, barmode='group', title="Views per Likes")
 
             fig.update_traces(name="After",selector=dict(name="view_per_like_after"))
 
@@ -353,7 +353,7 @@ if page == "Turkish News Media's YouTube Stats":
             video_count_df = video_count_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(video_count_df, barmode='group', title="Uploaded Video Count Before & After")
+            fig = px.bar(video_count_df, barmode='group', title="Uploaded Video Count")
 
             fig.update_traces(name="After",selector=dict(name="video_count_after"))
 
@@ -376,7 +376,7 @@ if page == "Turkish News Media's YouTube Stats":
             avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins Before & After")
+            fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins")
 
             fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
 
@@ -401,7 +401,7 @@ if page == "Turkish News Media's YouTube Stats":
             avg_monthly_likes_df = avg_monthly_likes_df.set_index('channelName')
 
             # generate a horizontal bar chart using Plotly
-            fig = px.bar(avg_monthly_likes_df, barmode='group', title="Monthly Average Video Likes Before & After")
+            fig = px.bar(avg_monthly_likes_df, barmode='group', title="Monthly Average Video Likes")
 
             fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
             width=800, height=600,yaxis_title=None)
