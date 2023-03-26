@@ -207,7 +207,11 @@ if page == "Turkish News Media's YouTube Stats":
 
 
 
-                ""","""<h1 style='text-align: center; color: red;'>Some title</h1>""")
+                ""","""<style>
+#the-title {
+  text-align: center
+}
+</style>""")
 
         if page == "Comments-Video Durations After":
             with channel_details:
