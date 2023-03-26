@@ -162,38 +162,11 @@ if page == "Turkish News Media's YouTube Stats":
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(view_count_df, barmode='group', title="Views-Video Durations After 6th of Feb")
 
-                st.set_page_config(layout='wide')
-
-                st.markdown(
-                    """
-                    <style>
-                        div[data-testid="column"]:nth-of-type(1)
-                        {
-                            border:1px solid red;
-                        }
-
-                        div[data-testid="column"]:nth-of-type(2)
-                        {
-                            border:1px solid blue;
-                            text-align: end;
-                        }
-                    </style>
-                    """,unsafe_allow_html=True
-                )
-
-                col1 = st.columns(1)
-
-                with col1:
-                            """
-                            ## Column 1
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua. Volutpat sed cras ornare arcu dui vivamus."""
-
-
                 fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
 
                 fig.update_traces(name="Views",selector=dict(name="view_count_after"))
+
+                st.set_page_config(layout='wide')
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
