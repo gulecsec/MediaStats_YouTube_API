@@ -173,11 +173,12 @@ if page == "Turkish News Media's YouTube Stats":
                 st.plotly_chart(fig)
 
                 st.caption("""
+
                 Based on the analysis of the data, it can be concluded that the number of videos uploaded by a news media channel does not necessarily have a direct correlation with the number of views received.
 
                 For example, the "Habertürk TV" channel has received the highest number of views after the data was collected, but has uploaded only 40 videos, which is lower than the number of videos uploaded by some of the other channels.
 
-            It is important to note that the number of views received by a channel is influenced by many factors, such as the quality of the content, the relevance of the topics covered, and the promotion of the channel.
+                It is important to note that the number of views received by a channel is influenced by many factors, such as the quality of the content, the relevance of the topics covered, and the promotion of the channel.
                 """)
 
         if page == "Likes-Video Durations After":
