@@ -203,15 +203,23 @@ if page == "Turkish News Media's YouTube Stats":
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""The duration_count_after column shows the total number of seconds that viewers watched a particular channel after the earthquake, while the like_count_after column shows the total number of likes or approvals received by the channel after the earthquake.
+                st.markdown("""
 
-TV100 had the highest duration_count_after value of 2,580,813 seconds (717 hours and 53 minutes) and the highest like_count_after value of 482,840. CNN TÜRK and Halktv also had high like_count_after values of 558,924 and 665,555, respectively.
+                Based on the analysis of the duration_count_after and like_count_after columns of the media_stats_edited table, the following channels stand out:
 
-BaBaLa TV had the lowest duration_count_after and like_count_after values, with only 5,463 seconds (1 hour and 31 minutes) and 66,590 likes. Nevşin Mengü had a duration_count_after value of 178,286 seconds (49 hours and 31 minutes) and a like_count_after value of 385,602, while Cüneyt Özdemir had a duration_count_after value of 588,527 seconds (163 hours and 28 minutes) and a like_count_after value of 715,635.
+Halktv: with a duration_count_after of 3,212,914 and a like_count_after of 665,555, it has the highest number of both metrics among all channels analyzed. Its duration_count_after is 150% higher than the second highest, TV100, and its like_count_after is almost 300% higher than the second highest, Cüneyt Özdemir.
 
-The Anadolu Ajansı had a duration_count_after value of 108,839 seconds (30 hours and 13 minutes) and a like_count_after value of 143,924, while the BBC News Türkçe had a duration_count_after value of 15,118 seconds (4 hours and 11 minutes) and a like_count_after value of 121,299. FOX Haber had a high duration_count_after value of 1,394,832 seconds (387 hours and 27 minutes), but a relatively low like_count_after value of 169,821.
+TV100: with a duration_count_after of 2,580,813 and a like_count_after of 482,840, it has the second highest number of both metrics among all channels analyzed.
 
-Overall, the table suggests that after the earthquake in Turkey on February 6, 2023, TV100, CNN TÜRK, and Halktv were the most popular news channels, while BaBaLa TV had the lowest viewership.""")
+CNN TÜRK: with a duration_count_after of 3,109,924 and a like_count_after of 558,924, it has the third highest duration_count_after and the fourth highest like_count_after among all channels analyzed.
+
+Cüneyt Özdemir: with a duration_count_after of 588,527 and a like_count_after of 715,635, it has the third highest like_count_after among all channels analyzed.
+
+Yeni Şafak: with a duration_count_after of 34,365 and a like_count_after of 620,847, it has a high like_count_after considering its low duration_count_after.
+
+These results suggest that Halktv and TV100 are the most successful channels in terms of both video duration and likes, while Cüneyt Özdemir, CNN TÜRK, and Yeni Şafak also have relatively high numbers in terms of likes. It should be noted that these conclusions are based on a limited set of metrics and should be interpreted with caution.
+
+                """)
 
         if page == "Comments-Video Durations After":
             with channel_details:
