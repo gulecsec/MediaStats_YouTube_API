@@ -204,7 +204,7 @@ if page == "Turkish News Media's YouTube Stats":
                 st.plotly_chart(fig)
 
                 st.markdown("""<div style="text-align: center"></div>
-                """
+                """,
                     """
 
                 Based on the analysis of the duration_count_after and like_count_after columns of the media_stats_edited table, the following channels stand out:
