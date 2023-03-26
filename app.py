@@ -172,28 +172,10 @@ if page == "Turkish News Media's YouTube Stats":
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""The table above shows the duration count and view count of various Turkish news channels after the earthquake that occurred on 6th of Feb 2023 in Turkey.
-
-After the earthquake, TV100 had the highest duration count of 2,580,813 seconds (717 hours and 53 minutes) and the highest view count of 54,783,488.
-
-CNN TÜRK and Halktv also had high view counts of 71,164,841 and 66,710,949, respectively.
-
-BaBaLa TV had the lowest duration count and view count, with only 5,463 seconds (1 hour and 31 minutes) and 889,954
-views.
-
-Nevşin Mengü had a duration count of 178,286 seconds (49 hours and 31 minutes) and a view count of 7,692,572,
-while Cüneyt Özdemir had a duration count of 588,527 seconds (163 hours and 28 minutes) and
-a view count of 36,982,115.
-
-The Anadolu Ajansı had a duration count of 108,839 seconds (30 hours and 13 minutes) and a view
-count of 6,678,831, while the BBC News Türkçe had a duration count of 15,118 seconds (4 hours and 11 minutes) and a
-view count of 9,800,184.
-
-FOX Haber had a high duration count of 1,394,832 seconds (387 hours and 27 minutes), but a relatively low view
-count of 15,883,558.
-
-Overall, the table suggests that after the earthquake in Turkey on February 6, 2023, TV100, CNN TÜRK, and Halktv
-were the most popular news channels, while BaBaLa TV had the lowest viewership.""")
+                st.caption("""Based on the analysis of the media_stats_edited table, it can be concluded that the number of videos uploaded by a news media channel does not necessarily have a direct correlation with the number of views received.
+For example, the "Habertürk TV" channel has received the highest number of views after the data was collected, but has uploaded only 40 videos, which is lower than the number of videos uploaded by some of the other channels.
+It is important to note that the number of views received by a channel is influenced by many factors, such as the quality of the content, the relevance of the topics covered, and the promotion of the channel.
+                """)
 
         if page == "Likes-Video Durations After":
             with channel_details:
