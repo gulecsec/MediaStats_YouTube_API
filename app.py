@@ -299,7 +299,7 @@ Overall, it is difficult to draw a general conclusion without more context about
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""Views per video represent the average number of views per video for each channel, as well as the average number of views per video before and after the period of analysis.
+                st.markdown("""Views per video represent the average number of views per video for each channel, as well as the average number of views per video before and after the period of analysis.
 
 Comparing these values for each channel can provide insight into how their viewership has changed over time. For instance, BaBaLa TV had a very high average view count per video before the period of analysis, but this dropped significantly during the analysis period. On the other hand, channels like TRT Haber and FOX Haber saw a significant increase in average view counts per video after the analysis period.
 
