@@ -455,21 +455,20 @@ Additionally, the difference between the highest and lowest values for each colu
 
                 Looking at the data, we can see that some channels have had significant changes in their video count.
 
-Here are the percentage changes for each channel:
-Nevşin Mengü: 7.08%
-BaBaLa TV: 1.14%
-Cüneyt Özdemir: 7.55%
-TRT Haber: 2.83%
-BBC News Türkçe: 0.51%
-Yeni Şafak: 4.79%
-A Haber: 3.73%
-FOX Haber: 2.39%
-Habertürk: 1.59%
-TV100: 6.59%
-Anadolu Ajansı: 4.19%
-CNN TÜRK: 4.59%
-Halktv: 2.03%
-Erk Acarer: 7.25%
+Here are the percentage changes for each channel:""")
+
+                # Calculate the percentage change for each channel
+                edited_stats_df["Percentage Change"] = ((edited_stats_df["totalVideos"] - edited_stats_df["video_count_before"]) / edited_stats_df["video_count_before"]) * 100
+
+                # Create a line chart using Plotly
+                fig = px.line(edited_stats_df, x="channelName", y="Percentage Change", title="Video Count Changes by Channel")
+
+                # Display the chart in a Streamlit app
+                st.plotly_chart(fig)
+
+
+                st.markdown("""
+
 These percentages represent the increase or decrease in the number of videos uploaded by each channel before and after the disaster.
 
 Overall, it seems that the majority of channels have had a relatively small change in their video count, with most falling within a range of 1-5% increase or decrease.
