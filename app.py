@@ -462,8 +462,8 @@ Here are the percentage changes for each channel:""")
                 edited_stats_df = edited_stats_df.sort_values(by="Percentage Change", ascending=False)
 
                 # Create a line chart using Plotly
-                fig = px.line(edited_stats_df, x="channelName", y="Percentage Change", title="Video Count Changes by Channel", hover_data=["totalVideos", "video_count_before"])
-                fig.update_layout(yaxis=dict(title="Percentage Change"))
+                fig = px.bar(edited_stats_df, x="channelName", y="Percentage Change", title="Video Count Changes by Channel", hover_data=["totalVideos", "video_count_before"], color='Percentage Change', color_continuous_scale=px.colors.sequential.Plasma)
+                fig.update_layout(yaxis=dict(title="Percentage Change"), xaxis=dict(title="Channel Name"))
 
                 # Display the chart in a Streamlit app
                 st.plotly_chart(fig)
