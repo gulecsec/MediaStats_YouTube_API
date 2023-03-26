@@ -166,8 +166,6 @@ if page == "Turkish News Media's YouTube Stats":
 
                 fig.update_traces(name="Views",selector=dict(name="view_count_after"))
 
-                st.set_page_config(layout='wide')
-
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
@@ -205,9 +203,7 @@ if page == "Turkish News Media's YouTube Stats":
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""<div style="text-align: center"></div>
-                """,
-                    """
+                st.markdown("""
 
                 Based on the analysis of the duration_count_after and like_count_after columns of the media_stats_edited table, the following channels stand out:
 
