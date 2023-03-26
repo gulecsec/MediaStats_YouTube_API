@@ -375,7 +375,9 @@ For example, Halktv and Erk Acarer have both seen a significant increase in the 
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""In terms of percentage increase or decrease, Nevşin Mengü, Cüneyt Özdemir, and FOX Haber have increased their video duration by 47.2%, 24.4%, and 254.8% respectively.
+                st.markdown("""
+
+                In terms of percentage increase or decrease, Nevşin Mengü, Cüneyt Özdemir, and FOX Haber have increased their video duration by 47.2%, 24.4%, and 254.8% respectively.
 
                 On the other hand, TRT Haber, BBC News Türkçe, and Anadolu Ajansı have decreased their video duration by 76.5%, 181.7%, and 47.4% respectively.
 
