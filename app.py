@@ -466,7 +466,6 @@ Here are the percentage changes for each channel:""")
                 # Display the chart in a Streamlit app
                 st.plotly_chart(fig)
 
-
                 st.markdown("""
 
 These percentages represent the increase or decrease in the number of videos uploaded by each channel before and after the disaster.
