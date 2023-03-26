@@ -341,11 +341,15 @@ It's important to note that these changes in average view counts could be due to
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""Comments per video values show the average number of comments per video for each channel, both before and after the period covered in the data.
+                st.markdown("""
 
-Looking at the data, we can see that the channels with the highest comment_per_video are BaBaLa TV, Yeni Şafak, and Halktv, while the channels with the lowest comment_per_video are TRT Haber, Habertürk, and Anadolu Ajansı.
+                In terms of percentage increase or decrease, Nevşin Mengü, Cüneyt Özdemir, and FOX Haber have increased their video duration by 47.2%, 24.4%, and 254.8% respectively.
 
-Comparing the "comment_per_video" to the "comment_per_video_after" and "comment_per_video_before" columns, we can see that some channels have increased their average number of comments per video, while others have decreased. For example, Halktv and Erk Acarer have both seen a significant increase in the number of comments per video, while TRT Haber, Habertürk, and Anadolu Ajansı have remained relatively consistent.
+                On the other hand, TRT Haber, BBC News Türkçe, and Anadolu Ajansı have decreased their video duration by 76.5%, 181.7%, and 47.4% respectively.
+
+                In terms of overall duration, TV100 and Halktv have the longest video duration, while TRT Haber has the shortest.
+
+                It is important to note that the duration of a video does not necessarily determine its quality or success on the platform, as there are other factors such as content and engagement that play a significant role.
 
                 """)
 
@@ -373,7 +377,7 @@ Comparing the "comment_per_video" to the "comment_per_video_after" and "comment_
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""Duration per video values represent the average duration of videos published by each channel. The "duration_per_video_after" column shows the average duration of videos after the algorithmic change, while the "duration_per_video_before" column represents the average duration of videos before the change.
+                st.markdown("""Duration per video values represent the average duration of videos published by each channel. The "duration_per_video_after" column shows the average duration of videos after the algorithmic change, while the "duration_per_video_before" column represents the average duration of videos before the change.
 
 Looking at the values, it appears that some channels' average video durations have increased after the algorithmic change, while others have decreased. For example, Nevşin Mengü's videos have become longer after the change, with an average duration of 2785.7 seconds, compared to 1998.3 seconds before the change. In contrast, BabaLa TV's videos have become shorter, with an average duration of 1365.8 seconds after the change, compared to 2248.3 seconds before the change.
 
