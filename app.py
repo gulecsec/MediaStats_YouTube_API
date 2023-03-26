@@ -172,7 +172,7 @@ if page == "Turkish News Media's YouTube Stats":
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""
+                st.markdown("""
 
                 Based on the analysis of the data, it can be concluded that the number of videos uploaded by a news media channel does not necessarily have a direct correlation with the number of views received.
 
