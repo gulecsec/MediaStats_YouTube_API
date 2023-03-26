@@ -384,14 +384,14 @@ Looking at the values, it appears that some channels' average video durations ha
 Other channels, such as TRT Haber and BBC News Türkçe, also show a decrease in the average duration of their videos after the algorithmic change. On the other hand, Habertürk and Halktv have longer average video durations after the change.
 
 It is important to note that video duration is just one factor that can influence a video's performance on YouTube, and it's not clear how significant of an impact changes in video duration have on a channel's overall performance.
-                
+
                 """)
 
         if page == "Views per Likes":
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
-                view_per_like_df = edited_stats_df[['channelName', 'view_per_like_after', 'view_per_like_before']]
+                view_per_like_df = edited_stats_df[['channelName', 'view_per_like_after', 'view_per_like_before', 'view_per_like']]
 
                 # set the index to 'channelName' column
                 view_per_like_df = view_per_like_df.set_index('channelName')
@@ -403,6 +403,8 @@ It is important to note that video duration is just one factor that can influenc
 
                 fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
 
+                fig.update_traces(name="Before",selector=dict(name="view_per_like"))
+
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
@@ -413,7 +415,7 @@ It is important to note that video duration is just one factor that can influenc
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
-                video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before']]
+                video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before', 'video_count']]
 
                 # set the index to 'channelName' column
                 video_count_df = video_count_df.set_index('channelName')
@@ -424,6 +426,8 @@ It is important to note that video duration is just one factor that can influenc
                 fig.update_traces(name="After",selector=dict(name="video_count_after"))
 
                 fig.update_traces(name="Before",selector=dict(name="video_count_before"))
+
+                fig.update_traces(name="Before",selector=dict(name="video_count"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
