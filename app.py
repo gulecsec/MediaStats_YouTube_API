@@ -446,7 +446,7 @@ Additionally, the difference between the highest and lowest values for each colu
                 fig.update_traces(name="Up to 23/03/23",selector=dict(name="totalVideos"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                width=800, height=600,yaxis_title=None)
+                width=800, height=400,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
