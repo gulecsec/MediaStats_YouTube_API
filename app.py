@@ -455,14 +455,16 @@ Additionally, the difference between the highest and lowest values for each colu
 
                 Looking at the data, we can see that some channels have had significant changes in their video count.
 
-Here are the percentage changes for each channel:""")
+Here are the percentage changes for each channel:
+
+                """)
 
                 # Calculate the percentage change for each channel and sort Percentage Change values descending
                 edited_stats_df["Percentage Change"] = round(((edited_stats_df["totalVideos"] - edited_stats_df["video_count_before"]) / edited_stats_df["video_count_before"]) * 100,2)
                 edited_stats_df = edited_stats_df.sort_values(by="Percentage Change", ascending=False)
 
                 # Create a line chart using Plotly
-                fig = px.bar(edited_stats_df, x="channelName", y="Percentage Change", title="Video Count % Changes by Channel", hover_data=["totalVideos", "video_count_before"],
+                fig = px.bar(edited_stats_df, x="channelName", y="Percentage Change", title="", hover_data=["totalVideos", "video_count_before"],
                 color='Percentage Change', color_continuous_scale=px.colors.sequential.Plasma)
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
