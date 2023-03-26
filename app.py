@@ -267,7 +267,7 @@ It's interesting to note that although TV100 has the highest like count, it has 
 
                 fig.update_traces(name="Before",selector=dict(name="like_per_video_before"))
 
-                fig.update_traces(name="Up to Date",selector=dict(name="like_per_video"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="like_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -301,7 +301,7 @@ Overall, it is difficult to draw a general conclusion without more context about
 
                 fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
 
-                fig.update_traces(name="Before",selector=dict(name="view_per_video"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="view_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -333,7 +333,7 @@ It's important to note that these changes in average view counts could be due to
 
                 fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
 
-                fig.update_traces(name="Before",selector=dict(name="comment_per_video"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="comment_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -367,7 +367,7 @@ For example, Halktv and Erk Acarer have both seen a significant increase in the 
 
                 fig.update_traces(name="Before",selector=dict(name="duration_per_video_before"))
 
-                fig.update_traces(name="Before",selector=dict(name="duration_per_video"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="duration_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -413,6 +413,17 @@ It is important to note that the duration of a video does not necessarily determ
 
                 st.markdown("""
 
+                Based on the observations above, we can conclude that:
+
+The average number of views per like after 2nd Feb 2023 is posted is lower than the overall average and the number of views per like before.
+
+Habertürk has the highest value in both the number of views per like after and overall views per like.
+
+TRT Haber has the highest value in the number of views per like before the video is posted, but this value is not a strong predictor of overall views per like.
+
+In terms of percentages, we can say that the average number of views per like after a video is posted is 107.3% lower than the average number of views per like before the video is posted, and 36.8% lower than the overall average number of views per like.
+
+Additionally, the difference between the highest and lowest values for each column is quite significant, ranging from 12.5% to 757.5%.
 
                 """)
 
@@ -432,7 +443,7 @@ It is important to note that the duration of a video does not necessarily determ
 
                 fig.update_traces(name="Before",selector=dict(name="video_count_before"))
 
-                fig.update_traces(name="Before",selector=dict(name="video_count"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="video_count"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -456,7 +467,7 @@ It is important to note that the duration of a video does not necessarily determ
 
                 fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
 
-                fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_mins"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="avg_monthly_total_mins"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -483,7 +494,7 @@ It is important to note that the duration of a video does not necessarily determ
 
                 fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_likes_before"))
 
-                fig.update_traces(name="Up to Date",selector=dict(name="avg_monthly_total_likes"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="avg_monthly_total_likes"))
 
                 # display the chart
                 st.plotly_chart(fig)
