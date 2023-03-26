@@ -379,11 +379,11 @@ For example, Halktv and Erk Acarer have both seen a significant increase in the 
 
                 In terms of percentage increase or decrease, Nevşin Mengü, Cüneyt Özdemir, and FOX Haber have increased their video duration by 47.2%, 24.4%, and 254.8% respectively.
 
-                On the other hand, TRT Haber, BBC News Türkçe, and Anadolu Ajansı have decreased their video duration by 76.5%, 181.7%, and 47.4% respectively.
+On the other hand, TRT Haber, BBC News Türkçe, and Anadolu Ajansı have decreased their video duration by 76.5%, 181.7%, and 47.4% respectively.
 
-                In terms of overall duration, TV100 and Halktv have the longest video duration, while TRT Haber has the shortest.
+In terms of overall duration, TV100 and Halktv have the longest video duration, while TRT Haber has the shortest.
 
-                It is important to note that the duration of a video does not necessarily determine its quality or success on the platform, as there are other factors such as content and engagement that play a significant role.
+It is important to note that the duration of a video does not necessarily determine its quality or success on the platform, as there are other factors such as content and engagement that play a significant role.
 
                 """)
 
