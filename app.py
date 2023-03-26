@@ -466,7 +466,7 @@ Here are the percentage changes for each channel:""")
                 color='Percentage Change', color_continuous_scale=px.colors.sequential.Plasma)
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                width=800, height=600,yaxis_title=None,yaxis=dict(title="% Change"))
+                width=800, height=600,yaxis_title=None)
 
                 # Display the chart in a Streamlit app
                 st.plotly_chart(fig)
