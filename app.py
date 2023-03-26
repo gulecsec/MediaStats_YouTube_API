@@ -455,7 +455,8 @@ Additionally, the difference between the highest and lowest values for each colu
 
                 Looking at the data, we can see that some channels have had significant changes in their video count.
 
-Here are the percentage changes for each channel:""")
+Here are the percentage changes for each channel:
+""")
                 # Calculate the percentage change for each channel and sort Percentage Change values descending
                 edited_stats_df["Percentage Change"] = round(((edited_stats_df["totalVideos"] - edited_stats_df["video_count_before"]) / edited_stats_df["video_count_before"]) * 100,2)
                 edited_stats_df = edited_stats_df.sort_values(by="Percentage Change", ascending=False)
