@@ -309,9 +309,9 @@ Overall, it is difficult to draw a general conclusion without more context about
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""Views per video represent the average number of views per video for each channel, as well as the average number of views per video before and after the period of analysis.
+                st.markdown("""Views per video represent the average number of views per video for each channel, as well as the average number of views per video before and after the period of natural disaster.
 
-Comparing these values for each channel can provide insight into how their viewership has changed over time. For instance, BaBaLa TV had a very high average view count per video before the period of analysis, but this dropped significantly during the analysis period. On the other hand, channels like TRT Haber and FOX Haber saw a significant increase in average view counts per video after the analysis period.
+Comparing these values for each channel can provide insight into how their viewership has changed over time. For instance, BaBaLa TV had a very high average view count per video before the period, but this dropped significantly after the incident. On the other hand, channels like TRT Haber and FOX Haber saw a significant increase in average view counts per video after the earthquake.
 
 It's important to note that these changes in average view counts could be due to a variety of factors, such as changes in content strategy or promotion efforts. Therefore, further analysis would be needed to determine the specific reasons behind these changes.
 
