@@ -241,7 +241,9 @@ These results suggest that Halktv and TV100 are the most successful channels in 
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""The table above shows the like count and comment count for various Turkish news channels. Among the channels, TV100 has the highest like count with 482,840 likes, followed by Halktv with 665,555 likes and CNN TÜRK with 558,924 likes. On the other hand, Habertürk has the lowest like count with only 32,148 likes.
+                st.markdown("""
+
+                The table above shows the like count and comment count for various Turkish news channels. Among the channels, TV100 has the highest like count with 482,840 likes, followed by Halktv with 665,555 likes and CNN TÜRK with 558,924 likes. On the other hand, Habertürk has the lowest like count with only 32,148 likes.
 
 In terms of comment count, Halktv has the highest count with 156,956 comments, followed by CNN TÜRK with 126,936 comments and TV100 with 106,354 comments. The lowest comment count is for BaBaLa TV with only 4,377 comments.
 
@@ -273,7 +275,9 @@ It's interesting to note that although TV100 has the highest like count, it has 
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.caption("""Looking at the values, we can see that for some channels like Nevşin Mengü, Cüneyt Özdemir, and A Haber, the like_per_video_after is slightly higher than the like_per_video_before. On the other hand, for channels like BaBaLa TV, FOX Haber, and Habertürk, the like_per_video_after is significantly lower than the like_per_video_before.
+                st.markdown("""
+
+                Looking at the values, we can see that for some channels like Nevşin Mengü, Cüneyt Özdemir, and A Haber, the like_per_video_after is slightly higher than the like_per_video_before. On the other hand, for channels like BaBaLa TV, FOX Haber, and Habertürk, the like_per_video_after is significantly lower than the like_per_video_before.
 
 For some channels like Yeni Şafak, Anadolu Ajansı, and CNN TÜRK, there is not much difference between the like_per_video_before and like_per_video_after values. However, for channels like Halktv and Erk Acarer, the like_per_video_after values are considerably higher than the like_per_video_before values.
 
