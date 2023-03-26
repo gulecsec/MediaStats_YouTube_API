@@ -184,11 +184,11 @@ if page == "Turkish News Media's YouTube Stats":
                 col1 = st.columns(1)
 
                 with col1:
-                    """
-                    ## Column 1
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua. Volutpat sed cras ornare arcu dui vivamus."""
+                            """
+                            ## Column 1
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua. Volutpat sed cras ornare arcu dui vivamus."""
 
 
                 fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
@@ -218,8 +218,6 @@ if page == "Turkish News Media's YouTube Stats":
 
                 # set the index to 'channelName' column
                 like_count_df = like_count_df.set_index('channelName')
-
-                st.set_page_config(layout='wide')
 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(like_count_df, barmode='group', title="Likes-Video Durations After 6th of Feb")
