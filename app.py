@@ -431,7 +431,7 @@ Additionally, the difference between the highest and lowest values for each colu
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
-                video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before', 'video_count']]
+                video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before', 'totalVideos']]
 
                 # set the index to 'channelName' column
                 video_count_df = video_count_df.set_index('channelName')
@@ -443,13 +443,17 @@ Additionally, the difference between the highest and lowest values for each colu
 
                 fig.update_traces(name="Before",selector=dict(name="video_count_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="video_count"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="totalVideos"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
+
+                st.markdown("""
+
+                """)
 
         if page == "Monthly Average Video Mins":
             with channel_details:
@@ -498,6 +502,7 @@ Additionally, the difference between the highest and lowest values for each colu
 
                 # display the chart
                 st.plotly_chart(fig)
+
 
         elif page == "Subscribers per Video":
             with channel_details:
