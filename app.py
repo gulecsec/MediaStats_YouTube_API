@@ -456,21 +456,23 @@ Additionally, the difference between the highest and lowest values for each colu
                 Looking at the data, we can see that some channels have had significant changes in their video count.
 
 Here are the percentage changes for each channel:
+Nevşin Mengü: 7.08%,
+BaBaLa TV: 1.14%,
 
-Nevşin Mengü: 7.08%
-BaBaLa TV: 1.14%
-Cüneyt Özdemir: 7.55%
-TRT Haber: 2.83%
-BBC News Türkçe: 0.51%
-Yeni Şafak: 4.79%
-A Haber: 3.73%
-FOX Haber: 2.39%
-Habertürk: 1.59%
-TV100: 6.59%
-Anadolu Ajansı: 4.19%
-CNN TÜRK: 4.59%
-Halktv: 2.03%
-Erk Acarer: 7.25%
+Cüneyt Özdemir: 7.55%,
+
+TRT Haber: 2.83%,
+
+BBC News Türkçe: 0.51%,
+Yeni Şafak: 4.79%,
+A Haber: 3.73%,
+FOX Haber: 2.39%,
+Habertürk: 1.59%,
+TV100: 6.59%,
+Anadolu Ajansı: 4.19%,
+CNN TÜRK: 4.59%,
+Halktv: 2.03%,
+Erk Acarer: 7.25%,
 
 These percentages represent the increase or decrease in the number of videos uploaded by each channel between the "video_count_before" and "video_count_after" columns.
 
