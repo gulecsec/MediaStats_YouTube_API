@@ -403,13 +403,18 @@ It is important to note that the duration of a video does not necessarily determ
 
                 fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
 
-                fig.update_traces(name="Before",selector=dict(name="view_per_like"))
+                fig.update_traces(name="Up to 23/03/23",selector=dict(name="view_per_like"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
+
+                st.markdown("""
+
+
+                """)
 
         if page == "Uploaded Video Count":
             with channel_details:
