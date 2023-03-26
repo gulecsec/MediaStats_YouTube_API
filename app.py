@@ -205,7 +205,7 @@ if page == "Turkish News Media's YouTube Stats":
 
                 st.markdown("""
 
-                Based on the analysis of the duration_count_after and like_count_after columns of the media_stats_edited table, the following channels stand out:
+                Based on the analysis of the durations and likes counts calculated from the data, the following channels stand out:
 
 Halktv: with a duration_count_after of 3,212,914 and a like_count_after of 665,555, it has the highest number of both metrics among all channels analyzed. Its duration_count_after is 150% higher than the second highest, TV100, and its like_count_after is almost 300% higher than the second highest, Cüneyt Özdemir.
 
@@ -217,9 +217,7 @@ Cüneyt Özdemir: with a duration_count_after of 588,527 and a like_count_after 
 
 Yeni Şafak: with a duration_count_after of 34,365 and a like_count_after of 620,847, it has a high like_count_after considering its low duration_count_after.
 
-These results suggest that Halktv and TV100 are the most successful channels in terms of both video duration and likes, while Cüneyt Özdemir, CNN TÜRK, and Yeni Şafak also have relatively high numbers in terms of likes. It should be noted that these conclusions are based on a limited set of metrics and should be interpreted with caution.
-
-                """)
+These results suggest that Halktv and TV100 are the most successful channels in terms of both video duration and likes, while Cüneyt Özdemir, CNN TÜRK, and Yeni Şafak also have relatively high numbers in terms of likes. It should be noted that these conclusions are based on a limited set of metrics and should be interpreted with caution.                """)
 
         if page == "Comments-Video Durations After":
             with channel_details:
