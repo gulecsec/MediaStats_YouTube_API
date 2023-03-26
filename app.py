@@ -453,6 +453,18 @@ Additionally, the difference between the highest and lowest values for each colu
 
                 st.markdown("""
 
+                Looking at the data, we can see that some channels have had significant changes in their video count.
+
+                Overall, it seems that the majority of channels have had a relatively small change in their video count, with most falling within a range of 1-5% increase or decrease.
+
+However, it's important to note that these changes may not necessarily be significant in the context of each channel's total video count. For example, a 1% increase for a channel with only a few videos may be less significant than a 1% increase for a channel with thousands of videos.
+
+Therefore, while these percentage changes can give us some insight into each channel's recent activity, they should be interpreted with caution and in the context of each channel's overall content strategy.
+
+
+
+
+
                 """)
 
         if page == "Monthly Average Video Mins":
