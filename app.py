@@ -198,29 +198,30 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
         if page == "Likes-Video Durations After":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'mins_count_after', and 'like_count_after' columns
-                like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
+                # Select columns of interest
+                df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
-                # sort the values by 'like_count_after'
-                like_mins_df = like_mins_df.sort_values(by='like_count_after')
+                # Calculate Like per Minute and add as a new column
+                df['Like per Minute'] = df['like_count_after'] / df['mins_count_after']
 
-                # set the index to 'channelName' column
-                like_mins_df = like_mins_df.set_index('channelName')
+                # Sort by Like count
+                df = df.sort_values(by='like_count_after')
 
-                # Calculate the like per minute values
-                like_per_min = edited_stats_df['like_count_after'] / edited_stats_df['mins_count_after']
-                like_mins_df['Like per Minute'] = like_per_min
+                # Set Channel Name as index
+                df.set_index('channelName', inplace=True)
 
-                # create the scatter plot
-                fig = px.scatter(like_mins_df, x='like_count_after', y='mins_count_after', size='Like per Minute', color='channelName',
-                hover_name='channelName', log_x=True, log_y=True, size_max=50,
-                title='Like Count vs Minutes Count (Size = Like per Minute)')
+                # Create the scatter plot
+                fig = px.scatter(df, x='like_count_after', y='mins_count_after', size='Like per Minute', color='channelName',
+                                hover_name='channelName', log_x=True, log_y=True, size_max=50,
+                                title='Like Count vs Minutes Count (Size = Like per Minute)')
 
+                # Update the x-axis and y-axis titles
                 fig.update_xaxes(title_text='Like Count After')
                 fig.update_yaxes(title_text='Minutes Count After')
 
-                # display the chart
+                # Display the plot
                 st.plotly_chart(fig)
+
 
 
                 st.markdown("""a
