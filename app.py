@@ -165,7 +165,7 @@ if page == "Turkish News Media's YouTube Stats":
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(view_count_df, x='view_count_after', y=view_count_df.index,
                 color='mins_count_after',orientation='h',
-                title="Total Video Minutes - Channel Views After 6th of Feb",
+                title="Channel Views - Total Video Minutes After 6th of Feb",
                 color_continuous_scale='Blues')
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
@@ -198,8 +198,8 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
         if page == "Likes-Video Durations After":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
-                like_count_df = edited_stats_df[['channelName', 'duration_count_after', 'like_count_after']]
+                # create a new DataFrame with 'channelName', 'mins_count_after', and 'like_count_after' columns
+                like_count_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
                 # set the index to 'channelName' column
                 like_count_df = like_count_df.set_index('channelName')
@@ -207,7 +207,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(like_count_df, barmode='group', title="Likes-Video Durations After 6th of Feb")
 
-                fig.update_traces(name="Durations",selector=dict(name="duration_count_after"))
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
                 fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
 
