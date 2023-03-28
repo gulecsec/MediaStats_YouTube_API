@@ -236,7 +236,24 @@ Cüneyt Özdemir: with a duration_count_after of 588,527 and a like_count_after 
 
 Yeni Şafak: with a duration_count_after of 34,365 and a like_count_after of 620,847, it has a high like_count_after considering its low duration_count_after.
 
-These results suggest that Halktv and TV100 are the most successful channels in terms of both video duration and likes, while Cüneyt Özdemir, CNN TÜRK, and Yeni Şafak also have relatively high numbers in terms of likes. It should be noted that these conclusions are based on a limited set of metrics and should be interpreted with caution.                """)
+These results suggest that Halktv and TV100 are the most successful channels in terms of both video duration and likes, while Cüneyt Özdemir, CNN TÜRK, and Yeni Şafak also have relatively high numbers in terms of likes. It should be noted that these conclusions are based on a limited set of metrics and should be interpreted with caution.
+
+                """)
+
+                # Calculate the like per minute values
+                like_per_min = df['like_count_after'] / df['mins_count_after']
+
+                # Calculate the percentage of total likes per minute across all channels
+                like_per_min_pct = like_per_min / like_per_min.sum() * 100
+
+                # Create a pie chart with the like per minute percentage for each channel
+                fig = go.Figure(data=go.Pie(labels=df['channelName'], values=like_per_min_pct))
+
+                # Set the title of the pie chart
+                fig.update_layout(title_text='Percentage of Likes per Minute for each Channel')
+
+                # Show the plot
+                fig.show()
 
         if page == "Comments-Video Durations After":
             with channel_details:
