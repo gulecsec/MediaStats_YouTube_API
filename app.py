@@ -207,34 +207,6 @@ Overall, the view per minute metric provides a better measure of the popularity 
         if page == "Likes-Video Durations After":
             with channel_details:
 
-                # # Select columns of interest
-                # like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
-
-                # # sort the values by 'like_count_after'
-                # like_mins_df = like_mins_df.sort_values(by='like_count_after')
-
-                # # Calculate the like per minute values
-                # like_per_min = like_mins_df['like_count_after'] / like_mins_df['mins_count_after']
-                # like_mins_df['Like per Minute'] = like_per_min
-
-                # # set the index to 'channelName' column
-                # like_mins_df = like_mins_df.set_index('channelName')
-
-                # # generate a horizontal bar chart using Plotly
-                # fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
-                # color='mins_count_after', orientation='h',
-                # title="Channel Likes - Total Video Minutes After 6th of Feb",
-                # color_continuous_scale='Reds', text=like_per_min.round(0))
-
-                # fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
-                # xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
-                # coloraxis_colorbar=dict(title="Minutes"))
-
-                # fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
-
-                # # display the chart
-                # st.plotly_chart(fig)
-
                 # Select columns of interest
                 like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
@@ -248,57 +220,17 @@ Overall, the view per minute metric provides a better measure of the popularity 
                 # set the index to 'channelName' column
                 like_mins_df = like_mins_df.set_index('channelName')
 
-                # generate dual horizontal bar charts using Plotly
-                fig = make_subplots(rows=1, cols=2, shared_yaxes=True, horizontal_spacing=0.05)
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
+                color='mins_count_after', orientation='h',
+                title="Channel Likes - Total Video Minutes After 6th of Feb",
+                color_continuous_scale='Reds', text=like_per_min.round(0))
 
-                fig.add_trace(
-                    go.Bar(
-                        x=like_mins_df['like_count_after'],
-                        y=like_mins_df.index,
-                        orientation='h',
-                        name='Likes',
-                        marker=dict(
-                            color=like_mins_df['mins_count_after'],
-                            colorscale='Reds'
-                        ),
-                        text=like_per_min.round(0),
-                        textposition='inside'
-                    ),
-                    row=1, col=1
-                )
+                fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
+                xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+                coloraxis_colorbar=dict(title="Minutes"))
 
-                fig.add_trace(
-                    go.Bar(
-                        x=like_mins_df['mins_count_after'],
-                        y=like_mins_df.index,
-                        orientation='h',
-                        name='Minutes',
-                        marker=dict(
-                            color=like_mins_df['mins_count_after'],
-                            colorscale='Reds'
-                        ),
-                        text=like_mins_df['mins_count_after'].apply(lambda x: f"{x:,.0f}"),
-                        textposition='inside'
-                    ),
-                    row=1, col=2
-                )
-
-                fig.update_layout(
-                    title="Channel Likes and Total Video Minutes After 6th of Feb",
-                    xaxis_title=None,
-                    yaxis_title=None,
-                    legend=dict(
-                        orientation='h',
-                        yanchor='top',
-                        y=1.1,
-                        xanchor='left',
-                        x=0.01
-                    ),
-                    legend_title="",
-                    width=1000,
-                    height=600,
-                    coloraxis_colorbar=dict(title="Minutes")
-                )
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
                 # display the chart
                 st.plotly_chart(fig)
