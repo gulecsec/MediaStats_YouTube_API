@@ -370,7 +370,7 @@ This suggests that these channels may have a more engaged audience, with viewers
 
                 st.markdown("""
 
-                The data shows the number of views per video for different Turkish news channels before and after February 6th, 2023.
+                The graph shows the number of views per video for different Turkish news channels before and after February 6th, 2023.
 
 Before February 6th, 2023, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After the natural disaster the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
 
