@@ -153,6 +153,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Channel Views - Total Video Minutes After 6th of Feb":
             with channel_details:
+
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
                 view_count_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
 
@@ -183,15 +184,19 @@ if page == "Turkish News Media's YouTube Stats":
 
                 st.markdown("""
 
-                From the data, we can see the values for the minutes and views for various news channels after the natural disaster.
+                From the given values, we can conclude that there is a significant variation in the view per minute for different media channels.
 
-CNN TÜRK has the highest with 56,479.9 minutes, while BaBaLa TV has the lowest with 101.6 minutes.
+The highest view per minute is for BBC News Türkçe, which is more than 39,000 views per minute, followed by Yeni Şafak with more than 39,000 views per minute.
 
-In terms of views, CNN TÜRK again has the highest value with 76,842,958 views, while BaBaLa TV has the lowest value with 949,934 views.
+TRT Haber also has a high view per minute with more than 14,000 views per minute.
 
-When comparing the Minutes and Views, we can see that there is not always a direct correlation between the two.
+On the other hand, FOX Haber and CNN Türk have the lowest view per minute, with only 699 and 1361 views per minute, respectively.
 
-For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, but a relatively low value of 38,785,815 views.
+Moreover, we can also observe that the minutes count after and view count after do not necessarily correspond to a higher view per minute.
+
+For instance, A Haber has a lower view per minute, even though it has a higher view count after and minutes count after compared to some other channels such as Halktv and SÖZCÜ Televizyonu.
+
+Overall, the view per minute metric provides a better measure of the popularity of a channel, as it considers the engagement of the viewers with the content in a given period.
 
                 """)
 
@@ -243,6 +248,10 @@ However, in terms of "Minutes Count After", Halktv has the highest value with 58
 Overall, it can be concluded that while some channels may have a higher "Like per Minute" rate, it is important to also consider the total number of minutes and likes, as these values can provide more context and a more comprehensive picture of a channel's performance on YouTube.
 
                 """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Comments-Video Durations After":
             with channel_details:
