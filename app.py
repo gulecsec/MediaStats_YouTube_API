@@ -544,13 +544,18 @@ Therefore, while these percentage changes can give us some insight into each cha
                 monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
 
                 # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-                avg_monthly_mins_df = monthly_df[['channelName', 'mins_after_per_month']]
+                avg_monthly_mins_df = monthly_df[['channelName', 'mins_after_per_month', "Month"]]
 
                 # set the index to 'channelName' column
-                avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
+                avg_monthly_mins_df = avg_monthly_mins_df.set_index(['channelName', 'Month'])
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins")
+                fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins",
+                color='Month', category_orders={'Month': ['Feb', 'Mar']})
+
+                fig.update_layout(xaxis_title=None, yaxis_title=None,
+                legend=dict(orientation='h', yanchor='top', y=1.1, xanchor='left', x=0.01),
+                legend_title="", width=800, height=600)
 
                 # fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
 
@@ -558,8 +563,8 @@ Therefore, while these percentage changes can give us some insight into each cha
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="avg_monthly_total_mins"))
 
-                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                width=800, height=600,yaxis_title=None)
+                # fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                # width=800, height=600,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
