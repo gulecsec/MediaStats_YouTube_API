@@ -154,14 +154,14 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Views-Video Durations After":
             with channel_details:
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
-                view_count_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
+                view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
 
                 # set the index to 'channelName' column
-                view_count_df = view_count_df.set_index('channelName')
+                view_mins_df = view_mins_df.set_index('channelName')
 
-                # generate a horizontal bar chart using Plotly
-                fig = px.bar(view_count_df, barmode='group', title="Total Video Minutes - Channel Views After 6th of Feb",
-                color_discrete_sequence=['#2ca02c', '#1f77b4'])
+                # generate a scatter plot using Plotly
+                fig = px.scatter(view_mins_df, x="view_count_after", y="mins_count_after", title="Total Video Minutes vs Channel Views After 6th of Feb",
+                 color_discrete_sequence=['#2ca02c'])
 
                 fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"), marker_color='#ff7f0e')
 
