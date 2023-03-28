@@ -159,9 +159,14 @@ if page == "Turkish News Media's YouTube Stats":
                 # set the index to 'channelName' column
                 view_mins_df = view_mins_df.set_index('channelName')
 
+                fig = px.bar(data_frame=view_mins_df.sort_values('view_count_after', ascending=False),
+                          x="channelName", y="view_count_after", color='mins_count_after',
+                          title="Total Video Minutes vs Channel Views After 6th of Feb")
+
                 # generate a scatter plot using Plotly
-                fig = px.scatter(view_mins_df, x="view_count_after", y="mins_count_after", title="Total Video Minutes vs Channel Views After 6th of Feb",
-                 color_discrete_sequence=['#2ca02c'])
+                # fig = px.scatter(view_mins_df, x="view_count_after", y="mins_count_after",
+                # title="Total Video Minutes vs Channel Views After 6th of Feb",
+                #  color_discrete_sequence=['#2ca02c'])
 
                 fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"), marker_color='#ff7f0e')
 
