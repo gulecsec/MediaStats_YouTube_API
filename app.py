@@ -203,7 +203,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
 
                 # Calculate the like per minute values
                 like_per_min = like_mins_df['like_count_after'] / like_mins_df['mins_count_after']
-                like_mins_df['Like per Minute'] = like_per_min.astype(int)
+                like_mins_df['Like per Minute'] = like_per_min.round(0)
 
                 # sort the values by 'like_count_after'
                 like_mins_df = like_mins_df.sort_values(by='like_count_after')
