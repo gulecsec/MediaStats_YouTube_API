@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 # Load data
-stats_df = pd.read_csv("media_stats.csv")
+stats_df = pd.read_csv("All_stats/media_stats.csv")
 
 # Define page layout
 header = st.container()
@@ -143,7 +143,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.title("Turkish News Media's YouTube Stats")
 
         # Load Each Channel Data
-        edited_stats_df = pd.read_csv("media_stats_edited.csv")
+        edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
 
         # Define sidebar
         st.sidebar.title("Video Stats")
