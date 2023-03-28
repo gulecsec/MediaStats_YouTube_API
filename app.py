@@ -307,20 +307,11 @@ Meanwhile, the channels with lower engagement rates could use this information t
         if page == "Likes per Video":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'like_per_video_after', and 'like_coulike_per_video_beforent_after' columns
-                like_per_video_df = edited_stats_df[['channelName', 'like_per_video_after', 'video_count_after']]
-
-                # sort the values by 'like_count_after'
-                like_per_video_df = like_per_video_df.sort_values(by='like_per_video_after', ascending=False)
-
-                # set the index to 'channelName' column
-                like_per_video_df = like_per_video_df.set_index('channelName')
-
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(data_frame=like_per_video_df.sort_values('like_per_video_after', ascending=False),
+                fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
                 x="channelName", y="like_per_video_after", color='video_count_after')
 
-                fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
+                # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
                 fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
