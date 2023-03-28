@@ -203,10 +203,10 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
 
                 # Calculate the like per minute values
                 like_per_min = edited_stats_df['like_count_after'] / edited_stats_df['mins_count_after']
-                like_mins_df['Like per Minute'] = like_per_min
+                df['Like per Minute'] = like_per_min
 
                 # create the bubble chart
-                fig = px.scatter(like_mins_df, x='like_count_after', y='mins_count_after', size='Like per Minute', color='channelName',
+                fig = px.scatter(df, x='like_count_after', y='mins_count_after', size='Like per Minute', color='channelName',
                                 hover_name='channelName', log_x=True, log_y=True, size_max=50,
                                 title='Like Count vs Minutes Count (Size = Like per Minute)')
 
