@@ -455,7 +455,7 @@ It is important to note that the number of videos produced does not necessarily 
                 x="channelName", y="view_per_like_after", color='view_count_after', color_continuous_scale='Inferno',
                 title="Views per Likes After 6th of Feb")
 
-                fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                fig.update_layout(coloraxis_colorbar=dict(title="Views"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
                 # display the chart
