@@ -228,9 +228,9 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
 
                 st.markdown("""
 
-                Based on the data provided, it appears that the channels with the highest "Like per Minute" are Yeni Şafak, BaBaLa TV, and Nevşin Mengü, with values of 763.17, 708.86, and 131.34, respectively.
+                Based on the data provided, it appears that the channels with the highest "Like per Minute" are Yeni Şafak and BaBaLa TV, with values of 764 and 709, respectively.
 
-On the other hand, the channels with the lowest "Like per Minute" are FOX Haber, CNN TÜRK, and Halktv, with values of 7.40, 10.77, and 12.78, respectively.
+On the other hand, the channels with the lowest "Like per Minute" are FOX Haber, CNN TÜRK, and Halktv, with values of 7, 11, and 13, respectively.
 
 In terms of total "Like Count After", Cüneyt Özdemir has the highest value with 761,719 likes, followed by Yeni Şafak with 656,476 likes.
 
