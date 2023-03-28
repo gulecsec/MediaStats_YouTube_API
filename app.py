@@ -192,7 +192,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 """)
 
                 # Add footer to the page
-                st.markdown("<p style='text-align: center;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
         if page == "Likes-Video Durations After":
