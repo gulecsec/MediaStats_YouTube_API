@@ -187,7 +187,7 @@ if page == "Turkish News Media's YouTube Stats":
 
                 st.markdown("""
 
-                From the media_stats_edited table, we can see the values for the mins_count_after and view_count_after columns for various news channels.
+                From the data, we can see the values for the minutes and views for various news channels after the natural disaster.
 
 CNN TÜRK has the highest mins_count_after with 56,479.9 minutes, while BaBaLa TV has the lowest with 101.6 minutes.
 
