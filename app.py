@@ -546,20 +546,29 @@ Therefore, while these percentage changes can give us some insight into each cha
                 # Pivot the data to create a new DataFrame with columns for each month
                 pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
 
-                # Calculate the like per minute values
-                monthly_video_count = monthly_df['monthly_video_count_after']
+                # Create a new DataFrame with the monthly_video_count_after values
+                monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after']]
 
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values='monthly_video_count_after')
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
-                labels={'value': 'Minutes'})
+                            labels={'value': 'Minutes'})
+
+                # Add the text to the chart
+                for i in range(len(pivoted_count_df)):
+                    for j in range(len(pivoted_count_df.columns)):
+                        fig.add_annotation(x=pivoted_count_df.columns[j], y=pivoted_df.iloc[i, j],
+                                        text=pivoted_count_df.iloc[i, j], showarrow=False, font=dict(color='white'))
 
                 # Customize the layout
-                fig.update_layout(xaxis_title=None, yaxis_title=None,legend=dict(orientation='h',
-                yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="",width=800,height=600,text=monthly_video_count)
+                fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-                # display the chart
+                # Display the chart
                 st.plotly_chart(fig)
+
 
         if page == "Monthly Average Video Likes":
             with channel_details:
