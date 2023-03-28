@@ -201,7 +201,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'like_count_after' columns
                 like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
-                # sort the values by 'view_count_after'
+                # sort the values by 'like_count_after'
                 like_mins_df = like_mins_df.sort_values(by='like_count_after')
 
                 # set the index to 'channelName' column
@@ -213,14 +213,15 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
 
                 # create the scatter plot
                 fig = px.scatter(like_mins_df, x='like_count_after', y='mins_count_after', size='Like per Minute', color='channelName',
-                hover_name='channelName', log_x=True, log_y=True, size_max=50,
-                title='Like Count vs Minutes Count (Size = Like per Minute)')
+                            hover_name='channelName', log_x=True, log_y=True, size_max=50,
+                            title='Like Count vs Minutes Count (Size = Like per Minute)')
 
                 fig.update_xaxes(title_text='Like Count After')
                 fig.update_yaxes(title_text='Minutes Count After')
 
                 # display the chart
                 st.plotly_chart(fig)
+
 
                 st.markdown("""
 
