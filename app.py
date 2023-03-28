@@ -552,11 +552,11 @@ Therefore, while these percentage changes can give us some insight into each cha
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins")
 
-                fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
+                # fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
 
-                fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
+                # fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
 
-                fig.update_traces(name="Up to 27/03/23",selector=dict(name="avg_monthly_total_mins"))
+                # fig.update_traces(name="Up to 27/03/23",selector=dict(name="avg_monthly_total_mins"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
