@@ -224,19 +224,37 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
 
                 st.markdown("""
 
+                Based on the analysis of the durations and likes counts calculated from the data, the following channels stand out:
+
+Halktv: with a duration_count_after of 3,212,914 and a like_count_after of 665,555, it has the highest number of both metrics among all channels analyzed. Its duration_count_after is 150% higher than the second highest, TV100, and its like_count_after is almost 300% higher than the second highest, Cüneyt Özdemir.
+
+TV100: with a duration_count_after of 2,580,813 and a like_count_after of 482,840, it has the second highest number of both metrics among all channels analyzed.
+
+CNN TÜRK: with a duration_count_after of 3,109,924 and a like_count_after of 558,924, it has the third highest duration_count_after and the fourth highest like_count_after among all channels analyzed.
+
+Cüneyt Özdemir: with a duration_count_after of 588,527 and a like_count_after of 715,635, it has the third highest like_count_after among all channels analyzed.
+
+Yeni Şafak: with a duration_count_after of 34,365 and a like_count_after of 620,847, it has a high like_count_after considering its low duration_count_after.
+
+These results suggest that Halktv and TV100 are the most successful channels in terms of both video duration and likes, while Cüneyt Özdemir, CNN TÜRK, and Yeni Şafak also have relatively high numbers in terms of likes. It should be noted that these conclusions are based on a limited set of metrics and should be interpreted with caution.
+
                 """)
 
-                # calculate percentage of like per minute values for each channel
-                like_per_min = [like/min for like, min in zip(like_count_after, mins_count_after)]
-                like_per_min_percent = [round((value/sum(like_per_min))*100,2) for value in like_per_min]
+                # Calculate the like per minute values
+                like_per_min = edited_stats_df['like_count_after'] / edited_stats_df['mins_count_after']
 
-                # plot pie chart
-                fig, ax = plt.subplots(figsize=(8, 6))
-                labels = edited_stats_df["channelName"].tolist()
-                ax.pie(like_per_min_percent, labels=labels, autopct='%1.1f%%', startangle=90)
-                ax.axis('equal')
+                # Calculate the percentage of total likes per minute across all channels
+                like_per_min_pct = like_per_min / like_per_min.sum() * 100
 
-                plt.title("Percentage of Like per Minute Values for each Channel")
+                # Set the figure size
+                plt.figure(figsize=(10, 10))
+
+                # Create a pie chart with the like per minute percentage for each channel
+                sns.set_style('whitegrid')
+                plt.pie(like_per_min_pct, labels=edited_stats_df['channelName'], autopct='%1.1f%%')
+                plt.title('Percentage of Likes per Minute for each Channel')
+
+                # Show the plot
                 plt.show()
 
         if page == "Comments-Video Durations After":
