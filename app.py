@@ -544,7 +544,7 @@ Therefore, while these percentage changes can give us some insight into each cha
                 monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
 
                 # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-                avg_monthly_mins_df = monthly_df[['v', 'mins_after_per_month', 'Month']]
+                avg_monthly_mins_df = monthly_df[['channelName', 'mins_after_per_month', 'Month']]
 
                 # set the index to 'channelName' column
                 avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
