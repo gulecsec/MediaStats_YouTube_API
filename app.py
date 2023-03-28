@@ -199,19 +199,25 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
             with channel_details:
 
                 # Select columns of interest
-                df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
+                like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
-                # Calculate the like per minute values
-                like_per_min = edited_stats_df['like_count_after'] / edited_stats_df['mins_count_after']
-                df['Like per Minute'] = like_per_min
+                # sort the values by 'like_count_after'
+                like_mins_df = like_mins_df.sort_values(by='like_count_after')
 
-                # create the bubble chart
-                fig = px.scatter(df, x='like_count_after', y='mins_count_after', size='Like per Minute', color='channelName',
-                                hover_name='channelName', log_x=True, log_y=True, size_max=50,
-                                title='Like Count vs Minutes Count (Size = Like per Minute)')
+                # set the index to 'channelName' column
+                like_mins_df = like_mins_df.set_index('channelName')
 
-                fig.update_xaxes(title_text='Like Count After')
-                fig.update_yaxes(title_text='Minutes Count After')
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
+                color='mins_count_after',orientation='h',
+                title="Channel Likes - Total Video Minutes After 6th of Feb",
+                color_continuous_scale='Reds')
+
+                fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
+                xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+                coloraxis_colorbar=dict(title="Minutes"))
+
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
                 # display the chart
                 st.plotly_chart(fig)
