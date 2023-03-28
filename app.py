@@ -201,7 +201,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 # Select columns of interest
                 df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
-                # Calculate Like per Minute and add as a new column
+                ## Calculate Like per Minute and add as a new column
                 df['Like per Minute'] = df['like_count_after'] / df['mins_count_after']
 
                 # Sort by Like count
@@ -210,16 +210,19 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 # Set Channel Name as index
                 df.set_index('channelName', inplace=True)
 
-                # Create the scatter plot
+                # Create the bubble chart
                 fig = px.scatter(df, x='like_count_after', y='mins_count_after', size='Like per Minute', color='channelName',
-                                hover_name='channelName', log_x=True, log_y=True, size_max=50,
-                                title='Like Count vs Minutes Count (Size = Like per Minute)')
+                hover_name='channelName', log_x=True, log_y=True, size_max=50,
+                title='Like Count vs Minutes Count (Size = Like per Minute)')
 
                 # Update the x-axis and y-axis titles
                 fig.update_xaxes(title_text='Like Count After')
                 fig.update_yaxes(title_text='Minutes Count After')
 
-                # Display the plot
+                # Set the bubble sizes to a reasonable value
+                fig.update_traces(marker=dict(sizemode='area', sizeref=0.05))
+
+                # Display the chart
                 st.plotly_chart(fig)
 
 
