@@ -419,22 +419,17 @@ However, it is important to note that the number of videos uploaded by these cha
         if page == "Durations per Video":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'duration_per_video_after', and 'duration_per_video_before' columns
-                duration_per_video_df = edited_stats_df[['channelName', 'duration_per_video_after', 'duration_per_video_before', 'duration_per_video']]
-
-                # set the index to 'channelName' column
-                duration_per_video_df = duration_per_video_df.set_index('channelName')
+                # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
+                comment_per_video_df = edited_stats_df[['channelName', 'mins_per_video_after', 'video_count_after']]
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(duration_per_video_df, barmode='group', title="Durations per Video")
+                fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
+                x="channelName", y="mins_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
+                title="Channel Comments per Video After 6th of Feb")
 
-                fig.update_traces(name="After",selector=dict(name="duration_per_video_after"))
+                # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
-                fig.update_traces(name="Before",selector=dict(name="duration_per_video_before"))
-
-                fig.update_traces(name="Up to 27/03/23",selector=dict(name="duration_per_video"))
-
-                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
                 # display the chart
@@ -451,6 +446,9 @@ In terms of overall duration, TV100 and Halktv have the longest video duration, 
 It is important to note that the duration of a video does not necessarily determine its quality or success on the platform, as there are other factors such as content and engagement that play a significant role.
 
                 """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         if page == "Views per Likes":
             with channel_details:
