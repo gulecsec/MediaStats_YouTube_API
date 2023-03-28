@@ -552,17 +552,24 @@ Therefore, while these percentage changes can give us some insight into each cha
                 # Pivot the data to create a new DataFrame with columns for each month
                 pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values='monthly_video_count_after')
 
-                # Generate a horizontal bar chart using Plotly
+                # Generate a horizontal bar chart using Plotly Express
                 fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
                             labels={'value': 'Minutes'})
 
+                # Add text annotations for the monthly_video_count_after values
+                for channel, row in pivoted_count_df.iterrows():
+                    for month in pivoted_count_df.columns:
+                        fig.add_annotation(x=month, y=row[month], text=row[month],
+                                        xanchor='center', yanchor='bottom',
+                                        showarrow=False, font=dict(size=10))
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
                             yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-                # display the chart
+                # Display the chart
                 st.plotly_chart(fig)
+
 
         if page == "Monthly Average Video Likes":
             with channel_details:
