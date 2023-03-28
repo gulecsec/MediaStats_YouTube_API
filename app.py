@@ -382,6 +382,9 @@ BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
 
                 """)
 
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
         if page == "Comments per Video":
             with channel_details:
 
