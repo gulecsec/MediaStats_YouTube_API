@@ -323,13 +323,9 @@ Meanwhile, the channels with lower engagement rates could use this information t
 
                 The table shows the number of videos uploaded and the average number of likes per video for 15 different Turkish news channels.
 
-The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos.
+The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos. The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
 
-The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
-
-The channel with the lowest number of videos was BaBaLa TV with only 5 videos.
-
-When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video, followed by Nevşin Mengü with an average of 6065 likes per video.
+The channel with the lowest number of videos was BaBaLa TV with only 5 videos. When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video, followed by Nevşin Mengü with an average of 6065 likes per video.
 
 The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
 
