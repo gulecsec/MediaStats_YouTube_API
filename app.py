@@ -206,7 +206,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 like_mins_df['Like per Minute'] = like_per_min.round(0).astype(int)
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
+                fig = px.bar(like_mins_df, x='like_count_after', y='channelName',
                 color='Like per Minute', orientation='h',
                 title="Channel Likes - Total Video Minutes After 6th of Feb",
                 color_continuous_scale='Reds')
