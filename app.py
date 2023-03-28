@@ -464,9 +464,13 @@ It is important to note that the number of videos produced does not necessarily 
                 st.markdown("""Looking at the updated data:
 
 CNN TÜRK has the highest view count after, followed by Habertürk and Halktv.
+
 BaBaLa TV and Anadolu Ajansı have the lowest view count after.
+
 Yeni Şafak has the lowest view per like after, while Habertürk has the highest view per like after.
+
 The view per like after for most channels is around 50-100, indicating that for every like on a video, there are about 50-100 views. However, there are some outliers, like CNN TÜRK with a view per like after of 126.3 and Habertürk with a view per like after of 203.6.
+
 It's worth noting that the view per like after metric could be influenced by factors such as the type of content, engagement rate, and the number of likes on each video. Therefore, it should be taken with a grain of salt and analyzed in conjunction with other metrics.
 
                 """)
