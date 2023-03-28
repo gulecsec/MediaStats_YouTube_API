@@ -475,6 +475,9 @@ It's worth noting that the view per like after metric could be influenced by fac
 
                 """)
 
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
         if page == "Uploaded Video Count":
             with channel_details:
 
