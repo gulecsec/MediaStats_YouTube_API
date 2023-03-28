@@ -207,37 +207,31 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 # set the index to 'channelName' column
                 like_mins_df = like_mins_df.set_index('channelName')
 
-                # generate a horizontal bar chart using Plotly
-                fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
-                color='mins_count_after',orientation='h',
-                title="Channel Likes - Total Video Minutes After 6th of Feb",
-                color_continuous_scale='Reds')
+                # # generate a horizontal bar chart using Plotly
+                # fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
+                # color='mins_count_after',orientation='h',
+                # title="Channel Likes - Total Video Minutes After 6th of Feb",
+                # color_continuous_scale='Reds')
 
-                fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
-                xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
-                coloraxis_colorbar=dict(title="Minutes"))
+                # fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
+                # xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+                # coloraxis_colorbar=dict(title="Minutes"))
 
-                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
+                # fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
-                # display the chart
-                st.plotly_chart(fig)
+                # # display the chart
+                # st.plotly_chart(fig)
 
                 # Calculate the like per minute values
                 like_per_min = edited_stats_df['like_count_after'] / edited_stats_df['mins_count_after']
 
-                # Calculate the percentage of total likes per minute across all channels
-                like_per_min_pct = like_per_min / like_per_min.sum() * 100
+                # create the scatter plot
+                fig = px.scatter(like_mins_df, x='Like Count After', y='Minutes Count After', size=like_per_min, color='Channel Name',
+                                hover_name='Channel Name', log_x=True, log_y=True, size_max=50,
+                                title='Like Count vs Minutes Count (Size = Like per Minute)')
 
-                # Set the figure size
-                plt.figure(figsize=(10, 10))
-
-                # Create a pie chart with the like per minute percentage for each channel
-                sns.set_style('whitegrid')
-                plt.pie(like_per_min_pct, labels=edited_stats_df['channelName'], autopct='%1.1f%%')
-                plt.title('Percentage of Likes per Minute for each Channel')
-
-                # Show the plot
-                plt.show()
+                # show the plot
+                fig.show()
 
                 st.markdown("""
 
