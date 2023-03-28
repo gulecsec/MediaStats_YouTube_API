@@ -442,7 +442,6 @@ Regarding the average length of videos produced, Nevşin Mengü has the longest 
 
 It is important to note that the number of videos produced does not necessarily reflect the quality of content or engagement with the audience.
 
-
                 """)
 
                 # Add footer to the page
@@ -452,7 +451,7 @@ It is important to note that the number of videos produced does not necessarily 
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
-                view_per_like_df = edited_stats_df[['channelName', 'like_count_after', 'view_per_like_after', 'view_count_after', 'view_count_before' ]]
+                view_per_like_df = edited_stats_df[['channelName', 'like_count_after', 'view_per_like_after', 'view_count_after' ]]
 
                 # set the index to 'channelName' column
                 view_per_like_df = view_per_like_df.set_index('channelName')
