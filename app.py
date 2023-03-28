@@ -6,6 +6,7 @@ import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
+import plotly.graph_objects as go
 
 # Load data
 stats_df = pd.read_csv("All_stats/media_stats.csv")
