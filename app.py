@@ -304,12 +304,17 @@ Meanwhile, the channels with lower engagement rates could use this information t
 
                 """)
 
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+
         if page == "Likes per Video":
             with channel_details:
 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
-                x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis')
+                x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
+                title="Channel Likes per Video After 6th of Feb")
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
@@ -334,6 +339,10 @@ It is interesting to note that some of the channels with a lower number of video
 This suggests that these channels may have a more engaged audience, with viewers who are more likely to engage with and appreciate the content that is uploaded.
 
                 """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Views per Video":
             with channel_details:
