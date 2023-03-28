@@ -160,11 +160,12 @@ if page == "Turkish News Media's YouTube Stats":
                 view_count_df = view_count_df.set_index('channelName')
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(view_count_df, barmode='group', title="Total Video Minutes - Channel Views After 6th of Feb")
+                fig = px.bar(view_count_df, barmode='group', title="Total Video Minutes - Channel Views After 6th of Feb",
+                color_discrete_sequence=['#2ca02c', '#1f77b4'])
 
-                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"), marker_color='#2ca02c')
 
-                fig.update_traces(name="Views",selector=dict(name="view_count_after"))
+                fig.update_traces(name="Views",selector=dict(name="view_count_after"),marker_color='#1f77b4')
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
