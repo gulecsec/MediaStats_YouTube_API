@@ -149,7 +149,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Durations After", "Comments-Durations After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Uploaded Video Count",
-        "Monthly Average Video Mins", "Monthly Average Video Likes", "Subscribers per Video"))
+        "Monthly Minutes After", "Monthly Average Video Likes", "Subscribers per Video"))
 
         if page == "Views-Minutes After":
             with channel_details:
@@ -537,7 +537,7 @@ Therefore, while these percentage changes can give us some insight into each cha
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-        if page == "Monthly Average Video Mins":
+        if page == "Monthly Minutes After":
             with channel_details:
 
                 # Load data
@@ -547,25 +547,12 @@ Therefore, while these percentage changes can give us some insight into each cha
                 pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
 
                 # Generate a horizontal bar chart using Plotly
-                fig = px.bar(pivoted_df, barmode='group', title="Monthly Average Video Mins",
-                            labels={'value': 'Minutes'})
+                fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
+                labels={'value': 'Minutes'})
 
                 # Customize the layout
-                fig.update_layout(xaxis_title=None,
-                yaxis_title=None,
-                legend=dict(orientation='h', yanchor='top', y=1.1, xanchor='left', x=0.01),
-                legend_title="",
-                width=800,
-                height=600)
-
-                # fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
-
-                # fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
-
-                # fig.update_traces(name="Up to 27/03/23",selector=dict(name="avg_monthly_total_mins"))
-
-                # fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                # width=800, height=600,yaxis_title=None)
+                fig.update_layout(xaxis_title=None, yaxis_title=None,legend=dict(orientation='h',
+                yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="",width=800,height=600)
 
                 # display the chart
                 st.plotly_chart(fig)
