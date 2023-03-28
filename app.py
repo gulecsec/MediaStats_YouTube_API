@@ -219,8 +219,8 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 fig.update_xaxes(title_text='Like Count After')
                 fig.update_yaxes(title_text='Minutes Count After')
 
-                # show the plot
-                fig.show()
+                # display the chart
+                st.plotly_chart(fig)
 
                 st.markdown("""
 
