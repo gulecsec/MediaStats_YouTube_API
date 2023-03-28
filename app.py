@@ -372,9 +372,7 @@ This suggests that these channels may have a more engaged audience, with viewers
 
                 The data shows the number of views per video for different Turkish news channels before and after February 6th, 2022.
 
-Before February 6th, 2022, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After February 6th, 2022,
-
-the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
+Before February 6th, 2022, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After February 6th, 2022, the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
 
 On the other hand, A Haber had the lowest number of views per video before and after February 6th, 2022.
 
