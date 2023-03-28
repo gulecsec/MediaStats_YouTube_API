@@ -419,9 +419,6 @@ However, it is important to note that the number of videos uploaded by these cha
         if page == "Durations per Video":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
-                comment_per_video_df = edited_stats_df[['channelName', 'mins_per_video_after', 'video_count_after']]
-
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
                 x="channelName", y="mins_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
