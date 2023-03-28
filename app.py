@@ -155,20 +155,20 @@ if page == "Turkish News Media's YouTube Stats":
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
-                view_count_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
+                view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
 
                 # sort the values by 'like_count_after'
-                view_count_df = view_count_df.sort_values(by='view_count_after')
+                view_mins_df = view_mins_df.sort_values(by='view_count_after')
 
                 # Calculate the like per minute values
-                view_per_min = view_count_df['view_count_after'] / view_count_df['mins_count_after']
-                view_count_df['View per Minute'] = view_per_min
+                view_per_min = view_mins_df['view_count_after'] / view_mins_df['mins_count_after']
+                view_mins_df['View per Minute'] = view_per_min
 
                 # set the index to 'channelName' column
-                view_count_df = view_count_df.set_index('channelName')
+                view_mins_df = view_mins_df.set_index('channelName')
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(view_count_df, x='view_count_after', y=view_count_df.index,
+                fig = px.bar(view_mins_df, x='view_count_after', y=view_mins_df.index,
                 color='mins_count_after', orientation='h',
                 title="Channel Views - Total Video Minutes After 6th of Feb",
                 color_continuous_scale='Blues', text=view_per_min.round(0))
@@ -455,7 +455,7 @@ It is important to note that the number of videos produced does not necessarily 
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
-                view_per_like_df = edited_stats_df[['channelName', 'view_per_like_after', 'view_per_like_before', 'view_per_like']]
+                view_per_like_df = edited_stats_df[['channelName', 'like_count_after', 'view_per_like_after', 'view_count_after', 'view_count_before' ]]
 
                 # set the index to 'channelName' column
                 view_per_like_df = view_per_like_df.set_index('channelName')
