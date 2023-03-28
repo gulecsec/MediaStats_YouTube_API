@@ -313,7 +313,7 @@ Meanwhile, the channels with lower engagement rates could use this information t
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
-                fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                fig.update_layout(coloraxis_colorbar=dict(title="Videos After"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
                 # display the chart
