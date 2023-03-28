@@ -167,7 +167,7 @@ if page == "Turkish News Media's YouTube Stats":
                 orientation='h', title="Total Video Minutes - Channel Views After 6th of Feb")
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
-                                                  xanchor='left', x=0.01), legend_title="",
+                                                  xanchor='left', x=0.01), legend_title="Minutes",
                   width=800, height=600, yaxis_title=None)
 
 
