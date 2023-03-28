@@ -503,9 +503,7 @@ It's worth noting that the view per like after metric could be influenced by fac
                 st.plotly_chart(fig)
 
                 st.markdown("""
-
                 Looking at the data, we can see that some channels have had significant changes in their video count.
-
 Here are the percentage changes for each channel:
 """)
                 # Calculate the percentage change for each channel and sort Percentage Change values descending
