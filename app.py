@@ -256,21 +256,30 @@ Overall, it can be concluded that while some channels may have a higher "Like pe
         if page == "Comments-Video Durations After":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'duration_count_after', and 'like_count_after' columns
-                comment_count_df = edited_stats_df[['channelName', 'comment_count_after', 'like_count_after']]
+                # Select columns of interest
+                comments_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'comment_count_after']]
+
+                # sort the values by 'like_count_after'
+                comments_mins_df = comments_mins_df.sort_values(by='comment_count_after')
+
+                # Calculate the like per minute values
+                comments_per_min = comments_mins_df['comment_count_after'] / comments_mins_df['mins_count_after']
+                comments_mins_df['View per Minute'] = comments_per_min
 
                 # set the index to 'channelName' column
-                comment_count_df = comment_count_df.set_index('channelName')
+                comments_mins_df = comments_mins_df.set_index('channelName')
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(comment_count_df, barmode='group', title="Comments-Video Durations After 6th of Feb")
+                fig = px.bar(comments_mins_df, x='comment_count_after', y=comments_mins_df.index,
+                color='mins_count_after', orientation='h',
+                title="Channel Comments - Total Video Minutes After 6th of Feb",
+                color_continuous_scale='Greens', text=comments_per_min.round(0))
 
-                fig.update_traces(name="Comments",selector=dict(name="comment_count_after"))
+                fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
+                xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+                coloraxis_colorbar=dict(title="Minutes"))
 
-                fig.update_traces(name="Likes",selector=dict(name="like_count_after"))
-
-                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                width=800, height=600,yaxis_title=None)
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
                 # display the chart
                 st.plotly_chart(fig)
