@@ -425,7 +425,7 @@ However, it is important to note that the number of videos uploaded by these cha
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
                 x="channelName", y="mins_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
-                title="Channel Comments per Video After 6th of Feb")
+                title="Minutes per Video After 6th of Feb")
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
