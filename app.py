@@ -286,11 +286,21 @@ Overall, it can be concluded that while some channels may have a higher "Like pe
 
                 st.markdown("""
 
-                The table above shows the like count and comment count for various Turkish news channels. Among the channels, TV100 has the highest like count with 482,840 likes, followed by Halktv with 665,555 likes and CNN TÜRK with 558,924 likes. On the other hand, Habertürk has the lowest like count with only 32,148 likes.
+                The data shows the number of comments received by different Turkish news channels in a specific time period.
 
-In terms of comment count, Halktv has the highest count with 156,956 comments, followed by CNN TÜRK with 126,936 comments and TV100 with 106,354 comments. The lowest comment count is for BaBaLa TV with only 4,377 comments.
+The values represents the average number of comments received per minute for each channel.
 
-It's interesting to note that although TV100 has the highest like count, it has a relatively lower comment count compared to Halktv and CNN TÜRK. This suggests that TV100's content may be more popular or appealing to viewers, but may not necessarily be sparking as much discussion or engagement. Conversely, Halktv and CNN TÜRK's content seems to be generating more conversation and engagement among viewers, despite having lower like counts.
+BBC News Türkçe and Yeni Şafak received the highest and lowest number of comments per minute, respectively.
+
+The BBC News Türkçe's high engagement rate may be attributed to its reputation as a credible and impartial news source.
+
+Yeni Şafak's low engagement rate could be due to a lack of trust in the news source or a smaller audience.
+
+CNN TÜRK, FOX Haber, Habertürk, and TV100 received the lowest number of comments per minute, which could indicate lower audience engagement with these channels.
+
+The channels that received a higher number of comments per minute than others, such as Yeni Şafak and BBC News Türkçe, could benefit from further analysis of their content and engagement strategies to determine what factors contribute to their higher engagement rates.
+
+Meanwhile, the channels with lower engagement rates could use this information to improve their content and engagement strategies to increase their audience's interest and engagement.
 
                 """)
 
