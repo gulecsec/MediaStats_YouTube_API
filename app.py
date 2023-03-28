@@ -556,19 +556,13 @@ Therefore, while these percentage changes can give us some insight into each cha
                 fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
                             labels={'value': 'Minutes'})
 
-                # Add the text to the chart
-                for i in range(len(pivoted_count_df)):
-                    for j in range(len(pivoted_count_df.columns)):
-                        fig.add_annotation(x=pivoted_count_df.columns[j], y=pivoted_df.iloc[i, j],
-                                        text=pivoted_count_df.iloc[i, j], showarrow=False, font=dict(color='white'))
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
                             yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-                # Display the chart
+                # display the chart
                 st.plotly_chart(fig)
-
 
         if page == "Monthly Average Video Likes":
             with channel_details:
