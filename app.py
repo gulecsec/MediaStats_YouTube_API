@@ -550,8 +550,7 @@ Therefore, while these percentage changes can give us some insight into each cha
                 avg_monthly_mins_df = avg_monthly_mins_df.set_index(['channelName', 'Month'])
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins",
-                color='Month', category_orders={'Month': ['Feb', 'Mar']})
+                fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins", category_orders={'Month': ['Feb', 'Mar']})
 
                 fig.update_layout(xaxis_title=None, yaxis_title=None,
                 legend=dict(orientation='h', yanchor='top', y=1.1, xanchor='left', x=0.01),
