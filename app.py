@@ -452,7 +452,7 @@ It is important to note that the number of videos produced does not necessarily 
 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('view_per_like_after', ascending=False),
-                x="channelName", y="view_per_like_after", color='view_count_after', color_continuous_scale='Cividis',
+                x="channelName", y="view_per_like_after", color='view_count_after', color_continuous_scale='Inferno',
                 title="Views per Likes After 6th of Feb")
 
                 fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
