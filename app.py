@@ -222,10 +222,6 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""
-
-                """)
-
                 # Calculate the like per minute values
                 like_per_min = edited_stats_df['like_count_after'] / edited_stats_df['mins_count_after']
 
@@ -242,6 +238,10 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
 
                 # Show the plot
                 plt.show()
+
+                st.markdown("""
+
+                """)
 
         if page == "Comments-Video Durations After":
             with channel_details:
