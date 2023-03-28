@@ -162,7 +162,7 @@ if page == "Turkish News Media's YouTube Stats":
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(view_count_df, barmode='group', title="Views-Mins After 6th of Feb")
 
-                fig.update_traces(name="Mins",selector=dict(name="mins_count_after"))
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
                 fig.update_traces(name="Views",selector=dict(name="view_count_after"))
 
