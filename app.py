@@ -461,7 +461,7 @@ It is important to note that the number of videos produced does not necessarily 
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""Looking at the updated data:
+                st.markdown("""Looking at the bar chart above:
 
 CNN TÜRK has the highest view count after, followed by Habertürk and Halktv.
 
