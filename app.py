@@ -189,13 +189,13 @@ if page == "Turkish News Media's YouTube Stats":
 
                 From the data, we can see the values for the minutes and views for various news channels after the natural disaster.
 
-CNN TÜRK has the highest mins_count_after with 56,479.9 minutes, while BaBaLa TV has the lowest with 101.6 minutes.
+CNN TÜRK has the highest with 56,479.9 minutes, while BaBaLa TV has the lowest with 101.6 minutes.
 
 In terms of views, CNN TÜRK again has the highest value with 76,842,958 views, while BaBaLa TV has the lowest value with 949,934 views.
 
 When comparing the Minutes and Views, we can see that there is not always a direct correlation between the two.
 
-For example, Cüneyt Özdemir has a relatively high minutes value of 10,150.3 minutes, but a relatively low views value of 38,785,815 views.
+For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, but a relatively low value of 38,785,815 views.
 
                 """)
 
