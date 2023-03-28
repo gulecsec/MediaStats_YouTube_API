@@ -513,7 +513,7 @@ Here are the percentage changes for each channel:
 
                 # Create a line chart using Plotly
                 fig = px.bar(edited_stats_df, x="channelName", y="Percentage Change", title="", hover_data=["totalVideos", "video_count_before"],
-                color='Percentage Change', color_continuous_scale=px.colors.sequential.Plasma, title="Percentage Change After 6th of Feb")
+                color='Percentage Change', color_continuous_scale=px.colors.sequential.Plasma)
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
