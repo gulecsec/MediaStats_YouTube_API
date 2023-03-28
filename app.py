@@ -508,6 +508,7 @@ Here are the percentage changes for each channel:
 """)
                 # Calculate the percentage change for each channel and sort Percentage Change values descending
                 edited_stats_df["Percentage Change"] = round(((edited_stats_df["totalVideos"] - edited_stats_df["video_count_before"]) / edited_stats_df["video_count_before"]) * 100,2)
+                edited_stats_df = edited_stats_df[edited_stats_df['channelName'] != 'SÖZCÜ Televizyonu'] # Exclude SÖZCÜ Televizyonu from the dataframe
                 edited_stats_df = edited_stats_df.sort_values(by="Percentage Change", ascending=False)
 
                 # Create a line chart using Plotly
