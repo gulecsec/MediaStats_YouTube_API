@@ -172,15 +172,7 @@ if page == "Turkish News Media's YouTube Stats":
                 xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
                 coloraxis_colorbar=dict(title="Minutes"))
 
-                # # generate a horizontal bar chart using Plotly
-                # fig = px.bar(view_count_df, barmode='group', title="Total Video Minutes - Channel Views After 6th of Feb")
-
                 fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
-
-                # fig.update_traces(name="Views",selector=dict(name="view_count_after"))
-
-                # fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                # width=800, height=600,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
@@ -198,6 +190,9 @@ When comparing the Minutes and Views, we can see that there is not always a dire
 For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, but a relatively low value of 38,785,815 views.
 
                 """)
+
+                # Add footnote to the page
+                st.markdown("<sup>*</sup> Data collected on 27rd of March 2023", unsafe_allow_html=True)
 
         if page == "Likes-Video Durations After":
             with channel_details:
