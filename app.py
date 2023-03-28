@@ -376,9 +376,7 @@ Before February 6th, 2023, the channel with the highest number of views per vide
 
 On the other hand, A Haber had the lowest number of views per video before and after the earthquake.
 
-Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were
-
-BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
+Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
 
                 """)
 
