@@ -556,12 +556,6 @@ Therefore, while these percentage changes can give us some insight into each cha
                 fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
                             labels={'value': 'Minutes'})
 
-                # Add text annotations for the monthly_video_count_after values
-                for month in pivoted_count_df.columns:
-                    for channel in pivoted_count_df.index:
-                        value = pivoted_count_df.loc[channel, month]
-                        fig.add_annotation(x=month, y=channel, text=str(value), showarrow=False, font=dict(color='white'))
-
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
                             yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
