@@ -267,7 +267,7 @@ It's interesting to note that although TV100 has the highest like count, it has 
 
                 fig.update_traces(name="Before",selector=dict(name="like_per_video_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="like_per_video"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -301,7 +301,7 @@ Overall, it is difficult to draw a general conclusion without more context about
 
                 fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="view_per_video"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="view_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -333,7 +333,7 @@ It's important to note that these changes in average view counts could be due to
 
                 fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="comment_per_video"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="comment_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -367,7 +367,7 @@ For example, Halktv and Erk Acarer have both seen a significant increase in the 
 
                 fig.update_traces(name="Before",selector=dict(name="duration_per_video_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="duration_per_video"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="duration_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -403,7 +403,7 @@ It is important to note that the duration of a video does not necessarily determ
 
                 fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="view_per_like"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="view_per_like"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -443,7 +443,7 @@ Additionally, the difference between the highest and lowest values for each colu
 
                 fig.update_traces(name="Before",selector=dict(name="video_count_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="totalVideos"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="totalVideos"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=400,yaxis_title=None)
@@ -499,7 +499,7 @@ Therefore, while these percentage changes can give us some insight into each cha
 
                 fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_mins_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="avg_monthly_total_mins"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="avg_monthly_total_mins"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
@@ -526,7 +526,7 @@ Therefore, while these percentage changes can give us some insight into each cha
 
                 fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_likes_before"))
 
-                fig.update_traces(name="Up to 23/03/23",selector=dict(name="avg_monthly_total_likes"))
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="avg_monthly_total_likes"))
 
                 # display the chart
                 st.plotly_chart(fig)
