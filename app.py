@@ -437,13 +437,14 @@ However, it is important to note that the number of videos uploaded by these cha
 
                 st.markdown("""
 
-                In terms of percentage increase or decrease, Nevşin Mengü, Cüneyt Özdemir, and FOX Haber have increased their video duration by 47.2%, 24.4%, and 254.8% respectively.
+                These values represent the number of videos and the average length of those videos for each channel after the selected date range.
 
-On the other hand, TRT Haber, BBC News Türkçe, and Anadolu Ajansı have decreased their video duration by 76.5%, 181.7%, and 47.4% respectively.
+The highest number of videos produced after the selected date range was by CNN TÜRK with 2,438 videos, followed by TV100 with 1,970 videos and Halktv with 1,396 videos.
 
-In terms of overall duration, TV100 and Halktv have the longest video duration, while TRT Haber has the shortest.
+Regarding the average length of videos produced, Nevşin Mengü has the longest average length of videos at 46.2 minutes, followed by Halktv with 41.9 minutes and FOX Haber with 34.4 minutes. On the other hand, TRT Haber has the shortest average video length of 1.6 minutes , followed by Yeni Şafak with 7.8 minutes.
 
-It is important to note that the duration of a video does not necessarily determine its quality or success on the platform, as there are other factors such as content and engagement that play a significant role.
+It is important to note that the number of videos produced does not necessarily reflect the quality of content or engagement with the audience.
+
 
                 """)
 
