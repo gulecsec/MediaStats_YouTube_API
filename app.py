@@ -154,29 +154,20 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Views-Video Durations After":
             with channel_details:
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
-                view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
+                view_count_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
 
                 # set the index to 'channelName' column
-                view_mins_df = view_mins_df.set_index('channelName')
+                view_count_df = view_count_df.set_index('channelName')
 
-                fig = px.bar(data_frame=view_mins_df.sort_values('view_count_after', ascending=False),
-                          x="channelName", y="view_count_after", color='mins_count_after',
-                          title="Total Video Minutes vs Channel Views After 6th of Feb")
+                # generate a horizontal bar chart using Plotly
+                fig = px.bar(view_count_df, barmode='group', title="Total Video Minutes - Channel Views After 6th of Feb")
 
-                # generate a scatter plot using Plotly
-                # fig = px.scatter(view_mins_df, x="view_count_after", y="mins_count_after",
-                # title="Total Video Minutes vs Channel Views After 6th of Feb",
-                #  color_discrete_sequence=['#2ca02c'])
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
-                fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+                fig.update_traces(name="Views",selector=dict(name="view_count_after"))
+
+                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
-
-                # fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"), marker_color='#ff7f0e')
-
-                # fig.update_traces(name="Views",selector=dict(name="view_count_after"),marker_color='#1f77b4')
-
-                # fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                # width=800, height=600,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
