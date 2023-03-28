@@ -309,7 +309,7 @@ Meanwhile, the channels with lower engagement rates could use this information t
 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
-                x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='YlOrRd')
+                x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis')
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
