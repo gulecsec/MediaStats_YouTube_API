@@ -311,7 +311,7 @@ Meanwhile, the channels with lower engagement rates could use this information t
                 like_per_video_df = edited_stats_df[['channelName', 'like_per_video_after']]
 
                 # sort the values by 'like_count_after'
-                like_per_video_df = like_per_video_df.sort_values(by='like_per_video_after')
+                like_per_video_df = like_per_video_df.sort_values(by='like_per_video_after', ascending=False)
 
                 # set the index to 'channelName' column
                 like_per_video_df = like_per_video_df.set_index('channelName')
