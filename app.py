@@ -206,7 +206,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 like_mins_df['Like per Minute'] = like_per_min
 
                 # sort the values by 'like_count_after'
-                like_mins_df = like_mins_df.sort_values(by='Like per Minute')
+                # like_mins_df = like_mins_df.sort_values(by='Like per Minute')
 
                 # set the index to 'channelName' column
                 like_mins_df = like_mins_df.set_index('channelName')
