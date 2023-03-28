@@ -533,6 +533,10 @@ Therefore, while these percentage changes can give us some insight into each cha
 
                 """)
 
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+
         if page == "Monthly Average Video Mins":
             with channel_details:
 
