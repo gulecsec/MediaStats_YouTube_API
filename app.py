@@ -368,11 +368,19 @@ This suggests that these channels may have a more engaged audience, with viewers
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""Views per video represent the average number of views per video for each channel, as well as the average number of views per video before and after the period of natural disaster.
+                st.markdown("""
 
-Comparing these values for each channel can provide insight into how their viewership has changed over time. For instance, BaBaLa TV had a very high average view count per video before the period, but this dropped significantly after the incident. On the other hand, channels like TRT Haber and FOX Haber saw a significant increase in average view counts per video after the earthquake.
+                The data shows the number of views per video for different Turkish news channels before and after February 6th, 2022.
 
-It's important to note that these changes in average view counts could be due to a variety of factors, such as changes in content strategy or promotion efforts. Therefore, further analysis would be needed to determine the specific reasons behind these changes.
+Before February 6th, 2022, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After February 6th, 2022,
+
+the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
+
+On the other hand, A Haber had the lowest number of views per video before and after February 6th, 2022.
+
+Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2022. The only exceptions to this trend were
+
+BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
 
                 """)
 
