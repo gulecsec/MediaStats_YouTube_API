@@ -208,8 +208,6 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 like_per_min = like_mins_df['like_count_after'] / like_mins_df['mins_count_after']
                 like_mins_df['Like per Minute'] = like_per_min
 
-
-
                 # set the index to 'channelName' column
                 like_mins_df = like_mins_df.set_index('channelName')
 
@@ -228,12 +226,17 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 # display the chart
                 st.plotly_chart(fig)
 
+                st.markdown("""
 
+                Based on the data provided, it appears that the channels with the highest "Like per Minute" are Yeni Şafak, BaBaLa TV, and Nevşin Mengü, with values of 763.17, 708.86, and 131.34, respectively.
 
+On the other hand, the channels with the lowest "Like per Minute" are FOX Haber, CNN TÜRK, and Halktv, with values of 7.40, 10.77, and 12.78, respectively.
 
+In terms of total "Like Count After", Cüneyt Özdemir has the highest value with 761,719 likes, followed by Yeni Şafak with 656,476 likes.
 
+However, in terms of "Minutes Count After", Halktv has the highest value with 58,560.8 minutes, followed by TV100 with 46,025.6 minutes.
 
-                st.markdown("""a
+Overall, it can be concluded that while some channels may have a higher "Like per Minute" rate, it is important to also consider the total number of minutes and likes, as these values can provide more context and a more comprehensive picture of a channel's performance on YouTube.
 
                 """)
 
