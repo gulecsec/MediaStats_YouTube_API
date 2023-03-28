@@ -205,26 +205,29 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 like_per_min = like_mins_df['like_count_after'] / like_mins_df['mins_count_after']
                 like_mins_df['Like per Minute'] = like_per_min.round(0).astype(int)
 
-                # sort the values by 'like_count_after'
+                # Sort the values by 'like_count_after'
                 like_mins_df = like_mins_df.sort_values(by='like_count_after')
 
-                # set the index to 'channelName' column
+                # Set the index to 'channelName' column
                 like_mins_df = like_mins_df.set_index('channelName')
 
-                # generate a horizontal bar chart using Plotly
+                # Generate a horizontal bar chart using Plotly
                 fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
                 color='mins_count_after', orientation='h',
                 title="Channel Likes - Total Video Minutes After 6th of Feb",
-                color_continuous_scale='Reds', text=like_per_min, textposition='outside')
+                color_continuous_scale='Reds', text='Like per Minute',
+                textposition='outside')
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
-                xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+                xanchor='left', x=0.01), legend_title="Minutes",
+                width=800, height=600, yaxis_title=None,
                 coloraxis_colorbar=dict(title="Minutes"))
 
-                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
+                fig.update_traces(name="Minutes", selector=dict(name="mins_count_after"))
 
-                # display the chart
+                # Display the chart
                 st.plotly_chart(fig)
+
 
 
 
