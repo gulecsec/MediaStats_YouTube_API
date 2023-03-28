@@ -247,7 +247,7 @@ These results suggest that Halktv and TV100 are the most successful channels in 
                 like_per_min_pct = like_per_min / like_per_min.sum() * 100
 
                 # Create a pie chart with the like per minute percentage for each channel
-                fig = go.Figure(data=go.Pie(labels=df['channelName'], values=like_per_min_pct))
+                fig = go.Figure(data=go.Pie(labels=edited_stats_df['channelName'], values=like_per_min_pct))
 
                 # Set the title of the pie chart
                 fig.update_layout(title_text='Percentage of Likes per Minute for each Channel')
