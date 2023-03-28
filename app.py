@@ -321,12 +321,21 @@ Meanwhile, the channels with lower engagement rates could use this information t
 
                 st.markdown("""
 
-                Looking at the values, we can see that for some channels like Nevşin Mengü, Cüneyt Özdemir, and A Haber, the like_per_video_after is slightly higher than the like_per_video_before. On the other hand, for channels like BaBaLa TV, FOX Haber, and Habertürk, the like_per_video_after is significantly lower than the like_per_video_before.
+                The table shows the number of videos uploaded and the average number of likes per video for 15 different Turkish news channels.
 
-For some channels like Yeni Şafak, Anadolu Ajansı, and CNN TÜRK, there is not much difference between the like_per_video_before and like_per_video_after values. However, for channels like Halktv and Erk Acarer, the like_per_video_after values are considerably higher than the like_per_video_before values.
+The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos.
 
-Overall, it is difficult to draw a general conclusion without more context about the channels and their content, but we can see some variation in the changes in average likes per video for different channels.
+The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
 
+The channel with the lowest number of videos was BaBaLa TV with only 5 videos.
+
+When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video, followed by Nevşin Mengü with an average of 6065 likes per video.
+
+The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
+
+It is interesting to note that some of the channels with a lower number of videos uploaded, such as BBC News Türkçe and TRT Haber, had relatively high average numbers of likes per video.
+
+This suggests that these channels may have a more engaged audience, with viewers who are more likely to engage with and appreciate the content that is uploaded.
                 """)
 
         if page == "Views per Video":
