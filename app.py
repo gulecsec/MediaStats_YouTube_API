@@ -163,7 +163,7 @@ if page == "Turkish News Media's YouTube Stats":
                 fig = px.bar(view_count_df, barmode='group', title="Total Video Minutes - Channel Views After 6th of Feb",
                 color_discrete_sequence=['#2ca02c', '#1f77b4'])
 
-                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"), marker_color='#1f77b4')
+                fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"), marker_color='#ff7f0e')
 
                 fig.update_traces(name="Views",selector=dict(name="view_count_after"),marker_color='#1f77b4')
 
