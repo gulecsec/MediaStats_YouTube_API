@@ -461,19 +461,13 @@ It is important to note that the number of videos produced does not necessarily 
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""
+                st.markdown("""Looking at the updated data:
 
-                Based on the observations above, we can conclude that:
-
-The average number of views per like after 2nd Feb 2023 is posted is lower than the overall average and the number of views per like before.
-
-Habertürk has the highest value in both the number of views per like after and overall views per like.
-
-TRT Haber has the highest value in the number of views per like before the video is posted, but this value is not a strong predictor of overall views per like.
-
-In terms of percentages, we can say that the average number of views per like after a video is posted is 107.3% lower than the average number of views per like before the video is posted, and 36.8% lower than the overall average number of views per like.
-
-Additionally, the difference between the highest and lowest values for each column is quite significant, ranging from 12.5% to 757.5%.
+CNN TÜRK has the highest view count after, followed by Habertürk and Halktv.
+BaBaLa TV and Anadolu Ajansı have the lowest view count after.
+Yeni Şafak has the lowest view per like after, while Habertürk has the highest view per like after.
+The view per like after for most channels is around 50-100, indicating that for every like on a video, there are about 50-100 views. However, there are some outliers, like CNN TÜRK with a view per like after of 126.3 and Habertürk with a view per like after of 203.6.
+It's worth noting that the view per like after metric could be influenced by factors such as the type of content, engagement rate, and the number of likes on each video. Therefore, it should be taken with a grain of salt and analyzed in conjunction with other metrics.
 
                 """)
 
