@@ -241,7 +241,7 @@ These results suggest that Halktv and TV100 are the most successful channels in 
                 """)
 
                 # Calculate the like per minute values
-                like_per_min = df['like_count_after'] / df['mins_count_after']
+                like_per_min = edited_stats_df['like_count_after'] / edited_stats_df['mins_count_after']
 
                 # Calculate the percentage of total likes per minute across all channels
                 like_per_min_pct = like_per_min / like_per_min.sum() * 100
