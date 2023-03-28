@@ -451,7 +451,7 @@ It is important to note that the number of videos produced does not necessarily 
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'view_per_like_after', and 'view_per_like_before' columns
-                view_per_like_df = edited_stats_df[['channelName', 'like_count_after', 'view_per_like_after', 'view_count_after' ]]
+                view_per_like_df = edited_stats_df[['channelName', 'like_count_after', 'view_per_like_after' ]]
 
                 # set the index to 'channelName' column
                 view_per_like_df = view_per_like_df.set_index('channelName')
@@ -459,11 +459,11 @@ It is important to note that the number of videos produced does not necessarily 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(view_per_like_df, barmode='group', title="Views per Likes")
 
-                fig.update_traces(name="After",selector=dict(name="view_per_like_after"))
+                # fig.update_traces(name="After",selector=dict(name="view_per_like_after"))
 
-                fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
+                # fig.update_traces(name="Before",selector=dict(name="view_per_like_before"))
 
-                fig.update_traces(name="Up to 27/03/23",selector=dict(name="view_per_like"))
+                # fig.update_traces(name="Up to 27/03/23",selector=dict(name="view_per_like"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
