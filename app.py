@@ -543,17 +543,20 @@ Therefore, while these percentage changes can give us some insight into each cha
                 # Load data
                 monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
 
-                # group by Month and mins_after_per_month columns and sum the values
-                grouped_df = monthly_df.groupby(['Month', 'mins_after_per_month']).sum().reset_index()
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
 
-                # create a new DataFrame with 'Month' and 'mins_after_per_month' columns
-                mins_month_df = grouped_df[['Month', 'mins_after_per_month']]
+                # Generate a horizontal bar chart using Plotly
+                fig = px.bar(pivoted_df, barmode='group', title="Monthly Average Video Mins",
+                            labels={'value': 'Minutes'})
 
-                # generate a horizontal bar chart using Plotly
-                fig = px.bar(mins_month_df, x='Month', y='mins_after_per_month', barmode='group', title="Monthly Average Video Mins")
-
-                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                width=800, height=600,yaxis_title=None)
+                # Customize the layout
+                fig.update_layout(xaxis_title=None,
+                yaxis_title=None,
+                legend=dict(orientation='h', yanchor='top', y=1.1, xanchor='left', x=0.01),
+                legend_title="",
+                width=800,
+                height=600)
 
                 # fig.update_traces(name="After",selector=dict(name="avg_monthly_total_mins_after"))
 
