@@ -218,8 +218,8 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 color_continuous_scale='Reds', text=like_per_min, textposition='outside')
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
-                                xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
-                                coloraxis_colorbar=dict(title="Minutes"))
+                xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+                coloraxis_colorbar=dict(title="Minutes"))
 
                 fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
