@@ -387,7 +387,7 @@ Overall, it seems that most channels experienced a decrease in the number of vie
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
-                comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'comment_per_video_before', 'comment_per_video']]
+                comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after']]
 
                 # set the index to 'channelName' column
                 comment_per_video_df = comment_per_video_df.set_index('channelName')
@@ -396,10 +396,6 @@ Overall, it seems that most channels experienced a decrease in the number of vie
                 fig = px.bar(comment_per_video_df, barmode='group', title="Comments per Video")
 
                 fig.update_traces(name="After",selector=dict(name="comment_per_video_after"))
-
-                fig.update_traces(name="Before",selector=dict(name="comment_per_video_before"))
-
-                fig.update_traces(name="Up to 27/03/23",selector=dict(name="comment_per_video"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
