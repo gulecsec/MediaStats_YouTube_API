@@ -215,7 +215,7 @@ For example, Cüneyt Özdemir has a relatively high value of 10,150.3 minutes, b
                 fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
                 color='mins_count_after', orientation='h',
                 title="Channel Likes - Total Video Minutes After 6th of Feb",
-                color_continuous_scale='Reds', text=like_per_min)
+                color_continuous_scale='Reds', text=like_per_min.round(0))
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
                 xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
