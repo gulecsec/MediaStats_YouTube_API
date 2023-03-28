@@ -547,7 +547,7 @@ Therefore, while these percentage changes can give us some insight into each cha
                 avg_monthly_mins_df = monthly_df[['channelName', 'mins_after_per_month', 'Month']]
 
                 # set the index to 'channelName' column
-                avg_monthly_mins_df = avg_monthly_mins_df.set_index('channelName')
+                avg_monthly_mins_df = avg_monthly_mins_df.set_index('Month')
 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(avg_monthly_mins_df, barmode='group', title="Monthly Average Video Mins")
