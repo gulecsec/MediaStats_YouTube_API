@@ -343,7 +343,6 @@ This suggests that these channels may have a more engaged audience, with viewers
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
-
         if page == "Views per Video":
             with channel_details:
 
@@ -402,15 +401,20 @@ Overall, it seems that most channels experienced a decrease in the number of vie
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""Comments per video values show the average number of comments per video for each channel, both before and after the period covered in the data.
+                st.markdown("""
 
-Looking at the data, we can see that the channels with the highest comment_per_video are BaBaLa TV, Yeni Şafak, and Halktv, while the channels with the lowest comment_per_video are TRT Haber, Habertürk, and Anadolu Ajansı.
+                The graph shows the number of videos uploaded by different news channels on YouTube and the average number of comments per video after the 6th of February 2023.
 
-Comparing the values, we can see that some channels have increased their average number of comments per video, while others have decreased.
+In terms of the average number of comments per video, the highest number is seen for BaBaLa TV with 923 comments per video followed by BBC News Türkçe with 666 comments per video. Anadolu Ajansı has the lowest number of comments per video with only 12 comments per video on average.
 
-For example, Halktv and Erk Acarer have both seen a significant increase in the number of comments per video, while TRT Haber, Habertürk, and Anadolu Ajansı have remained relatively consistent.
+Overall, it appears that BaBaLa TV and BBC News Türkçe are the channels with the most engaged audiences as they have the highest number of comments per video.
+
+However, it is important to note that the number of videos uploaded by these channels is relatively small compared to other channels such as CNN TÜRK and SÖZCÜ Televizyonu, which may have an impact on the comment per video ratio.
 
                 """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         if page == "Durations per Video":
             with channel_details:
