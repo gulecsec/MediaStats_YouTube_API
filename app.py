@@ -554,7 +554,7 @@ Therefore, while these percentage changes can give us some insight into each cha
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Total Minutes of Content in Feb & Mar 2023",
-                            labels={'value': 'Minutes'})
+                            labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Add text to the bars with monthly_video_count_after values
                 for i, col in enumerate(pivoted_df.columns):
