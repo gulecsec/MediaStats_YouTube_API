@@ -718,17 +718,10 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 st.markdown("""
 
-                The graph above shows the monthly video count and the minutes of content uploaded after the disaster, by various news channels and individual journalists in Turkey.
+                Regarding comments, in February, the channel with the highest number of comments was Halktv with a count of 67274 while in March, it was SÖZCÜ Televizyonu with a count of 101034. The channel with the lowest number of comments in February was SÖZCÜ Televizyonu with only 10 comments while in March, it was Habertürk with only 39 comments.
 
-Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
+In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the channels that have the highest number of comments across the two months. TV100 had the highest number of videos in February while Halktv had the highest number of videos in March. However, it is worth noting that these conclusions are based on only two months' worth of data and may not be indicative of overall trends.
 
-These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
-
-On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
-
-SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
-
-Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
                 """)
 
                 # Add footer to the page
