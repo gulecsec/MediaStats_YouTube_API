@@ -17,7 +17,7 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Main Pages")
-page = st.sidebar.radio("", ("Home", "Google Developers Console", "10 Most Popular Videos based on Likes and Views per Channel","Turkish News Media's YouTube Stats"))
+page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Turkish News Media's YouTube Stats"))
 
 if page == "Home":
     with header:
@@ -140,7 +140,7 @@ if page == "Google Developers Console":
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
-        st.title("10 Most Popular Videos based on Likes and Views per Channel")
+        st.title("Turkish News Media's YouTube Stats")
 
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
@@ -799,9 +799,10 @@ It's interesting to note that some channels with fewer subscribers, such as A Ha
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
-        st.title("Channel Details")
+        st.title("10 Most Popular Videos based on Likes and Views")
 
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
