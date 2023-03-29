@@ -735,9 +735,9 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
                 labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Add text to the bars with monthly_video_count_after values
-                for i, col in enumerate(pivoted_df.columns):
-                    fig.data[i].text = pivoted_count_df['daily_counts'][col].astype(str)
-                    fig.data[i].textposition = 'outside'
+                # for i, col in enumerate(pivoted_df.columns):
+                #     fig.data[i].text = pivoted_count_df['daily_counts'][col].astype(str)
+                #     fig.data[i].textposition = 'outside'
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
@@ -747,11 +747,6 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
                 st.plotly_chart(fig)
 
                 st.markdown("""
-
-                Regarding comments, in February, the channel with the highest number of comments was Halktv with a count of 67274 while in March, it was SÖZCÜ Televizyonu with a count of 101034. The channel with the lowest number of comments in February was SÖZCÜ Televizyonu with only 10 comments while in March, it was Habertürk with only 39 comments.
-
-In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the channels that have the highest number of comments across the two months. TV100 had the highest number of videos in February while Halktv had the highest number of videos in March. However, it is worth noting that these conclusions are based on only two months' worth of data and may not be indicative of overall trends.
-
                 """)
 
                 # Add footer to the page
