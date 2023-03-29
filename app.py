@@ -802,7 +802,7 @@ It's interesting to note that some channels with fewer subscribers, such as A Ha
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
-        st.title("10 Most Popular Videos based on Likes and Views")
+        st.header("10 Most Popular Videos based on Likes and Views per Channel")
 
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
