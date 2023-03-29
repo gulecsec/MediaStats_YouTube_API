@@ -721,30 +721,32 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
                 # Load data
                 monthly_df = pd.read_csv("All_stats/daily_totals.csv")
 
-                # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_df = monthly_df.pivot_table(index='channelName', columns='pushblishDayName', values='daily_counts')
+                # Pivot the data to create a new DataFrame with columns for each day of the week for each channel
+                pivoted_df = monthly_df.pivot_table(index=['pushblishDayName', 'channelName'], columns='pushblishDayName', values='daily_counts')
 
-                # Create a new DataFrame with the monthly_video_count_after values
-                monthly_count_df = monthly_df[['channelName', 'pushblishDayName', 'daily_counts']]
+                # Create a new DataFrame with the daily_counts values
+                daily_count_df = monthly_df[['pushblishDayName', 'channelName', 'daily_counts']]
 
-                # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='pushblishDayName', values='daily_counts')
+                # Pivot the data to create a new DataFrame with columns for each day of the week for each channel
+                pivoted_count_df = daily_count_df.pivot_table(index=['pushblishDayName', 'channelName'], columns='pushblishDayName', values='daily_counts')
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
-                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+                            labels={'value': 'Comments'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
-                # # Add text to the bars with monthly_video_count_after values
+                # # Add text to the bars with daily_counts values
                 # for i, col in enumerate(pivoted_df.columns):
-                #     fig.data[i].text = pivoted_count_df['daily_counts'][col].astype(str)
+                #     fig.data[i].text = pivoted_count_df[col].astype(str)
                 #     fig.data[i].textposition = 'outside'
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+                                        yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="",
+                                width=800, height=600)
 
                 # display the chart
                 st.plotly_chart(fig)
+
 
                 st.markdown("""
 
