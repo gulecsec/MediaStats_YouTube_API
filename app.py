@@ -147,7 +147,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         # Define sidebar
         st.sidebar.title("Video Stats")
-        page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Durations After", "Comments-Durations After",
+        page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos Uploaded",
         "Monthly Minutes After", "Monthly Likes After", "Subscribers per Video"))
 
@@ -204,7 +204,7 @@ Overall, the view per minute metric provides a better measure of the popularity 
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-        if page == "Likes-Durations After":
+        if page == "Likes-Minutes After":
             with channel_details:
 
                 # Select columns of interest
@@ -223,7 +223,7 @@ Overall, the view per minute metric provides a better measure of the popularity 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
                 color='mins_count_after', orientation='h',
-                title="Channel Likes - Total Video Minutes After 6th of Feb",
+                title="Top Channels by Likes per Minute: Analyzing Total Video Minutes After 6th of Feb",
                 color_continuous_scale='Reds', text=like_per_min.round(0))
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
@@ -253,7 +253,7 @@ Overall, it can be concluded that while some channels may have a higher "Like pe
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-        if page == "Comments-Durations After":
+        if page == "Comments-Minutes After":
             with channel_details:
 
                 # Select columns of interest
@@ -272,7 +272,7 @@ Overall, it can be concluded that while some channels may have a higher "Like pe
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(comments_mins_df, x='comment_count_after', y=comments_mins_df.index,
                 color='mins_count_after', orientation='h',
-                title="Channel Comments - Total Video Minutes After 6th of Feb",
+                title="Top Channels by Comments per Minute: Analyzing Total Video Minutes After 6th of Feb",
                 color_continuous_scale='Greens', text=comments_per_min.round(0))
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
