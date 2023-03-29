@@ -655,7 +655,11 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 st.markdown("""
 
-                Looking at the data, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average. BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively. It's interesting to note that some channels with fewer subscribers, such as A Haber and Anadolu Ajansı, have a higher number of subscribers per video than channels with larger subscriber counts like Habertürk and FOX Haber. This suggests that the quality and engagement of the content may be more important than the number of subscribers.
+                Looking at the data, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average.
+
+BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively.
+
+It's interesting to note that some channels with fewer subscribers, such as A Haber and Anadolu Ajansı, have a higher number of subscribers per video than channels with larger subscriber counts like Habertürk and FOX Haber. This suggests that the quality and engagement of the content may be more important than the number of subscribers.
 
                 """)
 
