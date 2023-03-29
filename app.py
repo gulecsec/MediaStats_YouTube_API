@@ -640,19 +640,10 @@ Overall, the data suggests that there is a considerable variation in the amount 
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
-                subs_per_video_df = edited_stats_df[['channelName', 'subscribers_per_video', 'views', 'like_count_after']]
+                subs_per_video_df = edited_stats_df[['channelName', 'subscribers_per_video','totalVideos']]
 
-                # set the index to 'channelName' column
-                subs_per_video_df = subs_per_video_df.set_index('channelName')
-
-                # generate a horizontal bar chart using Plotly
-                fig = px.bar(subs_per_video_df, barmode='group', title="Total Views per Video for Each Channel Uploaded After February 6th")
-
-                fig.update_traces(name="After",selector=dict(name="subscribers_per_video"))
-
-                fig.update_traces(name="Before",selector=dict(name="views"))
-
-                fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_count_after"))
+                fig = px.bar(data_frame=stats_df.sort_values('subscribers_per_video', ascending=False),
+                          x="channelName", y="subscribers_per_video", color='totalVideos')
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
