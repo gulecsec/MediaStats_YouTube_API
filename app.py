@@ -544,7 +544,7 @@ Therefore, while these percentage changes can give us some insight into each cha
                 monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
 
                 # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
+                pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
 
                 # Create a new DataFrame with the monthly_video_count_after values
                 monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'mins_after_per_month']]
