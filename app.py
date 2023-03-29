@@ -669,17 +669,12 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 st.markdown("""
 
-                The graph above shows the monthly video count and the minutes of content uploaded after the disaster, by various news channels and individual journalists in Turkey.
+                Based on the data provided, we can observe that the total number of videos produced by each channel decreased in March compared to February, except for SÖZCÜ Televizyonu, Halktv, and CNN TÜRK. However, the views received by these videos decreased more dramatically compared to the reduction in the number of videos produced, especially for channels like Habertürk, Yeni Şafak, and Anadolu Ajansı.
 
-Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
+Interestingly, Halktv and SÖZCÜ Televizyonu saw an increase in the number of comments per month in March compared to February, even though the number of videos produced decreased slightly.
 
-These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
+Overall, it seems that the viewing trends of Turkish news channels declined in March compared to February, which could be due to a variety of factors such as changes in the news cycle or shifts in audience behavior. However, further analysis would be needed to identify the reasons behind these trends.
 
-On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
-
-SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
-
-Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
                 """)
 
                 # Add footer to the page
@@ -726,8 +721,6 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
-
-
 
         elif page == "Subscribers per Video":
             with channel_details:
