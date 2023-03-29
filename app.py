@@ -552,9 +552,6 @@ Therefore, while these percentage changes can give us some insight into each cha
                 # Pivot the data to create a new DataFrame with columns for each month
                 pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
 
-                # Sort the values by 'mins_after_per_month'
-                pivoted_df = pivoted_df.sort_values(by='Feb', ascending=False)
-
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
                             labels={'value': 'Minutes'})
@@ -571,9 +568,20 @@ Therefore, while these percentage changes can give us some insight into each cha
                 # display the chart
                 st.plotly_chart(fig)
 
+                st.markdown("""
 
+These percentages represent the increase or decrease in the number of videos uploaded by each channel before and after the disaster.
 
+Overall, it seems that the majority of channels have had a relatively small change in their video count, with most falling within a range of 1-5% increase or decrease.
 
+However, it's important to note that these changes may not necessarily be significant in the context of each channel's total video count. For example, a 1% increase for a channel with only a few videos may be less significant than a 1% increase for a channel with thousands of videos.
+
+Therefore, while these percentage changes can give us some insight into each channel's recent activity, they should be interpreted with caution and in the context of each channel's overall content strategy.
+
+                """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         if page == "Monthly Average Video Likes":
             with channel_details:
