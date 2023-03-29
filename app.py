@@ -732,7 +732,7 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Content Uploaded Daily in Feb & Mar 2023",
-                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+                labels={'value': 'Video'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Add text to the bars with monthly_video_count_after values
                 # for i, col in enumerate(pivoted_df.columns):
