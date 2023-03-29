@@ -148,7 +148,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Define sidebar
         st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
-        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos Uploaded",
+        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
         "Monthly Minutes After", "Monthly Likes After", "Subscribers per Video"))
 
         if page == "Views-Minutes After":
@@ -478,7 +478,7 @@ It's worth noting that the view per like after metric could be influenced by fac
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
-        if page == "Number of Videos Uploaded":
+        if page == "Number of Videos After":
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
