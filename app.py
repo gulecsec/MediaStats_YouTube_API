@@ -562,7 +562,7 @@ Therefore, while these percentage changes can give us some insight into each cha
                 # Add text to the bars with monthly_video_count_after values
                 for i, col in enumerate(pivoted_df.columns):
                     fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
-                    fig.data[i].textposition = 'inside'
+                    fig.data[i].textposition = 'outside'
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
