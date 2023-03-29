@@ -646,10 +646,9 @@ Overall, the data suggests that there is a considerable variation in the amount 
                 x="subscribers", y="channelName", color='subscribers_per_video', orientation='h',
                 color_continuous_scale=px.colors.sequential.Viridis)
 
-                fig.update_layout(yaxis_title=None, xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="Subscribers per Video",
+                fig.update_layout(coloraxis_colorbar=dict(title="Subscribers per Video"), yaxis_title=None, xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600)
 
-                # fig.update_traces(name="Subscribers per Video",selector=dict(name="subscribers_per_video"))
 
                 # display the chart
                 st.plotly_chart(fig)
