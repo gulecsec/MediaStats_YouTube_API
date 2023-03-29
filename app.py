@@ -572,15 +572,13 @@ Therefore, while these percentage changes can give us some insight into each cha
 
                 The graph above shows the monthly video count and the minutes of content uploaded after the disaster, by various news channels and individual journalists in Turkey.
 
-Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month. These
+Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
 
-channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have
+These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
 
-a significant number of videos and minutes uploaded. On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts
+On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
 
-compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March. SÖZCÜ Televizyonu also has a low
-
-number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
+SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
 
 Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
                 """)
