@@ -149,7 +149,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
-        "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Subscribers per Video"))
+        "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Subscribers per Video"))
 
         if page == "Views-Minutes After":
             with channel_details:
@@ -684,6 +684,56 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+        if page == "Monthly Comments After":
+            with channel_details:
+
+                # Load data
+                monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
+
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='comments_after_per_month')
+
+                # Create a new DataFrame with the monthly_video_count_after values
+                monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'comments_after_per_month']]
+
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','comments_after_per_month'])
+
+                # Generate a horizontal bar chart using Plotly
+                fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
+                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+
+                # Add text to the bars with monthly_video_count_after values
+                for i, col in enumerate(pivoted_df.columns):
+                    fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
+                    fig.data[i].textposition = 'outside'
+
+                # Customize the layout
+                fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+
+                # display the chart
+                st.plotly_chart(fig)
+
+                st.markdown("""
+
+                The graph above shows the monthly video count and the minutes of content uploaded after the disaster, by various news channels and individual journalists in Turkey.
+
+Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
+
+These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
+
+On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
+
+SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
+
+Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
+                """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
 
         elif page == "Subscribers per Video":
