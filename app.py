@@ -148,7 +148,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Define sidebar
         st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Durations After", "Comments-Durations After",
-        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Uploaded Video Count",
+        "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos Uploaded",
         "Monthly Minutes After", "Monthly Likes After", "Subscribers per Video"))
 
         if page == "Views-Minutes After":
@@ -478,7 +478,7 @@ It's worth noting that the view per like after metric could be influenced by fac
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
-        if page == "Uploaded Video Count":
+        if page == "Number of Videos Uploaded":
             with channel_details:
 
                 # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
@@ -488,7 +488,7 @@ It's worth noting that the view per like after metric could be influenced by fac
                 video_count_df = video_count_df.set_index('channelName')
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(video_count_df, barmode='group', title="Uploaded Video Count")
+                fig = px.bar(video_count_df, barmode='group', title="Number of Videos Uploaded")
 
                 fig.update_traces(name="After",selector=dict(name="video_count_after"))
 
@@ -553,7 +553,7 @@ Therefore, while these percentage changes can give us some insight into each cha
                 pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
 
                 # Generate a horizontal bar chart using Plotly
-                fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
+                fig = px.bar(pivoted_df, barmode='group', title="Total Minutes of Content in Feb & Mar 2023",
                             labels={'value': 'Minutes'})
 
                 # Add text to the bars with monthly_video_count_after values
@@ -602,7 +602,7 @@ Overall, the data suggests that there is a considerable variation in the amount 
                 pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','likes_after_per_month'])
 
                 # Generate a horizontal bar chart using Plotly
-                fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
+                fig = px.bar(pivoted_df, barmode='group', title="Total Likes on Content Uploaded in Feb & Mar 2023",
                             labels={'value': 'Minutes'})
 
                 # Add text to the bars with monthly_video_count_after values
