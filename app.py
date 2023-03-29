@@ -721,30 +721,38 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
                 # Load data
                 monthly_df = pd.read_csv("All_stats/daily_totals.csv")
 
-                # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_df = monthly_df.pivot_table(index='pushblishDayName', columns='channelName', values='daily_counts')
+                # Create a dictionary to map day names to their respective numeric values
+                day_name_to_num = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Sunday': 7}
 
-                # Create a new DataFrame with the monthly_video_count_after values
-                monthly_count_df = monthly_df[['channelName', 'pushblishDayName', 'daily_counts']]
+                # Map the pushblishDayName column to their respective numeric values
+                monthly_df['day_num'] = monthly_df['pushblishDayName'].map(day_name_to_num)
 
-                # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_count_df = monthly_count_df.pivot_table(index='pushblishDayName', columns='channelName', values='daily_counts')
+                # Pivot the data to create a new DataFrame with columns for each channel
+                pivoted_df = monthly_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
+
+                # Rename the index values to the corresponding day names
+                pivoted_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
+
+                # Create a new DataFrame with the daily_counts values
+                monthly_count_df = monthly_df[['channelName', 'day_num', 'daily_counts']]
+
+                # Pivot the data to create a new DataFrame with columns for each channel
+                pivoted_count_df = monthly_count_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
+
+                # Rename the index values to the corresponding day names
+                pivoted_count_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Content Uploaded Daily in Feb & Mar 2023",
-                labels={'value': 'Video'}, color_discrete_sequence=px.colors.sequential.Inferno)
-
-                # Add text to the bars with monthly_video_count_after values
-                # for i, col in enumerate(pivoted_df.columns):
-                #     fig.data[i].text = pivoted_count_df['daily_counts'][col].astype(str)
-                #     fig.data[i].textposition = 'outside'
+                            labels={'value': 'Video'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+                                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
                 # display the chart
                 st.plotly_chart(fig)
+
 
                 st.markdown("""
                 """)
