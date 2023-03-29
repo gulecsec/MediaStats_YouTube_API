@@ -559,6 +559,11 @@ Therefore, while these percentage changes can give us some insight into each cha
                 fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
                             labels={'value': 'Minutes'})
 
+                # Add text to the bars with monthly_video_count_after values
+                for i, col in enumerate(pivoted_df.columns):
+                    fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
+                    fig.data[i].textposition = 'inside'
+
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
                             yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
