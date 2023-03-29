@@ -653,7 +653,7 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Total Views on Content Uploaded in Feb & Mar 2023",
-                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Reds)
+                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Add text to the bars with monthly_video_count_after values
                 for i, col in enumerate(pivoted_df.columns):
