@@ -728,7 +728,7 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
                 monthly_count_df = monthly_df[['channelName', 'pushblishDayName', 'daily_counts']]
 
                 # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='pushblishDayName', values='daily_counts')
+                pivoted_count_df = monthly_count_df.pivot_table(index='pushblishDayName', columns='channelName', values='daily_counts')
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
