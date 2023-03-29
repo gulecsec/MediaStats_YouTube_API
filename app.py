@@ -755,6 +755,14 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
 
 
                 st.markdown("""
+
+                From the given data, we can see that the news channels have varying daily counts of published news articles across different days of the week.
+
+A Haber, CNN TÜRK, Halktv, and TV100 seem to have the highest daily counts of published news articles, whereas BBC News Türkçe, BaBaLa TV, and Habertürk have the lowest.
+
+Furthermore, looking at the days of the week, Tuesday and Thursday seem to have the highest daily counts of published news articles across the majority of the channels, whereas Sunday seems to have the lowest daily counts.
+
+Overall, it is difficult to draw any definitive conclusions from this data without additional information, but we can see that different news channels have different patterns in terms of when they publish their news articles.
                 """)
 
                 # Add footer to the page
