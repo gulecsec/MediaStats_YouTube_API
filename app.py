@@ -642,8 +642,8 @@ Overall, the data suggests that there is a considerable variation in the amount 
                 # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
                 subs_per_video_df = edited_stats_df[['channelName','subscribers', 'subscribers_per_video','totalVideos']]
 
-                fig = px.bar(data_frame=subs_per_video_df.sort_values('subscribers_per_video', ascending=True),
-                x="subscribers_per_video", y="channelName", color='subscribers', orientation='h')
+                fig = px.bar(data_frame=subs_per_video_df.sort_values('subscribers', ascending=True),
+                x="subscribers", y="channelName", color='subscribers_per_video', orientation='h')
 
                 fig.update_layout(yaxis_title=None, xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600)
