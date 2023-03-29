@@ -149,7 +149,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.sidebar.title("Video Stats")
         page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
-        "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Subscribers per Video"))
+        "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
 
         if page == "Views-Minutes After":
             with channel_details:
@@ -714,6 +714,49 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+        if page == "Daily Uploaded Video":
+            with channel_details:
+
+                # Load data
+                monthly_df = pd.read_csv("All_stats/daily_totals.csv")
+
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_df = monthly_df.pivot_table(index='channelName', columns='pushblishDayName', values='daily_counts')
+
+                # Create a new DataFrame with the monthly_video_count_after values
+                monthly_count_df = monthly_df[['channelName', 'pushblishDayName', 'daily_counts']]
+
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='pushblishDayName', values='daily_counts')
+
+                # Generate a horizontal bar chart using Plotly
+                fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
+                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+
+                # Add text to the bars with monthly_video_count_after values
+                for i, col in enumerate(pivoted_df.columns):
+                    fig.data[i].text = pivoted_count_df['daily_counts'][col].astype(str)
+                    fig.data[i].textposition = 'outside'
+
+                # Customize the layout
+                fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+
+                # display the chart
+                st.plotly_chart(fig)
+
+                st.markdown("""
+
+                Regarding comments, in February, the channel with the highest number of comments was Halktv with a count of 67274 while in March, it was SÖZCÜ Televizyonu with a count of 101034. The channel with the lowest number of comments in February was SÖZCÜ Televizyonu with only 10 comments while in March, it was Habertürk with only 39 comments.
+
+In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the channels that have the highest number of comments across the two months. TV100 had the highest number of videos in February while Halktv had the highest number of videos in March. However, it is worth noting that these conclusions are based on only two months' worth of data and may not be indicative of overall trends.
+
+                """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         elif page == "Subscribers per Video":
             with channel_details:
