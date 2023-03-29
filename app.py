@@ -639,22 +639,42 @@ Overall, the data suggests that there is a considerable variation in the amount 
         elif page == "Subscribers per Video":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-                sub_video_df = edited_stats_df[['channelName', 'subscribers_per_video']]
+                # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
+                subs_per_video_df = edited_stats_df[['channelName', 'subscribers_per_video', 'views', 'like_count_after']]
 
                 # set the index to 'channelName' column
-                sub_video_df = sub_video_df.set_index('channelName')
+                subs_per_video_df = subs_per_video_df.set_index('channelName')
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(sub_video_df, barmode='group', title="Subscribers Count per Video ")
+                fig = px.bar(subs_per_video_df, barmode='group', title="Total Views per Video for Each Channel Uploaded After February 6th")
 
-                fig.update_traces(name="Subscribers",selector=dict(name="subscribers_per_video"))
+                fig.update_traces(name="After",selector=dict(name="subscribers_per_video"))
+
+                fig.update_traces(name="Before",selector=dict(name="views"))
+
+                fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_count_after"))
 
                 fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
 
                 # display the chart
                 st.plotly_chart(fig)
+
+                st.markdown("""
+
+                The graph shows the number of views per video for different Turkish news channels before and after February 6th, 2023.
+
+Before February 6th, 2023, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After the natural disaster the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
+
+On the other hand, A Haber had the lowest number of views per video before and after the earthquake.
+
+Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
+
+                """)
+
+                # Add footer to the page
+                st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
