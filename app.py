@@ -586,26 +586,33 @@ Overall, the data suggests that there is a considerable variation in the amount 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
-        if page == "Monthly Average Video Likes":
+        if page == "Monthly Likes After":
             with channel_details:
 
-                # create a new DataFrame with 'channelName', 'avg_monthly_total_mins_after', and 'avg_monthly_total_mins_before' columns
-                avg_monthly_likes_df = edited_stats_df[['channelName', 'avg_monthly_total_likes_after', 'avg_monthly_total_likes_before','avg_monthly_total_likes']]
+                # Load data
+                monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
 
-                # set the index to 'channelName' column
-                avg_monthly_likes_df = avg_monthly_likes_df.set_index('channelName')
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='likes_after_per_month')
 
-                # generate a horizontal bar chart using Plotly
-                fig = px.bar(avg_monthly_likes_df, barmode='group', title="Monthly Average Video Likes")
+                # Create a new DataFrame with the monthly_video_count_after values
+                monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'likes_after_per_month']]
 
-                fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-                width=800, height=600,yaxis_title=None)
+                # Pivot the data to create a new DataFrame with columns for each month
+                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','likes_after_per_month'])
 
-                fig.update_traces(name="After",selector=dict(name="avg_monthly_total_likes_after"))
+                # Generate a horizontal bar chart using Plotly
+                fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
+                            labels={'value': 'Minutes'})
 
-                fig.update_traces(name="Before",selector=dict(name="avg_monthly_total_likes_before"))
+                # Add text to the bars with monthly_video_count_after values
+                for i, col in enumerate(pivoted_df.columns):
+                    fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
+                    fig.data[i].textposition = 'outside'
 
-                fig.update_traces(name="Up to 27/03/23",selector=dict(name="avg_monthly_total_likes"))
+                # Customize the layout
+                fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
                 # display the chart
                 st.plotly_chart(fig)
