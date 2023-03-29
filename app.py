@@ -17,7 +17,7 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Pages")
-page = st.sidebar.radio(("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Turkish News Media's YouTube Stats"))
+page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Turkish News Media's YouTube Stats"))
 
 if page == "Home":
     with header:
