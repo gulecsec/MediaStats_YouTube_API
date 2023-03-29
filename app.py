@@ -27,10 +27,10 @@ if page == "Home":
 
     with dataset:
         # add radio button to select between the two graphs
-        graph_choice = st.radio("Select graph", options=["Views-Total Videos", "Subscribers-Total Videos"])
+        graph_choice = st.radio("Select graph", options=["Total number of Views vs Total number of Videos", "Total number of Subscribers vs Total number of Videos"])
 
         # display the selected graph
-        if graph_choice == "Views-Total Videos":
+        if graph_choice == "Total number of Views vs Total number of Videos":
             fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
                           x="channelName", y="views", color='totalVideos')
 
