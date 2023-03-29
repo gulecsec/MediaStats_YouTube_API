@@ -547,28 +547,25 @@ Therefore, while these percentage changes can give us some insight into each cha
                 pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
 
                 # Create a new DataFrame with the monthly_video_count_after values
-                monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after']]
+                monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'mins_after_per_month']]
 
                 # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values='monthly_video_count_after')
+                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
+
+                # Sort the values by 'mins_after_per_month'
+                pivoted_df = pivoted_df.sort_values(by='Feb', ascending=False)
 
                 # Generate a horizontal bar chart using Plotly
-                fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes and Monthly Video Count",
-                            labels={'value': 'Minutes'}, orientation='h')
-
-                # Add the monthly_video_count_after values as text on each bar
-                for month in pivoted_count_df.columns:
-                    for channel in pivoted_count_df.index:
-                        value = pivoted_count_df.loc[channel, month]
-                        fig.add_annotation(x=value, y=channel, text=str(value),
-                                        font=dict(color='white', size=12), showarrow=False, align='left')
+                fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
+                            labels={'value': 'Minutes'})
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                                yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+                            yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
                 # display the chart
                 st.plotly_chart(fig)
+
 
 
 
