@@ -550,14 +550,17 @@ Therefore, while these percentage changes can give us some insight into each cha
                 monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'mins_after_per_month']]
 
                 # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values='monthly_video_count_after')
-
-                # Merge the pivoted_df and pivoted_count_df DataFrames
-                merged_df = pd.merge(pivoted_df, pivoted_count_df, on='channelName')
+                pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
 
                 # Generate a stacked bar chart using Plotly
-                fig = px.bar(merged_df, barmode='stack', title="Feb & Mar 2023 Uploaded Total Video Minutes and Video Counts",
-                            labels={'value': 'Minutes', 'variable': 'Month'}, color_discrete_sequence=['#1f77b4', '#d62728'])
+                fig = px.bar(pivoted_df, barmode='group', title="Feb & Mar 2023 Uploaded Total Video Minutes",
+                labels={'value': 'Minutes'})
+
+                for month in ['Feb', 'Mar']:
+                    for channel in pivoted_count_df.index:
+                        video_count = pivoted_count_df.loc[channel, ('monthly_video_count_after', month)]
+                        fig.add_annotation(x=month, y=channel, text=str(video_count),
+                        showarrow=False, font=dict(color='white'))
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
