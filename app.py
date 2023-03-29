@@ -314,7 +314,7 @@ Meanwhile, the channels with lower engagement rates could use this information t
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
                 x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
-                title="Channel Likes per Video After 6th of Feb")
+                title="Total Likes per Video for Each Channel Uploaded After February 6th")
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
@@ -353,7 +353,7 @@ This suggests that these channels may have a more engaged audience, with viewers
                 view_per_video_df = view_per_video_df.set_index('channelName')
 
                 # generate a horizontal bar chart using Plotly
-                fig = px.bar(view_per_video_df, barmode='group', title="Views per Video")
+                fig = px.bar(view_per_video_df, barmode='group', title="Total Views per Video for Each Channel Uploaded After February 6th")
 
                 fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
@@ -391,7 +391,7 @@ Overall, it seems that most channels experienced a decrease in the number of vie
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('comment_per_video_after', ascending=False),
                 x="channelName", y="comment_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
-                title="Channel Comments per Video After 6th of Feb")
+                title="Total Comments per Video for Each Channel Uploaded After February 6th")
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
@@ -422,7 +422,7 @@ However, it is important to note that the number of videos uploaded by these cha
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
                 x="channelName", y="mins_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
-                title="Minutes per Video After 6th of Feb")
+                title="Total Minutes per Video for Each Channel Uploaded After February 6th")
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
@@ -453,7 +453,7 @@ It is important to note that the number of videos produced does not necessarily 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('view_per_like_after', ascending=False),
                 x="channelName", y="view_per_like_after", color='view_count_after', color_continuous_scale='Inferno',
-                title="Views per Likes After 6th of Feb")
+                title="Total Views per Like for Each Channel Uploaded After February 6th")
 
                 fig.update_layout(coloraxis_colorbar=dict(title="Views"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600,yaxis_title=None)
