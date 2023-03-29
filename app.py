@@ -655,13 +655,7 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 st.markdown("""
 
-                The graph shows the number of views per video for different Turkish news channels before and after February 6th, 2023.
-
-Before February 6th, 2023, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After the natural disaster the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
-
-On the other hand, A Haber had the lowest number of views per video before and after the earthquake.
-
-Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
+                Looking at the data, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average. BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively. It's interesting to note that some channels with fewer subscribers, such as A Haber and Anadolu Ajansı, have a higher number of subscribers per video than channels with larger subscriber counts like Habertürk and FOX Haber. This suggests that the quality and engagement of the content may be more important than the number of subscribers.
 
                 """)
 
