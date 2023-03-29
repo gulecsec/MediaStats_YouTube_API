@@ -643,7 +643,8 @@ Overall, the data suggests that there is a considerable variation in the amount 
                 subs_per_video_df = edited_stats_df[['channelName','subscribers', 'subscribers_per_video','totalVideos']]
 
                 fig = px.bar(data_frame=subs_per_video_df.sort_values('subscribers', ascending=True),
-                x="subscribers", y="channelName", color='subscribers_per_video', orientation='h')
+                x="subscribers", y="channelName", color='subscribers_per_video', orientation='h',
+                color_continuous_scale=px.colors.sequential.Viridis)
 
                 fig.update_layout(yaxis_title=None, xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600)
