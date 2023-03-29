@@ -722,7 +722,7 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
                 monthly_df = pd.read_csv("All_stats/daily_totals.csv")
 
                 # Pivot the data to create a new DataFrame with columns for each month
-                pivoted_df = monthly_df.pivot_table(index='channelName', columns='pushblishDayName', values='daily_counts')
+                pivoted_df = monthly_df.pivot_table(index='pushblishDayName', columns='channelName', values='daily_counts')
 
                 # Create a new DataFrame with the monthly_video_count_after values
                 monthly_count_df = monthly_df[['channelName', 'pushblishDayName', 'daily_counts']]
