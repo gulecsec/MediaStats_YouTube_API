@@ -854,3 +854,14 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # display plotly graph
         st.plotly_chart(fig)
+
+        st.markdown("""
+
+        The accuracy of the Top 10 Videos by Like Count and View Count may vary due to daily quotas on YouTube APIs, which can result in incomplete data for channels with a high number of total videos.
+
+The daily quota for YouTube Data API v3 was 10,000 units per day as of September 2021, but this may change at any time. It's important to follow YouTube's official documentation and guidelines to avoid exceeding the quota limit and ensure compliance with their terms of service.
+
+                """)
+
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
