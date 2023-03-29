@@ -734,10 +734,10 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
                 fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
                             labels={'value': 'Comments'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
-                # # Add text to the bars with daily_counts values
-                # for i, col in enumerate(pivoted_df.columns):
-                #     fig.data[i].text = pivoted_count_df[col].astype(str)
-                #     fig.data[i].textposition = 'outside'
+                # Add text to the bars with daily_counts values
+                for i, col in enumerate(pivoted_df.columns):
+                    fig.data[i].text = pivoted_count_df[col].astype(str)
+                    fig.data[i].textposition = 'outside'
 
                 # Customize the layout
                 fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
