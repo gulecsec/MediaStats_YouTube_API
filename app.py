@@ -183,26 +183,6 @@ if page == "Most Used Words Based on Content Title":
         plt.axis("off")
         plt.show()
 
-        # create a colored table using plotly express
-        fig = px.table(df, values=['title', 'likeCount', 'viewCount'],
-                    labels={'title': 'Title', 'likeCount': 'Like Count', 'viewCount': 'View Count'})
-
-        fig.update_layout(
-            font_family='Arial',
-            font_size=16,
-            height=500,
-            width=800,
-            margin=dict(l=20, r=20, t=20, b=20),
-            coloraxis_showscale=False,
-            plot_bgcolor='rgba(0,0,0,0)',
-            paper_bgcolor='rgba(0,0,0,0)',
-            font_color='#2b2d42',
-            hoverlabel=dict(bgcolor='#2b2d42', font_size=14, font_family='Arial', font_color='#f0f6f7'),
-        )
-
-        st.plotly_chart(fig)
-
-
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
