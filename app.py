@@ -42,7 +42,8 @@ state_dict = {
     "Home": {"headline_displayed": False},
     "Google Developers Console": {"headline_displayed": False},
     "Top 10 Videos by Like Count and View Count": {"headline_displayed": False},
-    "Turkish News Media's YouTube Stats": {"headline_displayed": False}
+    "Turkish News Media's YouTube Stats": {"headline_displayed": False},
+    "Most Used Words by Title": {"headline_displayed": False}
 }
 
 
@@ -823,6 +824,34 @@ if page == "Turkish News Media's YouTube Stats":
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+
+if page == "Most Used Words by Title":
+
+    # create a dropdown to select a channel
+    channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
+
+    # get the path and dataframe for the selected channel
+    path = channel_data[channel_choice]['path']
+
+    df = pd.read_csv(path)
+    df = df[df['publishedAt'] >= '2023-02-06']
+
+    # create a horizontal bar chart of the top 15 most used words
+    word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
+    top_words = word_counts[:15]
+    fig, ax = plt.subplots(figsize=(10, 8))
+    ax.barh(top_words.index, top_words.values)
+    ax.invert_yaxis()
+    ax.set_xlabel("Word Count")
+    ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+
+    # remove frame
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.pyplot(fig)
 
 
 elif page == "Top 10 Videos by Like Count and View Count":
