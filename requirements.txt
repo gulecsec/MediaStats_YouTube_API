@@ -3,5 +3,4 @@ pandas
 plotly.express
 seaborn
 matplotlib
-WordCloud
-STOPWORDS
+wordcloud
