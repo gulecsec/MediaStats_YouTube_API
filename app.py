@@ -184,45 +184,62 @@ if page == "Turkish News Media's YouTube Stats":
     # Load Each Channel Data
     edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
 
-    # Load data
+    # Load Each Channel Monthly & Daily Data
     monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
     daily_df = pd.read_csv("All_stats/daily_totals.csv")
 
     # Define sidebar
     st.sidebar.title("Detailed Stats")
     page = st.sidebar.radio("", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
-    "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
-    "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
+    "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes",
+    "Number of Videos After", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
+    "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
 
     if page == "Views-Minutes After":
 
-        # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
-        view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
+        # # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
+        # view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
 
-        # sort the values by 'like_count_after'
-        view_mins_df = view_mins_df.sort_values(by='view_count_after')
+        # # sort the values by 'view_count_after'
+        # view_mins_df = view_mins_df.sort_values(by='view_count_after')
 
-        # Calculate the like per minute values
-        view_per_min = view_mins_df['view_count_after'] / view_mins_df['mins_count_after']
-        view_mins_df['View per Minute'] = view_per_min
+        # # Calculate the view per minute values
+        # view_per_min = view_mins_df['view_count_after'] / view_mins_df['mins_count_after']
+        # view_mins_df['View per Minute'] = view_per_min
 
-        # set the index to 'channelName' column
-        view_mins_df = view_mins_df.set_index('channelName')
+        # # set the index to 'channelName' column
+        # view_mins_df = view_mins_df.set_index('channelName')
 
-        # generate a horizontal bar chart using Plotly
-        fig = px.bar(view_mins_df, x='view_count_after', y=view_mins_df.index,
-        color='mins_count_after', orientation='h',
-        title="Top Channels by Views per Minute: Analyzing Total Video Minutes After 6th of Feb",
-        color_continuous_scale='Blues', text=view_per_min.round(0), labels={'text': 'Views per Min'})
+        # # generate a horizontal bar chart using Plotly
+        # fig = px.bar(view_mins_df, x='view_count_after', y=view_mins_df.index,
+        # color='mins_count_after', orientation='h',
+        # title="Top Channels by Views per Minute: Analyzing Total Video Minutes After 6th of Feb",
+        # color_continuous_scale='Blues', text=view_per_min.round(0), labels={'text': 'Views per Min'})
 
-        fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
-        xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
-        coloraxis_colorbar=dict(title="Minutes"))
+        # fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
+        # xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+        # coloraxis_colorbar=dict(title="Minutes"))
 
-        fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
+        # fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
-        # display the chart
-        st.plotly_chart(fig)
+        # # display the chart
+        # st.plotly_chart(fig)
+
+
+        # load the data
+        data = pd.read_csv('youtube_stats.csv')
+
+        # create a long-format dataframe for plotting
+        df = pd.melt(data, id_vars=['Channel'], var_name='Metric', value_name='Value')
+
+        # filter to only include view and view per minute metrics
+        df = df[df['Metric'].isin(['Views', 'Views per minute'])]
+
+        # create the plot
+        fig = px.bar(df, x='Channel', y='Value', color='Metric',
+                    barmode='group', title='Comparison of Turkish News Media YouTube Stats')
+
+        fig.show()
 
         st.markdown("""
 
@@ -354,8 +371,6 @@ if page == "Turkish News Media's YouTube Stats":
         fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
         x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
         title="Total Likes per Video for Each Channel Uploaded After February 6th", labels={'text': 'Likes per Min'})
-
-        # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
         fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
         width=800, height=600,yaxis_title=None)
