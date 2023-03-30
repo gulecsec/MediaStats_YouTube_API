@@ -419,7 +419,7 @@ if page == "Turkish News Media's YouTube Stats":
         # generate a horizontal bar chart using Plotly
         fig = px.bar(data_frame=edited_stats_df.sort_values('comment_per_video_after', ascending=False),
         x="channelName", y="comment_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
-        title="Total Comments per Video for Each Channel Uploaded After February 6th")
+        title="Top Channels by Comments per Video: Analyzing Total Comments & Videos After 6th of Feb")
 
         # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
