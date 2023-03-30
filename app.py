@@ -36,7 +36,10 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Main Pages")
-page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count", "Turkish News Media's YouTube Stats"))
+page = st.sidebar.radio("", ("Home", "Google Developers Console",
+"Top 10 Videos by Like Count and View Count",
+"Turkish News Media's YouTube Stats"
+))
 
 # Define dictionary to keep track of state for each page
 state_dict = {
@@ -77,7 +80,7 @@ if page == "Google Developers Console":
     with header:
         st.markdown("This page aims to assist you in obtaining an API key, making requests using the YouTube API with Python, and analyzing the results. It is important to note that before proceeding, you will need to create a project in the Google Developers Console and obtain an API key. With this information, we will explore how to use the YouTube API to gather video statistics of channels after the 6th of February 2023 earthquake in Turkey to compare values between channels.")
 
-        st.subheader("Step 1: Set Up a Project in the Google Developers Console")
+        st.subheader("Step 1: Set Up a Project in the Google Developers Console", anchor=None)
         st.markdown("""
                 To use the YouTube API with Python, you first need to create a project in the Google Developers Console and obtain an API key. Here are the steps:
                 1. Go to the Google Developers Console (https://console.developers.google.com/).
