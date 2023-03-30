@@ -860,7 +860,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # show the list of top 10 videos in a table
         st.write("Top 10 Video Titles:")
-        top10_table = top10[['title', 'likeCount']].reset_index(drop=True)
+        top10_table = top10[['title', 'likeCount','viewCount']].reset_index(drop=True)
         top10_table.index += 1  # start the index from 1 instead of 0
         st.table(top10_table)
 
