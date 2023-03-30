@@ -193,7 +193,7 @@ if page == "Turkish News Media's YouTube Stats":
     page = st.sidebar.radio("", ("Views per Minute", "Likes per Minute", "Comments per Minute",
     "Likes per Video", "Views per Video", "Comments per Video", "Minutes per Video", "Views per Likes",
     "Number of Videos Uploaded", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
-    "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
+    "Monthly Comments After","Number of Daily Content","Subscribers per Video"))
 
     if page == "Views per Minute":
 
@@ -630,7 +630,7 @@ if page == "Turkish News Media's YouTube Stats":
         pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','likes_after_per_month'])
 
         # Generate a horizontal bar chart using Plotly
-        fig = px.bar(pivoted_df, barmode='group', title="Total Likes on Content Uploaded in Feb & Mar 2023",
+        fig = px.bar(pivoted_df, barmode='group', title="Total Likes of Monthly Content per Channel After 6th of Feb",
                     labels={'value': 'Likes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
         # Add text to the bars with monthly_video_count_after values
@@ -669,7 +669,7 @@ if page == "Turkish News Media's YouTube Stats":
         pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','views_after_per_month'])
 
         # Generate a horizontal bar chart using Plotly
-        fig = px.bar(pivoted_df, barmode='group', title="Total Views on Content Uploaded in Feb & Mar 2023",
+        fig = px.bar(pivoted_df, barmode='group', title="Total Views of Monthly Content per Channel After 6th of Feb",
         labels={'value': 'Views'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
         # Add text to the bars with monthly_video_count_after values
@@ -686,7 +686,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        Based on the data provided, we can observe that the total number of videos produced by each channel decreased in March compared to February, except for SÖZCÜ Televizyonu, Halktv, and CNN TÜRK. However, the views received by these videos decreased more dramatically compared to the reduction in the number of videos produced, especially for channels like Habertürk, Yeni Şafak, and Anadolu Ajansı.
+        Based on the graph above, we can observe that the total number of videos produced by each channel decreased in March compared to February, except for SÖZCÜ Televizyonu, Halktv, and CNN TÜRK. However, the views received by these videos decreased more dramatically compared to the reduction in the number of videos produced, especially for channels like Habertürk, Yeni Şafak, and Anadolu Ajansı.
 
         Interestingly, Halktv and SÖZCÜ Televizyonu saw an increase in the number of comments per month in March compared to February, even though the number of videos produced decreased slightly.
 
@@ -710,7 +710,7 @@ if page == "Turkish News Media's YouTube Stats":
         pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','comments_after_per_month'])
 
         # Generate a horizontal bar chart using Plotly
-        fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
+        fig = px.bar(pivoted_df, barmode='group', title="Total Comments of Monthly Content per Channel After 6th of Feb",
         labels={'value': 'Comments'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
         # Add text to the bars with monthly_video_count_after values
@@ -737,7 +737,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-    if page == "Daily Uploaded Video":
+    if page == "Number of Daily Content":
 
         # Create a dictionary to map day names to their respective numeric values
         day_name_to_num = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Sunday': 7}
@@ -761,7 +761,7 @@ if page == "Turkish News Media's YouTube Stats":
         pivoted_count_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
 
         # Generate a horizontal bar chart using Plotly
-        fig = px.bar(pivoted_df, barmode='group', title="Content Uploaded Daily in Feb & Mar 2023",
+        fig = px.bar(pivoted_df, barmode='group', title="Number of Uploaded Daily Content per Channel After 6th of Feb",
                     labels={'value': 'Daily Content'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
         # Customize the layout
@@ -774,7 +774,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        From the given data, we can see that the news channels have varying daily counts of published news articles across different days of the week.
+        From the values above, we can see that the news channels have varying daily counts of published news articles across different days of the week.
 
         A Haber, CNN TÜRK, Halktv, and TV100 seem to have the highest daily counts of published news articles, whereas BBC News Türkçe, BaBaLa TV, and Habertürk have the lowest.
 
@@ -805,7 +805,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        Looking at the data, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average.
+        Looking at the graph, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average.
 
         BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively.
 
