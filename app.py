@@ -180,7 +180,6 @@ if page == "Most Used Words Based on Content Title":
         if st.session_state.channel != channel_choice:
             df = pd.read_csv(path)
             df = df[df['publishedAt'] >= '2023-02-06']
-
             # create a word cloud of video titles
             text = " ".join(title for title in df['title'])
             stopwords = set(STOPWORDS)
@@ -199,6 +198,7 @@ if page == "Most Used Words Based on Content Title":
             st.session_state.channel = channel_choice
             st.session_state.df = df
             st.session_state.wordcloud = wordcloud
+
         else:
             # use session state variables if it is the same channel choice
             df = st.session_state.df
@@ -210,7 +210,6 @@ if page == "Most Used Words Based on Content Title":
         ax.imshow(wordcloud, interpolation='bilinear')
         ax.axis("off")
         st.pyplot(fig)
-
 
 
 if page == "Turkish News Media's YouTube Stats":
