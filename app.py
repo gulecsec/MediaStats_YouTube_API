@@ -583,7 +583,7 @@ if page == "Turkish News Media's YouTube Stats":
         pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
 
         # Generate a horizontal bar chart using Plotly
-        fig = px.bar(pivoted_df, barmode='group', title="Total Minutes of Content in Feb & Mar 2023",
+        fig = px.bar(pivoted_df, barmode='group', title="Total Minutes of Monthly Content per Channel After 6th of Feb",
                     labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
         # Add text to the bars with monthly_video_count_after values
