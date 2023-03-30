@@ -233,9 +233,8 @@ if page == "Turkish News Media's YouTube Stats":
 
         On the other hand, Halktv and CNN TÜRK had the longest watch time, with 58,560.8 and 56,479.9 minutes respectively.
 
-        However, their view per minute rates were much lower at 1,277 and 1,361, respectively. Yeni Şafak had the highest view
-
-        per minute rate at 39,390, but only 859.7 minutes watched. In contrast, BBC News Türkçe had a much lower view per minute
+        However, their view per minute rates were much lower at 1,277 and 1,361, respectively. Yeni Şafak had the highest view per minute rate at 39,390, but only 859.7 minutes watched.
+        In contrast, BBC News Türkçe had a much lower view per minute
 
         rate of 39,318 but had a much longer watch time of 260.9 minutes. The data can be useful for comparing the performance of
 
