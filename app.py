@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import WordCloud, STOPWORDS
+from wordcloud import WordCloud, STOPWORDS
 
 # Data viz packages
 import plotly.express as px
