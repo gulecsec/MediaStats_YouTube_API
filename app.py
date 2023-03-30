@@ -862,6 +862,18 @@ elif page == "Top 10 Videos by Like Count and View Count":
         st.write("Top 10 Video Titles:")
         top10_table = top10[['title', 'likeCount','viewCount']].reset_index(drop=True)
         top10_table.index += 1  # start the index from 1 instead of 0
+        # apply background color to the table
+        top10_styled = top10.style.set_table_styles([{'selector': 'thead',                                               'props': [('background-color', '#264653'), ('color', 'white')]},
+                                                    {'selector': 'tbody tr:nth-of-type(odd)',
+                                                    'props': [('background-color', '#f2f2f2')]},
+                                                    {'selector': 'tbody tr:nth-of-type(even)',
+                                                    'props': [('background-color', 'white')]},
+                                                    {'selector': 'th',
+                                                    'props': [('font-size', '18px'), ('text-align', 'center')]},
+                                                    {'selector': 'td',
+                                                    'props': [('font-size', '16px'), ('text-align', 'center')]},
+                                                    {'selector': '.row_heading',
+                                                    'props': [('display', 'none')]}])
         st.table(top10_table)
 
         st.markdown("""
