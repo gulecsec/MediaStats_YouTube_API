@@ -77,6 +77,14 @@ if page == "Home":
 
     st.plotly_chart(fig)
 
+    st.markdown("""
+
+    Due to daily quotas on YouTube APIs, the accuracy of the statistics presented in the graphs above may vary, particularly for channels with a high number of total videos.
+
+    The daily quota for YouTube Data API v3 was 10,000 units, but this limit is subject to change at any time. To prevent exceeding the quota limit and ensure compliance with YouTube's terms of service, it is essential to follow their official documentation and guidelines carefully.
+
+    """)
+
 
 if page == "Google Developers Console":
 
