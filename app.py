@@ -839,7 +839,9 @@ It's interesting to note that some channels with fewer subscribers, such as A Ha
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
-        st.header("10 Most Popular Videos based on Likes and Views per Channel")
+        if not state_dict[page]["headline_displayed"]:
+            st.header("10 Most Popular Videos based on Likes and Views per Channel")
+            state_dict[page]["headline_displayed"] = True
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
