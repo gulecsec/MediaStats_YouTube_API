@@ -179,9 +179,9 @@ if page == "Most Used Words Based on Content Title":
         wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
 
         # display the word cloud using matplotlib
-        fig = plt.figure(figsize=(10,8))
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis("off")
+        fig, ax = plt.subplots(figsize=(10, 8))
+        ax.imshow(wordcloud, interpolation='bilinear')
+        ax.axis("off")
         st.pyplot(fig)
 
         # clear cache after displaying the word cloud
