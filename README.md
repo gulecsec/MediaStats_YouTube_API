@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>YouTube Stats of Turkish News Media</h1>
-  <p>This project aims to analyze the popularity and engagement of YouTube channels belonging to Turkish news media by scraping their statistics. Additionally, it creates a word cloud of the top 50 most used words in the titles of the channel's videos to provide further insights.</p>
+  <p>This project aims to analyze the popularity and engagement of 15 YouTube channels belonging to Turkish news media by scraping their statistics. Additionally, it creates a word cloud of the top 50 most used words in the titles of the channel's videos to provide further insights.</p>
 
   <h2>Data Collection and Analysis</h2>
   <p>The project uses the YouTube Data API v3 to scrape data for the channels of Turkish news media. The scraped data includes information about the number of views, likes, durations, and comments for each video, as well as statistics about the channel itself, such as subscriber count and total views. The data is then analyzed to gain insights about the performance and engagement of the channels.</p>
