@@ -80,6 +80,11 @@ if page == "Home":
 
         st.plotly_chart(fig)
 
+
+# update session state variables
+st.session_state['page'] = page
+
+
 if page == "Google Developers Console":
     with header:
         st.markdown("This page aims to assist you in obtaining an API key, making requests using the YouTube API with Python, and analyzing the results. It is important to note that before proceeding, you will need to create a project in the Google Developers Console and obtain an API key. With this information, we will explore how to use the YouTube API to gather video statistics of channels after the 6th of February 2023 earthquake in Turkey to compare values between channels.")
@@ -175,6 +180,11 @@ The YouTube API and Python provide a wide range of possibilities for automation,
 By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                     """)
 
+
+# update session state variables
+st.session_state['page'] = page
+
+
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
         st.title("Detailed YouTube Stats of Turkish News Media's")
@@ -185,8 +195,6 @@ if page == "Turkish News Media's YouTube Stats":
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
         "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
 
-        # update session state variables
-        st.session_state['page'] = page
 
         if page == "Views-Minutes After":
             with channel_details:
@@ -836,6 +844,11 @@ It's interesting to note that some channels with fewer subscribers, such as A Ha
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+
+# update session state variables
+st.session_state['page'] = page
+
+
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
         st.header("10 Most Popular Videos based on Likes and Views per Channel")
@@ -895,3 +908,7 @@ The daily quota for YouTube Data API v3 was 10,000 units per day as of September
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+
+# update session state variables
+st.session_state['page'] = page
