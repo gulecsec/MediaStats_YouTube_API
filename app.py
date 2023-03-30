@@ -186,9 +186,6 @@ if page == "Google Developers Console":
 if page == "Turkish News Media's YouTube Stats":
 
     with channel_details:
-        if not state_dict[page]["headline_displayed"]:
-            st.header("Detailed YouTube Stats of Turkish News Media's")
-            state_dict[page]["headline_displayed"] = True
 
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
