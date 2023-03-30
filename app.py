@@ -130,7 +130,6 @@ request = youtube.channels().list(
     part="snippet,contentDetails,statistics",
     id=','.join(channel_ids))
 
-
 response = request.execute()
 
 # loop through items
@@ -139,8 +138,7 @@ for item in response['items']:
         'subscribers': item['statistics']['subscriberCount'],
         'views': item['statistics']['viewCount'],
         'totalVideos': item['statistics']['videoCount'],
-        'playlistId': item['contentDetails']['relatedPlaylists']['uploads']
-        }
+        'playlistId': item['contentDetails']['relatedPlaylists']['uploads']}
 
     # Check if the channel has any subscriber milestone
     if 'bulletin' in item['contentDetails']:
@@ -156,21 +154,23 @@ return(pd.DataFrame(all_data))
 
         st.subheader("Step 6: Analyze the Response")
         st.markdown("""
+
         The response is a JSON object that contains the details of the video, including the title, description, view count, like count, and more.
 
-        Here’s a simple example that prints the title and view count of the video:
+Here’s a simple example that prints the title and view count of the video:
 
-        By following these easy steps, you can now begin using the YouTube API with Python to streamline various tasks and collect valuable information about videos, channels, playlists, and beyond. Moreover, the API provides additional functionality such as:
+By following these easy steps, you can now begin using the YouTube API with Python to streamline various tasks and collect valuable information about videos, channels, playlists, and beyond. Moreover, the API provides additional functionality such as:
 
-        * Search for videos: You can use the search.list method to search for videos based on keywords, location, language, and other criteria.
+* Search for videos: You can use the search.list method to search for videos based on keywords, location, language, and other criteria.
 
-        * Retrieve channel details: You can use the channels.list method to retrieve information about a channel, including the number of subscribers, videos, and views.
+* Retrieve channel details: You can use the channels.list method to retrieve information about a channel, including the number of subscribers, videos, and views.
 
-        * Retrieve playlist details: You can use the playlists.list method to retrieve information about a playlist, including the videos, title, and description.
+* Retrieve playlist details: You can use the playlists.list method to retrieve information about a playlist, including the videos, title, and description.
 
-        The YouTube API and Python provide a wide range of possibilities for automation, data gathering, and feature creation. Whether you want to build a tool to analyze videos or automate repetitive tasks, the API and the Google API Client library can help you achieve your goals.
+The YouTube API and Python provide a wide range of possibilities for automation, data gathering, and feature creation. Whether you want to build a tool to analyze videos or automate repetitive tasks, the API and the Google API Client library can help you achieve your goals.
 
-        By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
+By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
+
                             """)
 
         state_dict[page]["headline_displayed"] = True
