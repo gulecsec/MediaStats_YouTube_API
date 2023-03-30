@@ -170,36 +170,32 @@ if page == "Most Used Words Based on Content Title":
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
         # get the path and dataframe for the selected channel
-        path = channel_data[channel_choice]['path']
-
-        # Load Each Channel Data
+        path = f"media_stats/stats_{channel_choice.lower().replace(' ', '_')}.csv"
         df = pd.read_csv(path)
         df = df[df['publishedAt'] >= '2023-02-06']
 
-        # display the most used words in a horizontal bar chart
-        st.subheader("Most Used Words Based on Content Title")
-        fig, ax = plt.subplots(figsize=(10, 8))
-        df['title'] = df['title'].apply(lambda x: x.lower())
-        df['title'] = df['title'].apply(lambda x: x.translate(str.maketrans('', '', string.punctuation)))
-        df['title'] = df['title'].apply(lambda x: " ".join(x.split()))
+        # create a word cloud of video titles
         text = " ".join(title for title in df['title'])
         stopwords = set(STOPWORDS)
         wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
-        word_count_dict = {}
-        for word in text.split():
-            if word not in stopwords and len(word) > 2:
-                if word not in word_count_dict:
-                    word_count_dict[word] = 1
-                else:
-                    word_count_dict[word] += 1
-        sorted_word_count_dict = sorted(word_count_dict.items(), key=lambda x: x[1], reverse=True)
-        top_words = dict(sorted_word_count_dict[:15])
-        ax.barh(list(top_words.keys()), list(top_words.values()))
-        ax.set_xlabel("Count")
-        ax.set_title(channel_data[channel_choice]['title'])
+
+        # display the word cloud using matplotlib
+        fig, ax = plt.subplots(figsize=(10, 8))
+        ax.imshow(wordcloud, interpolation='bilinear')
+        ax.axis("off")
         st.pyplot(fig)
 
-        # clear cache after display
+        # create a horizontal bar chart of the top 15 most used words
+        word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
+        top_words = word_counts[:15]
+        fig, ax = plt.subplots(figsize=(10, 8))
+        ax.barh(top_words.index, top_words.values)
+        ax.invert_yaxis()
+        ax.set_xlabel("Word Count")
+        ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+        st.pyplot(fig)
+
+        # clear cache after displaying the word cloud and bar chart
         st.caching.clear_cache()
 
 
