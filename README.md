@@ -26,6 +26,6 @@
   <p>The data is scraped using the googleapiclient and pandas packages in Python.</p>
   <p>The web application is built using the streamlit package in Python.</p>
   <p>The data visualization is designed using the plotly.express package in Python.</p>
-  <p>Special thanks to OpenAI for providing the language model ChatGPT which was used to answer some of the questions during the development of this project.</p>
+  <p>Special thanks to <a href="https://www.kaggle.com/heeraldedhia">Heeral Dedhia</a> on Kaggle for providing the Turkish stopwords file used in this project.</p>
 </body>
 </html>
