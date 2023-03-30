@@ -845,7 +845,7 @@ if page == "Most Used Words by Title":
     text = " ".join(df['title'].values)
 
     # generate word cloud
-    wordcloud = WordCloud(width=800, height=400, background_color='white', stopwords=stopwords, max_words=50).generate(text)
+    wordcloud = WordCloud(width=800, height=400, background_color='white', stopwords=stopwords, max_words=15).generate(text)
 
     # plot the word cloud
     plt.figure(figsize=(20,10))
