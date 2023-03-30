@@ -173,6 +173,11 @@ if page == "Most Used Words Based on Content Title":
         if "channel" not in st.session_state:
             st.session_state.channel = None
 
+        # check if selected channel is different from current channel in session state
+        if st.session_state.channel != channel_choice:
+            # update session state with new channel
+            st.session_state.channel = channel_choice
+
             # get the path and dataframe for the selected channel
             path = channel_data[channel_choice]['path']
 
@@ -190,6 +195,7 @@ if page == "Most Used Words Based on Content Title":
         ax.imshow(wordcloud, interpolation='bilinear')
         ax.axis("off")
         st.pyplot(fig)
+
 
 
 
