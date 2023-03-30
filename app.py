@@ -190,7 +190,7 @@ if page == "Turkish News Media's YouTube Stats":
 
     # Define sidebar
     st.sidebar.title("Detailed Stats")
-    page = st.sidebar.radio("", ("Views per Minute", "Likes-Minutes After", "Comments-Minutes After",
+    page = st.sidebar.radio("", ("Views per Minute", "Likes per Minute", "Comments-Minutes After",
     "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes",
     "Number of Videos After", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
     "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
@@ -242,7 +242,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-    if page == "Likes-Minutes After":
+    if page == "Likes per Minute":
 
         # Select columns of interest
         like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
@@ -273,17 +273,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.plotly_chart(fig)
 
         st.markdown("""
-
-        Based on the data provided, it appears that the channels with the highest "Like per Minute" are Yeni Şafak and BaBaLa TV, with values of 764 and 709, respectively.
-
-        On the other hand, the channels with the lowest "Like per Minute" are FOX Haber, CNN TÜRK, and Halktv, with values of 7, 11, and 13, respectively.
-
-        In terms of total "Like Count After", Cüneyt Özdemir has the highest value with 761,719 likes, followed by Yeni Şafak with 656,476 likes.
-
-        However, in terms of "Minutes Count After", Halktv has the highest value with 58,560.8 minutes, followed by TV100 with 46,025.6 minutes.
-
-        Overall, it can be concluded that while some channels may have a higher "Like per Minute" rate, it is important to also consider the total number of minutes and likes, as these values can provide more context and a more comprehensive picture of a channel's performance on YouTube.
-
+        The table shows the minutes of content produced, likes received, and likes per minute for various Turkish news channels. The channel "Yeni Şafak" received the highest number of likes, with an impressive 764 likes per minute, while "FOX Haber" had the lowest rate, with only 7 likes per minute. "CNN TÜRK" also had a relatively low rate of likes, with only 11 per minute, despite having produced the highest amount of content, with almost 57,000 minutes. "Cüneyt Özdemir" and "BaBaLa TV" had the highest and third-highest likes per minute rates, respectively, with 75 and 709. "Nevşin Mengü" and "BBC News Türkçe" had a relatively high rate of likes, with 131 and 485 per minute, respectively. Other channels had moderate to low rates of likes per minute, with the majority receiving between 11 and 27 likes per minute.
         """)
 
         # Add footer to the page
