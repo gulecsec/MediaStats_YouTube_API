@@ -379,459 +379,448 @@ if page == "Turkish News Media's YouTube Stats":
 
 
     if page == "Views per Video":
-        with channel_details:
 
-            # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
-            view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before', 'view_per_video']]
+        # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
+        view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before', 'view_per_video']]
 
-            # set the index to 'channelName' column
-            view_per_video_df = view_per_video_df.set_index('channelName')
+        # set the index to 'channelName' column
+        view_per_video_df = view_per_video_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(view_per_video_df, barmode='group', title="Total Views per Video for Each Channel Uploaded After February 6th")
+        # generate a horizontal bar chart using Plotly
+        fig = px.bar(view_per_video_df, barmode='group', title="Total Views per Video for Each Channel Uploaded After February 6th")
 
-            fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
+        fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
+        fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
 
-            fig.update_traces(name="Up to 27/03/23",selector=dict(name="view_per_video"))
+        fig.update_traces(name="Up to 27/03/23",selector=dict(name="view_per_video"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+        fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            The graph shows the number of views per video for different Turkish news channels before and after February 6th, 2023.
+        The graph shows the number of views per video for different Turkish news channels before and after February 6th, 2023.
 
-            Before February 6th, 2023, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After the natural disaster the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
+        Before February 6th, 2023, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After the natural disaster the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
 
-            On the other hand, A Haber had the lowest number of views per video before and after the earthquake.
+        On the other hand, A Haber had the lowest number of views per video before and after the earthquake.
 
-            Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
+        Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Comments per Video":
-        with channel_details:
 
-            # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
-            comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'video_count_after']]
+        # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
+        comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'video_count_after']]
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(data_frame=edited_stats_df.sort_values('comment_per_video_after', ascending=False),
-            x="channelName", y="comment_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
-            title="Total Comments per Video for Each Channel Uploaded After February 6th")
+        # generate a horizontal bar chart using Plotly
+        fig = px.bar(data_frame=edited_stats_df.sort_values('comment_per_video_after', ascending=False),
+        x="channelName", y="comment_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
+        title="Total Comments per Video for Each Channel Uploaded After February 6th")
 
-            # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
+        # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
-            fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+        fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            The graph shows the number of videos uploaded by different news channels on YouTube and the average number of comments per video after the 6th of February 2023.
+        The graph shows the number of videos uploaded by different news channels on YouTube and the average number of comments per video after the 6th of February 2023.
 
-            In terms of the average number of comments per video, the highest number is seen for BaBaLa TV with 923 comments per video followed by BBC News Türkçe with 666 comments per video. Anadolu Ajansı has the lowest number of comments per video with only 12 comments per video on average.
+        In terms of the average number of comments per video, the highest number is seen for BaBaLa TV with 923 comments per video followed by BBC News Türkçe with 666 comments per video. Anadolu Ajansı has the lowest number of comments per video with only 12 comments per video on average.
 
-            Overall, it appears that BaBaLa TV and BBC News Türkçe are the channels with the most engaged audiences as they have the highest number of comments per video.
+        Overall, it appears that BaBaLa TV and BBC News Türkçe are the channels with the most engaged audiences as they have the highest number of comments per video.
 
-            However, it is important to note that the number of videos uploaded by these channels is relatively small compared to other channels such as CNN TÜRK and SÖZCÜ Televizyonu, which may have an impact on the comment per video ratio.
+        However, it is important to note that the number of videos uploaded by these channels is relatively small compared to other channels such as CNN TÜRK and SÖZCÜ Televizyonu, which may have an impact on the comment per video ratio.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Durations per Video":
-        with channel_details:
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
-            x="channelName", y="mins_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
-            title="Total Minutes per Video for Each Channel Uploaded After February 6th")
+        # generate a horizontal bar chart using Plotly
+        fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
+        x="channelName", y="mins_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
+        title="Total Minutes per Video for Each Channel Uploaded After February 6th")
 
-            # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
+        # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
-            fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+        fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            These values represent the number of videos and the average length of those videos for each channel after the selected date range.
+        These values represent the number of videos and the average length of those videos for each channel after the selected date range.
 
-            The highest number of videos produced after the selected date range was by CNN TÜRK with 2,438 videos, followed by TV100 with 1,970 videos and Halktv with 1,396 videos.
+        The highest number of videos produced after the selected date range was by CNN TÜRK with 2,438 videos, followed by TV100 with 1,970 videos and Halktv with 1,396 videos.
 
-            Regarding the average length of videos produced, Nevşin Mengü has the longest average length of videos at 46.2 minutes, followed by Halktv with 41.9 minutes and FOX Haber with 34.4 minutes. On the other hand, TRT Haber has the shortest average video length of 1.6 minutes , followed by Yeni Şafak with 7.8 minutes.
+        Regarding the average length of videos produced, Nevşin Mengü has the longest average length of videos at 46.2 minutes, followed by Halktv with 41.9 minutes and FOX Haber with 34.4 minutes. On the other hand, TRT Haber has the shortest average video length of 1.6 minutes , followed by Yeni Şafak with 7.8 minutes.
 
-            It is important to note that the number of videos produced does not necessarily reflect the quality of content or engagement with the audience.
+        It is important to note that the number of videos produced does not necessarily reflect the quality of content or engagement with the audience.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Views per Likes":
-        with channel_details:
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(data_frame=edited_stats_df.sort_values('view_per_like_after', ascending=False),
-            x="channelName", y="view_per_like_after", color='view_count_after', color_continuous_scale='Inferno',
-            title="Total Views per Like for Each Channel Uploaded After February 6th")
+        # generate a horizontal bar chart using Plotly
+        fig = px.bar(data_frame=edited_stats_df.sort_values('view_per_like_after', ascending=False),
+        x="channelName", y="view_per_like_after", color='view_count_after', color_continuous_scale='Inferno',
+        title="Total Views per Like for Each Channel Uploaded After February 6th")
 
-            fig.update_layout(coloraxis_colorbar=dict(title="Views"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+        fig.update_layout(coloraxis_colorbar=dict(title="Views"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            Looking at the bar chart above:
+        Looking at the bar chart above:
 
-            CNN TÜRK has the highest view count after, followed by Habertürk and Halktv.
+        CNN TÜRK has the highest view count after, followed by Habertürk and Halktv.
 
-            BaBaLa TV and Anadolu Ajansı have the lowest view count after.
+        BaBaLa TV and Anadolu Ajansı have the lowest view count after.
 
-            Yeni Şafak has the lowest view per like after, while Habertürk has the highest view per like after.
+        Yeni Şafak has the lowest view per like after, while Habertürk has the highest view per like after.
 
-            The view per like after for most channels is around 50-100, indicating that for every like on a video, there are about 50-100 views. However, there are some outliers, like CNN TÜRK with a view per like after of 126.3 and Habertürk with a view per like after of 203.6.
+        The view per like after for most channels is around 50-100, indicating that for every like on a video, there are about 50-100 views. However, there are some outliers, like CNN TÜRK with a view per like after of 126.3 and Habertürk with a view per like after of 203.6.
 
-            It's worth noting that the view per like after metric could be influenced by factors such as the type of content, engagement rate, and the number of likes on each video. Therefore, it should be taken with a grain of salt and analyzed in conjunction with other metrics.
+        It's worth noting that the view per like after metric could be influenced by factors such as the type of content, engagement rate, and the number of likes on each video. Therefore, it should be taken with a grain of salt and analyzed in conjunction with other metrics.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Number of Videos After":
-        with channel_details:
 
-            # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
-            video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before', 'totalVideos']]
+        # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
+        video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before', 'totalVideos']]
 
-            # set the index to 'channelName' column
-            video_count_df = video_count_df.set_index('channelName')
+        # set the index to 'channelName' column
+        video_count_df = video_count_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(video_count_df, barmode='group', title="Number of Videos Uploaded")
+        # generate a horizontal bar chart using Plotly
+        fig = px.bar(video_count_df, barmode='group', title="Number of Videos Uploaded")
 
-            fig.update_traces(name="After",selector=dict(name="video_count_after"))
+        fig.update_traces(name="After",selector=dict(name="video_count_after"))
 
-            fig.update_traces(name="Before",selector=dict(name="video_count_before"))
+        fig.update_traces(name="Before",selector=dict(name="video_count_before"))
 
-            fig.update_traces(name="Up to 27/03/23",selector=dict(name="totalVideos"))
+        fig.update_traces(name="Up to 27/03/23",selector=dict(name="totalVideos"))
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=400,yaxis_title=None)
+        fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=400,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            Looking at the data, we can see that some channels have had significant changes in their video count.
+        Looking at the data, we can see that some channels have had significant changes in their video count.
 
-            Here are the percentage changes for each channel:
+        Here are the percentage changes for each channel:
 
-            """)
+        """)
 
-            # Calculate the percentage change for each channel and sort Percentage Change values descending
-            edited_stats_df["Percentage Change"] = round(((edited_stats_df["totalVideos"] - edited_stats_df["video_count_before"]) / edited_stats_df["video_count_before"]) * 100,2)
-            edited_stats_df = edited_stats_df[edited_stats_df['channelName'] != 'SÖZCÜ Televizyonu'] # Exclude SÖZCÜ Televizyonu from the dataframe
-            edited_stats_df = edited_stats_df.sort_values(by="Percentage Change", ascending=False)
+        # Calculate the percentage change for each channel and sort Percentage Change values descending
+        edited_stats_df["Percentage Change"] = round(((edited_stats_df["totalVideos"] - edited_stats_df["video_count_before"]) / edited_stats_df["video_count_before"]) * 100,2)
+        edited_stats_df = edited_stats_df[edited_stats_df['channelName'] != 'SÖZCÜ Televizyonu'] # Exclude SÖZCÜ Televizyonu from the dataframe
+        edited_stats_df = edited_stats_df.sort_values(by="Percentage Change", ascending=False)
 
-            # Create a line chart using Plotly
-            fig = px.bar(edited_stats_df, x="channelName", y="Percentage Change", title="", hover_data=["totalVideos", "video_count_before"],
-            color='Percentage Change', color_continuous_scale=px.colors.sequential.Plasma)
+        # Create a line chart using Plotly
+        fig = px.bar(edited_stats_df, x="channelName", y="Percentage Change", title="", hover_data=["totalVideos", "video_count_before"],
+        color='Percentage Change', color_continuous_scale=px.colors.sequential.Plasma)
 
-            fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+        fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
 
-            # Display the chart in a Streamlit app
-            st.plotly_chart(fig)
+        # Display the chart in a Streamlit app
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            These percentages represent the increase or decrease in the number of videos uploaded by each channel before and after the disaster.
+        These percentages represent the increase or decrease in the number of videos uploaded by each channel before and after the disaster.
 
-            Overall, it seems that the majority of channels have had a relatively small change in their video count, with most falling within a range of 1-5% increase or decrease.
+        Overall, it seems that the majority of channels have had a relatively small change in their video count, with most falling within a range of 1-5% increase or decrease.
 
-            However, it's important to note that these changes may not necessarily be significant in the context of each channel's total video count. For example, a 1% increase for a channel with only a few videos may be less significant than a 1% increase for a channel with thousands of videos.
+        However, it's important to note that these changes may not necessarily be significant in the context of each channel's total video count. For example, a 1% increase for a channel with only a few videos may be less significant than a 1% increase for a channel with thousands of videos.
 
-            Therefore, while these percentage changes can give us some insight into each channel's recent activity, they should be interpreted with caution and in the context of each channel's overall content strategy.
+        Therefore, while these percentage changes can give us some insight into each channel's recent activity, they should be interpreted with caution and in the context of each channel's overall content strategy.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Monthly Minutes After":
-        with channel_details:
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
 
-            # Create a new DataFrame with the monthly_video_count_after values
-            monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'mins_after_per_month']]
+        # Create a new DataFrame with the monthly_video_count_after values
+        monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'mins_after_per_month']]
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','mins_after_per_month'])
 
-            # Generate a horizontal bar chart using Plotly
-            fig = px.bar(pivoted_df, barmode='group', title="Total Minutes of Content in Feb & Mar 2023",
-                        labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+        # Generate a horizontal bar chart using Plotly
+        fig = px.bar(pivoted_df, barmode='group', title="Total Minutes of Content in Feb & Mar 2023",
+                    labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
-            # Add text to the bars with monthly_video_count_after values
-            for i, col in enumerate(pivoted_df.columns):
-                fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
-                fig.data[i].textposition = 'outside'
+        # Add text to the bars with monthly_video_count_after values
+        for i, col in enumerate(pivoted_df.columns):
+            fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
+            fig.data[i].textposition = 'outside'
 
-            # Customize the layout
-            fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                        yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+        # Customize the layout
+        fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                    yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            The graph above shows the monthly video count and the minutes of content uploaded after the disaster, by various news channels and individual journalists in Turkey.
+        The graph above shows the monthly video count and the minutes of content uploaded after the disaster, by various news channels and individual journalists in Turkey.
 
-            Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
+        Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
 
-            These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
+        These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
 
-            On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
+        On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
 
-            SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
+        SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
 
-            Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
+        Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Monthly Likes After":
-        with channel_details:
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='likes_after_per_month')
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='likes_after_per_month')
 
-            # Create a new DataFrame with the monthly_video_count_after values
-            monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'likes_after_per_month']]
+        # Create a new DataFrame with the monthly_video_count_after values
+        monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'likes_after_per_month']]
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','likes_after_per_month'])
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','likes_after_per_month'])
 
-            # Generate a horizontal bar chart using Plotly
-            fig = px.bar(pivoted_df, barmode='group', title="Total Likes on Content Uploaded in Feb & Mar 2023",
-                        labels={'value': 'Likes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+        # Generate a horizontal bar chart using Plotly
+        fig = px.bar(pivoted_df, barmode='group', title="Total Likes on Content Uploaded in Feb & Mar 2023",
+                    labels={'value': 'Likes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
-            # Add text to the bars with monthly_video_count_after values
-            for i, col in enumerate(pivoted_df.columns):
-                fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
-                fig.data[i].textposition = 'outside'
+        # Add text to the bars with monthly_video_count_after values
+        for i, col in enumerate(pivoted_df.columns):
+            fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
+            fig.data[i].textposition = 'outside'
 
-            # Customize the layout
-            fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                        yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+        # Customize the layout
+        fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                    yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            When looking at the number of likes per month, we can see that some channels like Anadolu Ajansı, BBC News Türkçe, and Habertürk had a decrease in the number of likes from February to March. In contrast, other channels such as A Haber, Cüneyt Özdemir, Halktv, and SÖZCÜ Televizyonu had an increase in the number of likes.
+        When looking at the number of likes per month, we can see that some channels like Anadolu Ajansı, BBC News Türkçe, and Habertürk had a decrease in the number of likes from February to March. In contrast, other channels such as A Haber, Cüneyt Özdemir, Halktv, and SÖZCÜ Televizyonu had an increase in the number of likes.
 
-            Overall, we can see that there is no clear correlation between the number of videos uploaded and the number of likes received. It seems that factors such as content quality, engagement with the audience, and current events play a significant role in determining the number of likes a channel receives.
+        Overall, we can see that there is no clear correlation between the number of videos uploaded and the number of likes received. It seems that factors such as content quality, engagement with the audience, and current events play a significant role in determining the number of likes a channel receives.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Monthly Views After":
-        with channel_details:
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='views_after_per_month')
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='views_after_per_month')
 
-            # Create a new DataFrame with the monthly_video_count_after values
-            monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'views_after_per_month']]
+        # Create a new DataFrame with the monthly_video_count_after values
+        monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'views_after_per_month']]
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','views_after_per_month'])
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','views_after_per_month'])
 
-            # Generate a horizontal bar chart using Plotly
-            fig = px.bar(pivoted_df, barmode='group', title="Total Views on Content Uploaded in Feb & Mar 2023",
-            labels={'value': 'Views'}, color_discrete_sequence=px.colors.sequential.Inferno)
+        # Generate a horizontal bar chart using Plotly
+        fig = px.bar(pivoted_df, barmode='group', title="Total Views on Content Uploaded in Feb & Mar 2023",
+        labels={'value': 'Views'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
-            # Add text to the bars with monthly_video_count_after values
-            for i, col in enumerate(pivoted_df.columns):
-                fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
-                fig.data[i].textposition = 'outside'
+        # Add text to the bars with monthly_video_count_after values
+        for i, col in enumerate(pivoted_df.columns):
+            fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
+            fig.data[i].textposition = 'outside'
 
-            # Customize the layout
-            fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                        yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+        # Customize the layout
+        fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                    yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            Based on the data provided, we can observe that the total number of videos produced by each channel decreased in March compared to February, except for SÖZCÜ Televizyonu, Halktv, and CNN TÜRK. However, the views received by these videos decreased more dramatically compared to the reduction in the number of videos produced, especially for channels like Habertürk, Yeni Şafak, and Anadolu Ajansı.
+        Based on the data provided, we can observe that the total number of videos produced by each channel decreased in March compared to February, except for SÖZCÜ Televizyonu, Halktv, and CNN TÜRK. However, the views received by these videos decreased more dramatically compared to the reduction in the number of videos produced, especially for channels like Habertürk, Yeni Şafak, and Anadolu Ajansı.
 
-            Interestingly, Halktv and SÖZCÜ Televizyonu saw an increase in the number of comments per month in March compared to February, even though the number of videos produced decreased slightly.
+        Interestingly, Halktv and SÖZCÜ Televizyonu saw an increase in the number of comments per month in March compared to February, even though the number of videos produced decreased slightly.
 
-            Overall, it seems that the viewing trends of Turkish news channels declined in March compared to February, which could be due to a variety of factors such as changes in the news cycle or shifts in audience behavior. However, further analysis would be needed to identify the reasons behind these trends.
+        Overall, it seems that the viewing trends of Turkish news channels declined in March compared to February, which could be due to a variety of factors such as changes in the news cycle or shifts in audience behavior. However, further analysis would be needed to identify the reasons behind these trends.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Monthly Comments After":
-        with channel_details:
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='comments_after_per_month')
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='comments_after_per_month')
 
-            # Create a new DataFrame with the monthly_video_count_after values
-            monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'comments_after_per_month']]
+        # Create a new DataFrame with the monthly_video_count_after values
+        monthly_count_df = monthly_df[['channelName', 'Month', 'monthly_video_count_after', 'comments_after_per_month']]
 
-            # Pivot the data to create a new DataFrame with columns for each month
-            pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','comments_after_per_month'])
+        # Pivot the data to create a new DataFrame with columns for each month
+        pivoted_count_df = monthly_count_df.pivot_table(index='channelName', columns='Month', values=['monthly_video_count_after','comments_after_per_month'])
 
-            # Generate a horizontal bar chart using Plotly
-            fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
-            labels={'value': 'Comments'}, color_discrete_sequence=px.colors.sequential.Inferno)
+        # Generate a horizontal bar chart using Plotly
+        fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
+        labels={'value': 'Comments'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
-            # Add text to the bars with monthly_video_count_after values
-            for i, col in enumerate(pivoted_df.columns):
-                fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
-                fig.data[i].textposition = 'outside'
+        # Add text to the bars with monthly_video_count_after values
+        for i, col in enumerate(pivoted_df.columns):
+            fig.data[i].text = pivoted_count_df['monthly_video_count_after'][col].astype(str)
+            fig.data[i].textposition = 'outside'
 
-            # Customize the layout
-            fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                        yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+        # Customize the layout
+        fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                    yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            Regarding comments, in February, the channel with the highest number of comments was Halktv with a count of 67274 while in March, it was SÖZCÜ Televizyonu with a count of 101034. The channel with the lowest number of comments in February was SÖZCÜ Televizyonu with only 10 comments while in March, it was Habertürk with only 39 comments.
+        Regarding comments, in February, the channel with the highest number of comments was Halktv with a count of 67274 while in March, it was SÖZCÜ Televizyonu with a count of 101034. The channel with the lowest number of comments in February was SÖZCÜ Televizyonu with only 10 comments while in March, it was Habertürk with only 39 comments.
 
-            In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the channels that have the highest number of comments across the two months. TV100 had the highest number of videos in February while Halktv had the highest number of videos in March. However, it is worth noting that these conclusions are based on only two months' worth of data and may not be indicative of overall trends.
+        In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the channels that have the highest number of comments across the two months. TV100 had the highest number of videos in February while Halktv had the highest number of videos in March. However, it is worth noting that these conclusions are based on only two months' worth of data and may not be indicative of overall trends.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Daily Uploaded Video":
-        with channel_details:
 
-            # Create a dictionary to map day names to their respective numeric values
-            day_name_to_num = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Sunday': 7}
+        # Create a dictionary to map day names to their respective numeric values
+        day_name_to_num = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Sunday': 7}
 
-            # Map the pushblishDayName column to their respective numeric values
-            daily_df['day_num'] = daily_df['pushblishDayName'].map(day_name_to_num)
+        # Map the pushblishDayName column to their respective numeric values
+        daily_df['day_num'] = daily_df['pushblishDayName'].map(day_name_to_num)
 
-            # Pivot the data to create a new DataFrame with columns for each channel
-            pivoted_df = daily_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
+        # Pivot the data to create a new DataFrame with columns for each channel
+        pivoted_df = daily_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
 
-            # Rename the index values to the corresponding day names
-            pivoted_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
+        # Rename the index values to the corresponding day names
+        pivoted_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
 
-            # Create a new DataFrame with the daily_counts values
-            daily_count_df = daily_df[['channelName', 'day_num', 'daily_counts']]
+        # Create a new DataFrame with the daily_counts values
+        daily_count_df = daily_df[['channelName', 'day_num', 'daily_counts']]
 
-            # Pivot the data to create a new DataFrame with columns for each channel
-            pivoted_count_df = daily_count_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
+        # Pivot the data to create a new DataFrame with columns for each channel
+        pivoted_count_df = daily_count_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
 
-            # Rename the index values to the corresponding day names
-            pivoted_count_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
+        # Rename the index values to the corresponding day names
+        pivoted_count_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
 
-            # Generate a horizontal bar chart using Plotly
-            fig = px.bar(pivoted_df, barmode='group', title="Content Uploaded Daily in Feb & Mar 2023",
-                        labels={'value': 'Daily Content'}, color_discrete_sequence=px.colors.sequential.Inferno)
+        # Generate a horizontal bar chart using Plotly
+        fig = px.bar(pivoted_df, barmode='group', title="Content Uploaded Daily in Feb & Mar 2023",
+                    labels={'value': 'Daily Content'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
-            # Customize the layout
-            fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
-                                        yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
+        # Customize the layout
+        fig.update_layout(xaxis_title=None, yaxis_title=None, legend=dict(orientation='h',
+                                    yanchor='top', y=1.1, xanchor='left', x=0.01), legend_title="", width=800, height=600)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
 
-            st.markdown("""
+        st.markdown("""
 
-            From the given data, we can see that the news channels have varying daily counts of published news articles across different days of the week.
+        From the given data, we can see that the news channels have varying daily counts of published news articles across different days of the week.
 
-            A Haber, CNN TÜRK, Halktv, and TV100 seem to have the highest daily counts of published news articles, whereas BBC News Türkçe, BaBaLa TV, and Habertürk have the lowest.
+        A Haber, CNN TÜRK, Halktv, and TV100 seem to have the highest daily counts of published news articles, whereas BBC News Türkçe, BaBaLa TV, and Habertürk have the lowest.
 
-            Furthermore, looking at the days of the week, Tuesday and Thursday seem to have the highest daily counts of published news articles across the majority of the channels, whereas Sunday seems to have the lowest daily counts.
+        Furthermore, looking at the days of the week, Tuesday and Thursday seem to have the highest daily counts of published news articles across the majority of the channels, whereas Sunday seems to have the lowest daily counts.
 
-            Overall, it is difficult to draw any definitive conclusions from this data without additional information, but we can see that different news channels have different patterns in terms of when they publish their news articles.
+        Overall, it is difficult to draw any definitive conclusions from this data without additional information, but we can see that different news channels have different patterns in terms of when they publish their news articles.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     elif page == "Subscribers per Video":
-        with channel_details:
 
-            # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
-            subs_per_video_df = edited_stats_df[['channelName','subscribers', 'subscribers_per_video','totalVideos']]
+        # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
+        subs_per_video_df = edited_stats_df[['channelName','subscribers', 'subscribers_per_video','totalVideos']]
 
-            fig = px.bar(data_frame=subs_per_video_df.sort_values('subscribers', ascending=True),
-            x="subscribers", y="channelName", color='subscribers_per_video', orientation='h',
-            color_continuous_scale=px.colors.sequential.Viridis, title = 'Number of Subscribers per Uploaded Video up to 27th of March 2023')
+        fig = px.bar(data_frame=subs_per_video_df.sort_values('subscribers', ascending=True),
+        x="subscribers", y="channelName", color='subscribers_per_video', orientation='h',
+        color_continuous_scale=px.colors.sequential.Viridis, title = 'Number of Subscribers per Uploaded Video up to 27th of March 2023')
 
-            fig.update_layout(coloraxis_colorbar=dict(title="Subscribers per Video"), yaxis_title=None, xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600)
+        fig.update_layout(coloraxis_colorbar=dict(title="Subscribers per Video"), yaxis_title=None, xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            Looking at the data, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average.
+        Looking at the data, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average.
 
-            BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively.
+        BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively.
 
-            It's interesting to note that some channels with fewer subscribers, such as A Haber and Anadolu Ajansı, have a higher number of subscribers per video than channels with larger subscriber counts like Habertürk and FOX Haber. This suggests that the quality and engagement of the content may be more important than the number of subscribers.
+        It's interesting to note that some channels with fewer subscribers, such as A Haber and Anadolu Ajansı, have a higher number of subscribers per video than channels with larger subscriber counts like Habertürk and FOX Haber. This suggests that the quality and engagement of the content may be more important than the number of subscribers.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
 elif page == "Top 10 Videos by Like Count and View Count":
