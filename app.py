@@ -41,6 +41,20 @@ channel_details = st.container()
 st.sidebar.title("Main Pages")
 page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count", "Turkish News Media's YouTube Stats"))
 
+# create session for each page is clicked after that clear cache
+def clear_cache_on_reload():
+    session_id = st.report_thread.get_report_ctx().session_id
+    if session_id not in st.session_state:
+        st.session_state[session_id] = {}
+    if st.session_state[session_id].get('page', None) != st.session_state.get('page', None):
+        st.session_state[session_id] = {}
+        st.session_state[session_id]['page'] = st.session_state['page']
+
+def main():
+    clear_cache_on_reload()
+
+
+
 if page == "Home":
     with header:
         st.title("How Turkish News Media's YouTube Stats Stack Up")
@@ -170,6 +184,9 @@ if page == "Turkish News Media's YouTube Stats":
         page = st.sidebar.radio("", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
         "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
+
+        # update session state variables
+        st.session_state['page'] = page
 
         if page == "Views-Minutes After":
             with channel_details:
