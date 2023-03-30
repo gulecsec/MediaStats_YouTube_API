@@ -87,8 +87,7 @@ api_version = 'v3'
                 In this example, the build function creates a YouTube service object that we can use to make API requests. The videos().list() method retrieves the details of a video, and the execute() method sends the request and returns the response. Note: Replace YOUR_API_KEY with your own API key.""")
 
         st.code("""
-        youtube = build(
-                    api_service_name, api_version, developerKey=api_key)
+        youtube = build(api_service_name, api_version, developerKey=api_key)
 
 def get_channel_stats(youtube, channel_ids):
 
