@@ -184,8 +184,6 @@ if page == "Most Used Words Based on Content Title":
         ax.axis("off")
         st.pyplot(fig)
 
-        # clear cache after displaying the word cloud
-        st.caching.clear_cache()
 
 
 if page == "Turkish News Media's YouTube Stats":
