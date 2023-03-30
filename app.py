@@ -200,7 +200,7 @@ if page == "Most Used Words Based on Content Title":
         st.pyplot(fig)
 
         # clear cache after display
-         st.caching.clear_cache()
+        st.caching.clear_cache()
 
 
 
