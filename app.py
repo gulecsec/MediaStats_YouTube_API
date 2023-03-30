@@ -166,12 +166,12 @@ if page == "Most Used Words Based on Content Title":
     with channel_details:
         st.header("Most Used Words Based on Content Title")
 
-        # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-
         # check if session state for channel exists, otherwise create it
         if 'channel' not in st.session_state:
             st.session_state['channel'] = None
+
+        # create a dropdown to select a channel
+        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
         # get the path and dataframe for the selected channel
         path = channel_data[channel_choice]['path']
@@ -180,10 +180,6 @@ if page == "Most Used Words Based on Content Title":
         if st.session_state.channel != channel_choice:
             df = pd.read_csv(path)
             df = df[df['publishedAt'] >= '2023-02-06']
-            # create a word cloud of video titles
-            text = " ".join(title for title in df['title'])
-            stopwords = set(STOPWORDS)
-            wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
 
             # create a horizontal bar chart of the top 15 most used words
             word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
@@ -197,18 +193,13 @@ if page == "Most Used Words Based on Content Title":
             # update session state variables
             st.session_state.channel = channel_choice
             st.session_state.df = df
-            st.session_state.wordcloud = wordcloud
 
         else:
             # use session state variables if it is the same channel choice
             df = st.session_state.df
-            wordcloud = st.session_state.wordcloud
             fig = None
 
-        # display the word cloud using matplotlib
-        fig, ax = plt.subplots(figsize=(10, 8))
-        ax.imshow(wordcloud, interpolation='bilinear')
-        ax.axis("off")
+        # display the horizontal bar chart using matplotlib
         st.pyplot(fig)
 
 
