@@ -190,12 +190,12 @@ if page == "Turkish News Media's YouTube Stats":
 
     # Define sidebar
     st.sidebar.title("Detailed Stats")
-    page = st.sidebar.radio("", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
+    page = st.sidebar.radio("", ("Views per Minute", "Likes-Minutes After", "Comments-Minutes After",
     "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes",
     "Number of Videos After", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
     "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
 
-    if page == "Views-Minutes After":
+    if page == "Views per Minute":
 
         # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
         view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
