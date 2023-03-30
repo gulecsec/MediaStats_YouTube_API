@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import SessionState
 
 # Data viz packages
 import plotly.express as px
@@ -29,8 +30,7 @@ channel_data = {
 'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak 10 Most Popular Videos based on Likes and Views per Channel'},
 }
 
-# Load Each Channel Data
-edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
+
 
 # Define page layout
 header = st.container()
@@ -42,7 +42,8 @@ st.sidebar.title("Main Pages")
 page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count", "Turkish News Media's YouTube Stats"))
 
 
-
+# Define the session state
+state = SessionState.get(headline_displayed=False)
 
 
 if page == "Home":
@@ -50,6 +51,7 @@ if page == "Home":
         st.title("How Turkish News Media's YouTube Stats Stack Up")
         st.subheader("Exploring the Data on My Streamlit App")
         st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically, we'll focus on 15 channels affected by the earthquake that occurred in Turkey on February 6th, 2023. By comparing the statistics of these channels, we can gain insight into the impact of the earthquake on the YouTube community and learn how to use the YouTube API to automate various tasks related to channel analysis.")
+
 
 
     with dataset:
@@ -168,6 +170,9 @@ By utilizing the capabilities of the YouTube API and Python, you can create inno
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
         st.title("Detailed YouTube Stats of Turkish News Media's")
+
+        # Load Each Channel Data
+        edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
 
         # Define sidebar
         st.sidebar.title("Detailed Stats")
