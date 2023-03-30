@@ -190,6 +190,11 @@ if page == "Most Used Words Based on Content Title":
             ax.set_xlabel("Word Count")
             ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
 
+            # remove frame
+            for spine in ax.spines.values():
+                spine.set_visible(False)
+
+
             # update session state variables
             st.session_state.channel = channel_choice
             st.session_state.df = df
