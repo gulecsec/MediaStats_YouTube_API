@@ -179,10 +179,9 @@ if page == "Most Used Words Based on Content Title":
         wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
 
         # display the word cloud using matplotlib
-        plt.figure(figsize=(12,6))
-        plt.imshow(wordcloud, interpolation='bilinear')
-        plt.axis("off")
-        plt.show()
+        fig = px.imshow(wordcloud)
+        fig.update_layout(title_text="Word Cloud of Video Titles")
+        st.write(fig)
 
 
 if page == "Turkish News Media's YouTube Stats":
