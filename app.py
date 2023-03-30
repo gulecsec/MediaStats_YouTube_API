@@ -49,6 +49,7 @@ state_dict = {
     "Turkish News Media's YouTube Stats": {"headline_displayed": False}
 }
 
+
 if page == "Home":
     with header:
 
@@ -79,6 +80,7 @@ if page == "Home":
             width=800, height=600,yaxis_title=None)
 
         st.plotly_chart(fig)
+
 
 if page == "Google Developers Console":
     with header:
@@ -180,6 +182,7 @@ if page == "Google Developers Console":
 
             state_dict[page]["headline_displayed"] = True
 
+
 if page == "Turkish News Media's YouTube Stats":
 
     with channel_details:
@@ -215,9 +218,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views-Minutes After":
             with channel_details:
-
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
 
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
                 view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
@@ -272,8 +272,7 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Likes-Minutes After":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
+
 
                 # Select columns of interest
                 like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
@@ -925,7 +924,7 @@ if page == "Turkish News Media's YouTube Stats":
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
-        
+
         if not state_dict[page]["headline_displayed"]:
             st.header("10 Most Popular Videos based on Likes and Views per Channel")
             state_dict[page]["headline_displayed"] = True
