@@ -186,7 +186,7 @@ if page == "Google Developers Console":
 if page == "Turkish News Media's YouTube Stats":
 
     with channel_details:
-        st.header("Detailed YouTube Stats of Turkish News Media's")
+
 
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
@@ -218,6 +218,10 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views-Minutes After":
             with channel_details:
+
+                if not state_dict[page]["headline_displayed"]:
+                    st.header("Detailed YouTube Stats of Turkish News Media's")
+                    state_dict[page]["headline_displayed"] = True
 
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
                 view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
@@ -272,7 +276,8 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Likes-Minutes After":
             with channel_details:
 
-
+                if not state_dict[page]["headline_displayed"]:
+                    state_dict[page]["headline_displayed"] = True
 
                 # Select columns of interest
                 like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
