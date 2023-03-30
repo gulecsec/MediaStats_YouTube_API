@@ -273,7 +273,12 @@ if page == "Turkish News Media's YouTube Stats":
         st.plotly_chart(fig)
 
         st.markdown("""
-        The table shows the minutes of content produced, likes received, and likes per minute for various Turkish news channels. The channel "Yeni Şafak" received the highest number of likes, with an impressive 764 likes per minute, while "FOX Haber" had the lowest rate, with only 7 likes per minute. "CNN TÜRK" also had a relatively low rate of likes, with only 11 per minute, despite having produced the highest amount of content, with almost 57,000 minutes. "Cüneyt Özdemir" and "BaBaLa TV" had the highest and third-highest likes per minute rates, respectively, with 75 and 709. "Nevşin Mengü" and "BBC News Türkçe" had a relatively high rate of likes, with 131 and 485 per minute, respectively. Other channels had moderate to low rates of likes per minute, with the majority receiving between 11 and 27 likes per minute.
+        The graph shows the minutes of content produced, likes received, and likes per minute following the day of the natural disaster for various Turkish news channels.
+
+        The channel "Yeni Şafak" received the highest number of likes, with an impressive 764 likes per minute, while "FOX Haber" had the lowest rate, with only 7 likes per minute. "CNN TÜRK" also had a relatively low rate of likes, with only 11 per minute, despite having produced the highest amount of content, with almost 57,000 minutes. "Cüneyt Özdemir" and "BaBaLa TV" had the highest and third-highest likes per minute rates, respectively, with 75 and 709. "Nevşin Mengü" and "BBC News Türkçe" had a relatively high rate of likes, with 131 and 485 per minute, respectively.
+
+        Other channels had moderate to low rates of likes per minute, with the majority receiving between 11 and 27 likes per minute.
+
         """)
 
         # Add footer to the page
