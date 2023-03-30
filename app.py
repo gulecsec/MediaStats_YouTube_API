@@ -193,6 +193,10 @@ if page == "Turkish News Media's YouTube Stats":
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
 
+        # Load data
+        monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
+        daily_df = pd.read_csv("All_stats/daily_totals.csv")
+
         # Define sidebar
         st.sidebar.title("Detailed Stats")
         page = st.sidebar.radio("", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
@@ -274,9 +278,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Likes-Minutes After":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
                 # Select columns of interest
                 like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
@@ -325,9 +326,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Comments-Minutes After":
             with channel_details:
-
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
 
                 # Select columns of interest
                 comments_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'comment_count_after']]
@@ -384,9 +382,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Likes per Video":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
                 x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
@@ -422,9 +417,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views per Video":
             with channel_details:
-
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
 
                 # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
                 view_per_video_df = edited_stats_df[['channelName', 'view_per_video_after', 'view_per_video_before', 'view_per_video']]
@@ -466,9 +458,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Comments per Video":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
                 # create a new DataFrame with 'channelName', 'comment_per_video_after', and 'comment_per_video_before' columns
                 comment_per_video_df = edited_stats_df[['channelName', 'comment_per_video_after', 'video_count_after']]
 
@@ -504,9 +493,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Durations per Video":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
                 x="channelName", y="mins_per_video_after", color='video_count_after', color_continuous_scale='Cividis',
@@ -538,9 +524,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Views per Likes":
             with channel_details:
-
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
 
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('view_per_like_after', ascending=False),
@@ -575,9 +558,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Number of Videos After":
             with channel_details:
-
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
 
                 # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
                 video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before', 'totalVideos']]
@@ -642,12 +622,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Monthly Minutes After":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
-                # Load data
-                monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
-
                 # Pivot the data to create a new DataFrame with columns for each month
                 pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='mins_after_per_month')
 
@@ -696,12 +670,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Monthly Likes After":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
-                # Load data
-                monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
-
                 # Pivot the data to create a new DataFrame with columns for each month
                 pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='likes_after_per_month')
 
@@ -741,12 +709,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         if page == "Monthly Views After":
             with channel_details:
-
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
-                # Load data
-                monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
 
                 # Pivot the data to create a new DataFrame with columns for each month
                 pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='views_after_per_month')
@@ -790,12 +752,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Monthly Comments After":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
-                # Load data
-                monthly_df = pd.read_csv("All_stats/monthly_totals.csv")
-
                 # Pivot the data to create a new DataFrame with columns for each month
                 pivoted_df = monthly_df.pivot_table(index='channelName', columns='Month', values='comments_after_per_month')
 
@@ -836,29 +792,23 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Daily Uploaded Video":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
-                # Load data
-                monthly_df = pd.read_csv("All_stats/daily_totals.csv")
-
                 # Create a dictionary to map day names to their respective numeric values
                 day_name_to_num = {'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5, 'Saturday': 6, 'Sunday': 7}
 
                 # Map the pushblishDayName column to their respective numeric values
-                monthly_df['day_num'] = monthly_df['pushblishDayName'].map(day_name_to_num)
+                daily_df['day_num'] = daily_df['pushblishDayName'].map(day_name_to_num)
 
                 # Pivot the data to create a new DataFrame with columns for each channel
-                pivoted_df = monthly_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
+                pivoted_df = daily_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
 
                 # Rename the index values to the corresponding day names
                 pivoted_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
 
                 # Create a new DataFrame with the daily_counts values
-                monthly_count_df = monthly_df[['channelName', 'day_num', 'daily_counts']]
+                daily_count_df = daily_df[['channelName', 'day_num', 'daily_counts']]
 
                 # Pivot the data to create a new DataFrame with columns for each channel
-                pivoted_count_df = monthly_count_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
+                pivoted_count_df = daily_count_df.pivot_table(index='day_num', columns='channelName', values='daily_counts')
 
                 # Rename the index values to the corresponding day names
                 pivoted_count_df.rename(index={1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}, inplace=True)
@@ -894,9 +844,6 @@ if page == "Turkish News Media's YouTube Stats":
         elif page == "Subscribers per Video":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
                 # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
                 subs_per_video_df = edited_stats_df[['channelName','subscribers', 'subscribers_per_video','totalVideos']]
 
@@ -906,7 +853,6 @@ if page == "Turkish News Media's YouTube Stats":
 
                 fig.update_layout(coloraxis_colorbar=dict(title="Subscribers per Video"), yaxis_title=None, xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
                 width=800, height=600)
-
 
                 # display the chart
                 st.plotly_chart(fig)
