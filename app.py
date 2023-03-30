@@ -170,7 +170,9 @@ if page == "Most Used Words Based on Content Title":
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
         # get the path and dataframe for the selected channel
-        path = f"media_stats/stats_{channel_choice.lower().replace(' ', '_')}.csv"
+        path = channel_data[channel_choice]['path']
+
+        # Load Each Channel Data
         df = pd.read_csv(path)
         df = df[df['publishedAt'] >= '2023-02-06']
 
@@ -189,6 +191,8 @@ if page == "Most Used Words Based on Content Title":
         ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
         st.pyplot(fig)
 
+        # clear cache after displaying the word cloud and bar chart
+        st.caching.clear_cache()
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
