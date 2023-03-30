@@ -180,10 +180,10 @@ if page == "Most Used Words Based on Content Title":
         wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
 
         # display the word cloud using matplotlib
-        fig, ax = plt.subplots(figsize=(10, 8))
-        ax.imshow(wordcloud, interpolation='bilinear')
-        ax.axis("off")
-        st.pyplot(fig)
+        # fig, ax = plt.subplots(figsize=(10, 8))
+        # ax.imshow(wordcloud, interpolation='bilinear')
+        # ax.axis("off")
+        # st.pyplot(fig)
 
         # create a horizontal bar chart of the top 15 most used words
         word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
