@@ -199,8 +199,8 @@ if page == "Most Used Words Based on Content Title":
             ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
             st.pyplot(fig)
 
-        # clear cache after displaying the word cloud and bar chart
-        st.caching.clear_cache()
+        # # clear cache after displaying the word cloud and bar chart
+        # st.caching.clear_cache()
 
 
 
