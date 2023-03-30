@@ -86,37 +86,38 @@ api_version = 'v3'
         st.markdown("""
                 In this example, the build function creates a YouTube service object that we can use to make API requests. The videos().list() method retrieves the details of a video, and the execute() method sends the request and returns the response. Note: Replace YOUR_API_KEY with your own API key.""")
 
-        st.code("""youtube = build(
+        st.code("""
+        youtube = build(
                     api_service_name, api_version, developerKey=api_key)
 
-                    def get_channel_stats(youtube, channel_ids):
+def get_channel_stats(youtube, channel_ids):
 
-                    all_data = []
-                    request = youtube.channels().list(
-                        part="snippet,contentDetails,statistics",
-                        id=','.join(channel_ids)
-                    )
-                    response = request.execute()
+all_data = []
+request = youtube.channels().list(
+    part="snippet,contentDetails,statistics",
+    id=','.join(channel_ids)
+)
+response = request.execute()
 
-                    # loop through items
-                    for item in response['items']:
-                        data= {'channelName': item['snippet']['title'],
-                            'subscribers': item['statistics']['subscriberCount'],
-                            'views': item['statistics']['viewCount'],
-                            'totalVideos': item['statistics']['videoCount'],
-                            'playlistId': item['contentDetails']['relatedPlaylists']['uploads']
-                            }
+# loop through items
+for item in response['items']:
+    data= {'channelName': item['snippet']['title'],
+        'subscribers': item['statistics']['subscriberCount'],
+        'views': item['statistics']['viewCount'],
+        'totalVideos': item['statistics']['videoCount'],
+        'playlistId': item['contentDetails']['relatedPlaylists']['uploads']
+        }
 
-                        # Check if the channel has any subscriber milestone
-                        if 'bulletin' in item['contentDetails']:
-                            milestone = item['contentDetails']['bulletin']['resource']
-                            if milestone['kind'] == 'youtube#subscription':
-                                data['milestoneDate'] = milestone['publishedAt']
-                                data['milestoneSubscribers'] = milestone['metadata']['subscriberCount']
+    # Check if the channel has any subscriber milestone
+    if 'bulletin' in item['contentDetails']:
+        milestone = item['contentDetails']['bulletin']['resource']
+        if milestone['kind'] == 'youtube#subscription':
+            data['milestoneDate'] = milestone['publishedAt']
+            data['milestoneSubscribers'] = milestone['metadata']['subscriberCount']
 
-                        all_data.append(data)
+    all_data.append(data)
 
-                    return(pd.DataFrame(all_data))
+return(pd.DataFrame(all_data))
                         """)
 
         st.subheader("Step 6: Analyze the Response")
