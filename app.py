@@ -227,17 +227,19 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        From the given values, we can conclude that there is a significant variation in the view per minute for different media channels.
+        The table includes data on the minutes watched, total view count, and view per minute for various news channels in Turkey.
 
-        The highest view per minute is for Yeni Şafak, which is more than 39,000 views per minute, followed by BBC News Türkçe with more than 39,000 views per minute.
+        BaBaLa TV had the shortest watch time, with only 101.6 minutes watched, but a very high view per minute rate of 9,350.
 
-        TRT Haber also has a high view per minute with more than 14,000 views per minute.
+        On the other hand, Halktv and CNN TÜRK had the longest watch time, with 58,560.8 and 56,479.9 minutes respectively.
 
-        On the other hand, FOX Haber and TV100 have the lowest view per minute, with only 699 and 1225 views per minute, respectively.
+        However, their view per minute rates were much lower at 1,277 and 1,361, respectively. Yeni Şafak had the highest view
 
-        Moreover, we can also observe that the minutes count after and view count after do not necessarily correspond to a higher view per minute.
+        per minute rate at 39,390, but only 859.7 minutes watched. In contrast, BBC News Türkçe had a much lower view per minute
 
-        Overall, the view per minute metric provides a better measure of the popularity of a channel, as it considers the engagement of the viewers with the content in a given period.
+        rate of 39,318 but had a much longer watch time of 260.9 minutes. The data can be useful for comparing the performance of
+
+        different news channels in terms of viewer engagement and determining which channels may be more successful in attracting viewers.
 
         """)
 
