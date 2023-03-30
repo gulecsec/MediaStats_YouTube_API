@@ -225,7 +225,7 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Views-Minutes After":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
+                if not state_dict_p2[page]["headline_displayed"]:
                     st.header("Detailed YouTube Stats of Turkish News Media's")
                     state_dict[page]["headline_displayed"] = True
 
