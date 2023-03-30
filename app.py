@@ -166,46 +166,45 @@ if page == "Most Used Words Based on Content Title":
     with channel_details:
         st.header("Most Used Words Based on Content Title")
 
-        # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-
         # check if session state for channel exists, otherwise create it
         if 'channel' not in st.session_state:
             st.session_state['channel'] = None
+
+        # create a dropdown to select a channel
+        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
         # get the path and dataframe for the selected channel
         path = channel_data[channel_choice]['path']
 
         # Load Each Channel Data if a new channel has been selected
         if st.session_state.channel != channel_choice:
-            # show loading spinner
-            with st.spinner(f"Loading data for {channel_choice}..."):
-                df = pd.read_csv(path)
-                df = df[df['publishedAt'] >= '2023-02-06']
-                # create a horizontal bar chart of the top 15 most used words
-                word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
-                top_words = word_counts[:15]
-                fig, ax = plt.subplots(figsize=(10, 8))
-                ax.barh(top_words.index, top_words.values)
-                ax.invert_yaxis()
-                ax.set_xlabel("Word Count")
-                ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+            df = pd.read_csv(path)
+            df = df[df['publishedAt'] >= '2023-02-06']
 
-                # update session state variables
-                st.session_state.channel = channel_choice
-                st.session_state.df = df
-                st.session_state.fig = fig
+            # create a horizontal bar chart of the top 15 most used words
+            word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
+            top_words = word_counts[:15]
+            fig, ax = plt.subplots(figsize=(10, 8))
+            ax.barh(top_words.index, top_words.values)
+            ax.invert_yaxis()
+            ax.set_xlabel("Word Count")
+            ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+
+            # remove frame
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+
+
+            # update session state variables
+            st.session_state.channel = channel_choice
+            st.session_state.df = df
+
         else:
             # use session state variables if it is the same channel choice
             df = st.session_state.df
-            fig = st.session_state.fig
+            fig = None
 
         # display the horizontal bar chart using matplotlib
-        st.set_option('deprecation.showPyplotGlobalUse', False)
-        plt.rcParams["axes.axisbelow"] = True
-        plt.grid(b=True, which='major', color='#666666', linestyle='-')
-        plt.minorticks_on()
-        plt.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         st.pyplot(fig)
 
 
