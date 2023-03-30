@@ -291,92 +291,91 @@ if page == "Turkish News Media's YouTube Stats":
 
     if page == "Comments-Minutes After":
 
-            # Select columns of interest
-            comments_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'comment_count_after']]
+        # Select columns of interest
+        comments_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'comment_count_after']]
 
-            # sort the values by 'like_count_after'
-            comments_mins_df = comments_mins_df.sort_values(by='comment_count_after')
+        # sort the values by 'like_count_after'
+        comments_mins_df = comments_mins_df.sort_values(by='comment_count_after')
 
-            # Calculate the like per minute values
-            comments_per_min = comments_mins_df['comment_count_after'] / comments_mins_df['mins_count_after']
-            comments_mins_df['View per Minute'] = comments_per_min
+        # Calculate the like per minute values
+        comments_per_min = comments_mins_df['comment_count_after'] / comments_mins_df['mins_count_after']
+        comments_mins_df['View per Minute'] = comments_per_min
 
-            # set the index to 'channelName' column
-            comments_mins_df = comments_mins_df.set_index('channelName')
+        # set the index to 'channelName' column
+        comments_mins_df = comments_mins_df.set_index('channelName')
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(comments_mins_df, x='comment_count_after', y=comments_mins_df.index,
-            color='mins_count_after', orientation='h',
-            title="Top Channels by Comments per Minute: Analyzing Total Video Minutes After 6th of Feb",
-            color_continuous_scale='Greens', text=comments_per_min.round(0), labels={'text': 'Comments per Min'})
+        # generate a horizontal bar chart using Plotly
+        fig = px.bar(comments_mins_df, x='comment_count_after', y=comments_mins_df.index,
+        color='mins_count_after', orientation='h',
+        title="Top Channels by Comments per Minute: Analyzing Total Video Minutes After 6th of Feb",
+        color_continuous_scale='Greens', text=comments_per_min.round(0), labels={'text': 'Comments per Min'})
 
-            fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
-            xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
-            coloraxis_colorbar=dict(title="Minutes"))
+        fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
+        xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
+        coloraxis_colorbar=dict(title="Minutes"))
 
-            fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
+        fig.update_traces(name="Minutes",selector=dict(name="mins_count_after"))
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            The data shows the number of comments received by different Turkish news channels in a specific time period.
+        The data shows the number of comments received by different Turkish news channels in a specific time period.
 
-            The values represents the average number of comments received per minute for each channel.
+        The values represents the average number of comments received per minute for each channel.
 
-            BBC News Türkçe and Yeni Şafak received the highest and lowest number of comments per minute, respectively.
+        BBC News Türkçe and Yeni Şafak received the highest and lowest number of comments per minute, respectively.
 
-            The BBC News Türkçe's high engagement rate may be attributed to its reputation as a credible and impartial news source.
+        The BBC News Türkçe's high engagement rate may be attributed to its reputation as a credible and impartial news source.
 
-            Yeni Şafak's low engagement rate could be due to a lack of trust in the news source or a smaller audience.
+        Yeni Şafak's low engagement rate could be due to a lack of trust in the news source or a smaller audience.
 
-            CNN TÜRK, FOX Haber, Habertürk, and TV100 received the lowest number of comments per minute, which could indicate lower audience engagement with these channels.
+        CNN TÜRK, FOX Haber, Habertürk, and TV100 received the lowest number of comments per minute, which could indicate lower audience engagement with these channels.
 
-            The channels that received a higher number of comments per minute than others, such as Yeni Şafak and BBC News Türkçe, could benefit from further analysis of their content and engagement strategies to determine what factors contribute to their higher engagement rates.
+        The channels that received a higher number of comments per minute than others, such as Yeni Şafak and BBC News Türkçe, could benefit from further analysis of their content and engagement strategies to determine what factors contribute to their higher engagement rates.
 
-            Meanwhile, the channels with lower engagement rates could use this information to improve their content and engagement strategies to increase their audience's interest and engagement.
+        Meanwhile, the channels with lower engagement rates could use this information to improve their content and engagement strategies to increase their audience's interest and engagement.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Likes per Video":
-        with channel_details:
 
-            # generate a horizontal bar chart using Plotly
-            fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
-            x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
-            title="Total Likes per Video for Each Channel Uploaded After February 6th", labels={'text': 'Likes per Min'})
+        # generate a horizontal bar chart using Plotly
+        fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
+        x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
+        title="Total Likes per Video for Each Channel Uploaded After February 6th", labels={'text': 'Likes per Min'})
 
-            # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
+        # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
-            fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+        fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
 
-            # display the chart
-            st.plotly_chart(fig)
+        # display the chart
+        st.plotly_chart(fig)
 
-            st.markdown("""
+        st.markdown("""
 
-            The table shows the number of videos uploaded and the average number of likes per video for 15 different Turkish news channels.
+        The table shows the number of videos uploaded and the average number of likes per video for 15 different Turkish news channels.
 
-            The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos. The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
+        The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos. The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
 
-            The channel with the lowest number of videos was BaBaLa TV with only 5 videos. When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video,
+        The channel with the lowest number of videos was BaBaLa TV with only 5 videos. When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video,
 
-            followed by Nevşin Mengü with an average of 6065 likes per video. The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
+        followed by Nevşin Mengü with an average of 6065 likes per video. The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
 
-            It is interesting to note that some of the channels with a lower number of videos uploaded, such as BBC News Türkçe and TRT Haber, had relatively high average numbers of likes per video.
+        It is interesting to note that some of the channels with a lower number of videos uploaded, such as BBC News Türkçe and TRT Haber, had relatively high average numbers of likes per video.
 
-            This suggests that these channels may have a more engaged audience, with viewers who are more likely to engage with and appreciate the content that is uploaded.
+        This suggests that these channels may have a more engaged audience, with viewers who are more likely to engage with and appreciate the content that is uploaded.
 
-            """)
+        """)
 
-            # Add footer to the page
-            st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+        # Add footer to the page
+        st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
     if page == "Views per Video":
