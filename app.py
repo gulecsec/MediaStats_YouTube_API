@@ -843,9 +843,8 @@ elif page == "Top 10 Videos by Like Count and View Count":
         df = df[(df['Year']==year_choice) & (df['Month']==month_choice)]
 
         # get the top 10 videos based on like count
-        top_videos = stats_df[stats_df['channelName'] == channel_choice].sort_values(by=['likeCount', 'viewCount'], ascending=False)[0:10]
-        top_videos_table = top_videos[['title', 'likeCount', 'viewCount']].reset_index(drop=True).to_dataframe(index=False)
-
+        top10 = df.sort_values('likeCount', ascending=False).iloc[:10]
+        top10 = top10[['title', 'likeCount', 'viewCount']].reset_index(drop=True).to_dataframe(index=False)
 
         # generate plotly graph
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
@@ -862,7 +861,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # show the list of top 10 videos in a table
         st.write("Top 10 Videos by Like Count:")
-        st.table(top_videos_table[['title', 'likeCount']])
+        st.table(top10[['title', 'likeCount']])
 
         st.markdown("""
 
