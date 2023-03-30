@@ -29,8 +29,6 @@ channel_data = {
 'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak 10 Most Popular Videos based on Likes and Views per Channel'},
 }
 
-
-
 # Define page layout
 header = st.container()
 dataset = st.container()
@@ -40,16 +38,26 @@ channel_details = st.container()
 st.sidebar.title("Main Pages")
 page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count", "Turkish News Media's YouTube Stats"))
 
-
-
-
+# Define dictionary to keep track of state for each page
+state_dict = {
+    "Home": {"headline_displayed": False},
+    "Google Developers Console": {"headline_displayed": False},
+    "Top 10 Videos by Like Count and View Count": {"headline_displayed": False},
+    "Turkish News Media's YouTube Stats": {"headline_displayed": False}
+}
 
 if page == "Home":
     with header:
         st.title("How Turkish News Media's YouTube Stats Stack Up")
+
+        if not state_dict[page]["headline_displayed"]:
+            st.title("How Turkish News Media's YouTube Stats Stack Up")
+            st.subheader("Exploring the Data on My Streamlit App")
+            st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically, we'll focus on 15 channels affected by the earthquake that occurred in Turkey on February 6th, 2023. By comparing the statistics of these channels, we can gain insight into the impact of the earthquake on the YouTube community and learn how to use the YouTube API to automate various tasks related to channel analysis.")
+            state_dict[page]["headline_displayed"] = True
+
         st.subheader("Exploring the Data on My Streamlit App")
         st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically, we'll focus on 15 channels affected by the earthquake that occurred in Turkey on February 6th, 2023. By comparing the statistics of these channels, we can gain insight into the impact of the earthquake on the YouTube community and learn how to use the YouTube API to automate various tasks related to channel analysis.")
-
 
 
     with dataset:
