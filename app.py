@@ -858,15 +858,26 @@ elif page == "Top 10 Videos by Like Count and View Count":
         # display plotly graph
         st.plotly_chart(fig)
 
-        # show the list of top 10 videos in a table
+        top10['index'] = range(1, 11)
 
-        top10_table = top10[['title', 'likeCount','viewCount']].reset_index(drop=True)
-        top10_table.index += 1  # start the index from 1 instead of 0
+        # create a colored table using plotly express
+        fig = px.table(top10, values=['title', 'likeCount', 'viewCount'],
+                    labels={'index': 'Rank', 'title': 'Title', 'likeCount': 'Like Count', 'viewCount': 'View Count'})
 
+        fig.update_layout(
+            font_family='Arial',
+            font_size=16,
+            height=500,
+            width=800,
+            margin=dict(l=20, r=20, t=20, b=20),
+            coloraxis_showscale=False,
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)',
+            font_color='#2b2d42',
+            hoverlabel=dict(bgcolor='#2b2d42', font_size=14, font_family='Arial', font_color='#f0f6f7'),
+        )
 
-        # display the table
-        st.write("Top 10 Video Titles:")
-        st.table(top10_table)
+        st.plotly_chart(fig)
 
         st.markdown("""
 
