@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from wordcloud import WordCloud, STOPWORDS
-
+import string
 
 # Data viz packages
 import plotly.express as px
@@ -836,6 +836,7 @@ if page == "Most Used Words by Title":
 
     df = pd.read_csv(path)
     df = df[df['publishedAt'] >= '2023-02-06']
+
 
     # create a horizontal bar chart of the top 15 most used words
     word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
