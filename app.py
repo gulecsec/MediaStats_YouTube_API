@@ -864,7 +864,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
 
         # set header background color
-        top10_table = top10_table.style.set_properties(**{'background-color': '#2b2d42', 'color': 'white'}, subset=pd.IndexSlice[:, :])
+        top10_table = top10_table.style.set_properties(**{'background-color': '#Blues', 'color': 'white'}, subset=pd.IndexSlice[:, :])
 
         # display the table
         st.write("Top 10 Video Titles:")
