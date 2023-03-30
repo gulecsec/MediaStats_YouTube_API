@@ -603,7 +603,7 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Total Likes on Content Uploaded in Feb & Mar 2023",
-                            labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+                            labels={'value': 'Likes'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Add text to the bars with monthly_video_count_after values
                 for i, col in enumerate(pivoted_df.columns):
@@ -646,7 +646,7 @@ Overall, we can see that there is no clear correlation between the number of vid
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Total Views on Content Uploaded in Feb & Mar 2023",
-                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+                labels={'value': 'Views'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Add text to the bars with monthly_video_count_after values
                 for i, col in enumerate(pivoted_df.columns):
@@ -690,7 +690,7 @@ Overall, it seems that the viewing trends of Turkish news channels declined in M
 
                 # Generate a horizontal bar chart using Plotly
                 fig = px.bar(pivoted_df, barmode='group', title="Total Comments on Content Uploaded in Feb & Mar 2023",
-                labels={'value': 'Minutes'}, color_discrete_sequence=px.colors.sequential.Inferno)
+                labels={'value': 'Comments'}, color_discrete_sequence=px.colors.sequential.Inferno)
 
                 # Add text to the bars with monthly_video_count_after values
                 for i, col in enumerate(pivoted_df.columns):
