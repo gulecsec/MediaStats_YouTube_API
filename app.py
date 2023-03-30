@@ -146,7 +146,7 @@ if page == "Turkish News Media's YouTube Stats":
         edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
 
         # Define sidebar
-        st.sidebar.title("Video Stats")
+        st.sidebar.title("Detailed Stats of the Channels")
         page = st.sidebar.radio("Go to", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
         "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
