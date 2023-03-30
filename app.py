@@ -229,15 +229,13 @@ if page == "Turkish News Media's YouTube Stats":
 
         From the given values, we can conclude that there is a significant variation in the view per minute for different media channels.
 
-        The highest view per minute is for BBC News Türkçe, which is more than 39,000 views per minute, followed by Yeni Şafak with more than 39,000 views per minute.
+        The highest view per minute is for Yeni Şafak, which is more than 39,000 views per minute, followed by BBC News Türkçe with more than 39,000 views per minute.
 
         TRT Haber also has a high view per minute with more than 14,000 views per minute.
 
-        On the other hand, FOX Haber and CNN Türk have the lowest view per minute, with only 699 and 1361 views per minute, respectively.
+        On the other hand, FOX Haber and TV100 have the lowest view per minute, with only 699 and 1225 views per minute, respectively.
 
         Moreover, we can also observe that the minutes count after and view count after do not necessarily correspond to a higher view per minute.
-
-        For instance, A Haber has a lower view per minute, even though it has a higher view count after and minutes count after compared to some other channels such as Halktv and SÖZCÜ Televizyonu.
 
         Overall, the view per minute metric provides a better measure of the popularity of a channel, as it considers the engagement of the viewers with the content in a given period.
 
