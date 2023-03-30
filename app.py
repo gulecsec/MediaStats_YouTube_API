@@ -23,7 +23,7 @@ if page == "Home":
     with header:
         st.title("How Turkish News Media's YouTube Stats Stack Up")
         st.subheader("Exploring the Data on My Streamlit App")
-        st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to interact with one of the world's largest video-sharing platforms,which boasts billions of daily users uploading, viewing, and commenting on videos. By the end of this tutorial, you'll know how to automate various tasks using the YouTube API.")
+        st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically, we'll focus on the channels affected by the earthquake that occurred in Turkey on February 6th, 2023. By comparing the statistics of these channels, we can gain insight into the impact of the earthquake on the YouTube community and learn how to use the YouTube API to automate various tasks related to channel analysis.")
 
 
     with dataset:
