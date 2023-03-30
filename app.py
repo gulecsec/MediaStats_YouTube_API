@@ -191,7 +191,7 @@ if page == "Turkish News Media's YouTube Stats":
     # Define sidebar
     st.sidebar.title("Detailed Stats")
     page = st.sidebar.radio("", ("Views per Minute", "Likes per Minute", "Comments per Minute",
-    "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes",
+    "Likes per Video", "Views per Video", "Comments per Video", "Minutes per Video", "Views per Likes",
     "Number of Videos After", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
     "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
 
@@ -431,9 +431,9 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        The graph shows the number of videos uploaded by different news channels on YouTube and the average number of comments per video after the 6th of February 2023.
+        The graph shows the number of videos uploaded by different news channels on YouTube and the number of comments per video after the 6th of February 2023.
 
-        In terms of the average number of comments per video, the highest number is seen for BaBaLa TV with 923 comments per video followed by BBC News Türkçe with 666 comments per video. Anadolu Ajansı has the lowest number of comments per video with only 12 comments per video on average.
+        In terms of the number of comments per video, the highest number is seen for BaBaLa TV with 923 comments per video followed by BBC News Türkçe with 666 comments per video. Anadolu Ajansı has the lowest number of comments per video with only 12 comments per video.
 
         Overall, it appears that BaBaLa TV and BBC News Türkçe are the channels with the most engaged audiences as they have the highest number of comments per video.
 
@@ -445,7 +445,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-    if page == "Durations per Video":
+    if page == "Minutes per Video":
 
         # generate a horizontal bar chart using Plotly
         fig = px.bar(data_frame=edited_stats_df.sort_values('mins_per_video_after', ascending=False),
