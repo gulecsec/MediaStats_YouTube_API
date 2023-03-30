@@ -146,21 +146,21 @@ if page == "Most Used Words Based on Content Title":
 
         # create a dictionary to store data frames and graph titles for each channel
         channel_data = {
-        'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Top 10 Videos by Like Count and View Count'},
-        'Anadolu Ajansı': {'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
-        'BaBaLa TV': {'path': 'media_stats/stats_babala_tv.csv' , 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
-        'BBC News Türkçe': {'path': 'media_stats/stats_bbc_news_türkçe.csv' ,'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
-        'CNN TÜRK': {'path': 'media_stats/stats_cnn_türk.csv' , 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
-        'Cüneyt Özdemir': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
-        'Erk Acarer': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
-        'FOX Haber': {'path': 'media_stats/stats_fox_haber.csv' , 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
-        'Habertürk': {'path': 'media_stats/stats_habertürk.csv' , 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
-        'Halktv': {'path': 'media_stats/stats_halktv.csv' , 'title': 'Halktv Top 10 Videos by Like Count and View Count'},
-        'Nevşin Mengü': {'path': 'media_stats/stats_nevşin_mengü.csv' ,'title': 'Nevşin Mengü Top 10 Videos by Like Count and View Count'},
-        'SÖZCÜ Televizyonu': {'path': 'media_stats/stats_sözcü_televizyonu.csv' ,'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
-        'TRT Haber': {'path': 'media_stats/stats_trt_haber.csv' ,'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
-        'TV100': {'path': 'media_stats/stats_tv100.csv' ,'title': 'TV100 Top 10 Videos by Like Count and View Count'},
-        'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
+        'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Most Used Words Based on Content Title'},
+        'Anadolu Ajansı': {'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Most Used Words Based on Content Title'},
+        'BaBaLa TV': {'path': 'media_stats/stats_babala_tv.csv' , 'title': 'BaBaLa TV Most Used Words Based on Content Title'},
+        'BBC News Türkçe': {'path': 'media_stats/stats_bbc_news_türkçe.csv' ,'title': 'BBC News Türkçe Most Used Words Based on Content Title'},
+        'CNN TÜRK': {'path': 'media_stats/stats_cnn_türk.csv' , 'title': 'CNN TÜRK Most Used Words Based on Content Title'},
+        'Cüneyt Özdemir': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Most Used Words Based on Content Title'},
+        'Erk Acarer': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Most Used Words Based on Content Title'},
+        'FOX Haber': {'path': 'media_stats/stats_fox_haber.csv' , 'title': 'FOX Haber Most Used Words Based on Content Title'},
+        'Habertürk': {'path': 'media_stats/stats_habertürk.csv' , 'title': 'Habertürk Most Used Words Based on Content Title'},
+        'Halktv': {'path': 'media_stats/stats_halktv.csv' , 'title': 'Halktv Most Used Words Based on Content Title'},
+        'Nevşin Mengü': {'path': 'media_stats/stats_nevşin_mengü.csv' ,'title': 'Nevşin Mengü Most Used Words Based on Content Title'},
+        'SÖZCÜ Televizyonu': {'path': 'media_stats/stats_sözcü_televizyonu.csv' ,'title': 'SÖZCÜ Televizyonu Most Used Words Based on Content Title'},
+        'TRT Haber': {'path': 'media_stats/stats_trt_haber.csv' ,'title': 'TRT Haber Most Used Words Based on Content Title'},
+        'TV100': {'path': 'media_stats/stats_tv100.csv' ,'title': 'TV100 Most Used Words Based on Content Title'},
+        'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Most Used Words Based on Content Title'},
         }
 
         # add dropdown to select a channel
@@ -183,6 +183,9 @@ if page == "Most Used Words Based on Content Title":
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis("off")
         st.pyplot(fig)
+
+        # clear cache after displaying the word cloud
+        st.caching.clear_cache()
 
 
 if page == "Turkish News Media's YouTube Stats":
