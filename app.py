@@ -462,7 +462,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        These values represent the number of videos and the average length of those videos for each channel after the selected date range.
+        These values represent the number of videos and the average length of those videos for each channel after the major disaster.
 
         The highest number of videos produced after the selected date range was by CNN TÜRK with 2,438 videos, followed by TV100 with 1,970 videos and Halktv with 1,396 videos.
 
@@ -481,7 +481,7 @@ if page == "Turkish News Media's YouTube Stats":
         # generate a horizontal bar chart using Plotly
         fig = px.bar(data_frame=edited_stats_df.sort_values('view_per_like_after', ascending=False),
         x="channelName", y="view_per_like_after", color='view_count_after', color_continuous_scale='Inferno',
-        title="Total Views per Like for Each Channel Uploaded After February 6th")
+        title="Top Channels by Views per Likes: Analyzing Total Views & Likes After 6th of Feb")
 
         fig.update_layout(coloraxis_colorbar=dict(title="Views"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
         width=800, height=600,yaxis_title=None)
