@@ -509,7 +509,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-    if page == "Number of Videos After":
+    if page == "Number of Videos Uploaded":
 
         # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
         video_count_df = edited_stats_df[['channelName', 'video_count_after', 'video_count_before', 'totalVideos']]
