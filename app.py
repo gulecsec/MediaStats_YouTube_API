@@ -229,16 +229,12 @@ if page == "Turkish News Media's YouTube Stats":
 
         The table includes data on the minutes watched, total view count, and view per minute for various news channels in Turkey.
 
-        BaBaLa TV had the shortest watch time, with only 101.6 minutes watched, but a very high view per minute rate of 9,350.
-
-        On the other hand, Halktv and CNN TÜRK had the longest watch time, with 58,560.8 and 56,479.9 minutes respectively.
+        BaBaLa TV had the shortest watch time, with only 101.6 minutes watched, but a very high view per minute rate of 9,350. On the other hand, Halktv and CNN TÜRK had the longest watch time, with 58,560.8 and 56,479.9 minutes respectively.
 
         However, their view per minute rates were much lower at 1,277 and 1,361, respectively. Yeni Şafak had the highest view per minute rate at 39,390, but only 859.7 minutes watched.
-        In contrast, BBC News Türkçe had a much lower view per minute
+        In contrast, BBC News Türkçe had a much lower view per minute rate of 39,318 but had a much longer watch time of 260.9 minutes.
 
-        rate of 39,318 but had a much longer watch time of 260.9 minutes. The data can be useful for comparing the performance of
-
-        different news channels in terms of viewer engagement and determining which channels may be more successful in attracting viewers.
+        The data can be useful for comparing the performance of different news channels in terms of viewer engagement and determining which channels may be more successful in attracting viewers.
 
         """)
 
