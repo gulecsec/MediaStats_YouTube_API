@@ -858,38 +858,15 @@ elif page == "Top 10 Videos by Like Count and View Count":
         # display plotly graph
         st.plotly_chart(fig)
 
-        # add an index column starting from 1
-        df['index'] = range(1, len(df)+1)
+        # show the list of top 10 videos in a table
 
-        # create the sidebar with filter and sort options
-        categories = sorted(df['category'].unique())
-        sort_options = ['Like Count', 'View Count']
-        category_filter = st.sidebar.selectbox('Filter by category', categories)
-        sort_by = st.sidebar.selectbox('Sort by', sort_options)
+        top10_table = top10[['title', 'likeCount','viewCount']].reset_index(drop=True)
+        top10_table.index += 1  # start the index from 1 instead of 0
 
-        # filter and sort the data
-        filtered = df[df['category'] == category_filter]
-        sorted_df = filtered.sort_values(sort_by.lower(), ascending=False)
-        top10 = sorted_df.iloc[:10]
 
-        # create a colored table using plotly express
-        fig = px.table(top10, values=['index', 'title', 'likeCount', 'viewCount'],
-                    labels={'index': 'Rank', 'title': 'Title', 'likeCount': 'Like Count', 'viewCount': 'View Count'})
-
-        fig.update_layout(
-            font_family='Arial',
-            font_size=16,
-            height=500,
-            width=800,
-            margin=dict(l=20, r=20, t=20, b=20),
-            coloraxis_showscale=False,
-            plot_bgcolor='rgba(0,0,0,0)',
-            paper_bgcolor='rgba(0,0,0,0)',
-            font_color='#2b2d42',
-            hoverlabel=dict(bgcolor='#2b2d42', font_size=14, font_family='Arial', font_color='#f0f6f7'),
-        )
-
-        st.plotly_chart(fig)
+        # display the table
+        st.write("Top 10 Video Titles:")
+        st.table(top10_table)
 
         st.markdown("""
 
