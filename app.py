@@ -59,7 +59,7 @@ if page == "Google Developers Console":
                 6. Click on the "Enable" button to enable the API for your project""")
 
         st.subheader("Step 2: Obtain the API Key")
-        st.text("""
+        st.markdown("""
                 1. Next, click on the "Create Credentials" button to create a new set of credentials for your project.
                 2. Select "API key" as the type of credentials and choose the "Restricted key" option.
                 3. Set up any necessary restrictions for your API key, such as IP address or HTTP referrers.
