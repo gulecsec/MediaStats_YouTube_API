@@ -178,12 +178,9 @@ if page == "Most Used Words Based on Content Title":
         stopwords = set(STOPWORDS)
         wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
 
-        # display the word cloud using seaborn
+        # display the word cloud using matplotlib
         plt.figure(figsize=(10,8))
-        sns.set_style("whitegrid")
-        sns.set(rc={'figure.figsize':(10,8)})
-        sns.set(font_scale=1.5)
-        sns.imshow(wordcloud, interpolation='bilinear')
+        plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis("off")
         st.pyplot()
 
