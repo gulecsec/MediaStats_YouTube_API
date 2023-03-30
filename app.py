@@ -858,10 +858,22 @@ elif page == "Top 10 Videos by Like Count and View Count":
         # display plotly graph
         st.plotly_chart(fig)
 
-        top10['index'] = range(1, 11)
+        # add an index column starting from 1
+        top10['index'] = range(1, len(df)+1)
+
+        # create the sidebar with filter and sort options
+        categories = sorted(top10['category'].unique())
+        sort_options = ['Like Count', 'View Count']
+        category_filter = st.sidebar.selectbox('Filter by category', categories)
+        sort_by = st.sidebar.selectbox('Sort by', sort_options)
+
+        # filter and sort the data
+        filtered = top10[top10['category'] == category_filter]
+        sorted_df = filtered.sort_values(sort_by.lower(), ascending=False)
+        top10 = sorted_df.iloc[:10]
 
         # create a colored table using plotly express
-        fig = px.table(top10, values=['title', 'likeCount', 'viewCount'],
+        fig = px.table(top10, values=['index', 'title', 'likeCount', 'viewCount'],
                     labels={'index': 'Rank', 'title': 'Title', 'likeCount': 'Like Count', 'viewCount': 'View Count'})
 
         fig.update_layout(
