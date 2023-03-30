@@ -173,12 +173,10 @@ if page == "Most Used Words Based on Content Title":
         if "channel" not in st.session_state:
             st.session_state.channel = None
 
-        # if user selects a new channel, clear the previous wordcloud image from session state
         if st.session_state.channel != channel_choice:
-            st.session_state.wordcloud = None
+            # update the session state variable
+            st.session_state.channel = channel_choice
 
-        # if wordcloud image is not already in session state, generate it
-        if "wordcloud" not in st.session_state:
             # get the path and dataframe for the selected channel
             path = channel_data[channel_choice]['path']
 
@@ -190,8 +188,6 @@ if page == "Most Used Words Based on Content Title":
             text = " ".join(title for title in df['title'])
             stopwords = set(STOPWORDS)
             wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
-
-            # store the wordcloud image in session state
             st.session_state.wordcloud = wordcloud
 
         # display the word cloud using matplotlib
@@ -200,8 +196,6 @@ if page == "Most Used Words Based on Content Title":
         ax.axis("off")
         st.pyplot(fig)
 
-        # update the channel variable in session state
-        st.session_state.channel = channel_choice
 
 
 
