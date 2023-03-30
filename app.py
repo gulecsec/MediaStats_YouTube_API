@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-from wordcloud import WordCloud, STOPWORDS
-import time
 
 # Data viz packages
 import plotly.express as px
@@ -14,21 +12,21 @@ stats_df = pd.read_csv("All_stats/media_stats.csv")
 
 # create a dictionary to store data frames and graph titles for each channel
 channel_data = {
-'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Most Used Words Based on Content Title'},
-'Anadolu Ajansı': {'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Most Used Words Based on Content Title'},
-'BaBaLa TV': {'path': 'media_stats/stats_babala_tv.csv' , 'title': 'BaBaLa TV Most Used Words Based on Content Title'},
-'BBC News Türkçe': {'path': 'media_stats/stats_bbc_news_türkçe.csv' ,'title': 'BBC News Türkçe Most Used Words Based on Content Title'},
-'CNN TÜRK': {'path': 'media_stats/stats_cnn_türk.csv' , 'title': 'CNN TÜRK Most Used Words Based on Content Title'},
-'Cüneyt Özdemir': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Most Used Words Based on Content Title'},
-'Erk Acarer': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Most Used Words Based on Content Title'},
-'FOX Haber': {'path': 'media_stats/stats_fox_haber.csv' , 'title': 'FOX Haber Most Used Words Based on Content Title'},
-'Habertürk': {'path': 'media_stats/stats_habertürk.csv' , 'title': 'Habertürk Most Used Words Based on Content Title'},
-'Halktv': {'path': 'media_stats/stats_halktv.csv' , 'title': 'Halktv Most Used Words Based on Content Title'},
-'Nevşin Mengü': {'path': 'media_stats/stats_nevşin_mengü.csv' ,'title': 'Nevşin Mengü Most Used Words Based on Content Title'},
-'SÖZCÜ Televizyonu': {'path': 'media_stats/stats_sözcü_televizyonu.csv' ,'title': 'SÖZCÜ Televizyonu Most Used Words Based on Content Title'},
-'TRT Haber': {'path': 'media_stats/stats_trt_haber.csv' ,'title': 'TRT Haber Most Used Words Based on Content Title'},
-'TV100': {'path': 'media_stats/stats_tv100.csv' ,'title': 'TV100 Most Used Words Based on Content Title'},
-'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Most Used Words Based on Content Title'},
+'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber 10 Most Popular Videos based on Likes and Views per Channel'},
+'Anadolu Ajansı': {'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı 10 Most Popular Videos based on Likes and Views per Channel'},
+'BaBaLa TV': {'path': 'media_stats/stats_babala_tv.csv' , 'title': 'BaBaLa TV 10 Most Popular Videos based on Likes and Views per Channel'},
+'BBC News Türkçe': {'path': 'media_stats/stats_bbc_news_türkçe.csv' ,'title': 'BBC News Türkçe 10 Most Popular Videos based on Likes and Views per Channel'},
+'CNN TÜRK': {'path': 'media_stats/stats_cnn_türk.csv' , 'title': 'CNN TÜRK 10 Most Popular Videos based on Likes and Views per Channel'},
+'Cüneyt Özdemir': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir 10 Most Popular Videos based on Likes and Views per Channel'},
+'Erk Acarer': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir 10 Most Popular Videos based on Likes and Views per Channel'},
+'FOX Haber': {'path': 'media_stats/stats_fox_haber.csv' , 'title': 'FOX Haber 10 Most Popular Videos based on Likes and Views per Channel'},
+'Habertürk': {'path': 'media_stats/stats_habertürk.csv' , 'title': 'Habertürk 10 Most Popular Videos based on Likes and Views per Channel'},
+'Halktv': {'path': 'media_stats/stats_halktv.csv' , 'title': 'Halktv 10 Most Popular Videos based on Likes and Views per Channel'},
+'Nevşin Mengü': {'path': 'media_stats/stats_nevşin_mengü.csv' ,'title': 'Nevşin Mengü 10 Most Popular Videos based on Likes and Views per Channel'},
+'SÖZCÜ Televizyonu': {'path': 'media_stats/stats_sözcü_televizyonu.csv' ,'title': 'SÖZCÜ Televizyonu 10 Most Popular Videos based on Likes and Views per Channel'},
+'TRT Haber': {'path': 'media_stats/stats_trt_haber.csv' ,'title': 'TRT Haber 10 Most Popular Videos based on Likes and Views per Channel'},
+'TV100': {'path': 'media_stats/stats_tv100.csv' ,'title': 'TV100 10 Most Popular Videos based on Likes and Views per Channel'},
+'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak 10 Most Popular Videos based on Likes and Views per Channel'},
 }
 
 # Load Each Channel Data
@@ -41,7 +39,7 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Main Pages")
-page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Most Used Words Based on Content Title","Turkish News Media's YouTube Stats"))
+page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count", "Turkish News Media's YouTube Stats"))
 
 if page == "Home":
     with header:
@@ -162,55 +160,6 @@ The YouTube API and Python provide a wide range of possibilities for automation,
 
 By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                     """)
-
-if page == "Most Used Words Based on Content Title":
-    with channel_details:
-        st.header("Most Used Words Based on Content Title")
-
-        # check if session state for channel exists, otherwise create it
-        if 'channel' not in st.session_state:
-            st.session_state['channel'] = None
-
-        # create a dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-
-        # get the path and dataframe for the selected channel
-        path = channel_data[channel_choice]['path']
-
-        # Load Each Channel Data if a new channel has been selected
-        if st.session_state.channel != channel_choice:
-            # show a spinner while loading the data
-            with st.spinner(f"Loading {channel_choice} data..."):
-                df = pd.read_csv(path)
-                df = df[df['publishedAt'] >= '2023-02-06']
-
-            # create a horizontal bar chart of the top 15 most used words
-            word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
-            top_words = word_counts[:15]
-            fig, ax = plt.subplots(figsize=(10, 8))
-            ax.barh(top_words.index, top_words.values)
-            ax.invert_yaxis()
-            ax.set_xlabel("Word Count")
-            ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
-
-            # remove frame
-            for spine in ax.spines.values():
-                spine.set_visible(False)
-
-
-            # update session state variables
-            st.session_state.channel = channel_choice
-            st.session_state.df = df
-
-        else:
-            # use session state variables if it is the same channel choice
-            df = st.session_state.df
-            fig = None
-
-        # display the horizontal bar chart using matplotlib
-        st.set_option('deprecation.showPyplotGlobalUse', False)
-        st.pyplot(fig)
-
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
@@ -869,7 +818,6 @@ It's interesting to note that some channels with fewer subscribers, such as A Ha
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
-
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
