@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from wordcloud import WordCloud, STOPWORDS
 
 # Data viz packages
 import plotly.express as px
@@ -170,6 +171,8 @@ if page == "Most Used Words Based on Content Title":
 
         # Load Each Channel Data
         df = pd.read_csv(path)
+
+
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
