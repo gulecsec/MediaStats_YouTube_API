@@ -381,7 +381,7 @@ if page == "Turkish News Media's YouTube Stats":
         view_per_video_df = view_per_video_df.set_index('channelName')
 
         # generate a horizontal bar chart using Plotly
-        fig = px.bar(view_per_video_df, barmode='group', title="Total Views per Video for Each Channel Uploaded After February 6th")
+        fig = px.bar(view_per_video_df, barmode='group', title="Top Channels by Views per Video: Analyzing Total Views & Videos")
 
         fig.update_traces(name="After",selector=dict(name="view_per_video_after"))
 
