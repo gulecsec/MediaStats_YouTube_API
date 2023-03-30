@@ -518,13 +518,13 @@ if page == "Turkish News Media's YouTube Stats":
         video_count_df = video_count_df.set_index('channelName')
 
         # generate a horizontal bar chart using Plotly
-        fig = px.bar(video_count_df, barmode='group', title="Number of Videos Uploaded")
+        fig = px.bar(video_count_df, barmode='group', title="Analyzing the Total Number of Uploaded Videos per Channel")
 
         fig.update_traces(name="After",selector=dict(name="video_count_after"))
 
         fig.update_traces(name="Before",selector=dict(name="video_count_before"))
 
-        fig.update_traces(name="Up to 27/03/23",selector=dict(name="totalVideos"))
+        fig.update_traces(name="All times",selector=dict(name="totalVideos"))
 
         fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
         width=800, height=400,yaxis_title=None)
