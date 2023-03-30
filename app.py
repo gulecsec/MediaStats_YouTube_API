@@ -41,17 +41,7 @@ channel_details = st.container()
 st.sidebar.title("Main Pages")
 page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count", "Turkish News Media's YouTube Stats"))
 
-# create session for each page is clicked after that clear cache
-def clear_cache_on_reload():
-    session_id = st.report_thread.get_report_ctx().session_id
-    if session_id not in st.session_state:
-        st.session_state[session_id] = {}
-    if st.session_state[session_id].get('page', None) != st.session_state.get('page', None):
-        st.session_state[session_id] = {}
-        st.session_state[session_id]['page'] = st.session_state['page']
 
-def main():
-    clear_cache_on_reload()
 
 
 
@@ -79,11 +69,6 @@ if page == "Home":
             width=800, height=600,yaxis_title=None)
 
         st.plotly_chart(fig)
-
-
-# update session state variables
-st.session_state['page'] = page
-
 
 if page == "Google Developers Console":
     with header:
@@ -180,11 +165,6 @@ The YouTube API and Python provide a wide range of possibilities for automation,
 By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                     """)
 
-
-# update session state variables
-st.session_state['page'] = page
-
-
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
         st.title("Detailed YouTube Stats of Turkish News Media's")
@@ -194,7 +174,6 @@ if page == "Turkish News Media's YouTube Stats":
         page = st.sidebar.radio("", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
         "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
-
 
         if page == "Views-Minutes After":
             with channel_details:
@@ -844,11 +823,6 @@ It's interesting to note that some channels with fewer subscribers, such as A Ha
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
-
-# update session state variables
-st.session_state['page'] = page
-
-
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
         st.header("10 Most Popular Videos based on Likes and Views per Channel")
@@ -908,7 +882,3 @@ The daily quota for YouTube Data API v3 was 10,000 units per day as of September
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
-
-
-# update session state variables
-st.session_state['page'] = page
