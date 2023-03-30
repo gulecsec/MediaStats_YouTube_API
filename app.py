@@ -192,7 +192,7 @@ if page == "Turkish News Media's YouTube Stats":
     st.sidebar.title("Detailed Stats")
     page = st.sidebar.radio("", ("Views per Minute", "Likes per Minute", "Comments per Minute",
     "Likes per Video", "Views per Video", "Comments per Video", "Minutes per Video", "Views per Likes",
-    "Number of Videos After", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
+    "Number of Videos Uploaded", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
     "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
 
     if page == "Views per Minute":
