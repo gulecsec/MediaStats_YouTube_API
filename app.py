@@ -191,8 +191,8 @@ if page == "Most Used Words Based on Content Title":
             ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
 
             # remove frame
-        for spine in ax.spines.values():
-            spine.set_visible(False)
+            for spine in ax.spines.values():
+                spine.set_visible(False)
 
 
             # update session state variables
