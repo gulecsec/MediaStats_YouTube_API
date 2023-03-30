@@ -387,7 +387,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         fig.update_traces(name="Before",selector=dict(name="view_per_video_before"))
 
-        fig.update_traces(name="Up to 27/03/23",selector=dict(name="view_per_video"))
+        fig.update_traces(name="All times",selector=dict(name="view_per_video"))
 
         fig.update_layout(xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
         width=800, height=600,yaxis_title=None)
