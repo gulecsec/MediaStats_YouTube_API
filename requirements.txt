@@ -4,4 +4,3 @@ plotly.express
 seaborn
 matplotlib
 wordcloud
-nltk.corpus

@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from wordcloud import WordCloud
-from nltk.corpus import stopwords
+from wordcloud import WordCloud, STOPWORDS
+
 
 # Data viz packages
 import plotly.express as px
