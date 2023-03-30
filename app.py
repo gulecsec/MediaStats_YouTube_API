@@ -199,7 +199,8 @@ if page == "Most Used Words Based on Content Title":
         ax.set_title(channel_data[channel_choice]['title'])
         st.pyplot(fig)
 
-    # clear cache after disp
+        # clear cache after display
+         st.caching.clear_cache()
 
 
 
