@@ -59,6 +59,10 @@ if page == "Home":
             state_dict[page]["headline_displayed"] = True
 
     with dataset:
+
+        if not state_dict[page]["headline_displayed"]:
+            state_dict[page]["headline_displayed"] = True
+            
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Total number of Views & Total number of Videos", "Total number of Subscribers & Total number of Videos"])
 
