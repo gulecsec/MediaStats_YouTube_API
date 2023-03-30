@@ -46,7 +46,7 @@ if page == "Home":
 
 if page == "Google Developers Console":
     with header:
-        st.subheader("However, before we jump into the code,we'll need to create a project in the Google Developers Console and obtain an API key.")
+        st.subheader("This page aims to assist you in obtaining an API key, making requests using the YouTube API with Python, and analyzing the results. It is important to note that before proceeding, you will need to create a project in the Google Developers Console and obtain an API key. With this information, we will explore how to use the YouTube API to gather video statistics of channels after the 6th of February 2023 earthquake in Turkey to compare values between channels.")
 
         st.subheader("Step 1: Set Up a Project in the Google Developers Console")
         st.text("""
