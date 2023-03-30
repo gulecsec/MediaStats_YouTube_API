@@ -67,7 +67,7 @@ if page == "Google Developers Console":
                 5. The API key will be displayed. Copy the key and keep it safe.""")
 
         st.subheader("Step 3: Install the Google API Client Library for Python")
-        st.text("""
+        st.markdown("""
         The Google API Client Library for Python makes it easy for developers to access Google APIs.To install the library, run the following command in your terminal or command prompt:
                 """)
         st.code("pip install --upgrade google-api-python-client")
