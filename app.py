@@ -860,6 +860,8 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # show the list of top 10 videos in a table
         st.write("Top 10 Videos by Like Count:")
+        top_videos = stats_df[stats_df['channelName'] == channel_choice].sort_values(by=['likeCount', 'viewCount'], ascending=False)[0:10]
+        top_videos_table = top_videos[['title', 'likeCount', 'viewCount']].reset_index(drop=True).to_dataframe(index=False)
         st.table(top10[['title', 'likeCount']])
 
         st.markdown("""
