@@ -863,7 +863,7 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # reset the index and rename the columns
         top10_table = top10[['title', 'likeCount', 'viewCount']].reset_index(drop=True)
-        top10_table.columns = ['Rank', 'Title', 'Like Count', 'View Count']
+        # top10_table.columns = ['Rank', 'Title', 'Like Count', 'View Count']
 
         # set the background color of the table
         table_styles = [
