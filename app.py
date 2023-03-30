@@ -200,25 +200,6 @@ if page == "Turkish News Media's YouTube Stats":
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
         "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
 
-        state_dict_p2 = {
-            "Views-Minutes After": {"headline_displayed": False},
-            "Likes-Minutes After": {"headline_displayed": False},
-            "Comments-Minutes After": {"headline_displayed": False},
-            "Likes per Video": {"headline_displayed": False},
-            "Views per Video": {"headline_displayed": False},
-            "Comments per Video": {"headline_displayed": False},
-            "Durations per Video": {"headline_displayed": False},
-            "Views per Likes": {"headline_displayed": False},
-            "Number of Videos After": {"headline_displayed": False},
-            "Monthly Minutes After": {"headline_displayed": False},
-            "Monthly Likes After": {"headline_displayed": False},
-            "Monthly Views After": {"headline_displayed": False},
-            "Monthly Comments After": {"headline_displayed": False},
-            "Daily Uploaded Video": {"headline_displayed": False},
-            "Subscribers per Video": {"headline_displayed": False}
-
-        }
-
         if page == "Views-Minutes After":
             with channel_details:
 
@@ -870,10 +851,6 @@ if page == "Turkish News Media's YouTube Stats":
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
-
-        if not state_dict[page]["headline_displayed"]:
-            st.header("10 Most Popular Videos based on Likes and Views per Channel")
-            state_dict[page]["headline_displayed"] = True
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
