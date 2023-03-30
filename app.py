@@ -180,9 +180,14 @@ if page == "Most Used Words Based on Content Title":
 
         # display the word cloud using matplotlib
         plt.figure(figsize=(10,8))
-        plt.imshow(wordcloud, interpolation='bilinear')
+        sns.set_style("whitegrid")
+        sns.set(rc={'figure.figsize':(10,8)})
+        sns.set(font_scale=1.5)
+        sns.imshow(wordcloud, interpolation='bilinear')
         plt.axis("off")
-        st.pyplot()
+
+        # display the plot on Streamlit
+        st.pyplot(plt.gcf()) 
 
 
 if page == "Turkish News Media's YouTube Stats":
