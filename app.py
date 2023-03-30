@@ -224,7 +224,7 @@ Overall, the view per minute metric provides a better measure of the popularity 
                 fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
                 color='mins_count_after', orientation='h',
                 title="Top Channels by Likes per Minute: Analyzing Total Video Minutes After 6th of Feb",
-                color_continuous_scale='Reds', text=like_per_min.round(0), , labels={'text': 'Likes per Min'})
+                color_continuous_scale='Reds', text=like_per_min.round(0), labels={'text': 'Likes per Min'})
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
                 xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
