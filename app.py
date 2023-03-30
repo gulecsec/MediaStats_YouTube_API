@@ -828,6 +828,10 @@ if page == "Turkish News Media's YouTube Stats":
 
 if page == "Most Used Words by Title":
 
+    # load Turkish stopwords
+    with open('turkish_stopwords.txt', 'r', encoding='utf-8') as f:
+        stopwords = f.read().splitlines()
+
     # create a dropdown to select a channel
     channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
@@ -837,22 +841,17 @@ if page == "Most Used Words by Title":
     df = pd.read_csv(path)
     df = df[df['publishedAt'] >= '2023-02-06']
 
+    # combine all titles into one string
+    text = " ".join(df['title'].values)
 
-    # create a horizontal bar chart of the top 15 most used words
-    word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
-    top_words = word_counts[:15]
-    fig, ax = plt.subplots(figsize=(10, 8))
-    ax.barh(top_words.index, top_words.values)
-    ax.invert_yaxis()
-    ax.set_xlabel("Word Count")
-    ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+    # generate word cloud
+    wordcloud = WordCloud(width=800, height=400, background_color='white', stopwords=stopwords, max_words=50).generate(text)
 
-    # remove frame
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-
-    st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.pyplot(fig)
+    # plot the word cloud
+    plt.figure(figsize=(20,10))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    st.pyplot(plt.gcf())
 
 
 elif page == "Top 10 Videos by Like Count and View Count":
