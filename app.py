@@ -863,26 +863,10 @@ elif page == "Top 10 Videos by Like Count and View Count":
         top10_table = top10[['title', 'likeCount','viewCount']].reset_index(drop=True)
         top10_table.index += 1  # start the index from 1 instead of 0
 
-        # define a function to add background colors to the DataFrame
-        def color_negative_red(val):
-            """
-            Takes a scalar and returns a string with
-            the css property `'background-color: red'` for negative
-            strings, green otherwise.
-            """
-            color = 'red' if val < 100 else 'green'
-            return f'background-color: {color}'
-
-        # apply the function to the 'Like Count' column
-        styled_df = df.style.applymap(color_negative_red, subset=['Like Count'])
-
-        # add the 'View Count' column with color gradients
-        styled_df.background_gradient(subset=['View Count'], cmap='BuPu')
 
         # display the table
         st.write("Top 10 Video Titles:")
-        # display the styled DataFrame in Streamlit
-        st.write(styled_df)
+        st.table(top10_table)
 
         st.markdown("""
 
