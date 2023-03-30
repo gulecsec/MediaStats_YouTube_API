@@ -21,7 +21,8 @@ page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos
 
 if page == "Home":
     with header:
-        st.title("How Turkish News Media's YouTube Stats Stack Up: Exploring the Data on My Streamlit App")
+        st.title("How Turkish News Media's YouTube Stats Stack Up")
+        st.subheader("Exploring the Data on My Streamlit App")
         st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to interact with one of the world's largest video-sharing platforms,which boasts billions of daily users uploading, viewing, and commenting on videos. By the end of this tutorial, you'll know how to automate various tasks using the YouTube API.")
 
 
