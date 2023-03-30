@@ -62,7 +62,7 @@ if page == "Home":
 
         if not state_dict[page]["headline_displayed"]:
             state_dict[page]["headline_displayed"] = True
-            
+
         # add radio button to select between the two graphs
         graph_choice = st.radio("Select graph", options=["Total number of Views & Total number of Videos", "Total number of Subscribers & Total number of Videos"])
 
@@ -181,6 +181,7 @@ if page == "Google Developers Console":
             state_dict[page]["headline_displayed"] = True
 
 if page == "Turkish News Media's YouTube Stats":
+
     with channel_details:
         st.header("Detailed YouTube Stats of Turkish News Media's")
 
@@ -192,6 +193,25 @@ if page == "Turkish News Media's YouTube Stats":
         page = st.sidebar.radio("", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
         "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes", "Number of Videos After",
         "Monthly Minutes After", "Monthly Likes After", "Monthly Views After", "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
+
+        state_dict = {
+            "Views-Minutes After": {"headline_displayed": False},
+            "Likes-Minutes After": {"headline_displayed": False},
+            "Comments-Minutes After": {"headline_displayed": False},
+            "Likes per Video": {"headline_displayed": False},
+            "Views per Video": {"headline_displayed": False},
+            "Comments per Video": {"headline_displayed": False},
+            "Durations per Video": {"headline_displayed": False},
+            "Views per Likes": {"headline_displayed": False},
+            "Number of Videos After": {"headline_displayed": False},
+            "Monthly Minutes After": {"headline_displayed": False},
+            "Monthly Likes After": {"headline_displayed": False},
+            "Monthly Views After": {"headline_displayed": False},
+            "Monthly Comments After": {"headline_displayed": False},
+            "Daily Uploaded Video": {"headline_displayed": False},
+            "Subscribers per Video": {"headline_displayed": False}
+
+        }
 
         if page == "Views-Minutes After":
             with channel_details:
@@ -228,17 +248,17 @@ if page == "Turkish News Media's YouTube Stats":
 
                 From the given values, we can conclude that there is a significant variation in the view per minute for different media channels.
 
-The highest view per minute is for BBC News Türkçe, which is more than 39,000 views per minute, followed by Yeni Şafak with more than 39,000 views per minute.
+                The highest view per minute is for BBC News Türkçe, which is more than 39,000 views per minute, followed by Yeni Şafak with more than 39,000 views per minute.
 
-TRT Haber also has a high view per minute with more than 14,000 views per minute.
+                TRT Haber also has a high view per minute with more than 14,000 views per minute.
 
-On the other hand, FOX Haber and CNN Türk have the lowest view per minute, with only 699 and 1361 views per minute, respectively.
+                On the other hand, FOX Haber and CNN Türk have the lowest view per minute, with only 699 and 1361 views per minute, respectively.
 
-Moreover, we can also observe that the minutes count after and view count after do not necessarily correspond to a higher view per minute.
+                Moreover, we can also observe that the minutes count after and view count after do not necessarily correspond to a higher view per minute.
 
-For instance, A Haber has a lower view per minute, even though it has a higher view count after and minutes count after compared to some other channels such as Halktv and SÖZCÜ Televizyonu.
+                For instance, A Haber has a lower view per minute, even though it has a higher view count after and minutes count after compared to some other channels such as Halktv and SÖZCÜ Televizyonu.
 
-Overall, the view per minute metric provides a better measure of the popularity of a channel, as it considers the engagement of the viewers with the content in a given period.
+                Overall, the view per minute metric provides a better measure of the popularity of a channel, as it considers the engagement of the viewers with the content in a given period.
 
                 """)
 
@@ -281,13 +301,13 @@ Overall, the view per minute metric provides a better measure of the popularity 
 
                 Based on the data provided, it appears that the channels with the highest "Like per Minute" are Yeni Şafak and BaBaLa TV, with values of 764 and 709, respectively.
 
-On the other hand, the channels with the lowest "Like per Minute" are FOX Haber, CNN TÜRK, and Halktv, with values of 7, 11, and 13, respectively.
+                On the other hand, the channels with the lowest "Like per Minute" are FOX Haber, CNN TÜRK, and Halktv, with values of 7, 11, and 13, respectively.
 
-In terms of total "Like Count After", Cüneyt Özdemir has the highest value with 761,719 likes, followed by Yeni Şafak with 656,476 likes.
+                In terms of total "Like Count After", Cüneyt Özdemir has the highest value with 761,719 likes, followed by Yeni Şafak with 656,476 likes.
 
-However, in terms of "Minutes Count After", Halktv has the highest value with 58,560.8 minutes, followed by TV100 with 46,025.6 minutes.
+                However, in terms of "Minutes Count After", Halktv has the highest value with 58,560.8 minutes, followed by TV100 with 46,025.6 minutes.
 
-Overall, it can be concluded that while some channels may have a higher "Like per Minute" rate, it is important to also consider the total number of minutes and likes, as these values can provide more context and a more comprehensive picture of a channel's performance on YouTube.
+                Overall, it can be concluded that while some channels may have a higher "Like per Minute" rate, it is important to also consider the total number of minutes and likes, as these values can provide more context and a more comprehensive picture of a channel's performance on YouTube.
 
                 """)
 
@@ -330,19 +350,19 @@ Overall, it can be concluded that while some channels may have a higher "Like pe
 
                 The data shows the number of comments received by different Turkish news channels in a specific time period.
 
-The values represents the average number of comments received per minute for each channel.
+                The values represents the average number of comments received per minute for each channel.
 
-BBC News Türkçe and Yeni Şafak received the highest and lowest number of comments per minute, respectively.
+                BBC News Türkçe and Yeni Şafak received the highest and lowest number of comments per minute, respectively.
 
-The BBC News Türkçe's high engagement rate may be attributed to its reputation as a credible and impartial news source.
+                The BBC News Türkçe's high engagement rate may be attributed to its reputation as a credible and impartial news source.
 
-Yeni Şafak's low engagement rate could be due to a lack of trust in the news source or a smaller audience.
+                Yeni Şafak's low engagement rate could be due to a lack of trust in the news source or a smaller audience.
 
-CNN TÜRK, FOX Haber, Habertürk, and TV100 received the lowest number of comments per minute, which could indicate lower audience engagement with these channels.
+                CNN TÜRK, FOX Haber, Habertürk, and TV100 received the lowest number of comments per minute, which could indicate lower audience engagement with these channels.
 
-The channels that received a higher number of comments per minute than others, such as Yeni Şafak and BBC News Türkçe, could benefit from further analysis of their content and engagement strategies to determine what factors contribute to their higher engagement rates.
+                The channels that received a higher number of comments per minute than others, such as Yeni Şafak and BBC News Türkçe, could benefit from further analysis of their content and engagement strategies to determine what factors contribute to their higher engagement rates.
 
-Meanwhile, the channels with lower engagement rates could use this information to improve their content and engagement strategies to increase their audience's interest and engagement.
+                Meanwhile, the channels with lower engagement rates could use this information to improve their content and engagement strategies to increase their audience's interest and engagement.
 
                 """)
 
@@ -370,20 +390,21 @@ Meanwhile, the channels with lower engagement rates could use this information t
 
                 The table shows the number of videos uploaded and the average number of likes per video for 15 different Turkish news channels.
 
-The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos. The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
+                The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos. The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
 
-The channel with the lowest number of videos was BaBaLa TV with only 5 videos. When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video,
+                The channel with the lowest number of videos was BaBaLa TV with only 5 videos. When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video,
 
-followed by Nevşin Mengü with an average of 6065 likes per video. The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
+                followed by Nevşin Mengü with an average of 6065 likes per video. The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
 
-It is interesting to note that some of the channels with a lower number of videos uploaded, such as BBC News Türkçe and TRT Haber, had relatively high average numbers of likes per video.
+                It is interesting to note that some of the channels with a lower number of videos uploaded, such as BBC News Türkçe and TRT Haber, had relatively high average numbers of likes per video.
 
-This suggests that these channels may have a more engaged audience, with viewers who are more likely to engage with and appreciate the content that is uploaded.
+                This suggests that these channels may have a more engaged audience, with viewers who are more likely to engage with and appreciate the content that is uploaded.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Views per Video":
             with channel_details:
@@ -413,16 +434,17 @@ This suggests that these channels may have a more engaged audience, with viewers
 
                 The graph shows the number of views per video for different Turkish news channels before and after February 6th, 2023.
 
-Before February 6th, 2023, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After the natural disaster the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
+                Before February 6th, 2023, the channel with the highest number of views per video was BaBaLa TV with 1,321,335 views per video. After the natural disaster the channel with the highest number of views per video was BBC News Türkçe with 410,318 views per video, followed by BaBaLa TV with 189,987 views per video.
 
-On the other hand, A Haber had the lowest number of views per video before and after the earthquake.
+                On the other hand, A Haber had the lowest number of views per video before and after the earthquake.
 
-Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
+                Overall, it seems that most channels experienced a decrease in the number of views per video after February 6th, 2023. The only exceptions to this trend were BBC News Türkçe and BaBaLa TV which saw an increase in their views per video.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Comments per Video":
             with channel_details:
@@ -447,16 +469,17 @@ Overall, it seems that most channels experienced a decrease in the number of vie
 
                 The graph shows the number of videos uploaded by different news channels on YouTube and the average number of comments per video after the 6th of February 2023.
 
-In terms of the average number of comments per video, the highest number is seen for BaBaLa TV with 923 comments per video followed by BBC News Türkçe with 666 comments per video. Anadolu Ajansı has the lowest number of comments per video with only 12 comments per video on average.
+                In terms of the average number of comments per video, the highest number is seen for BaBaLa TV with 923 comments per video followed by BBC News Türkçe with 666 comments per video. Anadolu Ajansı has the lowest number of comments per video with only 12 comments per video on average.
 
-Overall, it appears that BaBaLa TV and BBC News Türkçe are the channels with the most engaged audiences as they have the highest number of comments per video.
+                Overall, it appears that BaBaLa TV and BBC News Türkçe are the channels with the most engaged audiences as they have the highest number of comments per video.
 
-However, it is important to note that the number of videos uploaded by these channels is relatively small compared to other channels such as CNN TÜRK and SÖZCÜ Televizyonu, which may have an impact on the comment per video ratio.
+                However, it is important to note that the number of videos uploaded by these channels is relatively small compared to other channels such as CNN TÜRK and SÖZCÜ Televizyonu, which may have an impact on the comment per video ratio.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Durations per Video":
             with channel_details:
@@ -478,16 +501,17 @@ However, it is important to note that the number of videos uploaded by these cha
 
                 These values represent the number of videos and the average length of those videos for each channel after the selected date range.
 
-The highest number of videos produced after the selected date range was by CNN TÜRK with 2,438 videos, followed by TV100 with 1,970 videos and Halktv with 1,396 videos.
+                The highest number of videos produced after the selected date range was by CNN TÜRK with 2,438 videos, followed by TV100 with 1,970 videos and Halktv with 1,396 videos.
 
-Regarding the average length of videos produced, Nevşin Mengü has the longest average length of videos at 46.2 minutes, followed by Halktv with 41.9 minutes and FOX Haber with 34.4 minutes. On the other hand, TRT Haber has the shortest average video length of 1.6 minutes , followed by Yeni Şafak with 7.8 minutes.
+                Regarding the average length of videos produced, Nevşin Mengü has the longest average length of videos at 46.2 minutes, followed by Halktv with 41.9 minutes and FOX Haber with 34.4 minutes. On the other hand, TRT Haber has the shortest average video length of 1.6 minutes , followed by Yeni Şafak with 7.8 minutes.
 
-It is important to note that the number of videos produced does not necessarily reflect the quality of content or engagement with the audience.
+                It is important to note that the number of videos produced does not necessarily reflect the quality of content or engagement with the audience.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Views per Likes":
             with channel_details:
@@ -503,22 +527,25 @@ It is important to note that the number of videos produced does not necessarily 
                 # display the chart
                 st.plotly_chart(fig)
 
-                st.markdown("""Looking at the bar chart above:
+                st.markdown("""
 
-CNN TÜRK has the highest view count after, followed by Habertürk and Halktv.
+                Looking at the bar chart above:
 
-BaBaLa TV and Anadolu Ajansı have the lowest view count after.
+                CNN TÜRK has the highest view count after, followed by Habertürk and Halktv.
 
-Yeni Şafak has the lowest view per like after, while Habertürk has the highest view per like after.
+                BaBaLa TV and Anadolu Ajansı have the lowest view count after.
 
-The view per like after for most channels is around 50-100, indicating that for every like on a video, there are about 50-100 views. However, there are some outliers, like CNN TÜRK with a view per like after of 126.3 and Habertürk with a view per like after of 203.6.
+                Yeni Şafak has the lowest view per like after, while Habertürk has the highest view per like after.
 
-It's worth noting that the view per like after metric could be influenced by factors such as the type of content, engagement rate, and the number of likes on each video. Therefore, it should be taken with a grain of salt and analyzed in conjunction with other metrics.
+                The view per like after for most channels is around 50-100, indicating that for every like on a video, there are about 50-100 views. However, there are some outliers, like CNN TÜRK with a view per like after of 126.3 and Habertürk with a view per like after of 203.6.
+
+                It's worth noting that the view per like after metric could be influenced by factors such as the type of content, engagement rate, and the number of likes on each video. Therefore, it should be taken with a grain of salt and analyzed in conjunction with other metrics.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Number of Videos After":
             with channel_details:
@@ -545,9 +572,13 @@ It's worth noting that the view per like after metric could be influenced by fac
                 st.plotly_chart(fig)
 
                 st.markdown("""
+
                 Looking at the data, we can see that some channels have had significant changes in their video count.
-Here are the percentage changes for each channel:
-""")
+
+                Here are the percentage changes for each channel:
+
+                """)
+
                 # Calculate the percentage change for each channel and sort Percentage Change values descending
                 edited_stats_df["Percentage Change"] = round(((edited_stats_df["totalVideos"] - edited_stats_df["video_count_before"]) / edited_stats_df["video_count_before"]) * 100,2)
                 edited_stats_df = edited_stats_df[edited_stats_df['channelName'] != 'SÖZCÜ Televizyonu'] # Exclude SÖZCÜ Televizyonu from the dataframe
@@ -565,13 +596,13 @@ Here are the percentage changes for each channel:
 
                 st.markdown("""
 
-These percentages represent the increase or decrease in the number of videos uploaded by each channel before and after the disaster.
+                These percentages represent the increase or decrease in the number of videos uploaded by each channel before and after the disaster.
 
-Overall, it seems that the majority of channels have had a relatively small change in their video count, with most falling within a range of 1-5% increase or decrease.
+                Overall, it seems that the majority of channels have had a relatively small change in their video count, with most falling within a range of 1-5% increase or decrease.
 
-However, it's important to note that these changes may not necessarily be significant in the context of each channel's total video count. For example, a 1% increase for a channel with only a few videos may be less significant than a 1% increase for a channel with thousands of videos.
+                However, it's important to note that these changes may not necessarily be significant in the context of each channel's total video count. For example, a 1% increase for a channel with only a few videos may be less significant than a 1% increase for a channel with thousands of videos.
 
-Therefore, while these percentage changes can give us some insight into each channel's recent activity, they should be interpreted with caution and in the context of each channel's overall content strategy.
+                Therefore, while these percentage changes can give us some insight into each channel's recent activity, they should be interpreted with caution and in the context of each channel's overall content strategy.
 
                 """)
 
@@ -614,19 +645,21 @@ Therefore, while these percentage changes can give us some insight into each cha
 
                 The graph above shows the monthly video count and the minutes of content uploaded after the disaster, by various news channels and individual journalists in Turkey.
 
-Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
+                Looking at the data, it appears that CNN TÜRK and Halktv are the channels with the highest number of videos uploaded in both February and March, with over 1,000 videos per month.
 
-These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
+                These channels also have a high number of minutes of content uploaded, with Halktv having the highest number of minutes in March. Other channels such as A Haber, Habertürk, and TV100 also have a significant number of videos and minutes uploaded.
 
-On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
+                On the other hand, some individual journalists such as Cüneyt Özdemir, Nevşin Mengü, and Erk Acarer have lower video and minute counts compared to the news channels. BaBaLa TV has the lowest counts among all channels with only one video uploaded in February and 4 videos uploaded in March.
 
-SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
+                SÖZCÜ Televizyonu also has a low number of videos uploaded in February but has a significantly high count of videos and minutes uploaded in March.
 
-Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
+                Overall, the data suggests that there is a considerable variation in the amount of content uploaded by different news channels and individual journalists in Turkey.
+
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Monthly Likes After":
             with channel_details:
@@ -663,7 +696,7 @@ Overall, the data suggests that there is a considerable variation in the amount 
 
                 When looking at the number of likes per month, we can see that some channels like Anadolu Ajansı, BBC News Türkçe, and Habertürk had a decrease in the number of likes from February to March. In contrast, other channels such as A Haber, Cüneyt Özdemir, Halktv, and SÖZCÜ Televizyonu had an increase in the number of likes.
 
-Overall, we can see that there is no clear correlation between the number of videos uploaded and the number of likes received. It seems that factors such as content quality, engagement with the audience, and current events play a significant role in determining the number of likes a channel receives.
+                Overall, we can see that there is no clear correlation between the number of videos uploaded and the number of likes received. It seems that factors such as content quality, engagement with the audience, and current events play a significant role in determining the number of likes a channel receives.
 
                 """)
 
@@ -706,14 +739,15 @@ Overall, we can see that there is no clear correlation between the number of vid
 
                 Based on the data provided, we can observe that the total number of videos produced by each channel decreased in March compared to February, except for SÖZCÜ Televizyonu, Halktv, and CNN TÜRK. However, the views received by these videos decreased more dramatically compared to the reduction in the number of videos produced, especially for channels like Habertürk, Yeni Şafak, and Anadolu Ajansı.
 
-Interestingly, Halktv and SÖZCÜ Televizyonu saw an increase in the number of comments per month in March compared to February, even though the number of videos produced decreased slightly.
+                Interestingly, Halktv and SÖZCÜ Televizyonu saw an increase in the number of comments per month in March compared to February, even though the number of videos produced decreased slightly.
 
-Overall, it seems that the viewing trends of Turkish news channels declined in March compared to February, which could be due to a variety of factors such as changes in the news cycle or shifts in audience behavior. However, further analysis would be needed to identify the reasons behind these trends.
+                Overall, it seems that the viewing trends of Turkish news channels declined in March compared to February, which could be due to a variety of factors such as changes in the news cycle or shifts in audience behavior. However, further analysis would be needed to identify the reasons behind these trends.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Monthly Comments After":
             with channel_details:
@@ -750,12 +784,13 @@ Overall, it seems that the viewing trends of Turkish news channels declined in M
 
                 Regarding comments, in February, the channel with the highest number of comments was Halktv with a count of 67274 while in March, it was SÖZCÜ Televizyonu with a count of 101034. The channel with the lowest number of comments in February was SÖZCÜ Televizyonu with only 10 comments while in March, it was Habertürk with only 39 comments.
 
-In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the channels that have the highest number of comments across the two months. TV100 had the highest number of videos in February while Halktv had the highest number of videos in March. However, it is worth noting that these conclusions are based on only two months' worth of data and may not be indicative of overall trends.
+                In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the channels that have the highest number of comments across the two months. TV100 had the highest number of videos in February while Halktv had the highest number of videos in March. However, it is worth noting that these conclusions are based on only two months' worth of data and may not be indicative of overall trends.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
         if page == "Daily Uploaded Video":
             with channel_details:
@@ -800,11 +835,12 @@ In summary, it seems that in general, Halktv and SÖZCÜ Televizyonu are the cha
 
                 From the given data, we can see that the news channels have varying daily counts of published news articles across different days of the week.
 
-A Haber, CNN TÜRK, Halktv, and TV100 seem to have the highest daily counts of published news articles, whereas BBC News Türkçe, BaBaLa TV, and Habertürk have the lowest.
+                A Haber, CNN TÜRK, Halktv, and TV100 seem to have the highest daily counts of published news articles, whereas BBC News Türkçe, BaBaLa TV, and Habertürk have the lowest.
 
-Furthermore, looking at the days of the week, Tuesday and Thursday seem to have the highest daily counts of published news articles across the majority of the channels, whereas Sunday seems to have the lowest daily counts.
+                Furthermore, looking at the days of the week, Tuesday and Thursday seem to have the highest daily counts of published news articles across the majority of the channels, whereas Sunday seems to have the lowest daily counts.
 
-Overall, it is difficult to draw any definitive conclusions from this data without additional information, but we can see that different news channels have different patterns in terms of when they publish their news articles.
+                Overall, it is difficult to draw any definitive conclusions from this data without additional information, but we can see that different news channels have different patterns in terms of when they publish their news articles.
+
                 """)
 
                 # Add footer to the page
@@ -832,14 +868,15 @@ Overall, it is difficult to draw any definitive conclusions from this data witho
 
                 Looking at the data, it appears that BaBaLa TV has the highest number of subscribers per video, with a whopping 11,152 subscribers per video on average.
 
-BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively.
+                BBC News Türkçe comes in second with an average of 189 subscribers per video, followed closely by Cüneyt Özdemir with 312 subscribers per video. On the other hand, Erk Acarer and SÖZCÜ Televizyonu have the lowest number of subscribers per video with only 168 and 37 respectively.
 
-It's interesting to note that some channels with fewer subscribers, such as A Haber and Anadolu Ajansı, have a higher number of subscribers per video than channels with larger subscriber counts like Habertürk and FOX Haber. This suggests that the quality and engagement of the content may be more important than the number of subscribers.
+                It's interesting to note that some channels with fewer subscribers, such as A Haber and Anadolu Ajansı, have a higher number of subscribers per video than channels with larger subscriber counts like Habertürk and FOX Haber. This suggests that the quality and engagement of the content may be more important than the number of subscribers.
 
                 """)
 
                 # Add footer to the page
                 st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
 
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
