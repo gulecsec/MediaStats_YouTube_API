@@ -859,16 +859,16 @@ elif page == "Top 10 Videos by Like Count and View Count":
         st.plotly_chart(fig)
 
         # add an index column starting from 1
-        top10['index'] = range(1, len(df)+1)
+        df['index'] = range(1, len(df)+1)
 
         # create the sidebar with filter and sort options
-        categories = sorted(top10['category'].unique())
+        categories = sorted(df['category'].unique())
         sort_options = ['Like Count', 'View Count']
         category_filter = st.sidebar.selectbox('Filter by category', categories)
         sort_by = st.sidebar.selectbox('Sort by', sort_options)
 
         # filter and sort the data
-        filtered = top10[top10['category'] == category_filter]
+        filtered = df[df['category'] == category_filter]
         sorted_df = filtered.sort_values(sort_by.lower(), ascending=False)
         top10 = sorted_df.iloc[:10]
 
