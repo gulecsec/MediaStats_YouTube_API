@@ -863,11 +863,8 @@ elif page == "Top 10 Videos by Like Count and View Count":
         top10_table.index += 1  # start the index from 1 instead of 0
 
 
-        # set data row background color
-        def color_rows(s):
-            return ['background-color: #f0f0f0' if i % 2 == 0 else 'background-color: white' for i in range(len(s))]
-        top10_table = top10_table.applymap(lambda x: f'background-color: #f0f0f0' if x == '' else x)
-        top10_table = top10_table.apply(color_rows, axis=1)
+        # set header background color
+        top10_table = top10_table.style.set_properties(**{'background-color': 'Blues', 'color': 'white'}, subset=pd.IndexSlice[:, :])
 
         # display the table
         st.write("Top 10 Video Titles:")
