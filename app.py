@@ -34,7 +34,8 @@ channel_data = {
 st.sidebar.title("Main Pages")
 page = st.sidebar.radio("", ("Home", "Google Developers Console",
 "Top 10 Videos by Like Count and View Count",
-"Turkish News Media's YouTube Stats"
+"Turkish News Media's YouTube Stats",
+"Most Used Words by Title"
 ))
 
 # Define dictionary to keep track of state for each page
