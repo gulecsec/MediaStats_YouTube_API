@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YouTube Stats of Turkish News Media</title>
+
 </head>
 <body>
   <h1>YouTube Stats of Turkish News Media</h1>
