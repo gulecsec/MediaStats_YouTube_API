@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import SessionState
 
 # Data viz packages
 import plotly.express as px
