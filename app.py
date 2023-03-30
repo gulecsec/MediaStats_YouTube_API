@@ -224,7 +224,7 @@ Overall, the view per minute metric provides a better measure of the popularity 
                 fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
                 color='mins_count_after', orientation='h',
                 title="Top Channels by Likes per Minute: Analyzing Total Video Minutes After 6th of Feb",
-                color_continuous_scale='Reds', text=like_per_min.round(0))
+                color_continuous_scale='Reds', text=like_per_min.round(0), , labels={'text': 'Likes per Min'})
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
                 xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
@@ -273,7 +273,7 @@ Overall, it can be concluded that while some channels may have a higher "Like pe
                 fig = px.bar(comments_mins_df, x='comment_count_after', y=comments_mins_df.index,
                 color='mins_count_after', orientation='h',
                 title="Top Channels by Comments per Minute: Analyzing Total Video Minutes After 6th of Feb",
-                color_continuous_scale='Greens', text=comments_per_min.round(0))
+                color_continuous_scale='Greens', text=comments_per_min.round(0), labels={'text': 'Comments per Min'})
 
                 fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
                 xanchor='left', x=0.01), legend_title="Minutes",width=800, height=600, yaxis_title=None,
@@ -314,7 +314,7 @@ Meanwhile, the channels with lower engagement rates could use this information t
                 # generate a horizontal bar chart using Plotly
                 fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
                 x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
-                title="Total Likes per Video for Each Channel Uploaded After February 6th")
+                title="Total Likes per Video for Each Channel Uploaded After February 6th", labels={'text': 'Likes per Min'})
 
                 # fig.update_traces(name="Up to 27/03/23",selector=dict(name="like_per_video_after"))
 
