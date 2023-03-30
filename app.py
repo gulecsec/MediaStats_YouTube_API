@@ -29,10 +29,6 @@ channel_data = {
 'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak 10 Most Popular Videos based on Likes and Views per Channel'},
 }
 
-# Define page layout
-header = st.container()
-dataset = st.container()
-channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Main Pages")
@@ -51,35 +47,31 @@ state_dict = {
 
 
 if page == "Home":
-    with header:
 
-        if not state_dict[page]["headline_displayed"]:
-            st.title("How Turkish News Media's YouTube Stats Stack Up")
-            st.subheader("Exploring the Data on My Streamlit App")
-            st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically, we'll focus on 15 channels affected by the earthquake that occurred in Turkey on February 6th, 2023. By comparing the statistics of these channels, we can gain insight into the impact of the earthquake on the YouTube community and learn how to use the YouTube API to automate various tasks related to channel analysis.")
-            state_dict[page]["headline_displayed"] = True
+    if not state_dict[page]["headline_displayed"]:
+        st.title("How Turkish News Media's YouTube Stats Stack Up")
+        st.subheader("Exploring the Data on My Streamlit App")
+        st.markdown("In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically, we'll focus on 15 channels affected by the earthquake that occurred in Turkey on February 6th, 2023. By comparing the statistics of these channels, we can gain insight into the impact of the earthquake on the YouTube community and learn how to use the YouTube API to automate various tasks related to channel analysis.")
+        state_dict[page]["headline_displayed"] = True
 
-    with dataset:
 
-        if not state_dict[page]["headline_displayed"]:
-            state_dict[page]["headline_displayed"] = True
 
-        # add radio button to select between the two graphs
-        graph_choice = st.radio("Select graph", options=["Total number of Views & Total number of Videos", "Total number of Subscribers & Total number of Videos"])
+    # add radio button to select between the two graphs
+    graph_choice = st.radio("Select graph", options=["Total number of Views & Total number of Videos", "Total number of Subscribers & Total number of Videos"])
 
-        # display the selected graph
-        if graph_choice == "Total number of Views & Total number of Videos":
-            fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
-                          x="channelName", y="views", color='totalVideos')
+    # display the selected graph
+    if graph_choice == "Total number of Views & Total number of Videos":
+        fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
+                        x="channelName", y="views", color='totalVideos')
 
-        else:
-            fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
-                          x="channelName", y="subscribers", color='totalVideos')
+    else:
+        fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+                        x="channelName", y="subscribers", color='totalVideos')
 
-        fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-            width=800, height=600,yaxis_title=None)
+    fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
 
-        st.plotly_chart(fig)
+    st.plotly_chart(fig)
 
 
 if page == "Google Developers Console":
