@@ -279,6 +279,10 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Likes-Minutes After":
             with channel_details:
 
+                if not state_dict_p2[page]["headline_displayed"]:
+                    st.header("Detailed YouTube Stats of Turkish News Media's")
+                    state_dict_p2[page]["headline_displayed"] = True
+
                 # Select columns of interest
                 like_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'like_count_after']]
 
