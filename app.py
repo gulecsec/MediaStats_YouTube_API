@@ -78,12 +78,9 @@ if page == "Google Developers Console":
                 """)
         st.code("""
         from googleapiclient.discovery import build
-        api_service_name = 'youtube'
-        api_version = 'v3'
-
-        """)
-
-
+api_service_name = 'youtube'
+api_version = 'v3'
+                """)
 
         st.subheader("Step 5: Get credentials and create an API client")
         st.text("""
