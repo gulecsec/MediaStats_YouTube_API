@@ -79,9 +79,9 @@ if page == "Home":
 
     st.markdown("""
 
-    The accuracy of the stats on the graphs may vary due to daily quotas on YouTube APIs, which can result in incomplete data for channels with a high number of total videos.
+    The accuracy of the stats on the graphs may vary due to daily quotas on YouTube APIs, which can result in incomplete data for channels with a high number of total videos. The daily quota for YouTube Data API v3 was 10,000 units per day as of September 2021, but this may change at any time. It's important to follow YouTube's official documentation and guidelines to avoid exceeding the quota limit and ensure compliance with their terms of service.
 
-    The daily quota for YouTube Data API v3 was 10,000 units per day as of September 2021, but this may change at any time. It's important to follow YouTube's official documentation and guidelines to avoid exceeding the quota limit and ensure compliance with their terms of service. Additionally, please note that the data presented in our graphs was collected via YouTube API requests as of March 27th, 2023, and may not reflect the most up-to-date information available.
+    Additionally, please note that the data presented in our graphs was collected via YouTube API requests as of March 27th, 2023, and may not reflect the most up-to-date information available.
 
     """)
 
