@@ -30,6 +30,9 @@ channel_data = {
 'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Most Used Words Based on Content Title'},
 }
 
+# Load Each Channel Data
+edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
+
 # Define page layout
 header = st.container()
 dataset = st.container()
@@ -190,8 +193,7 @@ if page == "Turkish News Media's YouTube Stats":
     with channel_details:
         st.title("Detailed YouTube Stats of Turkish News Media's")
 
-        # Load Each Channel Data
-        edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
+
 
         # Define sidebar
         st.sidebar.title("Detailed Stats")
