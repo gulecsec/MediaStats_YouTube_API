@@ -213,7 +213,7 @@ if page == "Turkish News Media's YouTube Stats":
         # generate a horizontal bar chart using Plotly
         fig = px.bar(view_mins_df, x='view_count_after', y=view_mins_df.index,
         color='mins_count_after', orientation='h',
-        title="Top Channels by Views per Minute: Analyzing Total Video Minutes After 6th of Feb",
+        title="Top Channels by Views per Minute: Analyzing Total Views & Minutes After 6th of Feb",
         color_continuous_scale='Blues', text=view_per_min.round(0), labels={'text': 'Views per Min'})
 
         fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
@@ -227,7 +227,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        The table includes data on the minutes watched, total view count, and view per minute for various news channels in Turkey.
+        The graph includes data on the minutes watched, total view count, and view per minute for various news channels in Turkey.
 
         BaBaLa TV had the shortest watch time, with only 101.6 minutes watched, but a very high view per minute rate of 9,350. On the other hand, Halktv and CNN TÜRK had the longest watch time, with 58,560.8 and 56,479.9 minutes respectively.
 
