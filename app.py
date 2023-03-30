@@ -221,9 +221,6 @@ if page == "Turkish News Media's YouTube Stats":
         if page == "Views-Minutes After":
             with channel_details:
 
-                if not state_dict[page]["headline_displayed"]:
-                    state_dict[page]["headline_displayed"] = True
-
                 # create a new DataFrame with 'channelName', 'mins_count_after', and 'view_count_after' columns
                 view_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'view_count_after']]
 
