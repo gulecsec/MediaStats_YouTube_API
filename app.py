@@ -36,8 +36,7 @@ channel_data = {
 st.sidebar.title("Main Pages")
 page = st.sidebar.radio("", ("Home", "Google Developers Console",
 "Top 10 Videos by Like Count and View Count",
-"Turkish News Media's YouTube Stats",
-"Most Used Words by Title"
+"Turkish News Media's YouTube Stats"
 ))
 
 # Define dictionary to keep track of state for each page
@@ -824,34 +823,6 @@ if page == "Turkish News Media's YouTube Stats":
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
-
-
-if page == "Most Used Words by Title":
-
-    # load Turkish stopwords
-    with open('turkish_stopwords.txt', 'r', encoding='utf-8') as f:
-        stopwords = f.read().splitlines()
-
-    # create a dropdown to select a channel
-    channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
-
-    # get the path and dataframe for the selected channel
-    path = channel_data[channel_choice]['path']
-
-    df = pd.read_csv(path)
-    df = df[df['publishedAt'] >= '2023-02-06']
-
-    # combine all titles into one string
-    text = " ".join(df['title'].values)
-
-    # generate word cloud
-    wordcloud = WordCloud(width=800, height=400, background_color='white', stopwords=stopwords, max_words=15).generate(text)
-
-    # plot the word cloud
-    plt.figure(figsize=(20,10))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
-    st.pyplot(plt.gcf())
 
 
 elif page == "Top 10 Videos by Like Count and View Count":
