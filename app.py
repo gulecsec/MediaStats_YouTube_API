@@ -180,24 +180,37 @@ if page == "Most Used Words Based on Content Title":
         if st.session_state.channel != channel_choice:
             df = pd.read_csv(path)
             df = df[df['publishedAt'] >= '2023-02-06']
+
+            # create a word cloud of video titles
+            text = " ".join(title for title in df['title'])
+            stopwords = set(STOPWORDS)
+            wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
+
+            # create a horizontal bar chart of the top 15 most used words
+            word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
+            top_words = word_counts[:15]
+            fig, ax = plt.subplots(figsize=(10, 8))
+            ax.barh(top_words.index, top_words.values)
+            ax.invert_yaxis()
+            ax.set_xlabel("Word Count")
+            ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+
+            # update session state variables
             st.session_state.channel = channel_choice
+            st.session_state.df = df
+            st.session_state.wordcloud = wordcloud
         else:
+            # use session state variables if it is the same channel choice
             df = st.session_state.df
+            wordcloud = st.session_state.wordcloud
+            fig = None
 
-        # create a word cloud of video titles
-        text = " ".join(title for title in df['title'])
-        stopwords = set(STOPWORDS)
-        wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
-
-        # create a horizontal bar chart of the top 15 most used words
-        word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
-        top_words = word_counts[:15]
+        # display the word cloud using matplotlib
         fig, ax = plt.subplots(figsize=(10, 8))
-        ax.barh(top_words.index, top_words.values)
-        ax.invert_yaxis()
-        ax.set_xlabel("Word Count")
-        ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+        ax.imshow(wordcloud, interpolation='bilinear')
+        ax.axis("off")
         st.pyplot(fig)
+
 
 
 if page == "Turkish News Media's YouTube Stats":
