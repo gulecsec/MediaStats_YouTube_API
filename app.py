@@ -42,8 +42,7 @@ st.sidebar.title("Main Pages")
 page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count", "Turkish News Media's YouTube Stats"))
 
 
-# Define the session state
-state = SessionState.get(headline_displayed=False)
+
 
 
 if page == "Home":
@@ -108,8 +107,8 @@ if page == "Google Developers Console":
                 """)
         st.code("""
         from googleapiclient.discovery import build
-api_service_name = 'youtube'
-api_version = 'v3'
+                api_service_name = 'youtube'
+                api_version = 'v3'
                 """)
 
         st.subheader("Step 5: Get credentials and create an API client")
@@ -119,57 +118,58 @@ api_version = 'v3'
         st.code("""
         youtube = build(api_service_name, api_version, developerKey=api_key)
 
-def get_channel_stats(youtube, channel_ids):
+    def get_channel_stats(youtube, channel_ids):
 
-all_data = []
-request = youtube.channels().list(
-    part="snippet,contentDetails,statistics",
-    id=','.join(channel_ids)
-)
-response = request.execute()
+    all_data = []
+    request = youtube.channels().list(
+        part="snippet,contentDetails,statistics",
+        id=','.join(channel_ids)
+    )
+    response = request.execute()
 
-# loop through items
-for item in response['items']:
-    data= {'channelName': item['snippet']['title'],
-        'subscribers': item['statistics']['subscriberCount'],
-        'views': item['statistics']['viewCount'],
-        'totalVideos': item['statistics']['videoCount'],
-        'playlistId': item['contentDetails']['relatedPlaylists']['uploads']
-        }
+    # loop through items
+    for item in response['items']:
+        data= {'channelName': item['snippet']['title'],
+            'subscribers': item['statistics']['subscriberCount'],
+            'views': item['statistics']['viewCount'],
+            'totalVideos': item['statistics']['videoCount'],
+            'playlistId': item['contentDetails']['relatedPlaylists']['uploads']
+            }
 
-    # Check if the channel has any subscriber milestone
-    if 'bulletin' in item['contentDetails']:
-        milestone = item['contentDetails']['bulletin']['resource']
-        if milestone['kind'] == 'youtube#subscription':
-            data['milestoneDate'] = milestone['publishedAt']
-            data['milestoneSubscribers'] = milestone['metadata']['subscriberCount']
+        # Check if the channel has any subscriber milestone
+        if 'bulletin' in item['contentDetails']:
+            milestone = item['contentDetails']['bulletin']['resource']
+            if milestone['kind'] == 'youtube#subscription':
+                data['milestoneDate'] = milestone['publishedAt']
+                data['milestoneSubscribers'] = milestone['metadata']['subscriberCount']
 
-    all_data.append(data)
+        all_data.append(data)
 
-return(pd.DataFrame(all_data))
+    return(pd.DataFrame(all_data))
                         """)
 
         st.subheader("Step 6: Analyze the Response")
         st.markdown("""
         The response is a JSON object that contains the details of the video, including the title, description, view count, like count, and more.
-Here’s a simple example that prints the title and view count of the video:
 
-By following these easy steps, you can now begin using the YouTube API with Python to streamline various tasks and collect valuable information about videos, channels, playlists, and beyond. Moreover, the API provides additional functionality such as:
+        Here’s a simple example that prints the title and view count of the video:
 
-* Search for videos: You can use the search.list method to search for videos based on keywords, location, language, and other criteria.
+        By following these easy steps, you can now begin using the YouTube API with Python to streamline various tasks and collect valuable information about videos, channels, playlists, and beyond. Moreover, the API provides additional functionality such as:
 
-* Retrieve channel details: You can use the channels.list method to retrieve information about a channel, including the number of subscribers, videos, and views.
+        * Search for videos: You can use the search.list method to search for videos based on keywords, location, language, and other criteria.
 
-* Retrieve playlist details: You can use the playlists.list method to retrieve information about a playlist, including the videos, title, and description.
+        * Retrieve channel details: You can use the channels.list method to retrieve information about a channel, including the number of subscribers, videos, and views.
 
-The YouTube API and Python provide a wide range of possibilities for automation, data gathering, and feature creation. Whether you want to build a tool to analyze videos or automate repetitive tasks, the API and the Google API Client library can help you achieve your goals.
+        * Retrieve playlist details: You can use the playlists.list method to retrieve information about a playlist, including the videos, title, and description.
 
-By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
-                    """)
+        The YouTube API and Python provide a wide range of possibilities for automation, data gathering, and feature creation. Whether you want to build a tool to analyze videos or automate repetitive tasks, the API and the Google API Client library can help you achieve your goals.
+
+        By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
+                            """)
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
-        st.title("Detailed YouTube Stats of Turkish News Media's")
+        st.header("Detailed YouTube Stats of Turkish News Media's")
 
         # Load Each Channel Data
         edited_stats_df = pd.read_csv("All_stats/media_stats_edited.csv")
