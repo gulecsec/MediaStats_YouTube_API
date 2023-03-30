@@ -171,6 +171,36 @@ if page == "Most Used Words Based on Content Title":
 
         # Load Each Channel Data
         df = pd.read_csv(path)
+        df = df[df['publishedAt'] >= '2023-02-06']
+
+        # create a word cloud of video titles
+        text = " ".join(title for title in df['title'])
+        stopwords = set(STOPWORDS)
+        wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
+
+        # display the word cloud using matplotlib
+        plt.imshow(wordcloud, interpolation='bilinear')
+        plt.axis("off")
+        plt.show()
+
+        # create a colored table using plotly express
+        fig = px.table(df, values=['title', 'likeCount', 'viewCount'],
+                    labels={'title': 'Title', 'likeCount': 'Like Count', 'viewCount': 'View Count'})
+
+        fig.update_layout(
+            font_family='Arial',
+            font_size=16,
+            height=500,
+            width=800,
+            margin=dict(l=20, r=20, t=20, b=20),
+            coloraxis_showscale=False,
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)',
+            font_color='#2b2d42',
+            hoverlabel=dict(bgcolor='#2b2d42', font_size=14, font_family='Arial', font_color='#f0f6f7'),
+        )
+
+        st.plotly_chart(fig)
 
 
 
