@@ -863,18 +863,21 @@ elif page == "Top 10 Videos by Like Count and View Count":
         top10_table = top10[['title', 'likeCount','viewCount']].reset_index(drop=True)
         top10_table.index += 1  # start the index from 1 instead of 0
 
-        # apply background color to the table
-        top10_styled = top10.style.set_table_styles([{'selector': 'thead',                                               'props': [('background-color', '#264653'), ('color', 'white')]},
-        {'selector': 'tbody tr:nth-of-type(odd)',
-        'props': [('background-color', '#f2f2f2')]},
-        {'selector': 'tbody tr:nth-of-type(even)',
-        'props': [('background-color', 'white')]},
-        {'selector': 'th',
-        'props': [('font-size', '18px'), ('text-align', 'center')]},
-        {'selector': 'td',
-        'props': [('font-size', '16px'), ('text-align', 'center')]},
-        {'selector': '.row_heading',
-        'props': [('display', 'none')]}])
+        # define a function to add background colors to the DataFrame
+        def color_negative_red(val):
+            """
+            Takes a scalar and returns a string with
+            the css property `'background-color: red'` for negative
+            strings, green otherwise.
+            """
+            color = 'red' if val < 100 else 'green'
+            return f'background-color: {color}'
+
+        # apply the function to the 'Like Count' column
+        styled_df = df.style.applymap(color_negative_red, subset=['Like Count'])
+
+        # add the 'View Count' column with color gradients
+        styled_df.background_gradient(subset=['View Count'], cmap='BuPu')
 
         # display the table
         st.write("Top 10 Video Titles:")
