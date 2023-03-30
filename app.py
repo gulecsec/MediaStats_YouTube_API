@@ -190,7 +190,7 @@ if page == "Turkish News Media's YouTube Stats":
 
     # Define sidebar
     st.sidebar.title("Detailed Stats")
-    page = st.sidebar.radio("", ("Views per Minute", "Likes per Minute", "Comments-Minutes After",
+    page = st.sidebar.radio("", ("Views per Minute", "Likes per Minute", "Comments per Minute",
     "Likes per Video", "Views per Video", "Comments per Video", "Durations per Video", "Views per Likes",
     "Number of Videos After", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
     "Monthly Comments After","Daily Uploaded Video","Subscribers per Video"))
@@ -260,7 +260,7 @@ if page == "Turkish News Media's YouTube Stats":
         # generate a horizontal bar chart using Plotly
         fig = px.bar(like_mins_df, x='like_count_after', y=like_mins_df.index,
         color='mins_count_after', orientation='h',
-        title="Top Channels by Likes per Minute: Analyzing Total Video Minutes After 6th of Feb",
+        title="Top Channels by Likes per Minute: Analyzing Total Likes & Minutes After 6th of Feb",
         color_continuous_scale='Reds', text=like_per_min.round(0), labels={'text': 'Likes per Min'})
 
         fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
@@ -285,7 +285,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
 
-    if page == "Comments-Minutes After":
+    if page == "Comments per Minute":
 
         # Select columns of interest
         comments_mins_df = edited_stats_df[['channelName', 'mins_count_after', 'comment_count_after']]
@@ -303,7 +303,7 @@ if page == "Turkish News Media's YouTube Stats":
         # generate a horizontal bar chart using Plotly
         fig = px.bar(comments_mins_df, x='comment_count_after', y=comments_mins_df.index,
         color='mins_count_after', orientation='h',
-        title="Top Channels by Comments per Minute: Analyzing Total Video Minutes After 6th of Feb",
+        title="Top Channels by Comments per Minute: Analyzing Total Comments & Minutes After 6th of Feb",
         color_continuous_scale='Greens', text=comments_per_min.round(0), labels={'text': 'Comments per Min'})
 
         fig.update_layout(xaxis_title=None, legend=dict(orientation='h', yanchor='top', y=1.1,
@@ -344,7 +344,7 @@ if page == "Turkish News Media's YouTube Stats":
         # generate a horizontal bar chart using Plotly
         fig = px.bar(data_frame=edited_stats_df.sort_values('like_per_video_after', ascending=False),
         x="channelName", y="like_per_video_after", color='video_count_after', color_continuous_scale='Viridis',
-        title="Total Likes per Video for Each Channel Uploaded After February 6th", labels={'text': 'Likes per Min'})
+        title="Top Channels by Likes per Video: Analyzing Total Likes & Videos After 6th of Feb", labels={'text': 'Likes per Min'})
 
         fig.update_layout(coloraxis_colorbar=dict(title="Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
         width=800, height=600,yaxis_title=None)
@@ -354,13 +354,13 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.markdown("""
 
-        The table shows the number of videos uploaded and the average number of likes per video for 15 different Turkish news channels.
+        The graph shows the number of videos uploaded and the number of likes per video for 15 different Turkish news channels.
 
         The highest number of videos uploaded after 6th of February was by CNN TÜRK, with a total of 2438 videos. The second highest number of videos was uploaded by TV100 with a total of 1970 videos.
 
-        The channel with the lowest number of videos was BaBaLa TV with only 5 videos. When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video,
+        The channel with the lowest number of videos was BaBaLa TV with only 5 videos. When it comes to the average number of likes per video, BaBaLa TV had the highest average with 14,414 likes per video,followed by Nevşin Mengü with an average of 6065 likes per video.
 
-        followed by Nevşin Mengü with an average of 6065 likes per video. The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
+        The channel with the lowest average number of likes per video was A Haber with an average of 192 likes per video.
 
         It is interesting to note that some of the channels with a lower number of videos uploaded, such as BBC News Türkçe and TRT Haber, had relatively high average numbers of likes per video.
 
