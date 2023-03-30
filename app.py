@@ -193,8 +193,6 @@ if page == "Turkish News Media's YouTube Stats":
     with channel_details:
         st.title("Detailed YouTube Stats of Turkish News Media's")
 
-
-
         # Define sidebar
         st.sidebar.title("Detailed Stats")
         page = st.sidebar.radio("", ("Views-Minutes After", "Likes-Minutes After", "Comments-Minutes After",
@@ -853,26 +851,6 @@ It's interesting to note that some channels with fewer subscribers, such as A Ha
 elif page == "Top 10 Videos by Like Count and View Count":
     with channel_details:
         st.header("10 Most Popular Videos based on Likes and Views per Channel")
-
-        # create a dictionary to store data frames and graph titles for each channel
-        channel_data = {
-        'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Top 10 Videos by Like Count and View Count'},
-        'Anadolu Ajansı': {'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
-        'BaBaLa TV': {'path': 'media_stats/stats_babala_tv.csv' , 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
-        'BBC News Türkçe': {'path': 'media_stats/stats_bbc_news_türkçe.csv' ,'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
-        'CNN TÜRK': {'path': 'media_stats/stats_cnn_türk.csv' , 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
-        'Cüneyt Özdemir': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
-        'Erk Acarer': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
-        'FOX Haber': {'path': 'media_stats/stats_fox_haber.csv' , 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
-        'Habertürk': {'path': 'media_stats/stats_habertürk.csv' , 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
-        'Halktv': {'path': 'media_stats/stats_halktv.csv' , 'title': 'Halktv Top 10 Videos by Like Count and View Count'},
-        'Nevşin Mengü': {'path': 'media_stats/stats_nevşin_mengü.csv' ,'title': 'Nevşin Mengü Top 10 Videos by Like Count and View Count'},
-        'SÖZCÜ Televizyonu': {'path': 'media_stats/stats_sözcü_televizyonu.csv' ,'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
-        'TRT Haber': {'path': 'media_stats/stats_trt_haber.csv' ,'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
-        'TV100': {'path': 'media_stats/stats_tv100.csv' ,'title': 'TV100 Top 10 Videos by Like Count and View Count'},
-        'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
-        }
-
 
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
