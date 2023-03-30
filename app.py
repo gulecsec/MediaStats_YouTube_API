@@ -49,7 +49,7 @@ if page == "Google Developers Console":
         st.markdown("This page aims to assist you in obtaining an API key, making requests using the YouTube API with Python, and analyzing the results. It is important to note that before proceeding, you will need to create a project in the Google Developers Console and obtain an API key. With this information, we will explore how to use the YouTube API to gather video statistics of channels after the 6th of February 2023 earthquake in Turkey to compare values between channels.")
 
         st.subheader("Step 1: Set Up a Project in the Google Developers Console")
-        st.text("""
+        st.markdown("""
                 To use the YouTube API with Python, you first need to create a project in the Google Developers Console and obtain an API key. Here are the steps:
                 1. Go to the Google Developers Console (https://console.developers.google.com/).
                 2. Click on the project drop-down menu at the top of the screen and select "New Project" or an existing project that you want to use for the API.
@@ -73,14 +73,13 @@ if page == "Google Developers Console":
         st.code("pip install --upgrade google-api-python-client")
 
         st.subheader("Step 4: Make API Requests")
-        st.text("""
+        st.markdown("""
                 Now that we have the API key and the library installed, we can start making API requests. Here’s a simple example that retrieves the details of a video:
-
-                    from googleapiclient.discovery import build
-
-                    api_service_name = "youtube"
-                    api_version = "v3"
                 """)
+        st.code("from googleapiclient.discovery import build")
+        st.code("api_service_name = 'youtube'")
+        st.code("api_version = 'v3'")
+
 
         st.subheader("Step 5: Get credentials and create an API client")
         st.text("""
