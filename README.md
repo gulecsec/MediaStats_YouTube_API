@@ -14,7 +14,6 @@
     <li>Install the required packages by running <code>pip install -r requirements.txt</code> in your terminal.</li>
     <li>Run <code>python app.py</code> in your terminal.</li>
     <li>Open <code>http://localhost:8501</code> in your web browser.</li>
-    <li>Select a YouTube channel from the dropdown list.</li>
     <li>View the statistics and word cloud for the selected channel.</li>
   </ol>
   <h2>Credits</h2>
