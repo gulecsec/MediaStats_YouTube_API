@@ -17,7 +17,7 @@ channel_details = st.container()
 
 # Define sidebar
 st.sidebar.title("Main Pages")
-page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Turkish News Media's YouTube Stats"))
+page = st.sidebar.radio("", ("Home", "Google Developers Console", "Top 10 Videos by Like Count and View Count","Most Used Words Based on Content Title","Turkish News Media's YouTube Stats"))
 
 if page == "Home":
     with header:
@@ -56,7 +56,8 @@ if page == "Google Developers Console":
                 3. Enter a name for your project and click on the "Create" button.
                 4. Once the project is created, click on the hamburger menu at the top-left corner of the screen and select "APIs & Services" > "Library" from the navigation menu.
                 5. In the search bar, type "YouTube Data API" and click on the result.
-                6. Click on the "Enable" button to enable the API for your project""")
+                6. Click on the "Enable" button to enable the API for your project
+                """)
 
         st.subheader("Step 2: Obtain the API Key")
         st.markdown("""
@@ -64,7 +65,8 @@ if page == "Google Developers Console":
                 2. Select "API key" as the type of credentials and choose the "Restricted key" option.
                 3. Set up any necessary restrictions for your API key, such as IP address or HTTP referrers.
                 4. Click on the "Create" button to generate your API key.
-                5. The API key will be displayed. Copy the key and keep it safe.""")
+                5. The API key will be displayed. Copy the key and keep it safe.
+                """)
 
         st.subheader("Step 3: Install the Google API Client Library for Python")
         st.markdown("""
@@ -136,6 +138,38 @@ The YouTube API and Python provide a wide range of possibilities for automation,
 
 By utilizing the capabilities of the YouTube API and Python, you can create innovative and robust applications that can assist in automating tasks, gathering data, and adding new functionalities to your projects. However, it is essential to adhere to the API's terms of service and usage guidelines and to obtain an API key from the Google Cloud Console to ensure ethical and responsible use.
                     """)
+
+if page == "Most Used Words Based on Content Title":
+    with channel_details:
+        st.header("Most Used Words Based on Content Title")
+
+        # create a dictionary to store data frames and graph titles for each channel
+        channel_data = {
+        'A Haber': {'path': 'media_stats/stats_a_haber.csv' ,'title': 'A Haber Top 10 Videos by Like Count and View Count'},
+        'Anadolu Ajansı': {'path': 'media_stats/stats_anadolu_ajansı.csv' , 'title': 'Anadolu Ajansı Top 10 Videos by Like Count and View Count'},
+        'BaBaLa TV': {'path': 'media_stats/stats_babala_tv.csv' , 'title': 'BaBaLa TV Top 10 Videos by Like Count and View Count'},
+        'BBC News Türkçe': {'path': 'media_stats/stats_bbc_news_türkçe.csv' ,'title': 'BBC News Türkçe Top 10 Videos by Like Count and View Count'},
+        'CNN TÜRK': {'path': 'media_stats/stats_cnn_türk.csv' , 'title': 'CNN TÜRK Top 10 Videos by Like Count and View Count'},
+        'Cüneyt Özdemir': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
+        'Erk Acarer': {'path': 'media_stats/stats_cüneyt_özdemir.csv' , 'title': 'Cüneyt Özdemir Top 10 Videos by Like Count and View Count'},
+        'FOX Haber': {'path': 'media_stats/stats_fox_haber.csv' , 'title': 'FOX Haber Top 10 Videos by Like Count and View Count'},
+        'Habertürk': {'path': 'media_stats/stats_habertürk.csv' , 'title': 'Habertürk Top 10 Videos by Like Count and View Count'},
+        'Halktv': {'path': 'media_stats/stats_halktv.csv' , 'title': 'Halktv Top 10 Videos by Like Count and View Count'},
+        'Nevşin Mengü': {'path': 'media_stats/stats_nevşin_mengü.csv' ,'title': 'Nevşin Mengü Top 10 Videos by Like Count and View Count'},
+        'SÖZCÜ Televizyonu': {'path': 'media_stats/stats_sözcü_televizyonu.csv' ,'title': 'SÖZCÜ Televizyonu Top 10 Videos by Like Count and View Count'},
+        'TRT Haber': {'path': 'media_stats/stats_trt_haber.csv' ,'title': 'TRT Haber Top 10 Videos by Like Count and View Count'},
+        'TV100': {'path': 'media_stats/stats_tv100.csv' ,'title': 'TV100 Top 10 Videos by Like Count and View Count'},
+        'Yeni Şafak': {'path': 'media_stats/stats_yeni_şafak.csv' ,'title': 'Yeni Şafak Top 10 Videos by Like Count and View Count'},
+        }
+
+        # add dropdown to select a channel
+        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
+
+        # get the path and dataframe for the selected channel
+        path = channel_data[channel_choice]['path']
+
+        # Load Each Channel Data
+        df = pd.read_csv(path)
 
 if page == "Turkish News Media's YouTube Stats":
     with channel_details:
