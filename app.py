@@ -187,7 +187,7 @@ if page == "Most Used Words Based on Content Title":
 
             # create a horizontal bar chart of the top 15 most used words
             word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
-            top_words = word_counts[:15]
+            top_words = word_counts[:10]
             fig, ax = plt.subplots(figsize=(10, 8))
             ax.barh(top_words.index, top_words.values)
             ax.invert_yaxis()
