@@ -21,11 +21,10 @@
   </ol>
 
   <h2>Credits</h2>
-  <p>The project is inspired by <a href="https://github.com/thu-vu92/youtube-api-analysis">thu-vu92's YouTube API Analysis project</a>.</p>
+  <p>Special thanks <a href="https://github.com/thu-vu92">Thu</a> to The project is inspired by <a href="https://github.com/thu-vu92/youtube-api-analysis">thu-vu92's YouTube API Analysis project</a>.</p>
   <p>The word cloud is generated using the WordCloud package in Python.</p>
   <p>The data is scraped using the googleapiclient and pandas packages in Python.</p>
   <p>The web application is built using the streamlit package in Python.</p>
   <p>The data visualization is designed using the plotly.express package in Python.</p>
-  <p>Special thanks to <a href="https://www.kaggle.com/heeraldedhia">Heeral Dedhia</a> on Kaggle for providing the Turkish stopwords file used in this project.</p>
 </body>
 </html>
