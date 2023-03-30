@@ -198,9 +198,14 @@ if page == "Most Used Words Based on Content Title":
         else:
             # use session state variables if it is the same channel choice
             df = st.session_state.df
-            fig = None
+            fig = st.session_state.fig
 
         # display the horizontal bar chart using matplotlib
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        plt.rcParams["axes.axisbelow"] = True
+        plt.grid(b=True, which='major', color='#666666', linestyle='-')
+        plt.minorticks_on()
+        plt.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
         st.pyplot(fig)
 
 
