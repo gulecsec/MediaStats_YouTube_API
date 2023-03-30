@@ -167,14 +167,10 @@ if page == "Most Used Words Based on Content Title":
         st.header("Most Used Words Based on Content Title")
 
         # add dropdown to select a channel
-        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
+        channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique(), key='channel')
 
-        # initialize channel variable in session state
-        if "channel" not in st.session_state:
-            st.session_state.channel = None
-
+        # check if channel_choice has changed
         if st.session_state.channel != channel_choice:
-            # update the session state variable
             st.session_state.channel = channel_choice
 
             # get the path and dataframe for the selected channel
@@ -188,13 +184,17 @@ if page == "Most Used Words Based on Content Title":
             text = " ".join(title for title in df['title'])
             stopwords = set(STOPWORDS)
             wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
-            st.session_state.wordcloud = wordcloud
 
-        # display the word cloud using matplotlib
-        fig, ax = plt.subplots(figsize=(10, 8))
-        ax.imshow(st.session_state.wordcloud, interpolation='bilinear')
-        ax.axis("off")
-        st.pyplot(fig)
+            # create a horizontal bar chart of the top 15 most used words
+            word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
+            top_words = word_counts[:15]
+            fig, ax = plt.subplots(figsize=(10, 8))
+            ax.barh(top_words.index, top_words.values)
+            ax.invert_yaxis()
+            ax.set_xlabel("Word Count")
+            ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
+            st.pyplot(fig)
+
 
 
 
