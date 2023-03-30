@@ -178,8 +178,10 @@ if page == "Most Used Words Based on Content Title":
 
         # Load Each Channel Data if a new channel has been selected
         if st.session_state.channel != channel_choice:
-            df = pd.read_csv(path)
-            df = df[df['publishedAt'] >= '2023-02-06']
+            # show a spinner while loading the data
+            with st.spinner(f"Loading {channel_choice} data..."):
+                df = pd.read_csv(path)
+                df = df[df['publishedAt'] >= '2023-02-06']
 
             # create a horizontal bar chart of the top 15 most used words
             word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
