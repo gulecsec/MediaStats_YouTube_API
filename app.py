@@ -169,9 +169,9 @@ if page == "Most Used Words Based on Content Title":
         # add dropdown to select a channel
         channel_choice = st.selectbox("Select Channel", stats_df["channelName"].unique())
 
-        # check if channel has changed
-        if st.session_state.channel != channel_choice:
-            st.session_state.channel = channel_choice
+        # initialize channel variable in session state
+        if "channel" not in st.session_state:
+            st.session_state.channel = None
 
             # get the path and dataframe for the selected channel
             path = channel_data[channel_choice]['path']
