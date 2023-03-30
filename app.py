@@ -844,7 +844,6 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # get the top 10 videos based on like count
         top10 = df.sort_values('likeCount', ascending=False).iloc[:10]
-        top10 = top10[['title', 'likeCount', 'viewCount']].reset_index(drop=True).to_dataframe(index=False)
 
         # generate plotly graph
         fig = px.bar(data_frame=df.sort_values('likeCount', ascending=False)[0:9],
