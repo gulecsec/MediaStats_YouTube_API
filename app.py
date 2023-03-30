@@ -178,26 +178,22 @@ if page == "Most Used Words Based on Content Title":
 
         # Load Each Channel Data if a new channel has been selected
         if st.session_state.channel != channel_choice:
-            df = pd.read_csv(path)
-            df = df[df['publishedAt'] >= '2023-02-06']
+            with st.spinner(f"Loading data for {channel_choice}..."):
+                df = pd.read_csv(path)
+                df = df[df['publishedAt'] >= '2023-02-06']
+                # create a horizontal bar chart of the top 15 most used words
+                word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
+                top_words = word_counts[:15]
+                fig, ax = plt.subplots(figsize=(10, 8))
+                ax.barh(top_words.index, top_words.values)
+                ax.invert_yaxis()
+                ax.set_xlabel("Word Count")
+                ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
 
-            # create a horizontal bar chart of the top 15 most used words
-            word_counts = df['title'].str.lower().str.split(expand=True).stack().value_counts()
-            top_words = word_counts[:15]
-            fig, ax = plt.subplots(figsize=(10, 8))
-            ax.barh(top_words.index, top_words.values)
-            ax.invert_yaxis()
-            ax.set_xlabel("Word Count")
-            ax.set_title(f"{channel_choice} Top 15 Most Used Words Based on Content Title")
-
-            # remove frame
-        for spine in ax.spines.values():
-            spine.set_visible(False)
-
-
-            # update session state variables
-            st.session_state.channel = channel_choice
-            st.session_state.df = df
+                # update session state variables
+                st.session_state.channel = channel_choice
+                st.session_state.df = df
+                st.session_state.fig = fig
 
         else:
             # use session state variables if it is the same channel choice
