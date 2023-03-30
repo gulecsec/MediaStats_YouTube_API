@@ -881,7 +881,8 @@ elif page == "Top 10 Videos by Like Count and View Count":
 
         # display the table
         st.write("Top 10 Video Titles:")
-        st.table(top10_table)
+        # display the styled DataFrame in Streamlit
+        st.write(styled_df)
 
         st.markdown("""
 
