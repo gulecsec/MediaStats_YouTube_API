@@ -161,9 +161,6 @@ if page == "Home":
     st.write(ft, unsafe_allow_html=True)
 
 
-
-
-
 if page == "Google Developers Console":
 
     if not state_dict[page]["headline_displayed"]:
@@ -263,6 +260,82 @@ By utilizing the capabilities of the YouTube API and Python, you can create inno
                             """)
 
         state_dict[page]["headline_displayed"] = True
+
+    ft = """
+        <style>
+        a:link , a:visited{
+        color: #BFBFBF;  /* theme's text color hex code at 75 percent brightness*/
+        background-color: transparent;
+        text-decoration: none;
+        }
+
+        a:hover,  a:active {
+        color: #0283C3; /* theme's primary color*/
+        background-color: transparent;
+        text-decoration: underline;
+        }
+
+        #page-container {
+        position: relative;
+        min-height: 10vh;
+        }
+
+        footer{
+            visibility:hidden;
+        }
+
+        .footer {
+        position: relative;
+        left: 0;
+        top:230px;
+        bottom: 0;
+        width: 100%;
+        background-color: transparent;
+        color: #808080; /* theme's text color hex code at 50 percent brightness*/
+        text-align: left; /* you can replace 'left' with 'center' or 'right' if you want*/
+        }
+
+        .footer ul {
+        list-style: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        }
+
+        .footer ul li {
+        margin: 0 10px;
+        display: inline-block;
+        vertical-align: middle;
+        }
+
+        .footer ul li a {
+        color: #BFBFBF; /* theme's text color hex code at 75 percent brightness*/
+        text-decoration: none;
+        }
+
+        .footer ul li a:hover {
+        color: #0283C3; /* theme's primary color*/
+        text-decoration: none;
+        }
+
+        .footer ul li a i {
+        font-size: 1.5rem;
+        }
+        </style>
+
+        <div id="page-container">
+
+        <div class="footer">
+        <a href="https://www.linkedin.com/in/sgulec/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/gulecsec" target="_blank"><i class="fab fa-github"></i></a>
+        <a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a>
+        </div>
+
+        </div>
+        """
+
+    st.write(ft, unsafe_allow_html=True)
 
 
 if page == "Turkish News Media's YouTube Stats":
