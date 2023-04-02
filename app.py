@@ -123,7 +123,7 @@ text-align: left; /* you can replace 'left' with 'center' or 'right' if you want
 
 <div class="footer">
 <p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">Streamlit</a><br 'style= top:3px;'>
-with <img src="https://github.com/gulecsec" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/sape94" target="_blank"> by sape94</a></p>
+with <img src="" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank"> by sape94</a></p>
 </div>
 
 </div>
