@@ -121,6 +121,8 @@ ft = """
         </div>
         """
 
+st.set_page_config(page_icon="my_image.JPG")
+
 
 if page == "Home":
 
@@ -723,6 +725,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.write(ft, unsafe_allow_html=True)
 
+
     if page == "Monthly Likes After":
 
         # Pivot the data to create a new DataFrame with columns for each month
@@ -762,6 +765,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         st.write(ft, unsafe_allow_html=True)
+
 
     if page == "Monthly Views After":
 
@@ -805,6 +809,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.write(ft, unsafe_allow_html=True)
 
+
     if page == "Monthly Comments After":
 
         # Pivot the data to create a new DataFrame with columns for each month
@@ -844,6 +849,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         st.write(ft, unsafe_allow_html=True)
+
 
     if page == "Number of Daily Content":
 
@@ -897,6 +903,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.write(ft, unsafe_allow_html=True)
 
+
     elif page == "Subscribers per Video":
 
         # create a new DataFrame with 'channelName', 'view_per_video_after', and 'view_per_video_before' columns
@@ -926,6 +933,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         st.write(ft, unsafe_allow_html=True)
+
 
 elif page == "Top 10 Videos by Like Count and View Count":
 
