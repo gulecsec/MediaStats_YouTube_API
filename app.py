@@ -158,6 +158,7 @@ font-size: 1.5rem;
 st.write(ft, unsafe_allow_html=True)
 
 
+
 if page == "Google Developers Console":
 
     if not state_dict[page]["headline_displayed"]:
