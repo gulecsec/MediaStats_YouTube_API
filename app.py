@@ -505,7 +505,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         st.write(ft, unsafe_allow_html=True)
-        
+
 
     if page == "Comments per Video":
 
@@ -539,7 +539,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
-
+                
 
     if page == "Minutes per Video":
 
