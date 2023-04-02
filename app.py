@@ -149,7 +149,7 @@ font-size: 1.5rem;
 <div id="page-container">
 
 <div class="footer">
-<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://www.streamlit.io/" target="_blank">Streamlit</a> with <i class="fab fa-linkedin"></i><a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a> and <i class="fab fa-github"></i><a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a> by sape94</p>
+<i class="fab fa-linkedin"></i><a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a> and <i class="fab fa-github"></i><a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a> by sape94</p>
 </div>
 
 </div>
