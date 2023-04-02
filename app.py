@@ -8,6 +8,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
+st.set_page_config(page_icon="my_image.jpg")
+
 # Load data
 stats_df = pd.read_csv("All_stats/media_stats.csv")
 
