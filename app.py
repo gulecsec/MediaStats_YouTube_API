@@ -121,7 +121,7 @@ ft = """
         </div>
         """
 
-st.set_page_config(page_icon="my_image.JPG")
+
 
 
 if page == "Home":
