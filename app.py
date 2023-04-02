@@ -117,18 +117,46 @@ background-color: transparent;
 color: #808080; /* theme's text color hex code at 50 percent brightness*/
 text-align: left; /* you can replace 'left' with 'center' or 'right' if you want*/
 }
+
+.footer ul {
+list-style: none;
+display: inline-block;
+margin: 0;
+padding: 0;
+}
+
+.footer ul li {
+margin: 0 10px;
+display: inline-block;
+vertical-align: middle;
+}
+
+.footer ul li a {
+color: #BFBFBF; /* theme's text color hex code at 75 percent brightness*/
+text-decoration: none;
+}
+
+.footer ul li a:hover {
+color: #0283C3; /* theme's primary color*/
+text-decoration: none;
+}
+
+.footer ul li a i {
+font-size: 1.5rem;
+}
 </style>
 
 <div id="page-container">
 
 <div class="footer">
-<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">Streamlit</a><br 'style= top:3px;'>
-with <img src="" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank"> by sape94</a></p>
+<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://www.streamlit.io/" target="_blank">Streamlit</a> with <i class="fab fa-linkedin"></i><a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a> and <i class="fab fa-github"></i><a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a> by sape94</p>
 </div>
 
 </div>
 """
+
 st.write(ft, unsafe_allow_html=True)
+
 
 if page == "Google Developers Console":
 
