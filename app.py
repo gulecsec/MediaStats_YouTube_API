@@ -539,7 +539,9 @@ if page == "Turkish News Media's YouTube Stats":
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
-                
+
+        st.write(ft, unsafe_allow_html=True)
+
 
     if page == "Minutes per Video":
 
@@ -570,6 +572,8 @@ if page == "Turkish News Media's YouTube Stats":
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+        st.write(ft, unsafe_allow_html=True)
 
 
     if page == "Views per Likes":
@@ -604,6 +608,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
     if page == "Number of Videos Uploaded":
 
@@ -666,6 +671,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
     if page == "Monthly Minutes After":
 
@@ -713,6 +719,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
     if page == "Monthly Likes After":
 
@@ -752,6 +759,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
     if page == "Monthly Views After":
 
@@ -793,6 +801,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
     if page == "Monthly Comments After":
 
@@ -832,6 +841,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
     if page == "Number of Daily Content":
 
@@ -883,6 +893,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
     elif page == "Subscribers per Video":
 
@@ -912,6 +923,7 @@ if page == "Turkish News Media's YouTube Stats":
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
+        st.write(ft, unsafe_allow_html=True)
 
 elif page == "Top 10 Videos by Like Count and View Count":
 
@@ -970,3 +982,4 @@ The daily quota for YouTube Data API v3 was 10,000 units per day as of September
 
     # Add footer to the page
     st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+    st.write(ft, unsafe_allow_html=True)
