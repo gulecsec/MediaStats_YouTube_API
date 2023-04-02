@@ -124,8 +124,6 @@ ft = """
         """
 
 
-
-
 if page == "Home":
 
     if not state_dict[page]["headline_displayed"]:
