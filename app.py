@@ -122,7 +122,6 @@ ft = """
         """
 
 
-
 if page == "Home":
 
     if not state_dict[page]["headline_displayed"]:
@@ -431,6 +430,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.write(ft, unsafe_allow_html=True)
 
+
     if page == "Likes per Video":
 
         # generate a horizontal bar chart using Plotly
@@ -610,6 +610,7 @@ if page == "Turkish News Media's YouTube Stats":
 
         st.write(ft, unsafe_allow_html=True)
 
+
     if page == "Number of Videos Uploaded":
 
         # create a new DataFrame with 'channelName', 'video_count_after', and 'video_count_before' columns
@@ -672,6 +673,7 @@ if page == "Turkish News Media's YouTube Stats":
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
 
         st.write(ft, unsafe_allow_html=True)
+
 
     if page == "Monthly Minutes After":
 
