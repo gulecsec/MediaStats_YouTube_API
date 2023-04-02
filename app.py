@@ -93,8 +93,7 @@ if page == "Home":
             <li><a href="https://github.com/gulecsec" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
         </ul>
     </section>
-    """, unsafe_allow_html=True)
-
+        """)
 
 if page == "Google Developers Console":
 
