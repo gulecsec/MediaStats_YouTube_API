@@ -118,6 +118,8 @@ ft = """
         <a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a>
         <a href="https://github.com/gulecsec" target="_blank"><i class="fab fa-github"></i></a>
         <a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a>
+        <a href="https://gulecsec.github.io/myportfolio/" target="_blank"><i class="fab fa-github"></i></a>
+        <a style='display: inline; text-align: left;' href="https://gulecsec.github.io/myportfolio/" target="_blank">MySite</a>
         </div>
 
         </div>
