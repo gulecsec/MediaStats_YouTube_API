@@ -85,15 +85,15 @@ if page == "Home":
     """)
 
     # Define footer
-    st.footer("""
+st.footer("""
     <section>
         <h3>Social</h3>
-        <ul class="icons alt">
-            <li><a href="https://www.linkedin.com/in/sgulec/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            <li><a href="https://github.com/gulecsec" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+        <ul class="icons">
+            <li><a href="https://www.linkedin.com/in/sgulec/"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/gulecsec"><i class="fab fa-github"></i></a></li>
         </ul>
     </section>
-        """)
+""")
 
 if page == "Google Developers Console":
 
