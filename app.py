@@ -84,9 +84,17 @@ if page == "Home":
 
     """)
 
-    # Define footer
-    st.footer(
-        """
+    st.footer("""
+    <section class="split contact">
+        <section class="alt">
+            <h3>Location</h3>
+            <p>Mexico City, MX</p>
+        </section>
+
+        <section>
+            <h3>Email</h3>
+            <p><a href="#">selcangulec@proton.me</a></p>
+        </section>
         <section>
             <h3>Social</h3>
             <ul class="icons alt">
@@ -94,8 +102,8 @@ if page == "Home":
                 <li><a href="https://github.com/gulecsec" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
             </ul>
         </section>
-        """
-    )
+    </section>
+""")
 
 if page == "Google Developers Console":
 
