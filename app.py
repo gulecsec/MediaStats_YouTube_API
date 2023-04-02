@@ -119,7 +119,7 @@ ft = """
         <a href="https://github.com/gulecsec" target="_blank"><i class="fab fa-github"></i></a>
         <a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a>
         <a href="https://gulecsec.github.io/myportfolio/" target="_blank"><i class="fab fa-github"></i></a>
-        <a style='display: inline; text-align: left;' href="https://gulecsec.github.io/myportfolio/" target="_blank">SG</a>
+        <a style='display: inline; text-align: left;' href="https://gulecsec.github.io/myportfolio/" target="_blank">MySite</a>
         </div>
 
         </div>
