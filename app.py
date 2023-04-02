@@ -158,7 +158,7 @@ if page == "Home":
         </div>
         """
 
-        st.write(ft, unsafe_allow_html=True)
+    st.write(ft, unsafe_allow_html=True)
 
 
 
