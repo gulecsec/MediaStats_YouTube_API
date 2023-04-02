@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from wordcloud import WordCloud, STOPWORDS
 import string
 
 # Data viz packages
@@ -84,6 +83,17 @@ if page == "Home":
     Additionally, please note that the data presented in our graphs was collected via YouTube API requests as of March 27th, 2023, and may not reflect the most up-to-date information available.
 
     """)
+
+    # Define footer
+    st.markdown("""
+    <section>
+        <h3>Social</h3>
+        <ul class="icons alt">
+            <li><a href="https://www.linkedin.com/in/sgulec/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://github.com/gulecsec" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+        </ul>
+    </section>
+    """, unsafe_allow_html=True)
 
 
 if page == "Google Developers Console":
