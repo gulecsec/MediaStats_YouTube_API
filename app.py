@@ -85,7 +85,7 @@ if page == "Home":
     """)
 
     # Define footer
-    st.markdown("""
+    st.footer("""
     <section>
         <h3>Social</h3>
         <ul class="icons alt">
