@@ -47,44 +47,7 @@ state_dict = {
     "Most Used Words by Title": {"headline_displayed": False}
 }
 
-
-if page == "Home":
-
-    if not state_dict[page]["headline_displayed"]:
-
-        st.header("YouTube Stats of Turkish News Media")
-        st.subheader("Exploring the Data on My Streamlit App")
-        st.markdown("""In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically,we'll focus on 15 channels affected by the earthquake that occurred in Turkey on February 6th, 2023.By comparing the statistics of these channels, we can gain insight into the impact of the earthquakeon the YouTube community and learn how to use the YouTube API to automate various tasks related to channelanalysis.""")
-
-        state_dict[page]["headline_displayed"] = True
-
-
-    # add radio button to select between the two graphs
-    graph_choice = st.radio("Select graph", options=["Total number of Views & Total number of Videos", "Total number of Subscribers & Total number of Videos"])
-
-    # display the selected graph
-    if graph_choice == "Total number of Views & Total number of Videos":
-        fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
-                        x="channelName", y="views", color='totalVideos')
-
-    else:
-        fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
-                        x="channelName", y="subscribers", color='totalVideos')
-
-    fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
-        width=800, height=600,yaxis_title=None)
-
-    st.plotly_chart(fig)
-
-    st.markdown("""
-
-    The accuracy of the stats on the graphs may vary due to daily quotas on YouTube APIs, which can result in incomplete data for channels with a high number of total videos. The daily quota for YouTube Data API v3 was 10,000 units per day as of September 2021, but this may change at any time. It's important to follow YouTube's official documentation and guidelines to avoid exceeding the quota limit and ensure compliance with their terms of service.
-
-    Additionally, please note that the data presented in our graphs was collected via YouTube API requests as of March 27th, 2023, and may not reflect the most up-to-date information available.
-
-    """)
-
-    ft = """
+ft = """
         <style>
         a:link , a:visited{
         color: #BFBFBF;  /* theme's text color hex code at 75 percent brightness*/
@@ -157,6 +120,44 @@ if page == "Home":
 
         </div>
         """
+
+
+
+if page == "Home":
+
+    if not state_dict[page]["headline_displayed"]:
+
+        st.header("YouTube Stats of Turkish News Media")
+        st.subheader("Exploring the Data on My Streamlit App")
+        st.markdown("""In this tutorial, we'll explore how to use the YouTube API with Python to retrieve and analyze the statistics of channels on one of the world's largest video-sharing platforms. Specifically,we'll focus on 15 channels affected by the earthquake that occurred in Turkey on February 6th, 2023.By comparing the statistics of these channels, we can gain insight into the impact of the earthquakeon the YouTube community and learn how to use the YouTube API to automate various tasks related to channelanalysis.""")
+
+        state_dict[page]["headline_displayed"] = True
+
+
+    # add radio button to select between the two graphs
+    graph_choice = st.radio("Select graph", options=["Total number of Views & Total number of Videos", "Total number of Subscribers & Total number of Videos"])
+
+    # display the selected graph
+    if graph_choice == "Total number of Views & Total number of Videos":
+        fig = px.bar(data_frame=stats_df.sort_values('views', ascending=False),
+                        x="channelName", y="views", color='totalVideos')
+
+    else:
+        fig = px.bar(data_frame=stats_df.sort_values('subscribers', ascending=False),
+                        x="channelName", y="subscribers", color='totalVideos')
+
+    fig.update_layout(coloraxis_colorbar=dict(title="Total Videos"), xaxis_title=None,legend=dict(orientation='h',yanchor='top',y=1.1,xanchor='left',x=0.01),legend_title="",
+        width=800, height=600,yaxis_title=None)
+
+    st.plotly_chart(fig)
+
+    st.markdown("""
+
+    The accuracy of the stats on the graphs may vary due to daily quotas on YouTube APIs, which can result in incomplete data for channels with a high number of total videos. The daily quota for YouTube Data API v3 was 10,000 units per day as of September 2021, but this may change at any time. It's important to follow YouTube's official documentation and guidelines to avoid exceeding the quota limit and ensure compliance with their terms of service.
+
+    Additionally, please note that the data presented in our graphs was collected via YouTube API requests as of March 27th, 2023, and may not reflect the most up-to-date information available.
+
+    """)
 
     st.write(ft, unsafe_allow_html=True)
 
@@ -354,81 +355,7 @@ if page == "Turkish News Media's YouTube Stats":
     "Number of Videos Uploaded", "Monthly Minutes After", "Monthly Likes After", "Monthly Views After",
     "Monthly Comments After","Number of Daily Content","Subscribers per Video"))
 
-    ft = """
-        <style>
-        a:link , a:visited{
-        color: #BFBFBF;  /* theme's text color hex code at 75 percent brightness*/
-        background-color: transparent;
-        text-decoration: none;
-        }
 
-        a:hover,  a:active {
-        color: #0283C3; /* theme's primary color*/
-        background-color: transparent;
-        text-decoration: underline;
-        }
-
-        #page-container {
-        position: relative;
-        min-height: 10vh;
-        }
-
-        footer{
-            visibility:hidden;
-        }
-
-        .footer {
-        position: relative;
-        left: 0;
-        top:230px;
-        bottom: 0;
-        width: 100%;
-        background-color: transparent;
-        color: #808080; /* theme's text color hex code at 50 percent brightness*/
-        text-align: left; /* you can replace 'left' with 'center' or 'right' if you want*/
-        }
-
-        .footer ul {
-        list-style: none;
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-        }
-
-        .footer ul li {
-        margin: 0 10px;
-        display: inline-block;
-        vertical-align: middle;
-        }
-
-        .footer ul li a {
-        color: #BFBFBF; /* theme's text color hex code at 75 percent brightness*/
-        text-decoration: none;
-        }
-
-        .footer ul li a:hover {
-        color: #0283C3; /* theme's primary color*/
-        text-decoration: none;
-        }
-
-        .footer ul li a i {
-        font-size: 1.5rem;
-        }
-        </style>
-
-        <div id="page-container">
-
-        <div class="footer">
-        <a href="https://www.linkedin.com/in/sgulec/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/gulecsec" target="_blank"><i class="fab fa-github"></i></a>
-        <a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a>
-        </div>
-
-        </div>
-        """
-
-    st.write(ft, unsafe_allow_html=True)
 
     if page == "Views per Minute":
 
@@ -475,6 +402,8 @@ if page == "Turkish News Media's YouTube Stats":
 
         # Add footer to the page
         st.markdown("<p style='text-align: right;'><i><b>* Data collected on 27rd of March 2023</b></i></p>", unsafe_allow_html=True)
+
+
 
 
     if page == "Likes per Minute":
