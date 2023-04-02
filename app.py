@@ -149,14 +149,17 @@ font-size: 1.5rem;
 <div id="page-container">
 
 <div class="footer">
-<a href="https://www.linkedin.com/in/sgulec/" target="_blank"><i class="fab fa-linkedin"></i></a><a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a>
-<a href="https://github.com/gulecsec" target="_blank"><i class="fab fa-github"></i></a><a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/sgulec/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">LinkedIn</a>
+<a href="https://github.com/gulecsec" target="_blank"><i class="fab fa-github"></i></a>
+<a style='display: inline; text-align: left;' href="https://github.com/gulecsec" target="_blank">GitHub</a>
 </div>
 
 </div>
 """
 
 st.write(ft, unsafe_allow_html=True)
+
 
 
 
