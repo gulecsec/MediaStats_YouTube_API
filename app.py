@@ -122,8 +122,8 @@ text-align: left; /* you can replace 'left' with 'center' or 'right' if you want
 <div id="page-container">
 
 <div class="footer">
-<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://streamlit.io/" target="_blank">Streamlit</a><br 'style= top:3px;'>
-with <img src="https://em-content.zobj.net/source/skype/289/red-heart_2764-fe0f.png" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/sape94" target="_blank"> by sape94</a></p>
+<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://www.linkedin.com/in/sgulec/" target="_blank">Streamlit</a><br 'style= top:3px;'>
+with <img src="https://github.com/gulecsec" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/sape94" target="_blank"> by sape94</a></p>
 </div>
 
 </div>
